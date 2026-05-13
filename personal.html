@@ -471,18 +471,28 @@ document.getElementById("update").innerText = user.update || "-";
 document.getElementById("vcode").innerText = code || "-";
 
 // =====================
-// IMAGE FIX (IMPORTANT)
+// IMAGE FIX
 // =====================
 let photo = document.getElementById("photo");
 let doc = document.getElementById("doc");
 
-photo.src = user.photo || "https://via.placeholder.com/150";
-doc.src = user.doc || "https://via.placeholder.com/400";
+// direct image if localStorage missing
+photo.src = user && user.photo
+  ? user.photo
+  : "https://e-lmis-online.netlify.app/image/photo_2025-11-29_18-58-10.jpg";
+
+doc.src = user && user.doc
+  ? user.doc
+  : "https://e-lmis-online.netlify.app/image/photo_2025-11-29_18-23-08.jpg";
 
 // fallback
-photo.onerror = () => photo.src = "https://via.placeholder.com/150";
-doc.onerror = () => doc.src = "https://via.placeholder.com/400";
+photo.onerror = function () {
+  this.src = "https://e-lmis-online.netlify.app/image/photo_2025-11-29_18-58-10.jpg";
+};
 
+doc.onerror = function () {
+  this.src = "https://e-lmis-online.netlify.app/image/photo_2025-11-29_18-23-08.jpg";
+};
 // =====================
 // CLOCK
 // =====================
