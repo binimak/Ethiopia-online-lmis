@@ -442,20 +442,7 @@ color:#cbd5e1;
   </div>
 </footer>
 <script>
-let user = JSON.parse(localStorage.getItem("user"));
 
-if(user){
-
-  // photo
-  document.getElementById("photo").src = user.documentbox2.photo;
-
-  // document image
-  document.getElementById("doc").src = user.documentbox2.doc;
-
-  // other info
-  document.getElementById("name").innerText = user.name;
-  document.getElementById("country").innerText = user.country;
-}
 // ================= TIME =================
 setInterval(()=>{
   let now = new Date();
@@ -489,8 +476,6 @@ window.onload = function(){
   document.getElementById("country").innerText = user.country || "-";
   document.getElementById("reg").innerText = user.reg || "-";
   document.getElementById("update").innerText = user.update || "-";
-
-  // ✅ FIXED CODE
   document.getElementById("vcode").innerText = code || "-";
 
   // ================= PHOTO =================
@@ -500,24 +485,20 @@ window.onload = function(){
   // ================= DOCUMENT =================
   let docImg = document.getElementById("doc");
 
-  if(user.doc && user.doc !== ""){
+  if(user.doc){
     docImg.src = user.doc;
     docImg.style.display = "block";
-  }else{
+  } else {
     docImg.style.display = "none";
   }
 
-  // ================= QR CODE =================
+  // ================= QR =================
   let qr = document.getElementById("qr");
-
-  let pageURL = window.location.href;
 
   qr.src =
     "https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=" +
-    encodeURIComponent(pageURL);
-
+    encodeURIComponent(window.location.href);
 };
-
 
 
 // ================= RECEIPT UPLOAD =================
