@@ -777,27 +777,7 @@ which oversees national job creation, skills development, and labor concerns.
 <button class="lang">🇺🇸 EN</button>
 </div>
 </footer>
-
- <script>
-
-btn.forEach(function(b){
-  b.addEventListener("click", function(){
-  
-
-let content=this.nextElementSibling;
-
-if(content.style.display==="block"){
-content.style.display="none";
-}else{
-content.style.display="block";
-}
-
-});
-
-});
-
-</script>
-    <script>
+<script>
 
 // =======================
 // FAQ TOGGLE (FIXED)
@@ -853,24 +833,20 @@ function checkCode() {
     msg.style.color = "green";
     msg.innerHTML = "✅ Access Granted";
 
-    // SAVE DATA
-   localStorage.setItem("user", JSON.stringify(users[code]));
-localStorage.setItem("vcode", code);
+    // save data
+    localStorage.setItem("user", JSON.stringify(users[code]));
+    localStorage.setItem("vcode", code);
 
-window.location.href = "personal.html";
-
-    // REDIRECT
+    // redirect ONLY once
     setTimeout(() => {
       window.location.href = "personal.html";
-    }, 1000);
+    }, 800);
 
   } else {
     msg.style.color = "red";
     msg.innerHTML = "❌ Invalid Code";
   }
 }
-
-
 // =======================
 // SLIDER
 // =======================
