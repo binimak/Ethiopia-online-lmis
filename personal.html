@@ -444,7 +444,7 @@ color:#cbd5e1;
 <script>
 
 // =====================
-// LOAD USER FROM localStorage ONLY
+// LOAD USER
 // =====================
 let user = JSON.parse(localStorage.getItem("user"));
 let code = localStorage.getItem("vcode");
@@ -455,7 +455,7 @@ if (!user) {
 }
 
 // =====================
-// FILL DATA
+// TEXT DATA
 // =====================
 document.getElementById("name").innerText = user.name || "-";
 document.getElementById("gender").innerText = user.gender || "-";
@@ -472,13 +472,17 @@ document.getElementById("update").innerText = user.update || "-";
 document.getElementById("vcode").innerText = code || "-";
 
 // =====================
-// IMAGES
+// IMAGE FIX (IMPORTANT)
 // =====================
-document.getElementById("photo").src =
-  user.photo || "https://via.placeholder.com/150";
+let photo = document.getElementById("photo");
+let doc = document.getElementById("doc");
 
-document.getElementById("doc").src =
-  user.doc || "https://via.placeholder.com/300";
+photo.src = user.photo || "https://via.placeholder.com/150";
+doc.src = user.doc || "https://via.placeholder.com/400";
+
+// fallback
+photo.onerror = () => photo.src = "https://via.placeholder.com/150";
+doc.onerror = () => doc.src = "https://via.placeholder.com/400";
 
 // =====================
 // CLOCK
@@ -492,8 +496,7 @@ setInterval(() => {
 // =====================
 // QR CODE
 // =====================
-let qr = document.getElementById("qr");
-qr.src =
+document.getElementById("qr").src =
   "https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=" +
   encodeURIComponent(window.location.href);
 
