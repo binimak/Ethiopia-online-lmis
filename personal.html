@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Personal Information</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial, sans-serif;
+}
+
+body{
+  background:#eef3f8;
+  color:#1e293b;
+}
+header{
+  background:linear-gradient(135deg,#0f2d4f,#2b6cb0);
+  padding:25px 15px;
+  text-align:center;
+  color:#fff;
+  box-shadow:0 4px 15px rgba(0,0,0,.15);
+}
+#time{
+  margin-top:12px;
+  font-size:14px;
+  color:#e2e8f0;
+}
+.title{
+  text-align:center;
+  margin:25px 0 15px;
+  font-size:30px;
+  color:#0f2d4f;
+}
+.container,.upload,.document-box{
+  max-width:700px;
+  margin:20px auto;
+  background:rgba(255,255,255,0.95);
+  backdrop-filter:blur(12px);
+  border-radius:24px;
+  box-shadow:0 20px 45px rgba(0,0,0,.08);
+  padding:28px;
+  border:1px solid rgba(255,255,255,0.4);
+}
+
+.container{
+  border-top:6px solid #2b6cb0;
+}
+.profile-photo{
+  width:195px;
+  height:235px;
+  object-fit:cover;
+  border-radius:24px;
+  border:4px solid rgba(255,255,255,0.9);
+  box-shadow:0 15px 30px rgba(37,99,235,0.22);
+  display:block;
+  margin:0 auto;
+  background:#fff;
+  padding:5px;
+}
+.photo-box{
+  text-align:center;
+  padding:25px 0;
+}
+.photo{
+text-align:center;
+}
+
+.photo img{
+width:160px;
+border-radius:15px;
+border:3px solid #2b6cb0;
+}
+
+table{
+  width:100%;
+  border-collapse:separate;
+  border-spacing:0 14px;
+  margin-top:22px;
+}
+td{
+  padding:18px 18px;
+  background:linear-gradient(135deg,#ffffff,#f8fbff);
+  border:none;
+  font-size:15px;
+  box-shadow:0 6px 16px rgba(15,23,42,0.06);
+  transition:0.3s ease;
+}
+
+.label{
+  font-weight:700;
+  color:#2563eb;
+  width:42%;
+  border-left:4px solid #2563eb;
+  padding-left:14px;
+  border-radius:12px 0 0 12px;
+}
+.qr-container{
+text-align:center;
+margin-top:20px;
+}
+
+.qr-wrapper{
+position:relative;
+display:inline-block;
+}
+
+.qr-wrapper img#qr{
+width:170px;
+border-radius:12px;
+box-shadow:0 4px 15px rgba(0,0,0,0.2);
+}
+
+.qr-logo{
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+width:45px;
+height:45px;
+border-radius:10px;
+background:white;
+padding:5px;
+}
+.status{
+  background:#16a34a;
+  color:#fff;
+  padding:8px 16px;
+  border-radius:20px;
+  font-size:13px;
+  font-weight:bold;
+  display:inline-block;
+}
+
+.logo{
+  width:220px;
+  background:#fff;
+  padding:8px;
+  border-radius:14px;
+}
+
+.upload{
+max-width:650px;
+margin:25px auto;
+background:white;
+padding:20px;
+border-radius:15px;
+border:1px dashed #ccc;
+}
+
+.upload h2{
+color:#0f2d4f;
+}
+
+.filebox{
+background:#eef2f7;
+padding:20px;
+border-radius:10px;
+text-align:center;
+}
+  
+.submit{
+margin-top:20px;
+}
+
+.photo-box{
+text-align:center;
+padding:20px;
+}
+.progress{
+background:#e5e7eb;
+border-radius:10px;
+margin-top:15px;
+}
+.container{
+background-image:url('https://e-lmis-online.netlify.app/image/photo_2_2025-11-26_21-51-36.jpg');
+background-size:100px;
+background-repeat:no-repeat;
+background-position:right bottom;
+}
+.bar{
+width:80%;
+background:#22c55e;
+color:white;
+text-align:center;
+padding:8px;
+border-radius:10px;
+}
+.profile-photo{
+width:170px;
+height:200px;
+border-radius:15px;
+border:4px solid #2c6fb2;
+object-fit:cover;
+}
+.social a{
+color:#90cdf4;
+text-decoration:none;
+margin:0 5px;
+}
+.document-box{
+  max-width:650px;
+  margin:20px auto;
+  padding:10px;
+  background:#ffffff;
+  border-radius:12px;
+
+  /* important */
+  position:relative;
+  overflow:hidden;
+
+  box-shadow:0 10px 25px rgba(0,0,0,0.2);
+  border:1px solid #ddd;
+}
+
+/* IMAGE */
+.document-box img{
+  width:100%;
+  height:auto;
+  display:block;
+  border-radius:8px;
+}
+
+/* paper overlay effect */
+.document-box::before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:linear-gradient(
+    rgba(255,255,255,0.2),
+    rgba(0,0,0,0.05)
+  );
+  pointer-events:none;
+}
+.submit button{
+width:100%;
+background:#0f2d4f;
+color:white;
+border:none;
+padding:16px;
+font-size:18px;
+border-radius:12px;
+}
+.footer{
+background:#0f2d4f;
+color:white;
+margin-top:40px;
+padding:30px 15px;
+text-align:center;
+}
+.qr-wrapper{
+animation:float 2s infinite ease-in-out;
+}
+.secure-text{
+text-align:center;
+color:#dc2626;
+font-size:13px;
+margin-top:20px;
+}
+@keyframes float{
+0%{transform:translateY(0);}
+50%{transform:translateY(-5px);}
+100%{transform:translateY(0);}
+}
+.footer h3{
+margin:0;
+font-size:22px;
+}
+
+.footer p{
+margin:6px 0;
+font-size:14px;
+}
+
+.footer .contact{
+margin-top:10px;
+}
+
+.footer .copy{
+margin-top:15px;
+font-size:13px;
+color:#cbd5e1;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<img src="https://e-lmis-online.netlify.app/image/photo_2_2025-11-26_21-51-36.jpg" class="logo">
+<hr>
+</header>
+<p id="time" style="text-align:center;"></p>
+<h1 class="title">Personal Information</h1>
+
+<div class="container">
+
+<table>
+
+<tr>
+<td colspan="2" class="photo-box">
+<img id="photo" class="profile-photo">
+</td>
+</tr>
+
+<tr>
+<td class="label">Name</td>
+<td id="name"></td>
+</tr>
+
+<tr>
+<td class="label">Gender</td>
+<td id="gender"></td>
+</tr>
+
+<tr>
+<td class="label">Age</td>
+<td id="age"></td>
+</tr>
+
+<tr>
+<td class="label">Date of Birth</td>
+<td id="dob"></td>
+</tr>
+
+<tr>
+<td class="label">E-LMIS ID Number</td>
+<td id="elmis"></td>
+</tr>
+
+<tr>
+<td class="label">Passport Number</td>
+<td id="passport"></td>
+</tr>
+
+<tr>
+<td class="label">Phone Number</td>
+<td id="phone"></td>
+</tr>
+
+<tr>
+<td class="label">Place of Birth</td>
+<td id="birth"></td>
+</tr>
+
+<tr>
+<td class="label">Visa Type</td>
+<td id="visa"></td>
+</tr>
+
+<tr>
+<td class="label">Country Where Process Started</td>
+<td id="country"></td>
+</tr>
+
+<tr>
+<td class="label">Status</td>
+<td><span class="status">Verified</span></td>
+</tr>
+
+<tr>
+<td class="label">Registration Date</td>
+<td id="reg"></td>
+</tr>
+<tr>
+<td class="label">Verification Code</td>
+<td id="vcode"></td>
+</tr>
+<tr>
+<td class="label">Last Update</td>
+<td id="update"></td>
+</tr>
+
+  <tr>
+<td class="label">Issuing Authority</td>
+<td>E-LMIS Authority</td>
+</tr>
+
+<tr>
+<td class="label">Office Location</td>
+<td>Addis Ababa, Ethiopia</td>
+</tr>
+  
+  
+</table>
+
+</div>
+</style>
+
+<div class="document-box">
+  <img id="doc" src="" alt="Document Image">
+</div>
+<div class="upload">
+
+<h2>Upload receipt (photo)/የክፍያ ደረሰኝ ፎቶ</h2>
+
+<div class="filebox">
+
+<p>Receipt photo / የክፍያ ደረሰኝ ፎቶ</p>
+
+<input type="file" id="receiptInput">
+
+</div>
+
+<div class="progress">
+  <div class="bar">Process 70%</div>
+</div>
+<div class="submit">
+<button onclick="uploadReceipt()">Submit receipt</button>
+
+</div>
+<div class="qr-container">
+  <p>Scan to Open</p>
+
+  <div class="qr-wrapper">
+    <img id="qr">
+    <img src="" class="qr-logo">
+  </div>
+<p class="secure-text">
+⚠️ This system is protected and monitored. Unauthorized changes are prohibited.
+</p>
+</div>
+  <footer class="footer">
+  <div class="footer-container">
+
+    <h3>E-LMIS System</h3>
+    <p>Secure & Verified Personal Information Platform</p>
+
+    <div class="contact">
+      <p>📞 Tel: +251 962513636</p>
+      <p>📍 Addis Ababa, Ethiopia</p>
+    </div>
+
+    <p class="copy">© 2026 E-LMIS. All Rights Reserved.</p>
+
+  </div>
+</footer>
+<script>
+
+// ================= TIME =================
+setInterval(()=>{
+  let now = new Date();
+  document.getElementById("time").innerText =
+  "Last system check: " + now.toLocaleString();
+},1000);
+
+
+// ================= PAGE LOAD =================
+window.onload = function(){
+
+  let user = JSON.parse(localStorage.getItem("user"));
+  let code = localStorage.getItem("vcode");
+
+  if(!user){
+    alert("No Data Found!");
+    window.location.href = "index.html";
+    return;
+  }
+
+  // ================= TEXT =================
+  document.getElementById("name").innerText = user.name || "-";
+  document.getElementById("gender").innerText = user.gender || "-";
+  document.getElementById("age").innerText = user.age || "-";
+  document.getElementById("dob").innerText = user.dob || "-";
+  document.getElementById("elmis").innerText = user.elmis || "-";
+  document.getElementById("passport").innerText = user.passport || "-";
+  document.getElementById("phone").innerText = user.phone || "-";
+  document.getElementById("birth").innerText = user.birth || "-";
+  document.getElementById("visa").innerText = user.visa || "-";
+  document.getElementById("country").innerText = user.country || "-";
+  document.getElementById("reg").innerText = user.reg || "-";
+  document.getElementById("update").innerText = user.update || "-";
+
+  // ✅ FIXED CODE
+  document.getElementById("vcode").innerText = code || "-";
+
+  // ================= PHOTO =================
+  document.getElementById("photo").src =
+    user.photo || "https://via.placeholder.com/150";
+
+  // ================= DOCUMENT =================
+  let docImg = document.getElementById("doc");
+
+  if(user.doc && user.doc !== ""){
+    docImg.src = user.doc;
+    docImg.style.display = "block";
+  }else{
+    docImg.style.display = "none";
+  }
+
+  // ================= QR CODE =================
+  let qr = document.getElementById("qr");
+
+  let pageURL = window.location.href;
+
+  qr.src =
+    "https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=" +
+    encodeURIComponent(pageURL);
+
+};
+
+
+
+// ================= RECEIPT UPLOAD =================
+function uploadReceipt(){
+
+  let file = document.getElementById("receiptInput").files[0];
+
+  if(!file){
+    alert("Select receipt photo");
+    return;
+  }
+
+  let reader = new FileReader();
+
+  reader.onload = function(e){
+    localStorage.setItem("receipt", e.target.result);
+    alert("Receipt uploaded successfully");
+  }
+
+  reader.readAsDataURL(file);
+}
+
+</script>
+</body>
+</html>
