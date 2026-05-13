@@ -777,8 +777,8 @@ which oversees national job creation, skills development, and labor concerns.
 <button class="lang">🇺🇸 EN</button>
 </div>
 </footer>
-<script>
 
+<script>
 // =======================
 // FAQ TOGGLE (FIXED)
 // =======================
@@ -786,20 +786,18 @@ document.querySelectorAll(".faq-btn").forEach(btn => {
   btn.addEventListener("click", function () {
     let content = this.nextElementSibling;
 
-    if (content.style.display === "block") {
-      content.style.display = "none";
-    } else {
-      content.style.display = "block";
-    }
+    if (!content) return;
+
+    content.style.display =
+      content.style.display === "block" ? "none" : "block";
   });
 });
 
 
 // =======================
-// USERS DATA
+// USERS DATABASE (FIXED)
 // =======================
-let users = {
-let users = {
+const users = {
   "123123": {
     name: "Test User",
     gender: "Male",
@@ -811,33 +809,34 @@ let users = {
     birth: "Addis Ababa",
     visa: "Work Visa",
     country: "Kuwait",
-
-    // 🔥 IMPORTANT
     photo: "https://via.placeholder.com/150",
     doc: "https://via.placeholder.com/400",
-
     reg: "2026-01-01",
     update: "2026-05-01"
   }
 };
+
+
 // =======================
-// CHECK CODE
+// CHECK CODE FUNCTION
 // =======================
 function checkCode() {
-
   let code = document.getElementById("code").value.trim();
   let msg = document.getElementById("msg");
 
-  if (users[code]) {
+  if (!code) {
+    msg.style.color = "red";
+    msg.innerHTML = "❌ Please enter code";
+    return;
+  }
 
+  if (users[code]) {
     msg.style.color = "green";
     msg.innerHTML = "✅ Access Granted";
 
-    // save data
     localStorage.setItem("user", JSON.stringify(users[code]));
     localStorage.setItem("vcode", code);
 
-    // redirect ONLY once
     setTimeout(() => {
       window.location.href = "personal.html";
     }, 800);
@@ -847,29 +846,29 @@ function checkCode() {
     msg.innerHTML = "❌ Invalid Code";
   }
 }
-// =======================
-// SLIDER
-// =======================
-window.onload = function () {
 
-  let sliderImages = [
+
+// =======================
+// SLIDER (FIXED)
+// =======================
+window.addEventListener("load", () => {
+  const sliderImages = [
     "https://e-lmis-online.netlify.app/image/photo_2025-11-29_18-23-08.jpg",
     "https://e-lmis-online.netlify.app/image/photo_2025-11-26_21-51-36.jpg",
     "https://e-lmis-online.netlify.app/image/photo_2025-11-29_18-58-10.jpg"
   ];
 
   let index = 0;
-  let slider = document.querySelector(".slider img");
+  const slider = document.querySelector(".slider img");
 
-  if (slider) {
-    setInterval(() => {
-      index = (index + 1) % sliderImages.length;
-      slider.src = sliderImages[index];
-    }, 3000);
-  }
-};
+  if (!slider) return;
 
-</script>  
+  setInterval(() => {
+    index = (index + 1) % sliderImages.length;
+    slider.src = sliderImages[index];
+  }, 3000);
+});
+</script>
 
 </body>
 </html>
