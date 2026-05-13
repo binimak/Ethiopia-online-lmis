@@ -392,7 +392,9 @@ color:#cbd5e1;
 
 </div>
 </style>
-
+<div class="document-box2">
+  <img id="doc" src="" alt="Document Image">
+</div>
 <div class="document-box">
   <img id="doc" src="" alt="Document Image">
 </div>
@@ -442,7 +444,20 @@ color:#cbd5e1;
   </div>
 </footer>
 <script>
+let user = JSON.parse(localStorage.getItem("user"));
 
+if(user){
+
+  // photo
+  document.getElementById("photo").src = user.documentbox2.photo;
+
+  // document image
+  document.getElementById("doc").src = user.documentbox2.doc;
+
+  // other info
+  document.getElementById("name").innerText = user.name;
+  document.getElementById("country").innerText = user.country;
+}
 // ================= TIME =================
 setInterval(()=>{
   let now = new Date();
