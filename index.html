@@ -819,26 +819,27 @@ document.querySelectorAll(".faq-btn").forEach(btn => {
 // USERS DATA
 // =======================
 let users = {
-  "123123": {
-name:"RIBKAN WOGA AHIMED  ",
-gender:"Female",
-age:"22",
-dob:"08/02/1996",
-elmis:"EF12347853",
-passport:"EP 1452630",
-phone:"+251994437377",
-birth:" Adiss Abeba Ethiopia",
-visa:"Work Visa",
-country:"Kuwait 🇰🇼",
-reg:"2026-03-11",
-update:"2028-03-11",
-photo:"https://res.cloudinary.com/dwclusteb/image/upload/v1778332289/IMG_20260509_161029_907_olbgrx.jpg",
-doc:"https://res.cloudinary.com/dwclusteb/image/upload/v1778332939/IMG_20260509_161926_703_qp6zww.jpg",
-}
-  // 👉 ቀሪ users እንደተለመደ ቀጥል
+let users = {
+  "123": {
+    name: "Test User",
+    gender: "Male",
+    age: "25",
+    dob: "01/01/2000",
+    elmis: "EL123",
+    passport: "P12345",
+    phone: "0912345678",
+    birth: "Addis Ababa",
+    visa: "Work Visa",
+    country: "Kuwait",
+
+    // 🔥 IMPORTANT
+    photo: "https://via.placeholder.com/150",
+    doc: "https://via.placeholder.com/400",
+
+    reg: "2026-01-01",
+    update: "2026-05-01"
+  }
 };
-
-
 // =======================
 // CHECK CODE
 // =======================
@@ -853,8 +854,10 @@ function checkCode() {
     msg.innerHTML = "✅ Access Granted";
 
     // SAVE DATA
-    localStorage.setItem("user", JSON.stringify(users[code]));
-    localStorage.setItem("vcode", code);
+   localStorage.setItem("user", JSON.stringify(users[code]));
+localStorage.setItem("vcode", code);
+
+window.location.href = "personal.html";
 
     // REDIRECT
     setTimeout(() => {
