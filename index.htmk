@@ -1,1 +1,1450 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ministry Platform</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+body{
+margin:0;
+font-family:Poppins,sans-serif;
+background:#ffffff;
+color:#0f172a;
+  overflow-x: hidden;
+}
+* {
+  max-width: 120%;
+  box-sizing: border-box;
+}
+/* HEADER */
+.header{
+text-align:center;
+padding:15px;
+background:white;
+box-shadow:0 2px 10px rgba(0,0,0,0.05);
+position:sticky;
+top:0;
+z-index:100;
+}
+.header img{
+width:100px;
+}
+
+/* WELCOME */
+.news-section{
+padding:5px;
+}
+ .section{
+text-align:center;
+padding:20px;
+}
+.section h2{
+margin:0;
+font-size:22px;
+}
+
+.section p{
+color:#64748b;
+}
+ 
+ select{
+width:200%;
+padding:14px;
+margin:10px 0;
+border-radius:12px;
+border:1px solid #e2e8f0;
+background:#f8fafc;
+}
+/* MINISTERS (VERTICAL) */
+.ministers{
+display:flex;
+flex-direction:column;
+gap:20px;
+padding:20px;
+}
+
+.card{
+background:white;
+border-radius:20px;
+overflow:hidden;
+box-shadow:0 10px 25px rgba(0,0,0,0.08);
+ transition:0.3s;
+ position:relative;
+overflow:hidden;
+
+}
+.card:hover img{
+transform:scale(1.08);
+}
+.register-btn{
+display:block;
+width:90%;
+margin:20px auto;
+padding:15px;
+text-align:center;
+background:#2563eb;
+color:white;
+border-radius:15px;
+font-weight:bold;
+text-decoration:none;
+}
+.login-section{
+background:white;
+margin:20px;
+padding:20px;
+border-radius:20px;
+box-shadow:0 10px 30px rgba(0,0,0,0.1);
+text-align:center;
+}
+
+.login-section input{
+width:100%;
+padding:14px;
+border-radius:10px;
+border:1px solid #ccc;
+margin-top:10px;
+}
+.contact-box{
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:#0d47a1;
+color:white;
+padding:15px;
+border-radius:15px;
+margin-top:20px;
+}
+
+.contact-btn{
+background:white;
+color:#0d47a1;
+padding:8px 15px;
+border-radius:10px;
+text-decoration:none;
+font-weight:bold;
+}
+.login-section button{
+width:100%;
+margin-top:15px;
+padding:14px;
+background:#2563eb;
+color:white;
+border:none;
+border-radius:10px;
+font-weight:bold;
+}
+.card img{
+width:300%;
+height:800%;
+object-fit:cover;
+ transition:0.4s;
+
+}
+/* IMAGE OVERLAY */
+.card .overlay{
+position:absolute;
+top:0;
+left:0;
+width:300%;
+height:800%;
+background:linear-gradient(to top, rgba(0,0,0,0.6), transparent);
+}
+.card p{
+position:absolute;
+bottom:0;
+left:0;
+width:300%;
+background:rgba(0,0,0,0.5);
+color:white;
+padding:10px;
+}
+/* FORM */
+.form-box{
+background:white;
+margin:20px;
+padding:20px;
+border-radius:25px;
+box-shadow:0 15px 40px rgba(0,0,0,0.1);
+}
+
+.form-box h2{
+text-align:center;
+margin-bottom:15px;
+}
+
+input{
+width:100%;
+padding:14px;
+margin:10px 0;
+border-radius:12px;
+border:1px solid #e2e8f0;
+font-size:14px;
+ background:#f8fafc;
+}
+
+
+/* FILE UPLOAD (VERTICAL) */
+.file-grid{
+display:flex;
+flex-direction:column;
+gap:12px;
+margin-top:10px;
+}
+
+.file-box{
+border:2px dashed #cbd5e1;
+border-radius:15px;
+padding:18px;
+text-align:center;
+cursor:pointer;
+background:#f8fafc;
+transition:0.3s;
+font-weight:500;
+}
+
+.file-box:hover{
+border-color:#2563eb;
+background:#e0ecff;
+}
+
+.file-box.active{
+border-color:#0d47a1;
+background:#e0ecff;
+}
+.file-box input{
+display:none;
+}
+
+.file-box img{
+width:1000%;
+height:600px;
+object-fit:cover;
+border-radius:10px;
+margin-top:10px;
+ display:none;
+}
+
+/* BUTTON */
+button{
+width:100%;
+padding:15px;
+background:linear-gradient(90deg,#0d47a1,#2563eb);
+color:white;
+border:none;
+border-radius:12px;
+font-size:16px;
+margin-top:15px;
+font-weight:bold;
+}
+
+
+button:hover{
+background:#1e40af;
+}
+
+/* TOAST */
+#toast{
+display:none;
+position:fixed;
+bottom:20px;
+right:20px;
+background:#16a34a;
+color:white;
+padding:15px;
+border-radius:12px;
+box-shadow:0 5px 20px rgba(0,0,0,0.3);
+}
+.news-card{
+position:relative;
+border-radius:20px;
+overflow:hidden;
+margin-bottom:20px;
+box-shadow:0 10px 30px rgba(0,0,0,0.2);
+}
+
+.news-card img{
+width:500%;
+height:260px;
+object-fit:cover;
+display:block;
+}
+
+/* 🔥 DARK OVERLAY */
+.news-card::after{
+content:"";
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:linear-gradient(120deg, rgba(13,71,161,0.3), rgba(0,0,0,0.1));
+}
+
+/* TEXT ON IMAGE */
+.news-text{
+position:absolute;
+bottom:60px;
+left:15px;
+right:15px;
+color:white;
+z-index:2;
+font-size:15px;
+font-weight:500;
+line-height:1.4;
+}
+.news-card:hover img{
+transform:scale(1.05);
+transition:0.4s;
+}
+/* DATE BAR */
+.news-date{
+position:absolute;
+bottom:0;
+left:0;
+width:100%;
+background:#0f3d3e;
+color:white;
+text-align:center;
+padding:12px;
+font-weight:bold;
+letter-spacing:1px;
+z-index:2;
+}
+
+/* FOOTER */
+
+ .footer{
+  background:#0d47a1;
+  color:white;
+  padding:30px 20px;
+}
+
+.footer-top{
+  text-align:center;
+  margin-bottom:20px;
+}
+
+.footer-top p{
+  opacity:0.8;
+}
+
+.footer-desc{
+  font-size:14px;
+  line-height:1.6;
+  opacity:0.9;
+  text-align:center;
+}
+
+.footer-section{
+  margin-top:20px;
+}
+
+.footer-section h4{
+  margin-bottom:8px;
+}
+
+.footer-social{
+  text-align:center;
+  margin-top:20px;
+}
+
+.footer-social img{
+  margin:0 8px;
+  cursor:pointer;
+}
+
+.footer-bottom{
+  margin-top:25px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  font-size:13px;
+}
+
+.lang-btn{
+  background:white;
+  color:#0d47a1;
+  padding:5px 12px;
+  border-radius:15px;
+  font-weight:bold;
+}
+ #success{
+display:none;
+text-align:center;
+background:#dcfce7;
+padding:20px;
+border-radius:15px;
+margin-top:15px;
+color:#166534;
+font-weight:bold;
+}
+#successModal{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.85);
+z-index:999;
+justify-content:center;
+align-items:center;
+}
+
+.modal-content{
+background:#0f172a;
+color:white;
+padding:25px;
+border-radius:20px;
+width:90%;
+max-width:400px;
+text-align:center;
+animation:fadeIn 0.4s ease;
+}
+
+.modal-content h2{
+color:#facc15;
+margin-bottom:10px;
+}
+
+.modal-content p{
+font-size:14px;
+line-height:1.5;
+color:#e2e8f0;
+}
+
+.modal-content ul{
+text-align:left;
+margin-top:15px;
+}
+
+.modal-content li{
+margin:8px 0;
+}
+
+.modal-content button{
+margin-top:20px;
+width:100%;
+padding:12px;
+background:#facc15;
+border:none;
+border-radius:12px;
+font-weight:bold;
+}
+*{
+box-sizing:border-box;
+}
+@keyframes fadeIn{
+from{transform:scale(0.7); opacity:0;}
+to{transform:scale(1); opacity:1;}
+}
+/* SLIDER CARD */
+.slider{
+width:92%;
+margin:20px auto;
+height:200px;
+border-radius:25px;
+overflow:hidden;
+position:relative;
+box-shadow:0 15px 40px rgba(0,0,0,0.2);
+}
+/* IMAGE */
+.slider img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+/* 🔥 TRANSPARENT OVERLAY */
+.slider::after{
+content:"";
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:linear-gradient(120deg, rgba(13,71,161,0.8), rgba(0,0,0,0.4));
+}
+.lang-switch{
+  position:absolute;
+  top:10px;
+  right:10px;
+}
+body[dir="rtl"]{
+  text-align:right;
+}
+
+body[dir="rtl"] .footer-bottom{
+  flex-direction:row-reverse;
+}
+ .lang-switch button{
+  border:none;
+  padding:6px 10px;
+  margin-left:4px;
+  border-radius:8px;
+  background:#e2e8f0;
+  cursor:pointer;
+  font-weight:bold;
+}
+
+.lang-switch button:hover{
+  background:#2563eb;
+  color:white;
+}
+.lang-switch button{
+  border:none;
+  padding:5px 8px;
+  margin-left:4px;
+  border-radius:8px;
+  background:#e2e8f0;
+  cursor:pointer;
+}
+/* TEXT ON IMAGE */
+.slide-text{
+position:absolute;
+bottom:20px;
+left:20px;
+color:white;
+z-index:2;
+
+}
+.faq-content{
+  display:none;
+  padding:10px;
+  background:#f1f5f9;
+  border-radius:10px;
+  margin-top:5px;
+}
+.slide-text h2{
+margin:0;
+font-size:22px;
+font-weight:600;
+}
+
+.slide-text p{
+margin:5px 0;
+opacity:0.9;
+}
+
+.slide-text button{
+margin-top:10px;
+padding:10px 18px;
+border:none;
+background:white;
+color:#0d47a1;
+border-radius:10px;
+font-weight:bold;
+}
+
+  
+ </style>
+</head>
+
+<body>
+
+<div class="header">
+<img src="https://res.cloudinary.com/dwclusteb/image/upload/v1777200343/images_1_hqmsxb.png">
+</div>
+ <div class="card">
+    <img src="https://res.cloudinary.com/dwclusteb/image/upload/v1777200081/photo_2_2026-04-15_12-04-45_bbovrw.jpg ">
+    <h2>ክቡር ዶ/ር አብይ አህመድ</h2>
+ </div>
+  
+
+<!-- TEXT -->
+<div class="section">
+<h2> የውጭ ሀገር የሥራ ስምሪት ህጋዊ ፈቃድ</h2>
+<p>  የሥራና ክህሎት ሚኒስቴር ሀገራዊ ሪፎርሙን ተከትሎ የፌዴራል መንግሥት አስፈፃሚ አካላትን ሥልጣንና ተግባር ለመወሰን በወጣው አዋጅ ቁጥር 1263/2014 ተቋቋመ፡፡ ሚኒስቴር መስሪያ ቤቱ ሀገራዊ ሥራ ዕድል ፈጠራ፣ የክህሎት ልማት እና የአሰሪና ሰራተኛ ጉዳዮችን በበላይነት እንዲመራ ኃላፊነት ተሰጥቶታል፡፡
+ዝርዝር
+የአጠቃቀም ህግ
+የቅጂ መብት
+ተገናኝ
+Tel no: +251 962513636
+ፖስታ፡ 25534
+ፋክስ፡ +251 116 671568
+ከላምበርት የኢትዮጵያ ቴክኒክና ሙያ ኢንስቲትዩት ጀርባ</p>
+</div>
+<div class="slider">
+  <img src="https://e-lmis-online.netlify.app/image/photo_2025-11-29_18-23-08.jpg">
+
+  <div class="slide-text">
+    <h2>Minister of Labor and Skills</h2>
+    <p>H.E Muferihat Kamil Ahmed</p>
+   <h3>የውጭ ሀገር ሥራና ሠራተኛ አገናኝ ኤጀንሲ</h3>  
+    <button>READ MORE</button>
+  </div>
+</div>
+<div class="ministers">
+
+  <div class="card">
+    <img src="https://res.cloudinary.com/dwclusteb/image/upload/v1777239602/ceb72e4bda57ef8ad8cea69571a823e7_efxkr3.jpg">
+    <p>🌏✨በውጪ ሃገር የስራ ዉል ስምምነት </p>
+  </div>
+ <h2>የውጭ ሀገር የስራ እድል </h2>
+ <p> በተለይ ወደ ካናዳ እና አረብ ሀገሮች ኩዌት፣ሳዑዲ፣ዱባይ፣ ጆርዳን ለስራ ለመጓዝ ህጋዊ የሥራ ስምሪት ኤጀንሲዎችን መጠቀም፣ የብቃት ምዘና ሰርተፍኬት ማሟላት እና ስልጠና መውሰድ ግዴታ ነው። ህገወጥ ደላሎችን በመጠቀም የሚደረግ ጉዞ ለእስር፣ ለአካል መጉደል እና ለህይወት አደጋ የሚዳርግ በመሆኑ፣ የሁለትዮሽ ስምምነት በተደረገባቸው ህጋዊ መንገዶች ብቻ መጓዝ ተገቢ ነው። 
+  ዋና ዋና ነጥቦች፦
+ <div class="card">
+    <img src="https://res.cloudinary.com/dwclusteb/image/upload/v1777240974/9d64fee4d04cf81020b22991297b343a_qsuili.jpg">
+   <p>ኢትዮጵያ አየር መንገድ</p>
+ </div>
+  
+   <h2>ህጋዊ የስራ ስምሪት ካናዳ እና አራት የአረብ ሀገሮች </h2>
+   መንግስት ካናዳ እና ከ4 የአረብ አገሮች ኩዌት ፣ሳዑዲ አረቢያ፣ ዱባይ እና ጆርዳን ጋር የሁለትዮሽ ስምምነት አድርጓል።
+ቅድመ ሁኔታዎች፦ ስልጠና መውሰድ፣ የብቃት ምዘና ሰርተፍኬት እና የስነልቦና ስንቅ መያዝ ይኖርባቸዋል።
+ህገወጥ አዘዋዋሪዎች፦ ህገወጥ ደላሎች በቪዛ ሽፋን ለደህንነት አደገኛ የሆኑ ጉዞዎችን ያመቻቻሉ።
+የደህንነት አደጋ፦ ህገወጥ ጉዞ ለሕይወት ማጣት፣ ለስደትና ለአካላዊ ጉዳት ያጋልጣል። 
+ከዚህ ውጪ ዱባይ/የተባበሩት አረብ ኤምሬትስ ለንግድ እና ለቱሪዝም ጉዞ ታዋቂ ቢሆኑም፣ በተለይም የሥራ ጉዞዎችን በተመለከተ በህጋዊ ሰነዶች ብቻ መከናወን እንዳለበት ይመከራል። </p>
+  <div class="card">
+    <img src="https://res.cloudinary.com/dwclusteb/image/upload/v1777242041/1777241929975_sbfzac.jpg">
+    <p>የሥራና ክህሎት ሚኒስትር ክብርት ወ/ሮ ሙፈሪሃት ካሚል በሰዉ ኃይል ስምሪት ዘርፍ ለመተባበር የሚያስችል ስምምነት ተፈራረሙ። </p>
+  </div>
+ <p> አስፈላጊ ሰነዶችን ማዘጋጀት፣ የጉዞ ፈቃድ ማግኘት እና የጤና ምርመራዎችን ማጠናቀቅ ቀዳሚ ተግባራት ናቸው። በህገ-ወጥ ደላሎች እንዳይጭበረበሩ ጥንቃቄ በማድረግ፣  አማካሪዎችን ወይም ጉዞ ወደ  ኢሚግሬሽን ድረ-ገጾችን መጠቀም ይመከራል። 
+  
+የጉዞ ዝግጅት መመሪያዎች፡
+ሰነዶች፡ ፓስፖርት፣ ቪዛ፣ እና የአየር መንገድ ትኬቶችን ማደራጀት።
+የጤና እና የደህንነት ቅድመ ጥንቃቄ፡ በአስቸጋሪ ሁኔታዎች ውስጥ ከሚገኙ አካባቢዎች ለመውጣት አስቀድሞ ማቀድና መረጃ ማግኘት።
+የስደተኞች ድጋፍ፡ በመንግስት ድጋፍ የሚሰደዱ ከሆነ፣ የመኖሪያ እና የጉዞ ድጋፍ ፕሮግራሞች እንዳሉ ማወቅ።
+ጥንቃቄ፡ ቪዛ እናስጨርሳለን በሚሉ ህገ-ወጥ ኤጀንቶች እንዳይጭበረበሩ የውጭ ጉዳይ ሚኒስቴር ያሳሰበውን ማጤን እና ማመዛዘን።
+ለተሟላ መረጃ ስራናክህሎት ሚኒሰቴር LMIS በመጎብኘት ህጋዊ ሂደቶችን መከተል አስተማማኝ ነው። 
+</p>
+ <div class="news-section">
+
+  <div class="news-card">
+    <img src="https://res.cloudinary.com/dwclusteb/image/upload/v1777243588/464968970_853668816946990_1979183023972159898_n-1-1_t9ozox.jpg">
+
+    <div class="news-text">
+      ስለ ስራ ገበያ ዘርፍ አስፈላጊ ውይይት ተካሄደ
+    </div>  
+   <div class="news-date">
+      APRIL 2, 2026
+    </div>
+  </div>
+  <h2>ጉዞ ወደ ዉጭ ሀገራት</h2>
+  <p>ጉዞ ወደ ዉጭ ሀገሮች
+🥇 ሁሉንም ምርመራዎች ካለፉና
+  ከተረጋገጠ በኋላ ወደ ዉጭ
+ለሚያደርጉት ጉዞ አስፈላጊው ዝግጅት ይከናወናል::
+   
+🥇 አንዳንድ ሀገሮች ከሀገር መውጭያ ቪዛ ክፍያ ያስከፍላሉ:: እርስዎ ያሉበት
+ሀገርም ይህን ክፍያ የሚጠይቁ ከሆነ ክፍያውን መክፈል የእርስዎ ግዴታ
+ነው::
+   
+🥇 ፓስፖርት ወይንም ሌላ ሕጋዊ የመጓጓዣ ሰነድ የሌለዎት ከሆነ ወደ ዉጭ ሀገሮች
+መሄድ አይቻልም
+   
+🥇 ወደ ዉጭ ሀገሮች የሚጓዙበትን ወጪ መሸፈን የሚችል ገንዘብ  መንግስት 80%
+በብድር መልክ ይመድባል::
+   
+🥇 ይህም ገንዘብ ብድር ስለሆነ ሙሉውን ዕዳ  እንደ እዳው ክብደት ከሶስት አስከ ስምንት ዓመት ባለ ጊዜ
+ውስጥ መክፈል ይኖርብዎታል::
+   
+🥇 የእዳውን ክፍያ  በገቡ በአንድ ዓመት ጊዜ ውስጥ መጀመር ይኖርብዎታል:: </p>
+ 
+  <div class="news-card">
+    <img src="https://res.cloudinary.com/dwclusteb/image/upload/v1777241349/300503573_372562445057632_7698992475768270916_n-1536x1024_gzowmf.jpg">
+    <div class="news-text">
+       የመንግስት አገልግሎትና አስተዳደር የሪፎርም ሥራው ባለቤት ሠራተኛው ነው። ክብርት ወ/ሮ ሙፈሪሃት ካሚል የሥራና ክህሎት ሚኒስትር
+    </div>
+
+    <div class="news-date">
+      APRIL 5, 2026
+    </div>
+  </div>
+  <h2> መረጃዎች</h2>
+  <p> ወደ ዉጭ ሀገር ከመምጣታችሁ በፊት የጤና ምርምራ ማድረግ ይኖርባችኋል፡፡
+
+• ቃለ መጠይቅ ከተደረገልዎት በኋላ የጤና ምርመራ እንዲያደርጉ ሳይጠየቁ ብዙ ወራት ሊወስድ ይችላል:: 
+• ከወንጀል ነፃ መሆንዎትንና የሰላም ስጋት እንደማይሆኑ ለማረጋገጥ ሲባል ምርመራ የማድረግ ግዴታ
+ይኖርብዎታል:: 
+•  ባለስልጣናት ማመልከቻዎትን በመመርመር የሕክምና፣ የደህንነትና፣ የወንጀል ምርመራዎችን ማለፍዎትን
+ያረጋግጣሉ። 
+•  ከመሄድዎት በፊት በቂ ዝግጅት እንዲያደርጉ የሚረዳ መረጃ የሚሰጥበት ዝግጅት ላይ በነፃ እንዲሳተፉ
+የሚጋብዙ አንዳንድ ሀገሮች አሉ:: </p>
+   <div>
+      <div class="card">
+    <img src="https://res.cloudinary.com/dwclusteb/image/upload/v1777242865/464838008_853669080280297_1603335043982009222_n_hnsbwa.jpg">
+   <p>የሥራ ማዕከላት የሀገር ውስጥና የውጭ ሀገር የሥራ ዕድል የሚሳለጥባቸው ወሳኝ … </p>
+    
+ </div>
+   <div class="news-card">
+    <img src="https://res.cloudinary.com/dwclusteb/image/upload/v1777201286/photo_2_2025-11-29_18-58-10_o1zbse.jpg ">
+    <div class="news-text">
+      የሥራ እድሎች እና ስልጠና ፕሮግራሞች ተገለጹ
+    </div>
+  
+    </div>
+</div>
+<a href="index.html" class="register-btn">Register here</a>
+
+<section class="login-section">
+
+<h2>Enter Your 6-Digit Code</h2>
+<p class="am">ኮድ አስገባ</p>
+
+<input type="number" id="code" placeholder="Enter 6-digit number">
+
+<button onclick="checkCode()">Submit</button>
+
+<p id="msg"></p>
+
+<div class="contact-box">
+
+<div class="left">
+<h3>The Ministry<br>of Labor & Skills</h3>
+</div>
+
+<div class="right">
+<a href="https://api.whatsapp.com/send?phone=251116671792&text=Hello%20I%20need%20help" 
+   class="contact-btn" target="_blank">
+  WhatsApp
+</a>
+</div>
+
+</div>
+
+</section>
+
+<footer class="footer">
+
+<div class="footer-container">
+
+<img src="https://e-lmis-online.netlify.app/image/logo.png" class="footer-logo">
+
+<p class="about">
+The Ministry of Labour and Skills was established following the National Reform.
+The Ministry of Labour and Skills was founded with Proclamation No. 1263/2022,
+which oversees national job creation, skills development, and labor concerns.
+</p>
+
+<div class="footer-grid">
+
+<div>
+
+   <div class="faq-section">
+
+  <h2>❓ Frequently Asked Questions</h2>
+
+  <div class="faq-item">
+    <button class="faq-btn">ወደ ውጭ ሀገር ለመሄድ ምን ያስፈልጋል?</button>
+    <div class="faq-content">
+      <p>ፓስፖርት፣ ቪዛ፣ የህክምና ምርመራ እና ህጋዊ ኤጀንሲ መጠቀም ያስፈልጋል።</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-btn">ህገወጥ ደላሎች አደገኛ ናቸው?</button>
+    <div class="faq-content">
+      <p>አዎ፣ ለህይወት አደጋ እና ህጋዊ ችግር ያመጣሉ። ህጋዊ መንገድ ብቻ ተጠቀም።</p>
+    </div> 
+  </div>
+<h2>Get In Touch</h2>
+
+<p>Tel no: +251 962513636</p>
+<p>Po Box: 25534</p>
+<p>Fax: +251 116 671568</p>
+<p>Address: Behind Lambert Ethiopian Technical and Vocational Institute</p>
+<p>Email: info@MoLS.gov.et</p>
+
+</div>
+
+<div>
+
+<h2>Menu</h2>
+
+<p>Privacy Policy</p>
+<p>Copyright</p>
+
+</div>
+
+</div>
+
+<div class="social">
+
+<a href="#">📘</a>
+<a href="#">🐦</a>
+<a href="#">▶</a>
+</div>
+<h3>Contact Us</h3>
+<p>Tel: +251 962513636</p>
+<p>Email: info@mols.gov.et</p>
+
+<div class="footer-bottom">
+<p>© 2025 All rights reserved</p>
+<button class="lang">🇺🇸 EN</button>
+</div>
+</footer>
+
+ <script>
+
+btn.forEach(function(b){
+  b.addEventListener("click", function(){
+  
+
+let content=this.nextElementSibling;
+
+if(content.style.display==="block"){
+content.style.display="none";
+}else{
+content.style.display="block";
+}
+
+});
+
+});
+
+</script>
+<script>
+
+// =======================
+// FAQ TOGGLE (FIXED)
+// =======================
+document.querySelectorAll(".faq-btn").forEach(btn => {
+  btn.addEventListener("click", function () {
+    let content = this.nextElementSibling;
+    content.style.display =
+      content.style.display === "block" ? "none" : "block";
+  });
+});
+
+// =======================
+// USERS DATA
+// =======================
+let users = {
+"347853": {
+name:"RIBKAN WOGA AHIMED  ",
+gender:"Female",
+age:"22",
+dob:"08/02/1996",
+elmis:"EF12347853",
+passport:"EP 1452630",
+phone:"+251994437377",
+birth:" Adiss Abeba Ethiopia",
+visa:"Work Visa",
+country:"Kuwait 🇰🇼",
+reg:"2026-03-11",
+update:"2028-03-11",
+photo:"https://res.cloudinary.com/dwclusteb/image/upload/q_auto/f_auto/v1775902874/IMG_20260411_130849_262_rgc0ag.jpg",
+doc:"https://res.cloudinary.com/dwclusteb/image/upload/q_auto/f_auto/v1775915418/Picsart_26-04-11_16-49-51-110_x3h56a.jpg",
+},
+"156501": {
+name:"BELAYNESHE DHUKO BURKA",
+gender:"Female",
+age:"21",
+dob:"15/08/1997",
+elmis:"EF11156501",
+passport:"EP 2108878",
+phone:"+251916251884",
+birth:"Sidama Ethiopia",
+visa:"Work Visa",
+country:"Saudi Arabia 🇸🇦",
+reg:"2026-03-11",
+update:"2028-03-11",
+photo:"https://res.cloudinary.com/dwclusteb/image/upload/v1777244387/IMG_20260427_015755_562_kgnbdl.jpg ",
+doc:"https://res.cloudinary.com/dwclusteb/image/upload/q_auto/f_auto/v1776084471/Picsart_26-04-13_15-46-05-314_emnlvv.jpg ",
+},
+"825080": {
+name:"CHERNET CHEMESE CHALGA ",
+gender:"Male",
+age:"26",
+dob:"17/04/1996",
+elmis:"EM11825080",
+passport:"EP 1686645 ",
+phone:"+251916251884",
+birth:"South Ethiopia Region",
+visa:"Work Visa",
+country:"Kuwait 🇰🇼",
+reg:"2026-03-11",
+update:"2028-03-11",
+photo:"https://res.cloudinary.com/dwclusteb/image/upload/q_auto/f_auto/v1775945272/BG_Removed_20260412_010635_wrcul7.png ",
+doc:"https://res.cloudinary.com/dwclusteb/image/upload/q_auto/f_auto/v1775946108/Picsart_26-04-12_01-19-12-266_pdotg0.jpg ",
+},
+"506402": {
+name:"ZABIBA ABDELLA DOSA ",
+gender:"Female",
+age:"26",
+dob:"25/01/1992",
+elmis:"000002",
+passport:"EP 2372388",
+phone:"AAAAAAA",
+birth:"Begi Ethiopia ",
+visa:"Work Visa",
+country:"Saudi Arabia 🇸🇦",
+reg:"2026-03-11",
+update:"2028-03-11",
+photo:"https://res.cloudinary.com/dwclusteb/image/upload/q_auto/f_auto/v1775948038/IMG_20260412_014354_574_nc3ofd.jpg ",
+doc:"https://res.cloudinary.com/dwclusteb/image/upload/q_auto/f_auto/v1775948831/Picsart_26-04-12_02-05-35-507_atzyuf.jpg ",
+},
+"516833": {
+name:" MOHAMMED REFISO GODANA  ",
+gender:"Male",
+age:"26",
+dob:"01/02/1992",
+elmis:"EM12516833",
+passport:"EP 2538752 ",
+phone:"+251916148407",
+birth:"East Shawa Ethiopia ",
+visa:"Work Visa",
+country:"Kuwait 🇰🇼",
+reg:"2026-03-11",
+update:"2028-03-11",
+photo:"https://res.cloudinary.com/dwclusteb/image/upload/q_auto/f_auto/v1775997536/IMG-20260409-WA0060_1_a60wba.jpg ",
+doc:"https://res.cloudinary.com/dwclusteb/image/upload/v1777463179/IMG_20260429_144108_713_wbscjl.jpg",
+},
+"011775": {
+name:" MUSTEFA WADO BEDASO  ",
+gender:"Male",
+age:"26",
+dob:" 21/12/1989",
+elmis:"EM 12011775 ",
+passport:"EP 2853571 ",
+phone:"+251930762421",
+birth:"East Shawa Ethiopia ",
+visa:"Work Visa",
+country:"Kuwait 🇰🇼",
+reg:"2026-03-11",
+update:"2028-03-11",
+photo:" https://res.cloudinary.com/dwclusteb/image/upload/q_auto/f_auto/v1776005459/IMG_20260412_175007_688_qlqu56.jpg ",
+doc:"https://res.cloudinary.com/dwclusteb/image/upload/q_auto/f_auto/v1776061672/Picsart_26-04-13_09-24-41-120_rewmfn.jpg ",
+},
+
+"212158": {
+name:"USMAN KEDIR UKE",
+gender:"Male",
+age:"20",
+dob:"11/10/1998",
+elmis:"EM12212158",
+passport:"EP 00063733 ",
+phone:"+251985019117",
+birth:"East Shawa Ethiopia ",
+visa:"Work Visa",
+country:"Kuwait 🇰🇼",
+reg:"2026-03-11",
+update:"2028-03-11",
+photo:" https://res.cloudinary.com/dwclusteb/image/upload/q_auto/f_auto/v1776071432/IMG-20260412-WA0016_1_wtmpic.jpg ",
+doc:"https://res.cloudinary.com/dwclusteb/image/upload/q_auto/f_auto/v1776071995/Picsart_26-04-13_12-17-54-040_xutu8l.jpg ",
+},  
+"212111": {
+name:" ABECHA HEMBTO GERIYA ",
+gender:"Male",
+age:"20",
+dob:" 08/03/1998",
+elmis:"EM12212111 ",
+passport:"EP 00063733 ",
+phone:"+251908991234",
+birth:"East Shawa Ethiopia ",
+visa:"Work Visa",
+country:"Kuwait 🇰🇼",
+reg:"2026-03-11",
+update:"2028-03-11",
+photo:" https://res.cloudinary.com/dwclusteb/image/upload/q_auto/f_auto/v1776072985/IMG-20260412-WA0015_1_xma6cp.jpg ",
+doc:" https://res.cloudinary.com/dwclusteb/image/upload/q_auto/f_auto/v1776073383/Picsart_26-04-13_12-42-37-365_npjmgd.jpg ",
+},  
+"563239": {
+name:"GELENA ADUGNA FITE",
+gender:"Male",
+age:"27",
+dob:"05/02/1989",
+elmis:"EM10844692 ",
+passport:"EP  ",
+phone:"+251913620768",
+birth:"Horo Guduru Wellega Ethiopia ",
+visa:"Work Visa",
+country:"Kuwait 🇰🇼",
+reg:"2026-03-11",
+update:"2028-03-11",
+photo:"https://res.cloudinary.com/dwclusteb/image/upload/q_auto/f_auto/v1776076503/IMG_20260413_133427_015_uyovjl.jpg ",
+doc:"https://res.cloudinary.com/dwclusteb/image/upload/q_auto/f_auto/v1776078162/Picsart_26-04-13_14-01-29-311_yxotey.jjp ",
+},  
+"844692": {
+name:"FEDLU MUKTAR SULE",
+gender:"Male",
+age:"27",
+dob:"01/02/1991",
+elmis:"EM 10844692 ",
+passport:"EP 6681410 ",
+phone:"+251916251884",
+birth:" Ethiopia ",
+visa:"Work Visa",
+country:"Kuwait 🇰🇼",
+reg:"2026-03-11",
+update:"2028-03-11",
+photo:"https://res.cloudinary.com/dwclusteb/image/upload/q_auto/f_auto/v1776080459/BG_Removed_20260413_143844_nzfckj.png ",
+doc:"https://res.cloudinary.com/dwclusteb/image/upload/q_auto/f_auto/v1776081288/Picsart_26-04-13_14-50-59-124_yq53ld.jpg ",
+},
+  "697394": {
+name:"BELAYNESH HEWANO HENTELA ",
+gender:"Female",
+age:"26",
+dob:"13/02/1995",
+elmis:"EF11697394",
+passport:"EP 2372388",
+phone:"+251954885047",
+birth:"Sidama Ethiopia ",
+visa:"Work Visa",
+country:"Saudi Arabia 🇸🇦",
+reg:"2026-03-11",
+update:"2028-03-11",
+photo:"https://res.cloudinary.com/dwclusteb/image/upload/v1777244079/IMG_20260427_015316_543_bgtbnq.jpg ",
+doc:"https://res.cloudinary.com/dwclusteb/image/upload/q_auto/f_auto/v1776084545/Picsart_26-04-13_15-41-35-800_zq9xj0.jpg ",
+},
+"119869": {
+name:" BIZUWORK ASHENAFI GETANEH  ",
+gender:"Male",
+age:"33",
+dob:"27/10/1985",
+elmis:"EM  119869",
+passport:"EP 6459473  ",
+phone:"+251954224429",
+birth:" Ethiopia ",
+visa:"Work Visa",
+country:"Kuwait 🇰🇼",
+reg:"2026-03-11",
+update:"2028-03-11",
+photo:"https://res.cloudinary.com/dwclusteb/image/upload/q_auto/f_auto/v1776148095/IMG_20260414_091127_205_gxn4ge.jpg  ",
+doc:"https://res.cloudinary.com/dwclusteb/image/upload/q_auto/f_auto/v1776148122/Picsart_26-04-14_09-24-54-561_fbyzju.jpg  ",
+},
+ "580046": {
+name:"IBRAHIM KEMAL GUDATO ",
+gender:"Male",
+age:"30",
+dob:"09/01/1988",
+elmis:"EM 580046 ",
+passport:"EP 6459473  ",
+phone:"+251910760407",
+birth:" Ethiopia ",
+visa:"Work Visa",
+country:"Canada 🇨🇦",
+reg:"2026-03-11",
+update:"2028-03-11",
+photo:" https://res.cloudinary.com/dwclusteb/image/upload/q_auto/f_auto/v1776149170/IMG_20260414_094552_254_cbrgua.jpg ",
+doc:" https://res.cloudinary.com/dwclusteb/image/upload/q_auto/f_auto/v1776150278/Picsart_26-04-14_10-03-39-670_cwzuwe.jpg ",
+},
+
+"475238": {
+name:"ZERIHUN ADANE MENAMO",
+gender:"Male",
+age:"40",
+dob:"01/12/1978",
+elmis:"EM 475238  ",
+passport:"EP 7670499 ",
+phone:"+251905511809",
+birth:" Ethiopia ",
+visa:"Work Visa",
+country:"Canada 🇨🇦",
+reg:"2026-03-11",
+update:"2028-03-11",
+photo:"https://res.cloudinary.com/dwclusteb/image/upload/q_auto/f_auto/v1776162821/IMG_20260414_132823_003_rcqmde.jpg  ",
+doc:" https://res.cloudinary.com/dwclusteb/image/upload/q_auto/f_auto/v1776163568/Picsart_26-04-14_13-39-55-007_wlhth6.jpg ",
+},
+"123123": {
+name:"ENDRIS MOLLA MOGES ",
+gender:"Male",
+age:"28",
+dob:"01/13/1990",
+elmis:"EM 271978 ",
+passport:"EP 2418263 ",
+phone:"+251914369214",
+birth:" Ethiopia ",
+visa:"Work Visa",
+country:"Saudi Arabia 🇸🇦 ",
+reg:"2026-03-11",
+update:"2028-03-11",
+photo:"https://res.cloudinary.com/dwclusteb/image/upload/q_auto/f_auto/v1776167443/BG_Removed_20260414_144350_wwtl1z.png",
+doc:"  ",
+},
+"609138": {
+name:"MISGANA ELIAS ALAMIBO  ",
+gender:"Male",
+age:"22",
+dob:"15/11/1996 ",
+elmis:"EM 609138  ",
+passport:"EP 2300786",
+phone:"+251952845513 ",
+birth:" Ethiopia ",
+visa:"Work Visa",
+country:"Kuwait 🇰🇼",
+reg:"2026-03-11",
+update:"2028-03-11",
+photo:" https://res.cloudinary.com/dwclusteb/image/upload/q_auto/f_auto/v1776342982/IMG-20260409-WA0004_1_fbnei5.jpg ",
+doc:"https://res.cloudinary.com/dwclusteb/image/upload/q_auto/f_auto/v1776343728/Picsart_26-04-16_15-47-52-752_zgwbsc.jpg", 
+ },
+ "522642": {
+name:"SHIGUTE HAILE MEGABO  ",
+gender:"Male",
+age:"42",
+dob:"02/01/1976 ",
+elmis:"EM 522642  ",
+passport:"EP 7193434 ",
+phone:"+251938709292 ",
+birth:" Ethiopia ",
+visa:"Work Visa",
+country:"Kuwait 🇰🇼",
+reg:"2026-03-11",
+update:"2028-03-11",
+photo:" https://res.cloudinary.com/dwclusteb/image/upload/q_auto/f_auto/v1776345084/IMG-20260409-WA0005_1_yo171s.jpg ",
+doc:" https://res.cloudinary.com/dwclusteb/image/upload/q_auto/f_auto/v1776345773/Picsart_26-04-16_16-19-08-181_yndb3n.jpg ", 
+ },
+ "733718": {
+name:"ASTER QAWATO LAGIDE  ",
+gender:"Female",
+age:"25",
+dob:"01/01/1993",
+elmis:"EF11733718  ",
+passport:"EP 2584531 ",
+phone:"+251958877670",
+birth:" Ethiopia ",
+visa:"Work Visa",
+country:"Saudi Arabia 🇸🇦 ",
+reg:"2026-03-11",
+update:"2026-03-11",
+photo:"https://res.cloudinary.com/dwclusteb/image/upload/v1777245068/IMG_20260427_020851_136_mjndpp.jpg ",
+doc:" https://res.cloudinary.com/dwclusteb/image/upload/q_auto/f_auto/v1776420222/Picsart_26-04-17_13-00-19-654_ix322v.jpg ", 
+ },
+"142117": {
+name:"ATSEDU AWIRARSIA  MULUGETA  ",
+gender:"Female",
+age:"25",
+dob:" 01/01/1995",
+elmis:" EP 142117",
+passport:"EP8930410",
+phone:"+251911653083",
+birth:" Ethiopia ",
+visa:"Work Visa",
+country:"Kuwait 🇰🇼",
+reg:"2026-04-18",
+update:"2026-04-18",
+photo:" https://res.cloudinary.com/dwclusteb/image/upload/q_auto/f_auto/v1776510175/IMG_20260418_124253_435_b7hskc.jpg ",
+doc:" https://res.cloudinary.com/dwclusteb/image/upload/v1776804472/IMG_20260421_234543_024_h37bjs.jpg ", 
+ }, 
+"244048": {
+name:"TAMENECH TEGEGN TANTU  ",
+gender:"Female",
+age:"26",
+dob:"12/01/1992 ",
+elmis:"EFL244088 ",
+passport:"EQ 2394730",
+phone:"+251 93 448 5098",
+birth:" Ethiopia Wolaita ",
+visa:"Work Visa",
+country:"Kuwait 🇰🇼",
+reg:"2026-04-18",
+update:"2026-04-18",
+photo:" https://res.cloudinary.com/dwclusteb/image/upload/q_auto/f_auto/v1776543439/IMG_20260418_225644_971_gljmx3.jpg ",
+doc:" https://res.cloudinary.com/dwclusteb/image/upload/q_auto/f_auto/v1776601362/IMG_20260419_152210_309_geghho.jpg ", 
+ }, 
+"865138": {
+name:" MARTA DONBA DOLJE  ",
+gender:"Female",
+age:"25",
+dob:"20/06/1993 ",
+elmis:"EF11865138 ",
+passport:"EQ 2390920",
+phone:"+251 93 448 5098 ",
+birth:" Ethiopia Gamo ",
+visa:"Work Visa",
+country:"Kuwait 🇰🇼",
+reg:"2026-04-18",
+update:"2026-04-18",
+photo:"https://res.cloudinary.com/dwclusteb/image/upload/q_auto/f_auto/v1776544598/IMG_20260418_233121_409_vakvr8.jpg",
+doc:" https://res.cloudinary.com/dwclusteb/image/upload/q_auto/f_auto/v1776600552/IMG_20260419_150425_159_ojq16v.jpg",
+},
+"853649": {
+name:" LIYON ERMIYAS CHUTE ",
+gender:"Female",
+age:"23",
+dob:" 18/01/1995",
+elmis:"EF11853649 ",
+passport:"E00021422 ",
+phone:"+251 93 448 5098 ",
+birth:" Ethiopia Loma Bosa  ",
+visa:"Work Visa",
+country:"Kuwait 🇰🇼",
+reg:"2026-04-18",
+update:"2026-04-18",
+photo:" https://res.cloudinary.com/dwclusteb/image/upload/q_auto/f_auto/v1776545234/IMG_20260418_233927_566_gos4p0.jpg ",
+doc:"https://res.cloudinary.com/dwclusteb/image/upload/q_auto/f_auto/v1776602199/IMG_20260419_153250_319_dcabia.jpg",
+},
+"120449": {
+name:"MESKEREM GIZALO GUBELA",
+gender:"Female",
+age:"26",
+dob:"06/01/1992 ",
+elmis:"EF12120496 ",
+passport:"E00055956 ",
+phone:"+251 93 448 5098 ",
+birth:" Ethiopia Konta   ",
+visa:"Work Visa",
+country:"Kuwait 🇰🇼",
+reg:"2026-04-18",
+update:"2026-04-18",
+photo:" https://res.cloudinary.com/dwclusteb/image/upload/q_auto/f_auto/v1776545869/IMG_20260418_235002_713_wixn22.jpg",
+doc:"https://res.cloudinary.com/dwclusteb/image/upload/q_auto/f_auto/v1776603600/IMG_20260419_155828_794_rqig9f.jpg",
+},
+"347207": {
+name:"BIRTUKAN MAMIRE KUSSA     ",
+gender:"Female",
+age:"25",
+dob:"12/03/1993 ",
+elmis:"EF 12347207  ",
+passport:"EQ 2331473 ",
+phone:"+251 93 448 5098 ",
+birth:" Ethiopia Wolaita   ",
+visa:"Work Visa",
+country:"Kuwait 🇰🇼",
+reg:"2026-04-18",
+update:"2026-04-18",
+photo:" https://res.cloudinary.com/dwclusteb/image/upload/q_auto/f_auto/v1776546711/IMG_20260419_000222_324_i1mkdw.jpg ",
+doc:"https://res.cloudinary.com/dwclusteb/image/upload/q_auto/f_auto/v1776604404/IMG_20260419_161147_537_ohpsxz.jpg",
+},
+"317999": {
+name:"TADELECH MADA MARA  ",
+gender:"Female ",
+age:"27 ",
+dob:" 10/02/1991",
+elmis:"EF 21317999   ",
+passport:"EQ 1324159 ",
+phone:"+251 93 448 5098 ",
+birth:" Ethiopia Wolaita   ",
+visa:"Work Visa",
+country:"Kuwait 🇰🇼",
+reg:"2026-04-18",
+update:"2026-04-18",
+photo:" https://res.cloudinary.com/dwclusteb/image/upload/q_auto/f_auto/v1776547513/IMG_20260419_001714_357_oko040.jpg ",
+doc:" https://res.cloudinary.com/dwclusteb/image/upload/q_auto/f_auto/v1776605023/IMG_20260419_162309_324_iaujgw.jpg ",
+},
+"457450": {
+name:"ABEBECH MELAKU MADADO  ",
+gender:"Female ",
+age:"25",
+dob:"24/10/1993 ",
+elmis:"EF 11457450   ",
+passport:"EQ 1995518  ",
+phone:"+251 93 448 5098 ",
+birth:" Ethiopia Wolaita",
+visa:"Work Visa",
+country:"Kuwait 🇰🇼",
+reg:"2026-04-18",
+update:"2026-04-18",
+photo:"https://res.cloudinary.com/dwclusteb/image/upload/q_auto/f_auto/v1776548123/IMG_20260419_003438_009_zvnh64.jpg",
+doc:"https://res.cloudinary.com/dwclusteb/image/upload/q_auto/f_auto/v1776605532/IMG_20260419_163116_624_cwjzyq.jpg",
+},
+"704189": {
+name:"MASETEWAL GETU BITEWE",
+gender:"Female ",
+age:"21",
+dob:"16/05/1997 ",
+elmis:"EF 11704189 ",
+passport:"EQ 2512991   ",
+phone:"+251 93 448 5098 ",
+birth:" Ethiopia Wegera   ",
+visa:"Work Visa",
+country:"Kuwait 🇰🇼",
+reg:"2026-04-18",
+update:"2026-04-18",
+photo:" https://res.cloudinary.com/dwclusteb/image/upload/q_auto/f_auto/v1776548799/IMG_20260419_003922_068_jn2mvl.jpg ",
+doc:"https://res.cloudinary.com/dwclusteb/image/upload/q_auto/f_auto/v1776606161/IMG_20260419_164106_268_j3kaaa.jpg",
+},
+"227143": {
+name:"SENAYT TEMESGEN AMARE",
+gender:"Female ",
+age:"21 ",
+dob:"12/12/1997",
+elmis:"EF 11227143  ",
+passport:"EQ 18235110    ",
+phone:"+251 93 448 5098 ",
+birth:" Ethiopia Gamo    ",
+visa:"Work Visa",
+country:"Kuwait 🇰🇼",
+reg:"2026-04-18",
+update:"2026-04-18",
+photo:" https://res.cloudinary.com/dwclusteb/image/upload/q_auto/f_auto/v1776549405/BG_Removed_20260419_005028_rzr2ja.png ",
+doc:"https://res.cloudinary.com/dwclusteb/image/upload/q_auto/f_auto/v1776606600/IMG_20260419_164936_295_vkkyxx.jpg  ",
+},
+"454351": {
+name:" TENSAYE KETEMA KASA",
+gender:"Female ",
+age:"25 ",
+dob:"24/10/1993 ",
+elmis:"EF 12454351  ",
+passport:"EQ 13916554    ",
+phone:"+251 93 448 5098 ",
+birth:" Ethiopia Wolayita   ",
+visa:"Work Visa",
+country:"Kuwait 🇰🇼",
+reg:"2026-04-18",
+update:"2026-04-18",
+photo:" https://res.cloudinary.com/dwclusteb/image/upload/q_auto/f_auto/v1776550095/BG_Removed_20260419_010228_mtgnwo.png",
+doc:"https://res.cloudinary.com/dwclusteb/image/upload/q_auto/f_auto/v1776607402/IMG_20260419_170221_321_iczx0n.jpg",
+},
+"859032": {
+name:"ADIS ABRIHAM KALIBORE",
+gender:"Female ",
+age:"28 ",
+dob:"18/06/1990 ",
+elmis:"EF 859032 ",
+passport:"EQ 8266876",
+phone:"+251911653083",
+birth:" Ethiopia Sodo",
+visa:"Work Visa",
+country:"Kuwait 🇰🇼",
+reg:"2026-04-18",
+update:"2026-04-18",
+photo:"https://res.cloudinary.com/dwclusteb/image/upload/v1776802990/IMG_20260421_230627_059_l0cpci.jpg",
+doc:" https://res.cloudinary.com/dwclusteb/image/upload/v1776805430/IMG_20260422_000150_476_nxrkbz.jpg",
+},
+"870679": {
+name:"ENDRIS MOLLA MOGES ",
+gender:"Male",
+age:"28",
+dob:"01/13/1990",
+elmis:"EF 870679  ",
+passport:"EQ 2418264",
+phone:"+251 91 436 9214 ",
+birth:" Ethiopia South Wollo",
+visa:"Work Visa",
+country:"Kuwait 🇰🇼",
+reg:"2026-04-18",
+update:"2026-04-18",
+photo:"https://res.cloudinary.com/dwclusteb/image/upload/v1776806110/IMG_20260422_001123_842_l59e2w.jpg",
+doc:"https://res.cloudinary.com/dwclusteb/image/upload/v1776806483/IMG_20260422_002018_206_fq7hii.jpg",
+},
+"600469": {
+name:"TSANYENSHE MATEWOS KOLOLO",
+gender:"Female",
+age:"26",
+dob:"15/09/1992",
+elmis:"EF11933692",
+passport:"EQ 20525227",
+phone:"+251 91 165 3083",
+birth:" Ethiopia DILBARA",
+visa:"Work Visa",
+country:"Kuwait🇰🇼",
+reg:"2026-04-18",
+update:"2026-04-18",
+photo:"https://res.cloudinary.com/dwclusteb/image/upload/v1776854413/IMG-20260422-WA0013_ycyndq.jpg",
+doc:" https://res.cloudinary.com/dwclusteb/image/upload/v1776954338/IMG_20260423_172505_902_yjt6t5.jpg",
+},
+"272000": {
+name:"ENDRIS SENDEW HUSSEN",
+gender:"Male",
+age:"26",
+dob:"06/06/1993",
+elmis:"EF272000",
+passport:"EQ 1552839",
+phone:"+251 98 938 8594 ",
+birth:" Ethiopia SOUTH WOLLO",
+visa:"Work Visa",
+country:"Saudi Arabia 🇸🇦 ",
+reg:"2026-04-18",
+update:"2026-04-18",
+photo:"https://res.cloudinary.com/dwclusteb/image/upload/v1777029970/BG_Removed_20260424_142428_ihqb23.png",
+doc:"https://res.cloudinary.com/dwclusteb/image/upload/v1777030713/IMG_20260424_143734_229_vpnyfb.jpg",
+},
+"292669": {
+name:"MAKIA MUHAMMED JARISO",
+gender:"Female",
+age:"25",
+dob:"01/07/1993",
+elmis:"EF292669",
+passport:"EQ 2237642",
+phone:"+251 943974555",
+birth:" Ethiopia East ",
+visa:"Work Visa",
+country:"Cabada 🇨🇦",
+reg:"2026-04-18",
+update:"2026-04-18",
+photo:"https://res.cloudinary.com/dwclusteb/image/upload/v1777292075/IMG_20260427_150414_952_hnfgvz.png",
+doc:"https://res.cloudinary.com/dwclusteb/image/upload/v1777292633/IMG_20260427_152135_424_m9qcw8.jpg",
+},
+"443532": {
+name:" ",
+gender:"Female",
+age:"39",
+dob:"05/11/1979",
+elmis:"ELMI443532 ",
+passport:"E00646673 ",
+phone:"+251 95 520 7614 ",
+birth:" Ethiopia  ",
+visa:"Work Visa",
+country:"Cabada 🇨🇦",
+reg:"2026-04-18",
+update:"2026-04-18",
+photo:"https://res.cloudinary.com/dwclusteb/image/upload/v1777548954/IMG-20260413-WA0015_mmeejs.jpg ",
+doc:"https://res.cloudinary.com/dwclusteb/image/upload/v1777643658/IMG_20260501_165203_442_hzsrkt.jpg  ",
+},
+"345821": {
+name:"ADEM MUHAYE ESHETE ",
+gender:"Female",
+age:"39",
+dob:"06/11/1988",
+elmis:"ELMI345821 ",
+passport:"EQ8170813 ",
+phone:"+251 92 518 4146 ",
+birth:" Ethiopia  ",
+visa:"Work Visa",
+country:"Kuwait 🇰🇼",
+reg:"2026-04-18",
+update:"2026-04-18",
+photo:"https://res.cloudinary.com/dwclusteb/image/upload/v1777889781/IMG-20260430-WA0007_oypera.jpg ",
+doc:" https://res.cloudinary.com/dwclusteb/image/upload/v1777890907/IMG_20260504_133347_185_cmge3a.jpg ",
+}
+
+};
+// =======================
+// CHECK CODE
+// =======================
+function checkCode(){
+
+  let code = document.getElementById("code").value.trim();
+  let msg = document.getElementById("msg");
+
+  if(users[code]){
+
+    msg.style.color = "green";
+    msg.innerHTML = "✅ Access Granted";
+
+    // SAVE DATA
+    localStorage.setItem("user", JSON.stringify(users[code]));
+    localStorage.setItem("vcode", code);
+
+    // REDIRECT
+    setTimeout(()=>{
+      window.location.href = "personal.html";
+    },1000);
+
+  }else{
+    msg.style.color = "red";
+    msg.innerHTML = "❌ Invalid Code";
+  }
+}
+
+// =======================
+// SLIDER
+// =======================
+window.onload = function(){
+
+  let sliderImages = [
+    "https://e-lmis-online.netlify.app/image/photo_2025-11-29_18-23-08.jpg",
+    "https://e-lmis-online.netlify.app/image/photo_2_2025-11-26_21-51-36.jpg",
+    "https://e-lmis-online.netlify.app/image/photo_1_2025-11-29_18-58-10.jpg"
+  ];
+
+  let index = 0;
+  let slider = document.querySelector(".slider img");
+
+  if(slider){
+    setInterval(()=>{
+      index = (index + 1) % sliderImages.length;
+      slider.src = sliderImages[index];
+    },3000);
+  }
+};
+
+</script>
+
+</body>
+</html>
