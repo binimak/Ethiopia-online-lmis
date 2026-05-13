@@ -442,134 +442,80 @@ color:#cbd5e1;
   </div>
 </footer>
 <script>
- // URL ውስጥ የተላከው code ተቀባ
-const urlParams = new URLSearchParams(window.location.search);
-const code = urlParams.get("code");
 
-// users object ካለ index.html ላይ መጥቶ መሆን አለበት
-if (code && users[code]) {
-    const data = users[code].data;
+// =====================
+// LOAD USER FROM localStorage ONLY
+// =====================
+let user = JSON.parse(localStorage.getItem("user"));
+let code = localStorage.getItem("vcode");
 
-    document.getElementById("name").innerText     = data.name;
-    document.getElementById("gender").innerText   = data.gender;
-    document.getElementById("age").innerText      = data.age;
-    document.getElementById("dob").innerText      = data.dob;
-    document.getElementById("phone").innerText    = data.phone;
-    document.getElementById("reg").innerText      = data.reg;
-    document.getElementById("update").innerText   = data.update;
-
-    document.getElementById("photo").src          = data.photo;
-    document.getElementById("doc").src            = data.doc;
-} else {
-    // ቢያጣ፣ ወደ index.html መመለስ
-    window.location.href = "index.html";
+if (!user) {
+  alert("No user data found!");
+  window.location.href = "index.html";
 }
 
-  // CONFETTI
-const canvas = document.getElementById('confetti');
-const ctx = canvas.getContext('2d');
+// =====================
+// FILL DATA
+// =====================
+document.getElementById("name").innerText = user.name || "-";
+document.getElementById("gender").innerText = user.gender || "-";
+document.getElementById("age").innerText = user.age || "-";
+document.getElementById("dob").innerText = user.dob || "-";
+document.getElementById("elmis").innerText = user.elmis || "-";
+document.getElementById("passport").innerText = user.passport || "-";
+document.getElementById("phone").innerText = user.phone || "-";
+document.getElementById("birth").innerText = user.birth || "-";
+document.getElementById("visa").innerText = user.visa || "-";
+document.getElementById("country").innerText = user.country || "-";
+document.getElementById("reg").innerText = user.reg || "-";
+document.getElementById("update").innerText = user.update || "-";
+document.getElementById("vcode").innerText = code || "-";
 
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+// =====================
+// IMAGES
+// =====================
+document.getElementById("photo").src =
+  user.photo || "https://via.placeholder.com/150";
 
-let pieces = [];
+document.getElementById("doc").src =
+  user.doc || "https://via.placeholder.com/300";
 
-for(let i=0;i<120;i++){
-pieces.push({
-x: Math.random()*canvas.width,
-y: Math.random()*canvas.height,
-size: Math.random()*6+4,
-speed: Math.random()*3+2
-});
-}
+// =====================
+// CLOCK
+// =====================
+setInterval(() => {
+  let now = new Date();
+  document.getElementById("time").innerText =
+    "Last system check: " + now.toLocaleString();
+}, 1000);
 
-function update(){
-ctx.clearRect(0,0,canvas.width,canvas.height);
+// =====================
+// QR CODE
+// =====================
+let qr = document.getElementById("qr");
+qr.src =
+  "https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=" +
+  encodeURIComponent(window.location.href);
 
-pieces.forEach(p=>{
-ctx.fillStyle = ["#e6a93d","#ffffff","#2c6fb2"][Math.floor(Math.random()*3)];
-ctx.fillRect(p.x,p.y,p.size,p.size);
-p.y += p.speed;
+// =====================
+// RECEIPT UPLOAD
+// =====================
+function uploadReceipt() {
+  let file = document.getElementById("receiptInput").files[0];
 
-if(p.y > canvas.height){
-p.y = 0;
-p.x = Math.random()*canvas.width;
-}
-});
+  if (!file) {
+    alert("Select receipt photo");
+    return;
+  }
 
-requestAnimationFrame(update);
-}
+  let reader = new FileReader();
 
-update();
+  reader.onload = function (e) {
+    localStorage.setItem("receipt", e.target.result);
+    alert("Receipt uploaded successfully");
+  };
 
-
-// SOUND EFFECT
-function playSound(){
-let audio = new Audio("https://www.soundjay.com/human/sounds/applause-8.mp3");
-audio.play();
-}
-
-
-// AUTO SHOW + REDIRECT
-window.onload = function(){
-
-document.getElementById("successBox").style.display = "flex";
-
-playSound();
-
-// 5 seconds after → redirect
-setTimeout(function(){
- 
-},3000);
-
-}
-function closeSuccess(){
-document.getElementById("successBox").style.display = "none";
-}
-  let user = JSON.parse(localStorage.getItem("user")) || {};
-
-document.getElementById("doc").src = user.doc; 
-
-if(user.photo){
-document.getElementById("photo").src = user.photo;
-}
-
-document.getElementById("name").innerText = user.name || "";
-document.getElementById("gender").innerText = user.gender || "";
-document.getElementById("age").innerText = user.age || "";
-document.getElementById("dob").innerText = user.dob || "";
-document.getElementById("elmis").innerText = user.elmis || "";
-document.getElementById("passport").innerText = user.passport || "";
-document.getElementById("phone").innerText = user.phone || "";
-document.getElementById("birth").innerText = user.birth || "";
-document.getElementById("visa").innerText = user.visa || "";
-document.getElementById("country").innerText = user.country || "";
-document.getElementById("reg").innerText = user.reg || "";
-document.getElementById("update").innerText = user.update || "";
-
-function uploadReceipt(){
-
-let file = document.getElementById("receiptInput").files[0];
-
-if(!file){
-alert("Select receipt photo");
-return;
-}
-
-let reader = new FileReader();
-
-reader.onload = function(e){
-
-let receipt = e.target.result;
-
-localStorage.setItem("receipt", receipt);
-
-alert("Receipt uploaded");
-
-}
-
-reader.readAsDataURL(file);
-
+  reader.readAsDataURL(file);
 }
 
 </script>
