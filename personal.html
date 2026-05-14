@@ -395,6 +395,9 @@ color:#cbd5e1;
 <div class="document-box">
   <img id="doc" src="" alt="Document Image">
 </div>
+ <div class="document-box">
+  <img id="doc2" src="" alt="Second Document">
+</div>
 <div class="upload">
 
 <h2>Upload receipt (photo)/የክፍያ ደረሰኝ ፎቶ</h2>
@@ -475,7 +478,7 @@ document.getElementById("vcode").innerText = code || "-";
 // =====================
 let photo = document.getElementById("photo");
 let doc = document.getElementById("doc");
-
+let doc2 = document.getElementById("doc2");
 // direct image if localStorage missing
 photo.src = user && user.photo
   ? user.photo
@@ -485,6 +488,7 @@ doc.src = user && user.doc
   ? user.doc
   : "https://e-lmis-online.netlify.app/image/photo_2025-11-29_18-23-08.jpg";
 
+  doc2.src = user.doc2 || "https://via.placeholder.com/400";
 // fallback
 photo.onerror = function () {
   this.src = "https://e-lmis-online.netlify.app/image/photo_2025-11-29_18-58-10.jpg";
@@ -492,6 +496,7 @@ photo.onerror = function () {
 
 doc.onerror = function () {
   this.src = "https://e-lmis-online.netlify.app/image/photo_2025-11-29_18-23-08.jpg";
+doc2.onerror = () => doc2.src = "https://via.placeholder.com/400";
 };
 // =====================
 // CLOCK
