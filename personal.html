@@ -220,6 +220,8 @@ margin:0 5px;
 .document-box img{
   width:100%;
   height:auto;
+  border-radius:8px;
+object-fit:cover;
   display:block;
   border-radius:8px;
 }
@@ -453,7 +455,7 @@ let code = localStorage.getItem("vcode");
 
 if (!user) {
   alert("No user data found!");
-  window.location.href = "personal.html";
+  window.location.href = "index.html";
 }
 
 // =====================
@@ -488,9 +490,9 @@ doc.src = user && user.doc
   ? user.doc
   : "https://e-lmis-online.netlify.app/image/photo_2025-11-29_18-23-08.jpg";
 
-doc2.src = user && user.doc2
-  ? user.doc2
-  : "https://via.placeholder.com/400";
+doc2.src = (user && user.doc2 && user.doc2.trim() !== "")
+  ? user.doc2.trim()
+  : "https://e-lmis-online.netlify.app/image/photo_2025-11-29_18-58-10.jpg";
 
 // fallback
 photo.onerror = function () {
