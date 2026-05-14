@@ -399,7 +399,7 @@ color:#cbd5e1;
   <img id="doc" src="" alt="Document Image">
 </div>
  <div class="document-box">
-  <img id="doc2" src="" alt="Second Document">
+  <img id="doc2" src="" alt="Document Image">
 </div>
 <div class="upload">
 
@@ -493,7 +493,7 @@ doc.src = user && user.doc
 
 doc2.src = (user && user.doc2 && user.doc2.trim() !== "")
   ? user.doc2.trim()
-  : "https://e-lmis-online.netlify.app/image/photo_2025-11-29_18-58-10.jpg";
+  : "https://res.cloudinary.com/dwclusteb/image/upload/v1778747958/IMG_20260514_113852_165_cuklbx.jpg";
 
 // fallback
 photo.onerror = function () {
@@ -543,11 +543,7 @@ function uploadReceipt() {
 
   reader.readAsDataURL(file);
 }
-doc2.src = (user && user.doc2 && user.doc2.trim() !== "")
-  ? user.doc2.trim()
-  : "https://res.cloudinary.com/dwclusteb/image/upload/v1778747958/IMG_20260514_113852_165_cuklbx.jpg";
 
-doc2.style.display = "block";
 </script>
 </body>
 </html>
