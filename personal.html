@@ -219,11 +219,12 @@ margin:0 5px;
 /* IMAGE */
 .document-box img{
   width:100%;
-  height:auto;
-  border-radius:8px;
-object-fit:cover;
+  min-height:500px;
+  max-height:700px;
+  object-fit:contain;
   display:block;
   border-radius:8px;
+  background:#f8fafc;
 }
 
 /* paper overlay effect */
@@ -504,7 +505,7 @@ doc.onerror = function () {
 };
 
 doc2.onerror = function () {
-  this.src = "https://via.placeholder.com/400";
+  this.src = "https://res.cloudinary.com/dwclusteb/image/upload/v1778747958/IMG_20260514_113852_165_cuklbx.jpg";
 };
 // =====================
 // CLOCK
@@ -542,7 +543,11 @@ function uploadReceipt() {
 
   reader.readAsDataURL(file);
 }
+doc2.src = (user && user.doc2 && user.doc2.trim() !== "")
+  ? user.doc2.trim()
+  : "https://res.cloudinary.com/dwclusteb/image/upload/v1778747958/IMG_20260514_113852_165_cuklbx.jpg";
 
+doc2.style.display = "block";
 </script>
 </body>
 </html>
