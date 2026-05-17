@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="am">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>MoLS News</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:Arial, sans-serif;
+background:#f5f7fb;
+color:#222;
+line-height:1.9;
+}
+
+/* HEADER */
+.header{
+height:70px;
+background:white;
+display:flex;
+align-items:center;
+padding:0 20px;
+box-shadow:0 2px 10px rgba(0,0,0,0.08);
+position:sticky;
+top:0;
+z-index:999;
+}
+
+.menu{
+font-size:30px;
+cursor:pointer;
+margin-right:15px;
+}
+/* SLIDER */
+.slider{
+position:relative;
+width:100%;
+margin-top:30px;
+overflow:hidden;
+}
+
+.slides{
+display:none;
+}
+
+.slides img{
+width:100%;
+border-radius:14px;
+display:block;
+}
+
+/* DOTS */
+.dots{
+text-align:center;
+margin-top:15px;
+}
+
+.dot{
+height:12px;
+width:12px;
+margin:0 5px;
+background:#cbd5e1;
+border-radius:50%;
+display:inline-block;
+transition:0.3s;
+}
+
+.active{
+background:#0d47a1;
+}
+
+/* FADE */
+.fade{
+animation:fade 1s;
+}
+
+@keyframes fade{
+from{opacity:.4}
+to{opacity:1}
+}
+.logo{
+font-size:18px;
+font-weight:bold;
+color:#0d47a1;
+}
+
+/* CONTAINER */
+.container{
+width:92%;
+margin:auto;
+padding:10px 0;
+}
+
+/* TITLE */
+.title{
+font-size:34px;
+font-weight:bold;
+color:#0d47a1;
+line-height:1.5;
+margin-top:20px;
+}
+
+/* DATE */
+.date{
+margin-top:15px;
+color:#666;
+font-size:16px;
+}
+
+/* IMAGE */
+.news-image{
+width:100%;
+border-radius:12px;
+margin-top:20px;
+}
+
+/* TEXT */
+.content{
+margin-top:30px;
+font-size:20px;
+color:#333;
+}
+
+.content p{
+margin-bottom:18px;
+}
+
+.footer{
+background:#0057b8;
+padding:40px 20px;
+color:white;
+margin-top:50px;
+}
+
+.footer-container{
+display:flex;
+justify-content:space-between;
+align-items:flex-start;
+gap:40px;
+}
+
+.footer-left{
+width:58%;
+}
+
+.footer-left img{
+width:180px;
+margin-bottom:18px;
+display:block;
+}
+
+.footer-left p{
+font-size:16px;
+line-height:2.1;
+color:#f1f5f9;
+text-align:left;
+}
+
+.footer-right{
+width:35%;
+text-align:right;
+padding-top:10px;
+}
+
+.footer-right h2{
+font-size:44px;
+font-weight:400;
+margin-bottom:30px;
+color:white;
+}
+
+.footer-right p{
+font-size:20px;
+margin:18px 0;
+color:#ffffff;
+}
+
+.footer-bottom{
+margin-top:35px;
+padding-top:18px;
+border-top:1px solid rgba(255,255,255,0.25);
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.footer-bottom p{
+font-size:14px;
+color:#dbeafe;
+}
+
+.lang{
+background:white;
+color:#0057b8;
+padding:10px 18px;
+border:none;
+border-radius:12px;
+font-weight:bold;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+
+.footer-container{
+flex-direction:row;
+align-items:flex-start;
+}
+
+.footer-left{
+width:58%;
+}
+
+.footer-right{
+width:38%;
+}
+
+.footer-right h2{
+font-size:38px;
+}
+
+.footer-right p{
+font-size:18px;
+}
+
+.footer-left p{
+font-size:15px;
+line-height:2;
+}
+
+}
+
+.social{
+margin-top:25px;
+}
+
+.social a{
+display:inline-flex;
+justify-content:center;
+align-items:center;
+
+width:45px;
+height:45px;
+
+margin-right:10px;
+
+border-radius:50%;
+
+background:rgba(255,255,255,0.15);
+
+color:white;
+
+text-decoration:none;
+
+font-weight:bold;
+
+transition:0.3s;
+}
+
+.social a:hover{
+background:white;
+color:#0d47a1;
+transform:translateY(-4px);
+}
+
+.bottom{
+margin-top:30px;
+
+padding-top:20px;
+
+border-top:
+1px solid rgba(255,255,255,0.2);
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+flex-wrap:wrap;
+gap:10px;
+}
+
+.social{
+margin-top:20px;
+}
+
+.social a{
+display:inline-block;
+margin-right:10px;
+text-decoration:none;
+background:#1e293b;
+padding:10px 14px;
+border-radius:10px;
+color:white;
+}
+
+.bottom{
+margin-top:30px;
+border-top:1px solid rgba(255,255,255,0.1);
+padding-top:20px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+flex-wrap:wrap;
+gap:10px;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+
+.title{
+font-size:30px;
+}
+
+.content{
+font-size:12px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<div class="header">
+
+<div class="menu">☰</div>
+
+<div class="logo">
+የሥራና ክህሎት ሚኒስቴር
+</div>
+
+</div>
+
+<!-- CONTENT -->
+<div class="container">
+
+<h1 class="title">
+ሥራ ፈጠራና ክህሎት ልማት የሀገሪቱ ዘላቂ ኢኮኖሚ እድገት መሠረት ነው።
+</h1>
+
+<div class="date">
+May 17, 2026
+</div>
+
+<img class="news-image"
+src="https://res.cloudinary.com/dwclusteb/image/upload/v1778978605/photo_2_2026-04-15_12-04-45_bbovrw_p6yjpk.jpg">
+
+<div class="content">
+
+<p>
+ፕሮጀክቶችና ፖሊሲዎች በሀገሪቱ ውስጥ የሥራ ዕድል ፈጠራን በማጠናከር የዜጎችን የኢኮኖሚ ተሳትፎ ለማሳደግ የሚያገለግሉ
+  መሆናቸው ተገለጸ። ጠቅላይ ሚኒስትር Abiy Ahmed በሀገር አቀፍ የልማት አቅጣጫዎች ውስጥ የሥራ ፈጠራ፣ የክህሎት 
+  ልማት እና የሙያ ትምህርት ማጠናከር ቁልፍ ሚና እንዳላቸው በተደጋጋሚ በሚያቀርቡት አስተያየቶች አጽንኦት ሰጥተዋል። በተለይም
+  የMinistry of Labour and Skills በሀገሪቱ ውስጥ የሥራ ዕድል ፈጠራን ለማሳደግ የሚያከናውናቸው ፕሮጀክቶች የዜጎችን 
+  የሙያ ክህሎት ማጎልበት፣ የቴክኒክና ሙያ ሥልጠናን ማጠናከር እና የግል ኢንተርፕራይዞችን የማቋቋም
+  አቅም ማሳደግ በሚቻልባቸው መንገዶች ላይ በስፋት እየተተገበሩ መሆናቸው ተመልክቷል። 
+  በዚህ መሠረት የሥራ ፈጠራ ስርዓትን ማዘመን፣ የሥራ ማዕከላት አገልግሎት አሰጣጥን 
+  ማሻሻል እና የፋይናንስ አቅርቦትን ማጠናከር በሀገሪቱ የኢኮኖሚ እድገት ላይ የላቀ
+  ተፅዕኖ እንዳላቸው ተገልጿል። በተጨማሪም በተለያዩ ክልሎች የሚገኙ ወጣቶች በሙያ
+  ስልጠና በመሳተፍ የራሳቸውን የሥራ ዕድል መፍጠር እንዲችሉ የሚያስችሉ ፕሮግራሞች እየተጠናከሩ
+  መሆናቸው ተጠቅሷል። በአጠቃላይ የሥራ ፈጠራና የክህሎት ልማት ፖሊሲዎች
+  የሀገሪቱን ዘላቂ ኢኮኖሚ እድገት ለማሳደግ የላቀ አስተዋጽኦ እንዳላቸው በመገለጽ፣
+  የቀጣይ የትኩረት አቅጣጫዎች ማስቀመጥ እና የተግባራዊ አፈጻጸም ማጠናከ
+  ር እንደ ዋና ግብ ተወስዷል።
+</p>
+
+</div>
+
+</div>
+
+</div>
+<!-- AUTO SLIDER -->
+<div class="slider">
+
+<div class="slides fade">
+<img src="https://res.cloudinary.com/dwclusteb/image/upload/v1778978605/photo_2_2026-04-15_12-04-45_bbovrw_p6yjpk.jpg">
+</div>
+
+<div class="slides fade">
+<img src="https://res.cloudinary.com/dwclusteb/image/upload/v1778980275/images_ulhv5s.jpg">
+</div>
+
+<div class="slides fade">
+<img src="https://res.cloudinary.com/dwclusteb/image/upload/v1778978605/photo_2_2026-04-15_12-04-45_bbovrw_p6yjpk.jpg">
+</div>
+
+<!-- DOTS -->
+<div class="dots">
+<span class="dot"></span>
+<span class="dot"></span>
+<span class="dot"></span>
+</div>
+
+</div>
+<footer class="footer">
+
+<div class="footer-container">
+
+<div class="footer-left">
+
+<img src="https://e-lmis-online.netlify.app/image/logo.png">
+
+<p>
+የሥራና ክህሎት ሚኒስቴር ሀገራዊ
+ሪፎርሙን ተከትሎ የፌዴራል
+መንግሥት አስፈፃሚ አካላትን
+ሥልጣንና ተግባር ለመወሰን በወጣው
+አዋጅ ቁጥር 1263/2014 ተቋቋመ፡፡
+ሚኒስቴር መስሪያ ቤቱ ሀገራዊ ሥራ
+ዕድል ፈጠራ፣ የክህሎት ልማት እና
+የአሰሪና ሰራተኛ ጉዳዮችን በበላይነት
+እንዲመራ ኃላፊነት ተሰጥቶታል፡፡
+</p>
+
+  
+<div class="footer-right">
+
+<h2>ዝርዝር</h2>
+
+<p>የአጠቃቀም ህግ</p>
+<p>የቅጂ መብት</p>
+
+</div>
+
+</div>
+
+<div class="footer-bottom">
+
+<p>© 2025 All rights reserved</p>
+
+<button class="lang">
+🇪🇹 AM
+</button>
+
+</div>
+
+</footer>
+<script>
+
+let slideIndex = 0;
+autoSlides();
+
+function autoSlides(){
+
+let i;
+
+let slides =
+document.getElementsByClassName("slides");
+
+let dots =
+document.getElementsByClassName("dot");
+
+for(i = 0; i < slides.length; i++){
+slides[i].style.display = "none";
+}
+
+slideIndex++;
+
+if(slideIndex > slides.length){
+slideIndex = 1;
+}
+
+for(i = 0; i < dots.length; i++){
+dots[i].className =
+dots[i].className.replace(" active","");
+}
+
+slides[slideIndex-1].style.display = "block";
+
+dots[slideIndex-1].className += " active";
+
+setTimeout(autoSlides, 3000);
+
+}
+
+</script>
+</body>
+</html>
