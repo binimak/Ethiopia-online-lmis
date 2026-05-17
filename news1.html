@@ -4,43 +4,306 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>የሥራ ዕድል ፈጠራ</title>
+<title>MoLS News</title>
 
 <style>
 
-body{
-font-family:Arial;
-background:#f5f7fb;
+*{
 margin:0;
-line-height:1.8;
+padding:0;
+box-sizing:border-box;
 }
 
+body{
+font-family:Arial, sans-serif;
+background:#f5f7fb;
+color:#222;
+line-height:1.9;
+}
+
+/* HEADER */
+.header{
+height:70px;
+background:white;
+display:flex;
+align-items:center;
+padding:0 20px;
+box-shadow:0 2px 10px rgba(0,0,0,0.08);
+position:sticky;
+top:0;
+z-index:999;
+}
+
+.menu{
+font-size:30px;
+cursor:pointer;
+margin-right:15px;
+}
+
+.logo{
+font-size:18px;
+font-weight:bold;
+color:#0d47a1;
+}
+
+/* CONTAINER */
 .container{
 width:92%;
 margin:auto;
-padding:20px;
+padding:20px 0;
 }
 
-img{
-width:100%;
-border-radius:15px;
-margin-top:20px;
-}
-
-h1{
+/* TITLE */
+.title{
+font-size:38px;
+font-weight:bold;
 color:#0d47a1;
-font-size:34px;
+line-height:1.4;
 margin-top:20px;
 }
 
+/* DATE */
 .date{
+margin-top:15px;
 color:#666;
-margin:10px 0 25px;
+font-size:15px;
 }
 
-p{
+/* IMAGE */
+.news-image{
+width:100%;
+border-radius:18px;
+margin-top:30px;
+}
+
+/* TEXT */
+.content{
+margin-top:30px;
 font-size:18px;
 color:#333;
+}
+
+.content p{
+margin-bottom:20px;
+}
+
+.footer{
+background:#0057b8;
+padding:40px 20px;
+color:white;
+margin-top:50px;
+}
+
+.footer-container{
+display:flex;
+justify-content:space-between;
+align-items:flex-start;
+gap:40px;
+}
+
+.footer-left{
+width:58%;
+}
+
+.footer-left img{
+width:180px;
+margin-bottom:18px;
+display:block;
+}
+
+.footer-left p{
+font-size:16px;
+line-height:2.1;
+color:#f1f5f9;
+text-align:left;
+}
+
+.footer-right{
+width:35%;
+text-align:right;
+padding-top:10px;
+}
+
+.footer-right h2{
+font-size:44px;
+font-weight:400;
+margin-bottom:30px;
+color:white;
+}
+
+.footer-right p{
+font-size:20px;
+margin:18px 0;
+color:#ffffff;
+}
+
+.footer-bottom{
+margin-top:35px;
+padding-top:18px;
+border-top:1px solid rgba(255,255,255,0.25);
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.footer-bottom p{
+font-size:14px;
+color:#dbeafe;
+}
+
+.lang{
+background:white;
+color:#0057b8;
+padding:10px 18px;
+border:none;
+border-radius:12px;
+font-weight:bold;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+
+.footer-container{
+flex-direction:row;
+align-items:flex-start;
+}
+
+.footer-left{
+width:58%;
+}
+
+.footer-right{
+width:38%;
+}
+
+.footer-right h2{
+font-size:38px;
+}
+
+.footer-right p{
+font-size:18px;
+}
+
+.footer-left p{
+font-size:15px;
+line-height:2;
+}
+
+}
+
+.lang{
+background:white;
+color:#0057b8;
+padding:10px 18px;
+border-radius:12px;
+font-weight:bold;
+border:none;
+}
+
+.social{
+margin-top:25px;
+}
+
+.social a{
+display:inline-flex;
+justify-content:center;
+align-items:center;
+
+width:45px;
+height:45px;
+
+margin-right:10px;
+
+border-radius:50%;
+
+background:rgba(255,255,255,0.15);
+
+color:white;
+
+text-decoration:none;
+
+font-weight:bold;
+
+transition:0.3s;
+}
+
+.social a:hover{
+background:white;
+color:#0d47a1;
+transform:translateY(-4px);
+}
+
+.bottom{
+margin-top:30px;
+
+padding-top:20px;
+
+border-top:
+1px solid rgba(255,255,255,0.2);
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+flex-wrap:wrap;
+gap:10px;
+}
+
+.lang{
+background:white;
+color:#0d47a1;
+
+padding:8px 15px;
+
+border-radius:12px;
+
+font-weight:bold;
+}
+.social{
+margin-top:20px;
+}
+
+.social a{
+display:inline-block;
+margin-right:10px;
+text-decoration:none;
+background:#1e293b;
+padding:10px 14px;
+border-radius:10px;
+color:white;
+}
+
+.bottom{
+margin-top:30px;
+border-top:1px solid rgba(255,255,255,0.1);
+padding-top:20px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+flex-wrap:wrap;
+gap:10px;
+}
+
+.lang{
+background:white;
+color:#0d47a1;
+padding:8px 14px;
+border-radius:10px;
+font-weight:bold;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+
+.title{
+font-size:30px;
+}
+
+.content{
+font-size:17px;
+}
+
 }
 
 </style>
@@ -48,29 +311,98 @@ color:#333;
 
 <body>
 
+<!-- HEADER -->
+<div class="header">
+
+<div class="menu">☰</div>
+
+<div class="logo">
+የሥራና ክህሎት ሚኒስቴር
+</div>
+
+</div>
+
+<!-- CONTENT -->
 <div class="container">
 
-<h1>
-የሥራ ዕድል ፈጠራ ሥራውን ከዕቅድ በላይ ማሳካቱን ቢሮው አስታወቀ
+<h1 class="title">
+ሥራ ፈጠራና ክህሎት ልማት የሀገሪቱ ዘላቂ ኢኮኖሚ እድገት መሠረት ነው።
 </h1>
 
 <div class="date">
-ግንቦት 14, 2026
+May 17, 2026
 </div>
 
-<img src="https://res.cloudinary.com/dwclusteb/image/upload/v1777243588/464968970_853668816946990_1979183023972159898_n-1-1_t9ozox.jpg">
+<img class="news-image"
+src="https://res.cloudinary.com/dwclusteb/image/upload/v1777243588/464968970_853668816946990_1979183023972159898_n-1-1_t9ozox.jpg">
+
+<div class="content">
 
 <p>
-የአዲስ አበባ ሥራና ክህሎት ቢሮ የ10 ወራት ዕቅድ አፈፃፀሙን
-ከባለድርሻና አስፈፃሚ አካላት ጋር ገምግሟል።
-</p>
-
-<p>
-በዚህም ለ320,000 በላይ ዜጎች የሥራ ዕድል መፍጠሩን
-አስታውቋል።
+ፕሮጀክቶችና ፖሊሲዎች በሀገሪቱ ውስጥ የሥራ ዕድል ፈጠራን በማጠናከር የዜጎችን የኢኮኖሚ ተሳትፎ ለማሳደግ የሚያገለግሉ
+  መሆናቸው ተገለጸ። ጠቅላይ ሚኒስትር Abiy Ahmed በሀገር አቀፍ የልማት አቅጣጫዎች ውስጥ የሥራ ፈጠራ፣ የክህሎት 
+  ልማት እና የሙያ ትምህርት ማጠናከር ቁልፍ ሚና እንዳላቸው በተደጋጋሚ በሚያቀርቡት አስተያየቶች አጽንኦት ሰጥተዋል። በተለይም
+  የMinistry of Labour and Skills በሀገሪቱ ውስጥ የሥራ ዕድል ፈጠራን ለማሳደግ የሚያከናውናቸው ፕሮጀክቶች የዜጎችን 
+  የሙያ ክህሎት ማጎልበት፣ የቴክኒክና ሙያ ሥልጠናን ማጠናከር እና የግል ኢንተርፕራይዞችን የማቋቋም
+  አቅም ማሳደግ በሚቻልባቸው መንገዶች ላይ በስፋት እየተተገበሩ መሆናቸው ተመልክቷል። 
+  በዚህ መሠረት የሥራ ፈጠራ ስርዓትን ማዘመን፣ የሥራ ማዕከላት አገልግሎት አሰጣጥን 
+  ማሻሻል እና የፋይናንስ አቅርቦትን ማጠናከር በሀገሪቱ የኢኮኖሚ እድገት ላይ የላቀ
+  ተፅዕኖ እንዳላቸው ተገልጿል። በተጨማሪም በተለያዩ ክልሎች የሚገኙ ወጣቶች በሙያ
+  ስልጠና በመሳተፍ የራሳቸውን የሥራ ዕድል መፍጠር እንዲችሉ የሚያስችሉ ፕሮግራሞች እየተጠናከሩ
+  መሆናቸው ተጠቅሷል። በአጠቃላይ የሥራ ፈጠራና የክህሎት ልማት ፖሊሲዎች
+  የሀገሪቱን ዘላቂ ኢኮኖሚ እድገት ለማሳደግ የላቀ አስተዋጽኦ እንዳላቸው በመገለጽ፣
+  የቀጣይ የትኩረት አቅጣጫዎች ማስቀመጥ እና የተግባራዊ አፈጻጸም ማጠናከ
+  ር እንደ ዋና ግብ ተወስዷል።
 </p>
 
 </div>
+
+</div>
+
+<footer class="footer">
+
+<div class="footer-container">
+
+<div class="footer-left">
+
+<img src="https://e-lmis-online.netlify.app/image/logo.png">
+
+<p>
+የሥራና ክህሎት ሚኒስቴር ሀገራዊ
+ሪፎርሙን ተከትሎ የፌዴራል
+መንግሥት አስፈፃሚ አካላትን
+ሥልጣንና ተግባር ለመወሰን በወጣው
+አዋጅ ቁጥር 1263/2014 ተቋቋመ፡፡
+ሚኒስቴር መስሪያ ቤቱ ሀገራዊ ሥራ
+ዕድል ፈጠራ፣ የክህሎት ልማት እና
+የአሰሪና ሰራተኛ ጉዳዮችን በበላይነት
+እንዲመራ ኃላፊነት ተሰጥቶታል፡፡
+</p>
+
+</div>
+
+<div class="footer-right">
+
+<h2>ዝርዝር</h2>
+
+<p>የአጠቃቀም ህግ</p>
+<p>የቅጂ መብት</p>
+
+</div>
+
+</div>
+
+<div class="footer-bottom">
+
+<p>© 2025 All rights reserved</p>
+
+<button class="lang">
+🇪🇹 AM
+</button>
+
+</div>
+
+</footer>
 
 </body>
 </html>
