@@ -32,37 +32,14 @@ body{
 }
 body::before{
   content:"";
-
   position:fixed;
+  ...
+  z-index:-1;
+}
 
-  width:500px;
-  height:500px;
-
-  background:
-  radial-gradient(
-    rgba(59,130,246,0.12),
-    transparent 70%
-  );
 .countdown{
   display:flex;
-  justify-content:center;
-  align-items:center;
-  gap:22px;
-
-  max-width:900px;
-  margin:35px auto;
-
-  padding:28px;
-
-  background:rgba(255,255,255,.92);
-  backdrop-filter:blur(15px);
-
-  border-radius:35px;
-
-  box-shadow:
-    0 25px 60px rgba(15,23,42,.12);
-
-  border:1px solid rgba(255,255,255,.8);
+  ...
 }
 
 .box{
@@ -535,7 +512,7 @@ padding:5px;
 
   
 .submit{
-margin-top:20px;
+  margin-top:24px;
 }
 
 .photo-box{
@@ -684,7 +661,7 @@ td:hover{
   );
   pointer-events:none;
 }
-..submit{
+.submit{
   margin-top:24px;
 }
 
@@ -1156,7 +1133,7 @@ margin-top:20px;
   </div>
 </footer>
 <script>
-<script>
+
 
 let totalSeconds = 2 * 24 * 60 * 60;
 
@@ -1191,7 +1168,6 @@ updateTimer();
 
 let timer = setInterval(updateTimer,1000);
 
-</script>
 // =====================
 // LOAD USER
 // ===================
