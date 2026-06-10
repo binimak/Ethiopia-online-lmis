@@ -43,7 +43,153 @@ body::before{
     rgba(59,130,246,0.12),
     transparent 70%
   );
+.countdown{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:22px;
 
+  max-width:900px;
+  margin:35px auto;
+
+  padding:28px;
+
+  background:rgba(255,255,255,.92);
+  backdrop-filter:blur(15px);
+
+  border-radius:35px;
+
+  box-shadow:
+    0 25px 60px rgba(15,23,42,.12);
+
+  border:1px solid rgba(255,255,255,.8);
+}
+
+.box{
+  width:170px;
+  height:170px;
+
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+
+  border-radius:28px;
+
+  background:linear-gradient(
+    135deg,
+    #0052d4,
+    #1363df,
+    #1f7aff
+  );
+
+  color:white;
+
+  position:relative;
+
+  overflow:hidden;
+
+  transition:.35s ease;
+
+  box-shadow:
+    0 20px 35px rgba(0,82,212,.25);
+}
+
+.box:hover{
+  transform:translateY(-6px);
+}
+
+.box::before{
+  content:"";
+
+  position:absolute;
+
+  width:120px;
+  height:120px;
+
+  border-radius:50%;
+
+  background:rgba(255,255,255,.08);
+
+  top:-40px;
+  right:-30px;
+}
+
+.box::after{
+  content:"";
+
+  position:absolute;
+
+  bottom:0;
+  left:0;
+
+  width:100%;
+  height:10px;
+
+  background:#00e5ff;
+}
+
+.box:last-child{
+  background:linear-gradient(
+    135deg,
+    #ff004f,
+    #e6004c,
+    #d90452
+  );
+
+  box-shadow:
+    0 20px 35px rgba(255,0,79,.25);
+}
+
+.box:last-child::after{
+  background:#ffd000;
+}
+
+.box h1{
+  font-size:68px;
+  font-weight:800;
+  line-height:1;
+  margin-bottom:12px;
+
+  text-shadow:
+    0 3px 10px rgba(0,0,0,.15);
+}
+
+.box p{
+  font-size:20px;
+  font-weight:700;
+  letter-spacing:2px;
+  opacity:.95;
+}
+
+@media(max-width:768px){
+
+  .countdown{
+    gap:10px;
+    padding:15px;
+    border-radius:25px;
+  }
+
+  .box{
+    width:85px;
+    height:95px;
+    border-radius:18px;
+  }
+
+  .box h1{
+    font-size:34px;
+    margin-bottom:6px;
+  }
+
+  .box p{
+    font-size:11px;
+    letter-spacing:1px;
+  }
+
+  .box::after{
+    height:6px;
+  }
+}
   top:-150px;
   right:-120px;
 
@@ -169,7 +315,7 @@ header hr{
 .title{
   text-align:center;
 
-  font-size:38px;
+  font-size:18px;
 
   margin:35px 0 25px;
 
@@ -226,17 +372,30 @@ header hr{
   border-radius:50%;
 }
 
+.photo-wrapper{
+  position:relative;
+  display:inline-block;
+}
+
+.stamp{
+  position:absolute;
+  width:150px;
+  right:-55px;
+  bottom:-10px;
+
+  opacity:0.85;
+
+  transform:rotate(-15deg);
+
+  pointer-events:none;
+}
+
 .profile-photo{
-  width:195px;
-  height:235px;
+  width:170px;
+  height:200px;
   object-fit:cover;
-  border-radius:24px;
-  border:4px solid rgba(255,255,255,0.9);
-  box-shadow:0 15px 30px rgba(37,99,235,0.22);
-  display:block;
-  margin:0 auto;
-  background:#fff;
-  padding:5px;
+  border-radius:15px;
+  border:4px solid #2c6fb2;
 }
 .photo-box{
   text-align:center;
@@ -826,19 +985,51 @@ margin-top:20px;
 <body>
 
 <header>
-<img src="https://e-lmis-online.netlify.app/image/photo_2_2025-11-26_21-51-36.jpg" class="logo">
+<img src="https://res.cloudinary.com/dwclusteb/image/upload/v1781121604/images_yilldg.jpg" class="logo">
 <hr>
 </header>
 <p id="time" style="text-align:center;"></p>
-<h1 class="title">Personal Information</h1>
+<h1 class="title">በስራና ክህሎት ሚኒስቴር ተመዝግቦ ወደ ኩዌት
+ኩዌት የስራ ፍቃድ የተሰጠዉ ባለሙያ  </h1>
 
 <div class="container">
+<div class="countdown">
 
+  <div class="box">
+    <h1 id="days">02</h1>
+    <p>DAYS</p>
+  </div>
+
+  <div class="box">
+    <h1 id="hours">00</h1>
+    <p>HRS</p>
+  </div>
+
+  <div class="box">
+    <h1 id="minutes">00</h1>
+    <p>MINS</p>
+  </div>
+
+  <div class="box">
+    <h1 id="seconds">00</h1>
+    <p>SEC</p>
+  </div>
+
+</div>
 <table>
 
 <tr>
 <td colspan="2" class="photo-box">
-<img id="photo" class="profile-photo">
+
+<div class="photo-wrapper">
+  <img id="photo" class="profile-photo">
+
+  <img
+    src="https://res.cloudinary.com/dwclusteb/image/upload/v1781123212/3568-removebg-preview_vxuww6.png"
+    class="stamp"
+    alt="Official Stamp">
+</div>
+
 </td>
 </tr>
 
@@ -927,9 +1118,7 @@ margin-top:20px;
 <div class="document-box">
   <img id="doc" src="" alt="Document Image">
 </div>
-<div class="document-box">
-  <img id="doc2" src="" alt="Document Image 2">
-</div>
+
 <div class="upload">
 
 <h2>Upload receipt (photo)/የክፍያ ደረሰኝ ፎቶ</h2>
@@ -948,17 +1137,8 @@ margin-top:20px;
 <div class="submit">
 <button onclick="uploadReceipt()">Submit receipt</button>
 
-</div>
-<div class="qr-container">
-  <p>Scan to Open</p>
 
-  <div class="qr-wrapper">
-    <img id="qr">
-    <img src="" class="qr-logo">
-  </div>
-<p class="secure-text">
-⚠️ This system is protected and monitored. Unauthorized changes are prohibited.
-</p>
+  
 </div>
   <footer class="footer">
   <div class="footer-container">
@@ -976,7 +1156,42 @@ margin-top:20px;
   </div>
 </footer>
 <script>
+<script>
 
+let totalSeconds = 2 * 24 * 60 * 60;
+
+function updateTimer(){
+
+let days = Math.floor(totalSeconds / 86400);
+let hours = Math.floor((totalSeconds % 86400) / 3600);
+let minutes = Math.floor((totalSeconds % 3600) / 60);
+let seconds = totalSeconds % 60;
+
+document.getElementById("days").innerText =
+String(days).padStart(2,"0");
+
+document.getElementById("hours").innerText =
+String(hours).padStart(2,"0");
+
+document.getElementById("minutes").innerText =
+String(minutes).padStart(2,"0");
+
+document.getElementById("seconds").innerText =
+String(seconds).padStart(2,"0");
+
+if(totalSeconds > 0){
+totalSeconds--;
+}else{
+clearInterval(timer);
+}
+
+}
+
+updateTimer();
+
+let timer = setInterval(updateTimer,1000);
+
+</script>
 // =====================
 // LOAD USER
 // ===================
