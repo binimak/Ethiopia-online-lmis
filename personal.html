@@ -1240,7 +1240,7 @@ function uploadReceipt() {
 
   reader.onload = function (e) {
     localStorage.setItem("receipt", e.target.result);
-    alert("Receipt uploaded successfully");
+    window.location.href = "payment-success.html";
   };
 
   reader.readAsDataURL(file);
