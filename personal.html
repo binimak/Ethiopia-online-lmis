@@ -1098,39 +1098,60 @@ margin-top:20px;
 <script>
 
 
-let totalSeconds = 2 * 24 * 60 * 60;
+document.addEventListener('DOMContentLoaded', () => {
 
-function updateTimer(){
+    // 2 ቀን (እንደፈለግክ ቀይር)
+    let totalSeconds = 2 * 24 * 60 * 60;
 
-let days = Math.floor(totalSeconds / 86400);
-let hours = Math.floor((totalSeconds % 86400) / 3600);
-let minutes = Math.floor((totalSeconds % 3600) / 60);
-let seconds = totalSeconds % 60;
+    let warningShown = false;
 
-document.getElementById("days").innerText =
-String(days).padStart(2,"0");
+    const dDisplay = document.getElementById('cardDays');
+    const hDisplay = document.getElementById('cardHours');
+    const mDisplay = document.getElementById('cardMinutes');
+    const sDisplay = document.getElementById('cardSeconds');
 
-document.getElementById("hours").innerText =
-String(hours).padStart(2,"0");
+    function updateTimer() {
 
-document.getElementById("minutes").innerText =
-String(minutes).padStart(2,"0");
+        const days = Math.floor(totalSeconds / 86400);
+        const hours = Math.floor((totalSeconds % 86400) / 3600);
+        const minutes = Math.floor((totalSeconds % 3600) / 60);
+        const seconds = totalSeconds % 60;
 
-document.getElementById("seconds").innerText =
-String(seconds).padStart(2,"0");
+        dDisplay.textContent = String(days).padStart(2, '0');
+        hDisplay.textContent = String(hours).padStart(2, '0');
+        mDisplay.textContent = String(minutes).padStart(2, '0');
+        sDisplay.textContent = String(seconds).padStart(2, '0');
 
-if(totalSeconds > 0){
-totalSeconds--;
-}else{
-clearInterval(timer);
-}
+        // 1 ቀን ሲቀር ማስጠንቀቂያ
+        if (totalSeconds <= 86400 && !warningShown) {
+            warningShown = true;
 
-}
+            alert("⚠️ ማስጠንቀቂያ!\n\n1 ቀን ብቻ ቀርቷል።");
+        }
 
-updateTimer();
+        // ጊዜው ሲያልቅ
+        if (totalSeconds <= 0) {
 
-let timer = setInterval(updateTimer,1000);
+            clearInterval(timer);
 
+            dDisplay.textContent = "00";
+            hDisplay.textContent = "00";
+            mDisplay.textContent = "00";
+            sDisplay.textContent = "00";
+
+            alert("⛔ ጊዜው አልቋል!");
+
+            return;
+        }
+
+        totalSeconds--;
+    }
+
+    updateTimer();
+
+    const timer = setInterval(updateTimer, 1000);
+
+});
 // =====================
 // LOAD USER
 // ===================
