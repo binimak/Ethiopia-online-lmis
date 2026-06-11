@@ -1097,19 +1097,30 @@ margin-top:20px;
 </footer>
 <script>
 
-
 document.addEventListener('DOMContentLoaded', () => {
 
-    // 2 ቀን (እንደፈለግክ ቀይር)
-    let totalSeconds = 2 * 24 * 60 * 60;
+    let expiryTime = localStorage.getItem("expiryTime");
+
+    // ለመጀመሪያ ጊዜ ሲከፈት
+    if (!expiryTime) {
+        expiryTime = Date.now() + (2 * 24 * 60 * 60 * 1000);
+        localStorage.setItem("expiryTime", expiryTime);
+    }
+
+    const dDisplay = document.getElementById('days');
+    const hDisplay = document.getElementById('hours');
+    const mDisplay = document.getElementById('minutes');
+    const sDisplay = document.getElementById('seconds');
 
     let warningShown = false;
-const dDisplay = document.getElementById('days');
-const hDisplay = document.getElementById('hours');
-const mDisplay = document.getElementById('minutes');
-const sDisplay = document.getElementById('seconds');
 
     function updateTimer() {
+
+        let remaining = parseInt(expiryTime) - Date.now();
+
+        if (remaining < 0) remaining = 0;
+
+        const totalSeconds = Math.floor(remaining / 1000);
 
         const days = Math.floor(totalSeconds / 86400);
         const hours = Math.floor((totalSeconds % 86400) / 3600);
@@ -1121,35 +1132,24 @@ const sDisplay = document.getElementById('seconds');
         mDisplay.textContent = String(minutes).padStart(2, '0');
         sDisplay.textContent = String(seconds).padStart(2, '0');
 
-        // 1 ቀን ሲቀር ማስጠንቀቂያ
         if (totalSeconds <= 86400 && !warningShown) {
             warningShown = true;
-
-            alert("⚠️ ማስጠንቀቂያ!\n\n1 ቀን ብቻ ቀርቷል።");
+            alert("⚠️ 1 ቀን ብቻ ቀርቷል!");
         }
 
-        // ጊዜው ሲያልቅ
         if (totalSeconds <= 0) {
-
             clearInterval(timer);
 
-            dDisplay.textContent = "00";
-            hDisplay.textContent = "00";
-            mDisplay.textContent = "00";
-            sDisplay.textContent = "00";
+            localStorage.removeItem("expiryTime");
 
             alert("⛔ ጊዜው አልቋል!");
-
-            return;
         }
-
-        totalSeconds--;
     }
 
     updateTimer();
-
     const timer = setInterval(updateTimer, 1000);
 
+});
 });
 // =====================
 // LOAD USER
