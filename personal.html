@@ -1076,7 +1076,25 @@ margin-top:20px;
 </div>
 <div class="submit">
 <button onclick="uploadReceipt()">Submit receipt</button>
+<div class="timer-admin">
 
+<h3>⏳ Timer Control</h3>
+
+<input
+type="datetime-local"
+id="expiryDate">
+
+<button
+onclick="setExpiryDate()">
+Save Timer
+</button>
+
+<button
+onclick="resetTimer()">
+Reset
+</button>
+
+</div>
 
   
 </div>
@@ -1101,50 +1119,137 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let expiryTime = localStorage.getItem("expiryTime");
 
-    // ለመጀመሪያ ጊዜ ሲከፈት
-    if (!expiryTime) {
-        expiryTime = Date.now() + (2 * 24 * 60 * 60 * 1000);
-        localStorage.setItem("expiryTime", expiryTime);
-    }
-
     const dDisplay = document.getElementById('days');
     const hDisplay = document.getElementById('hours');
     const mDisplay = document.getElementById('minutes');
     const sDisplay = document.getElementById('seconds');
 
-    let warningShown = false;
+    let warningShown =
+    localStorage.getItem("warningShown") || false;
 
-    function updateTimer() {
+    function updateTimer(){
 
-        let remaining = parseInt(expiryTime) - Date.now();
+        expiryTime =
+        localStorage.getItem("expiryTime");
 
-        if (remaining < 0) remaining = 0;
-
-        const totalSeconds = Math.floor(remaining / 1000);
-
-        const days = Math.floor(totalSeconds / 86400);
-        const hours = Math.floor((totalSeconds % 86400) / 3600);
-        const minutes = Math.floor((totalSeconds % 3600) / 60);
-        const seconds = totalSeconds % 60;
-
-        dDisplay.textContent = String(days).padStart(2, '0');
-        hDisplay.textContent = String(hours).padStart(2, '0');
-        mDisplay.textContent = String(minutes).padStart(2, '0');
-        sDisplay.textContent = String(seconds).padStart(2, '0');
-
-        if (totalSeconds <= 86400 && !warningShown) {
-            warningShown = true;
-            alert("⚠️ 1 ቀን ብቻ ቀርቷል!");
+        if(!expiryTime){
+            return;
         }
 
-        if (totalSeconds <= 0) {
+        let remaining =
+        parseInt(expiryTime) - Date.now();
+
+        if(remaining < 0){
+            remaining = 0;
+        }
+
+        const totalSeconds =
+        Math.floor(remaining / 1000);
+
+        const days =
+        Math.floor(totalSeconds / 86400);
+
+        const hours =
+        Math.floor((totalSeconds % 86400) / 3600);
+
+        const minutes =
+        Math.floor((totalSeconds % 3600) / 60);
+
+        const seconds =
+        totalSeconds % 60;
+
+        dDisplay.textContent =
+        String(days).padStart(2,'0');
+
+        hDisplay.textContent =
+        String(hours).padStart(2,'0');
+
+        mDisplay.textContent =
+        String(minutes).padStart(2,'0');
+
+        sDisplay.textContent =
+        String(seconds).padStart(2,'0');
+
+        if(totalSeconds <= 86400 && !warningShown){
+
+            warningShown = true;
+
+            localStorage.setItem(
+            "warningShown",
+            "true"
+            );
+
+            alert(
+            "⚠️ ማስጠንቀቂያ!\n\n1 ቀን ብቻ ቀርቷል።"
+            );
+        }
+
+        if(totalSeconds <= 0){
+
             clearInterval(timer);
 
-            localStorage.removeItem("expiryTime");
+            alert(
+            "⛔ ጊዜው አልቋል!"
+            );
 
-            alert("⛔ ጊዜው አልቋል!");
+            localStorage.removeItem(
+            "warningShown"
+            );
         }
     }
+
+    updateTimer();
+
+    const timer =
+    setInterval(updateTimer,1000);
+
+});
+
+function setExpiryDate(){
+
+    let selectedDate =
+    document.getElementById("expiryDate").value;
+
+    if(!selectedDate){
+
+        alert(
+        "ቀን እና ሰዓት ያስገቡ"
+        );
+
+        return;
+    }
+
+    let expiryTime =
+    new Date(selectedDate).getTime();
+
+    localStorage.setItem(
+    "expiryTime",
+    expiryTime
+    );
+
+    localStorage.removeItem(
+    "warningShown"
+    );
+
+    alert(
+    "✅ Timer Saved"
+    );
+
+    location.reload();
+}
+
+function resetTimer(){
+
+    localStorage.removeItem(
+    "expiryTime"
+    );
+
+    localStorage.removeItem(
+    "warningShown"
+    );
+
+    location.reload();
+}
 
     updateTimer();
     const timer = setInterval(updateTimer, 1000);
