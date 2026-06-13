@@ -1019,57 +1019,50 @@ alt="Official Stamp">
 
   </div>  
 </footer>  
-<script>  document.addEventListener('DOMContentLoaded', () => {
+<script> 
+  document.addEventListener('DOMContentLoaded', () => {
 
-let expiryTime = localStorage.getItem("expiryTime");  
+let expiryTime = localStorage.getItem("expiryTime");
 
-// ለመጀመሪያ ጊዜ ሲከፈት  
-if (!expiryTime) {  
-    expiryTime = Date.now() + (2 * 24 * 60 * 60 * 1000);  
-    localStorage.setItem("expiryTime", expiryTime);  
-}  
+// ካልነበረ ወይም ካለቀ → reset
+if (!expiryTime || Date.now() > expiryTime) {
+    expiryTime = Date.now() + (2 * 24 * 60 * 60 * 1000);
+    localStorage.setItem("expiryTime", expiryTime);
+}
 
-const dDisplay = document.getElementById('days');  
-const hDisplay = document.getElementById('hours');  
-const mDisplay = document.getElementById('minutes');  
-const sDisplay = document.getElementById('seconds');  
+const dDisplay = document.getElementById('days');
+const hDisplay = document.getElementById('hours');
+const mDisplay = document.getElementById('minutes');
+const sDisplay = document.getElementById('seconds');
 
-let warningShown = false;  
+function updateTimer() {
 
-function updateTimer() {  
+    let remaining = expiryTime - Date.now();
 
-    let remaining = parseInt(expiryTime) - Date.now();  
+    if (remaining < 0) remaining = 0;
 
-    if (remaining < 0) remaining = 0;  
+    const totalSeconds = Math.floor(remaining / 1000);
 
-    const totalSeconds = Math.floor(remaining / 1000);  
+    const days = Math.floor(totalSeconds / 86400);
+    const hours = Math.floor((totalSeconds % 86400) / 3600);
+    const minutes = Math.floor((totalSeconds % 3600) / 60);
+    const seconds = totalSeconds % 60;
 
-    const days = Math.floor(totalSeconds / 86400);  
-    const hours = Math.floor((totalSeconds % 86400) / 3600);  
-    const minutes = Math.floor((totalSeconds % 3600) / 60);  
-    const seconds = totalSeconds % 60;  
+    dDisplay.textContent = String(days).padStart(2, '0');
+    hDisplay.textContent = String(hours).padStart(2, '0');
+    mDisplay.textContent = String(minutes).padStart(2, '0');
+    sDisplay.textContent = String(seconds).padStart(2, '0');
 
-    dDisplay.textContent = String(days).padStart(2, '0');  
-    hDisplay.textContent = String(hours).padStart(2, '0');  
-    mDisplay.textContent = String(minutes).padStart(2, '0');  
-    sDisplay.textContent = String(seconds).padStart(2, '0');  
+    // ⛔ ጊዜ ካለቀ → auto reset
+    if (totalSeconds <= 0) {
+        let newTime = Date.now() + (2 * 24 * 60 * 60 * 1000);
+        localStorage.setItem("expiryTime", newTime);
+        location.reload();
+    }
+}
 
-    if (totalSeconds <= 86400 && !warningShown) {  
-        warningShown = true;  
-        alert("⚠️ 1 ቀን ብቻ ቀርቷል!");  
-    }  
-
-    if (totalSeconds <= 0) {  
-        clearInterval(timer);  
-
-        localStorage.removeItem("expiryTime");  
-
-        alert("⛔ ጊዜው አልቋል!");  
-    }  
-}  
-
-updateTimer();  
-const timer = setInterval(updateTimer, 1000);
+updateTimer();
+setInterval(updateTimer, 1000);
 
 });
 // =====================
