@@ -1,4 +1,4 @@
-<!DOCTYPE html>  <html>  
+w3<!DOCTYPE html>  <html>  
 <head>  <meta name="viewport" content="width=device-width, initial-scale=1.0">  
 <title>Personal Information</title>  <style>  
 *{  
@@ -987,29 +987,4 @@ reader.readAsDataURL(file);
 
 </script>  
 </body>  
-</html>  encodeURIComponent(window.location.href);
-
-// =====================
-// RECEIPT UPLOAD
-// =====================
-function uploadReceipt() {
-let file = document.getElementById("receiptInput").files[0];
-
-if (!file) {
-alert("Select receipt photo");
-return;
-}
-
-let reader = new FileReader();
-
-reader.onload = function (e) {
-localStorage.setItem("receipt", e.target.result);
-window.location.href = "payment-success.html";
-};
-
-reader.readAsDataURL(file);
-}
-
-</script>  
-</body>  
-</html> 
+</html>  
