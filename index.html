@@ -128,6 +128,1313 @@ padding:20px;
 }
 
 .card{
+    width:92%;
+    margin:20px auto;
+    border-radius:20px;
+    overflow:hidden;
+    background:#fff;
+    box-shadow:0 10px 25px rgba(0,0,0,.12);
+}
+.card:hover{
+  transform:translateY(-8px);
+  box-shadow:
+  0 25px 60px rgba(37,99,235,0.18);
+}
+.card img{
+    width:100%;
+    height:160px;
+    object-fit:cover;
+    display:block;
+}
+.card:hover img{
+  transform:scale(1.1);
+}
+
+.card::before{
+  content:"";
+  position:absolute;
+  inset:0;
+
+  background:
+  linear-gradient(
+  to top,
+  rgba(0,0,0,0.78),
+  rgba(0,0,0,0.15),
+  transparent);
+
+  z-index:1;
+}
+
+.card h2,
+.card p{
+  position:absolute;
+  left:24px;
+  right:24px;
+  color:white;
+  z-index:2;
+}
+.card,
+.news-card,
+.slider{
+cursor:pointer;
+}
+.card h2{
+  bottom:65px;
+  font-size:34px;
+  font-weight:700;
+  line-height:1.3;
+}
+
+.card p{
+  bottom:20px;
+  font-size:15px;
+  opacity:.95;
+  padding:0;
+  background:none;
+}
+.register-btn{
+display:block;
+width:90%;
+margin:20px auto;
+padding:15px;
+text-align:center;
+background:#2563eb;
+color:white;
+border-radius:15px;
+font-weight:bold;
+text-decoration:none;
+}
+.login-section{
+background:white;
+margin:20px;
+padding:20px;
+border-radius:20px;
+box-shadow:0 10px 30px rgba(0,0,0,0.1);
+text-align:center;
+}
+
+.login-section input{
+width:100%;
+padding:14px;
+border-radius:10px;
+border:1px solid #ccc;
+margin-top:10px;
+}
+.contact-box{
+  margin-top:28px;
+
+  padding:22px;
+
+  border-radius:24px;
+
+  background:
+  linear-gradient(
+  135deg,
+  #0f172a,
+  #1e3a8a);
+
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:15px;
+
+  color:white;
+}
+
+.contact-btn{
+  background:white;
+  color:#0f172a;
+
+  padding:12px 18px;
+
+  border-radius:16px;
+
+  text-decoration:none;
+
+  font-weight:700;
+
+  transition:.3s;
+}
+
+.contact-btn:hover{
+  transform:scale(1.05);
+}
+.login-section button{
+width:100%;
+margin-top:15px;
+padding:14px;
+background:#2563eb;
+color:white;
+border:none;
+border-radius:10px;
+font-weight:bold;
+}
+.card img{
+width:100%;
+height:220px;
+object-fit:cover;
+ transition:0.4s;
+display:block;
+}
+/* IMAGE OVERLAY */
+.card .overlay{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:linear-gradient(to top, rgba(0,0,0,0.6), transparent);
+}
+.card p{
+position:absolute;
+bottom:0;
+left:0;
+width:100%;
+background:rgba(0,0,0,0.5);
+color:white;
+padding:10px;
+}
+/* FORM */
+.form-box{
+background:white;
+margin:20px;
+padding:20px;
+border-radius:25px;
+box-shadow:0 15px 40px rgba(0,0,0,0.1);
+}
+
+.form-box h2{
+text-align:center;
+margin-bottom:15px;
+}
+
+input{
+width:100%;
+padding:14px;
+margin:10px 0;
+border-radius:12px;
+border:1px solid #e2e8f0;
+font-size:14px;
+ background:#f8fafc;
+}
+
+
+/* FILE UPLOAD (VERTICAL) */
+.file-grid{
+display:flex;
+flex-direction:column;
+gap:12px;
+margin-top:10px;
+}
+
+.file-box{
+border:2px dashed #cbd5e1;
+border-radius:15px;
+padding:18px;
+text-align:center;
+cursor:pointer;
+background:#f8fafc;
+transition:0.3s;
+font-weight:500;
+}
+
+.file-box:hover{
+border-color:#2563eb;
+background:#e0ecff;
+}
+
+.file-box.active{
+border-color:#0d47a1;
+background:#e0ecff;
+}
+.file-box input{
+display:none;
+}
+
+.file-box img{
+width:100%;
+height:220px;
+object-fit:cover;
+border-radius:10px;
+margin-top:10px;
+ display:none;
+}
+
+/* BUTTON */
+button{
+width:100%;
+padding:15px;
+background:linear-gradient(90deg,#0d47a1,#2563eb);
+color:white;
+border:none;
+border-radius:12px;
+font-size:16px;
+margin-top:15px;
+font-weight:bold;
+}
+.register-btn{
+  border:none;
+  outline:none;
+  cursor:pointer;
+  transition:0.3s;
+}
+.register-btn{
+  width:92%;
+  margin:30px auto;
+  display:block;
+  text-align:center;
+  padding:18px;
+  border-radius:18px;
+  background:linear-gradient(135deg,
+  var(--primary),
+  var(--secondary));
+  color:white;
+  text-decoration:none;
+  font-weight:700;
+  font-size:17px;
+  box-shadow:0 10px 30px rgba(37,99,235,0.35);
+}
+.register-btn:hover{
+  transform:translateY(-3px);
+}
+button:hover{
+background:#1e40af;
+}
+
+/* TOAST */
+#toast{
+display:none;
+position:fixed;
+bottom:20px;
+right:20px;
+background:#16a34a;
+color:white;
+padding:15px;
+border-radius:12px;
+box-shadow:0 5px 20px rgba(0,0,0,0.3);
+}
+
+.news-card{
+    width:92%;
+    margin:20px auto;
+    border-radius:20px;
+    overflow:hidden;
+    position:relative;
+    background:#fff;
+    box-shadow:0 10px 25px rgba(0,0,0,.12);
+}
+
+
+.news-card:hover{
+  transform:translateY(-5px);
+}
+
+.news-card img{
+    width:100%;
+    height:260px;
+    object-fit:cover;
+    display:block;
+}
+
+.news-card:hover img{
+  transform:scale(1.1);
+}
+
+.news-card::before{
+  content:"";
+  position:absolute;
+  inset:0;
+
+  background:
+  linear-gradient(
+  to top,
+  rgba(0,0,0,0.82),
+  rgba(0,0,0,0.15),
+  transparent);
+
+  z-index:1;
+}
+
+.news-text{
+    position:absolute;
+    left:20px;
+    right:20px;
+    bottom:55px;
+    color:#fff;
+    font-size:18px;
+    font-weight:600;
+    z-index:2;
+}
+
+
+.news-date{
+    position:absolute;
+    left:0;
+    right:0;
+    bottom:0;
+    padding:12px;
+    background:#0f172a;
+    color:#fff;
+    text-align:center;
+    font-size:14px;
+    z-index:2;
+}
+/* FOOTER */
+.footer{
+  margin-top:60px;
+
+  background:
+  linear-gradient(
+  135deg,
+  #0f172a,
+  #1e3a8a);
+
+  color:white;
+
+  padding:50px 25px;
+
+  border-radius:30px 30px 0 0;
+}
+
+.footer-logo{
+  width:95px;
+  display:block;
+  margin:auto;
+}
+
+.about{
+  text-align:center;
+
+  margin-top:18px;
+
+  color:#dbeafe;
+
+  line-height:1.9;
+}
+
+.footer-grid{
+  margin-top:35px;
+
+  display:grid;
+  gap:28px;
+}
+
+.footer h2,
+.footer h3{
+  margin-bottom:14px;
+}
+
+.footer p{
+  color:#dbeafe;
+  margin:7px 0;
+}
+
+.social{
+  margin-top:28px;
+  text-align:center;
+}
+
+.social a{
+  display:inline-flex;
+  justify-content:center;
+  align-items:center;
+
+  width:48px;
+  height:48px;
+
+  margin:0 7px;
+
+  border-radius:50%;
+
+  background:
+  rgba(255,255,255,0.1);
+
+  color:white;
+
+  text-decoration:none;
+
+  font-size:20px;
+
+  transition:.3s;
+}
+
+.social a:hover{
+  background:white;
+  color:#1d4ed8;
+  transform:translateY(-4px);
+}
+
+.footer-bottom{
+  margin-top:35px;
+
+  padding-top:20px;
+
+  border-top:
+  1px solid rgba(255,255,255,0.12);
+
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+
+  flex-wrap:wrap;
+  gap:10px;
+}
+
+.footer-bottom button{
+  background:white;
+  color:#1d4ed8;
+
+  padding:10px 18px;
+
+  border-radius:14px;
+
+  font-weight:700;
+}
+
+.lang-btn{
+  background:white;
+  color:#0d47a1;
+  padding:5px 12px;
+  border-radius:15px;
+  font-weight:bold;
+}
+ #success{
+display:none;
+text-align:center;
+background:#dcfce7;
+padding:20px;
+border-radius:15px;
+margin-top:15px;
+color:#166534;
+font-weight:bold;
+}
+#successModal{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.85);
+z-index:999;
+justify-content:center;
+align-items:center;
+}
+
+.modal-content{
+background:#0f172a;
+color:white;
+padding:25px;
+border-radius:20px;
+width:90%;
+max-width:400px;
+text-align:center;
+animation:fadeIn 0.4s ease;
+}
+
+.modal-content h2{
+color:#facc15;
+margin-bottom:10px;
+}
+
+.modal-content p{
+font-size:14px;
+line-height:1.5;
+color:#e2e8f0;
+}
+
+.modal-content ul{
+text-align:left;
+margin-top:15px;
+}
+
+.modal-content li{
+margin:8px 0;
+}
+
+.modal-content button{
+margin-top:20px;
+width:100%;
+padding:12px;
+background:#facc15;
+border:none;
+border-radius:12px;
+font-weight:bold;
+}
+*{
+box-sizing:border-box;
+}
+@keyframes fadeIn{
+from{transform:scale(0.7); opacity:0;}
+to{transform:scale(1); opacity:1;}
+}
+/* SLIDER CARD */
+.slider{
+  width:92%;
+  height:260px;
+
+  cursor:pointer;
+  margin:30px auto;
+
+  border-radius:32px;
+  overflow:hidden;
+
+  position:relative;
+
+  box-shadow:
+  0 20px 60px rgba(0,0,0,0.18);
+}
+
+.slider img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:1s;
+}
+
+.slider:hover img{
+  transform:scale(1.08);
+}
+
+.slider::after{
+  content:"";
+  position:absolute;
+  inset:0;
+
+  background:
+  linear-gradient(
+  120deg,
+  rgba(29,78,216,0.92),
+  rgba(15,23,42,0.55));
+}
+
+.slide-text{
+  position:absolute;
+  left:28px;
+  bottom:28px;
+  z-index:3;
+  color:white;
+}
+
+.slide-text h2{
+  font-size:34px;
+  font-weight:700;
+  margin-bottom:5px;
+}
+
+.slide-text p{
+  opacity:.92;
+}
+
+.slide-text h3{
+  margin-top:10px;
+  font-size:17px;
+  font-weight:500;
+}
+
+.slide-text button{
+  margin-top:16px;
+
+  padding:13px 24px;
+
+  border:none;
+  border-radius:16px;
+
+  background:white;
+  color:var(--primary);
+
+  font-weight:700;
+
+  cursor:pointer;
+
+  transition:.3s;
+}
+
+.slide-text button:hover{
+  transform:translateY(-3px);
+  background:#eff6ff;
+}
+.lang-switch{
+  position:absolute;
+  top:10px;
+  right:10px;
+}
+body[dir="rtl"]{
+  text-align:right;
+}
+
+body[dir="rtl"] .footer-bottom{
+  flex-direction:row-reverse;
+}
+ .lang-switch button{
+  border:none;
+  padding:6px 10px;
+  margin-left:4px;
+  border-radius:8px;
+  background:#e2e8f0;
+  cursor:pointer;
+  font-weight:bold;
+}
+
+.lang-switch button:hover{
+  background:#2563eb;
+  color:white;
+}
+.lang-switch button{
+  border:none;
+  padding:5px 8px;
+  margin-left:4px;
+  border-radius:8px;
+  background:#e2e8f0;
+  cursor:pointer;
+}
+.login-section{
+  width:92%;
+  margin:35px auto;
+
+  padding:35px;
+
+  border-radius:32px;
+
+  background:rgba(255,255,255,0.85);
+
+  backdrop-filter:blur(16px);
+
+  box-shadow:var(--shadow);
+
+  text-align:center;
+}
+
+.login-section h2{
+  color:var(--primary);
+  margin-bottom:10px;
+  font-size:28px;
+}
+
+.login-section p{
+  color:var(--muted);
+}
+
+.login-section input{
+  width:100%;
+
+  margin-top:16px;
+
+  padding:17px;
+
+  border-radius:18px;
+
+  border:1px solid var(--border);
+
+  background:#f8fbff;
+
+  font-size:15px;
+
+  transition:.3s;
+}
+
+.login-section input:focus{
+  border-color:#2563eb;
+  background:white;
+  outline:none;
+
+  box-shadow:
+  0 0 0 5px rgba(37,99,235,0.08);
+}
+
+.login-section button{
+  width:100%;
+  margin-top:20px;
+
+  padding:17px;
+
+  border-radius:18px;
+
+  background:
+  linear-gradient(
+  135deg,
+  #1d4ed8,
+  #2563eb);
+
+  color:white;
+
+  font-size:16px;
+  font-weight:700;
+}
+
+.login-section button:hover{
+  transform:translateY(-2px);
+}
+
+.faq-section{
+  margin-top:28px;
+}
+
+.faq-item{
+  margin-top:16px;
+}
+
+.faq-btn{
+  width:100%;
+
+  padding:17px;
+
+  border:none;
+
+  border-radius:18px;
+
+  background:#eff6ff;
+
+  color:#0f172a;
+
+  font-size:15px;
+  font-weight:600;
+
+  text-align:left;
+}
+
+.faq-content{
+  margin-top:10px;
+
+  padding:18px;
+
+  border-radius:18px;
+
+  background:white;
+
+  box-shadow:
+  0 8px 20px rgba(0,0,0,0.05);
+
+  display:none;
+}
+
+ </style>
+</head>
+
+<body>
+
+<div class="header">
+<img src="https://res.cloudinary.com/dwclusteb/image/upload/v1777200343/images_1_hqmsxb.png">
+</div>
+ <div class="card">
+    <img src="https://res.cloudinary.com/dwclusteb/image/upload/v1777200081/photo_2_2026-04-15_12-04-45_bbovrw.jpg ">
+    <h2>ክቡር ዶ/ር አብይ አህመድ</h2>
+ </div>
+  
+
+<!-- TEXT -->
+<div class="section">
+<h2> የውጭ ሀገር የሥራ ስምሪት ህጋዊ ፈቃድ</h2>
+<p>  የሥራና ክህሎት ሚኒስቴር ሀገራዊ ሪፎርሙን ተከትሎ የፌዴራል መንግሥት አስፈፃሚ አካላትን ሥልጣንና ተግባር ለመወሰን በወጣው አዋጅ ቁጥር 1263/2014 ተቋቋመ፡፡ ሚኒስቴር መስሪያ ቤቱ ሀገራዊ ሥራ ዕድል ፈጠራ፣ የክህሎት ልማት እና የአሰሪና ሰራተኛ ጉዳዮችን በበላይነት እንዲመራ ኃላፊነት ተሰጥቶታል፡፡
+ዝርዝር
+የአጠቃቀም ህግ
+የቅጂ መብት
+ተገናኝ
+Tel no:  +251 116 671568
+ፖስታ፡ 25534
+ፋክስ፡ +251 116 671568
+ከላምበርት የኢትዮጵያ ቴክኒክና ሙያ ኢንስቲትዩት ጀርባ</p>
+</div>
+<!-- SLIDER -->
+<div class="slider"
+
+
+  <img src="https://e-lmis-online.netlify.app/image/photo_2025-11-29_18-23-08.jpg">
+
+  <div class="slide-text">
+    <h2>Minister of Labor and Skills</h2>
+    <p>H.E Muferihat Kamil Ahmed</p>
+
+    <h3>የውጭ ሀገር ሥራና ሠራተኛ አገናኝ ኤጀንሲ</h3>
+
+    <button type="button">
+      READ MORE
+    </button>
+
+  </div>
+</div>
+<div class="ministers">
+
+  <div class="card">
+    <img src="https://res.cloudinary.com/dwclusteb/image/upload/v1781131768/photo_1_2026-04-26_22-08-17_wwmtin.jpg">
+    <p>ውጪ ሃገር የስራ ዉል ስምምነት </p>
+  </div>
+ <h2>ውጭ ሀገር የስራ እድል </h2>
+
+ <div class="card">
+    <img src="https://res.cloudinary.com/dwclusteb/image/upload/v1781131966/photo_1_2026-04-26_23-10-58_rhsbfc.jpg">
+   <p>ሥራ ዕድል ፈጠራ ሥራውን ከዕቅድ በላይ ማሳካቱን ቢሮው አስታወቀ</p>
+ </div>
+ 
+ <div class="news-section">
+
+  <div class="news-card">
+    <img src="https://res.cloudinary.com/dwclusteb/image/upload/v1778983479/photo_6_2026-04-26_23-17-44_anphlv.jpg ">
+
+    <div class="news-text">
+      ስለ ስራ ገበያ ዘርፍ አስፈላጊ ውይይት ተካሄደ
+    </div>  
+   <div class="news-date">
+      APRIL 2, 2026
+    </div>
+  </div>
+  <h2>ጉዞ ወደ ዉጭ ሀገራት</h2>
+  
+  <div class="news-card">
+    <img src="https://res.cloudinary.com/dwclusteb/image/upload/v1778984328/photo_2_2026-04-26_23-25-06_dhx9ze.jpg">
+    <div class="news-text">
+       መንግስት አገልግሎትና አስተዳደር የሪፎርም ሥራው ባለቤት ሠራተኛው ነው። ክብርት ወ/ሮ ሙፈሪሃት ካሚል የሥራና ክህሎት ሚኒስትር
+    </div>
+
+    <div class="news-date">
+      APRIL 5, 2026
+    </div>
+  </div>
+
+  
+    </div>
+</div>
+<a href="index.html" class="register-btn">Register here</a>
+
+<section class="login-section">
+
+<h2>Enter Your 6-Digit Code</h2>
+<p class="am">ኮድ አስገባ</p>
+
+<input type="number" id="code" placeholder="Enter 6-digit number">
+
+<button onclick="checkCode()">Submit</button>
+
+<p id="msg"></p>
+
+<div class="contact-box">
+
+<div class="left">
+<h3>The Ministry<br>of Labor & Skills</h3>
+</div>
+
+<div class="right">
+<a href="https://api.whatsapp.com/send?phone=251116671792&text=Hello%20I%20need%20help" 
+   class="contact-btn" target="_blank">
+  WhatsApp
+</a>
+</div>
+
+</div>
+
+</section>
+
+<footer class="footer">
+
+<div class="footer-container">
+
+<img src="https://e-lmis-online.netlify.app/image/logo.png" class="footer-logo">
+
+<p class="about">
+The Ministry of Labour and Skills was established following the National Reform.
+The Ministry of Labour and Skills was founded with Proclamation No. 1263/2022,
+which oversees national job creation, skills development, and labor concerns.
+</p>
+
+<div class="footer-grid">
+
+<div>
+
+   <div class="faq-section">
+
+  <h2>❓ Frequently Asked Questions</h2>
+
+  <div class="faq-item">
+    <button class="faq-btn">ወደ ውጭ ሀገር ለመሄድ ምን ያስፈልጋል?</button>
+    <div class="faq-content">
+      <p>ፓስፖርት፣ ቪዛ፣ የህክምና ምርመራ እና ህጋዊ ኤጀንሲ መጠቀም ያስፈልጋል።</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-btn">ህገወጥ ደላሎች አደገኛ ናቸው?</button>
+    <div class="faq-content">
+      <p>አዎ፣ ለህይወት አደጋ እና ህጋዊ ችግር ያመጣሉ። ህጋዊ መንገድ ብቻ ተጠቀም።</p>
+    </div> 
+  </div>
+<h2>Get In Touch</h2>
+
+<p>Tel no: +251 962513636</p>
+<p>Po Box: 25534</p>
+<p>Fax: +251 116 671568</p>
+<p>Address: Behind Lambert Ethiopian Technical and Vocational Institute</p>
+<p>Email: info@MoLS.gov.et</p>
+
+</div>
+
+<div>
+
+<h2>Menu</h2>
+
+<p>Privacy Policy</p>
+<p>Copyright</p>
+
+</div>
+
+</div>
+
+<div class="social">
+
+<a href="#">📘</a>
+<a href="#">🐦</a>
+<a href="#">▶</a>
+</div>
+<h3>Contact Us</h3>
+<p>Tel: +251 962513636</p>
+<p>Email: info@mols.gov.et</p>
+
+<div class="footer-bottom">
+<p>© 2025 All rights reserved</p>
+<button class="lang">🇺🇸 EN</button>
+</div>
+</footer>
+<script>
+  // =======================
+// USERS DATABASE (FIXED)
+// =======================
+const users = {
+  "621016": {
+    name: "YESIN HAYATO HEDARA ",
+    gender: "Male",
+    age: "34",
+    dob: "18/03/1984",
+    elmis: "ELS BAW2-OADB-621016",
+    passport: "EP8526422",
+    phone: "+251917539207 ",
+    birth: "HASASA",
+    visa: "Work Visa",
+    country: "Canada 🇨🇦",
+    photo: "https://res.cloudinary.com/dwclusteb/image/upload/v1782750181/IMG-20260629-WA0124_qmg2bs.jpg ",
+    doc: "https://res.cloudinary.com/dwclusteb/image/upload/v1782813780/Screenshot_20260630_130119_Chrome_f6s2ut.jpg",
+  },
+"720303": {
+    name: "OUMER HUSSEN MOHAMMED",
+    gender: "Male",
+    age: "34",
+    dob: "10/10/1987 ",
+    elmis: "ELS BAW2-OADB-720303",
+    passport: "EP 9113214",
+    phone: "+251 951371118 ",
+    birth: "BERAHLE Ethiopia ",
+    visa: "Work Visa",
+    country: "Kuwait 🇰🇼 ",
+    photo: "https://res.cloudinary.com/dwclusteb/image/upload/v1782476471/IMG-20260626-WA0021_bcrygy.jpg ",
+    doc: "https://res.cloudinary.com/dwclusteb/image/upload/v1782477908/Screenshot_20260626_154424_Chrome_nkwlzm.jpg ",
+  },
+"730304": {
+    name: "ADANE MUSTEFA MOHAMMED  ",
+    gender: "Male",
+    age: "23",
+    dob: "15/08/1981",
+    elmis: "ELS BAW2-OADB-730304",
+    passport: "EP9235002 ",
+    phone: "+251 93 134 5850",
+    birth: "DIKSIS Ethiopia ",
+    visa: "Work Visa",
+    country: "Kuwait 🇰🇼 ",
+    photo: "https://res.cloudinary.com/dwclusteb/image/upload/v1782814669/IMG-20260630-WA0000_gjg1zb.jpg ",
+    doc: "https://res.cloudinary.com/dwclusteb/image/upload/v1782826248/Screenshot_20260630_162946_Chrome_pfhax3.jpg ",
+   
+  },
+"737305": {
+    name: "DEGEFE ERIMIAS WAYORE",
+    gender: "Male",
+    age: "26",
+    dob: "12/04/1992",
+    elmis: "ELS BAW2-OADB-737305",
+    passport: "EQ1764379",
+    phone: "+251 925644250 ",
+    birth: "BADEWACHO ETHIOPIA ",
+    visa: "Work Visa",
+    country: "Kuwait 🇰🇼 ",
+    photo: "https://res.cloudinary.com/dwclusteb/image/upload/v1781209420/IMG-20260611-WA0055_ybigdx.jpg ",
+    doc: "https://res.cloudinary.com/dwclusteb/image/upload/v1782809530/Screenshot_20260630_115055_Chrome_ceplna.jpg ",
+},
+  "737306": {
+    name: "FIKIRU ZENEBE TESEMA ",
+    gender: "Male",
+    age: "49",
+    dob: "27/05/1969",
+    elmis: "ELS BAW2-OADB-737306",
+    passport: "EQ8413090",
+    phone: "+251 912986465 ",
+    birth: "ADDIS ABEBA ETHIOPIA ",
+    visa: "Work Visa",
+    country: "Kuwait 🇰🇼 ",
+    photo: "https://res.cloudinary.com/dwclusteb/image/upload/v1781215126/IMG-20260610-WA0099_xhjhvb.jpg ",
+    doc: "https://res.cloudinary.com/dwclusteb/image/upload/v1781215638/Screenshot_20260612_010358_Chrome_iq2ces.jpg ",
+   },
+    "727106": {
+    name: "KALID GUTA GUYASA ",
+    gender: "Male",
+    age: "43",
+    dob: "01/01/1975",
+    elmis: "ELS BAW2-OADB-727106",
+    passport: "EQ7108685",
+    phone: "private ",
+    birth: "WOLISO ETHIOPIA ",
+    visa: "Work Visa",
+    country: "Kuwait 🇰🇼 ",
+    photo: "https://res.cloudinary.com/dwclusteb/image/upload/v1782455986/IMG-20260626-WA0010_l4jjyf.jpg ",
+    doc: "https://res.cloudinary.com/dwclusteb/image/upload/v1782457668/Screenshot_20260626_100553_Chrome_gwxury.jpg ",
+    },
+    "737390": {
+    name: "MOGES ASEBE DELESHI",
+    gender: "Male",
+    age: "22",
+    dob: "13/07/1996",
+    elmis: "ELS BAW2-OADB-737390",
+    passport: "E00079118",
+    phone: "private ",
+    birth: "GURAGE ETHIOPIA ",
+    visa: "Work Visa",
+    country: "Kuwait 🇰🇼 ",
+    photo: "https://res.cloudinary.com/dwclusteb/image/upload/v1782454662/IMG-20260626-WA0008_dk4wmt.jpg ",
+    doc: "https://res.cloudinary.com/dwclusteb/image/upload/v1782455203/Screenshot_20260626_092605_Chrome_tb0duw.jpg ",
+   },
+   "737306": {
+    name: "TADELE BOGALE LJO ",
+    gender: "Male",
+    age: "41",
+    dob: "24/08/1977",
+    elmis: "ELS BAW2-OADB-737306",
+    passport: "EQ1880942",
+    phone: "private ",
+    birth: "WOLISO ETHIOPIA ",
+    visa: "Work Visa",
+    country: "Kuwait 🇰🇼 ",
+    photo: "https://res.cloudinary.com/dwclusteb/image/upload/v1782453700/IMG-20260626-WA0005_pjmqdc.jpg ",
+    doc: "https://res.cloudinary.com/dwclusteb/image/upload/v1782454015/Screenshot_20260626_090622_Chrome_zbv4yb.jpg ",
+    },
+    "717301": {
+    name: "SARA WOLDE HANKORO",
+    gender: "Female",
+    age: "31",
+    dob: "01/01/1986",
+    elmis: "ELS BAW2-OADB-717301",
+    passport: "EQ1589307",
+    phone: "Private ",
+    birth: "MESMES ETHIOPIA ",
+    visa: "Work Visa",
+    country: "Kuwait 🇰🇼 ",
+    photo: "https://res.cloudinary.com/dwclusteb/image/upload/v1782452163/IMG-20260626-WA0003_zis2yn.jpg ",
+    doc: "https://res.cloudinary.com/dwclusteb/image/upload/v1782453042/Screenshot_20260626_084941_Chrome_nvu5wi.jpg ",
+    },
+    "737311": {
+    name: "ELISABET SIDE GIBEBO  ",
+    gender: "Female",
+    age: "40",
+    dob: "10/02/1978",
+    elmis: "ELS BAW2-OADB-737311",
+    passport: "EQ1197331",
+    phone: "Private ",
+    birth: " ETHIOPIA  GIBE",
+    visa: "Work Visa",
+    country: "Kuwait 🇰🇼",
+    photo: "https://res.cloudinary.com/dwclusteb/image/upload/v1782425898/IMG-20260625-WA0010_qdqqy8.jpg ",
+    doc: "https://res.cloudinary.com/dwclusteb/image/upload/v1782450183/Screenshot_20260626_080207_Chrome_kytbho.jpg ",
+    },
+   "637721": {
+     name: "TIGEST TAKELE ANISE ",
+    gender: "Female",
+    age: "27",
+    dob: "27/08/1991",
+    elmis: "KW-637721",
+    passport: "EQ1790422",
+    phone: "Private ",
+    birth: " ETHIOPIA HOSSANA ",
+    visa: "Work Visa",
+    country: "Kuwait 🇰🇼",
+    photo: "https://res.cloudinary.com/dwclusteb/image/upload/v1782423238/IMG-20260625-WA0007_w0vzex.jpg ",
+    doc: "https://res.cloudinary.com/dwclusteb/image/upload/v1782425216/Screenshot_20260626_010543_Chrome_b9tyat.jpg ",           
+  },
+"647421": {
+     name: "AYELE ARSICHA HANKUTO ",
+    gender: "Male",
+    age: "27",
+    dob: "27/08/1991",
+    elmis: "KW-647421",
+    passport: "EQ6417573",
+    phone: "Private ",
+    birth: " ETHIOPIA SHONE",
+    visa: "Work Visa",
+    country: "Kuwait 🇰🇼",
+    photo: "https://res.cloudinary.com/dwclusteb/image/upload/v1782653407/IMG_20260628_162301_690_o5zhft.jpg ",
+    doc: "https://res.cloudinary.com/dwclusteb/image/upload/v1782653797/Screenshot_20260628_163617_Chrome_wtv3up.jpg ",           
+  },
+"657421": {
+     name: "DESALAGN WEILORO GADISO",
+    gender: "Male",
+    age: "32",
+    dob: "27/08/1981",
+    elmis: "KW-657421",
+    passport: "EQ6365443",
+    phone: "Private ",
+    birth: " ETHIOPIA ",
+    visa: "Work Visa",
+    country: "Kuwait 🇰🇼",
+    photo: "https://res.cloudinary.com/dwclusteb/image/upload/v1783262276/IMG-20260629-WA0020_bbdpkm.jpg ",
+doc: "https://res.cloudinary.com/dwclusteb/image/upload/v1783319738/Screenshot_20260705_183047_Chrome_wbcy44.jpg ",
+},
+"657422": {
+     name: "YONAS LENJAMO MELEKATO  ",
+    gender: "Male",
+    age: "32",
+    dob: "27/08/1981",
+    elmis: "KW-647422",
+    passport: "EP00403431",
+    phone: "Private ",
+    birth: " ETHIOPIA ",
+    visa: "Work Visa",
+    country: "Canada 🇨🇦",
+    photo: "https://res.cloudinary.com/dwclusteb/image/upload/v1782881920/IMG_20260701_075204_354_w2vokj.jpg ",
+doc: "https://res.cloudinary.com/dwclusteb/image/upload/v1783264091/Screenshot_20260705_180719_Chrome_diajs5.jpg ",
+
+},
+  "657423": {
+     name: "መኪያ አማኖ ወዶ",
+    gender: "ሴት",
+    age: "24",
+    dob: "13/09/1994",
+    elmis: "KW-647423",
+    passport: "EP2775318 ",
+    phone: "Private ",
+    birth: "ኢትዮጵያ",
+    visa: "ሥራ ቪዛ",
+    country: "ሳዉድ አረቢያ ",
+    photo: "https://res.cloudinary.com/dwclusteb/image/upload/v1783409021/IMG_20260707_100922_205_e3ser5.jpg ",
+doc: " https://res.cloudinary.com/dwclusteb/image/upload/v1783415910/Screenshot_20260707_121807_Chrome_k6v2al.jpg ",
+  },
+}
+
+
+// CARD 1
+document.querySelectorAll('.card')[0]
+.addEventListener('click', () => {
+
+window.location.href = 'news1.html';
+
+});
+
+
+// CARD 2
+document.querySelectorAll('.card')[1]
+.addEventListener('click', () => {
+
+window.location.href = 'news2.html';
+
+});
+
+
+// CARD 3
+document.querySelectorAll('.card')[2]
+.addEventListener('click', () => {
+
+window.location.href = 'news3.html';
+
+});
+
+
+// NEWS CARD 1
+document.querySelectorAll('.news-card')[0]
+.addEventListener('click', () => {
+
+window.location.href = 'news4.html';
+
+});
+
+
+// NEWS CARD 2
+document.querySelectorAll('.news-card')[1]
+.addEventListener('click', () => {
+
+window.location.href = 'news5.html';
+
+});
+
+
+// =======================
+// CHECK CODE FUNCTION
+// =======================
+function checkCode() {
+  let code = document.getElementById("code").value.trim();
+  let msg = document.getElementById("msg");
+
+  if (!code) {
+    msg.style.color = "red";
+    msg.innerHTML = "❌ Please enter code";
+    return;
+  }
+
+  if (users[code]) {
+    msg.style.color = "green";
+    msg.innerHTML = "✅ Access Granted";
+
+    localStorage.setItem("user", JSON.stringify(users[code]));
+    localStorage.setItem("vcode", code);
+
+    setTimeout(() => {
+      window.location.href = "personal.html";
+    }, 800);
+
+  } else {
+    msg.style.color = "red";
+    msg.innerHTML = "❌ Invalid Code";
+  }
+}
+
+
+// =======================
+// SLIDER (FIXED)
+// =======================
+window.addEventListener("load", () => {
+  const sliderImages = [
+    "https://e-lmis-online.netlify.app/image/photo_2025-11-29_18-23-08.jpg",
+    "https://e-lmis-online.netlify.app/image/photo_2025-11-26_21-51-36.jpg",
+    "https://e-lmis-online.netlify.app/image/photo_2025-11-29_18-58-10.jpg"
+  ];
+
+  let index = 0;
+  const slider = document.querySelector(".slider img");
+
+  if (!slider) return;
+
+  setInterval(() => {
+    index = (index + 1) % sliderImages.length;
+    slider.src = sliderImages[index];
+  }, 3000);
+});
+</script>
+
+</body>
+</html>.section p{
+  color:#475569;
+  font-size:15px;
+  line-height:2;
+}
+ 
+ select{
+width:100%;
+padding:14px;
+margin:10px 0;
+border-radius:12px;
+border:1px solid #e2e8f0;
+background:#f8fafc;
+}
+/* MINISTERS (VERTICAL) */
+.ministers{
+display:flex;
+flex-direction:column;
+gap:20px;
+padding:20px;
+}
+
+.card{
   width:100%;
   margin:24px auto;
   border-radius:32px;
