@@ -8,13 +8,13 @@
 <meta name="viewport"
       content="width=device-width, initial-scale=1.0">
 
-<title>Personal Information</title>
+<title>Personal Information — DEMO</title>
 
 <style>
 
-/* =========================
+/* =====================================================
    GLOBAL
-========================= */
+===================================================== */
 
 *{
     margin:0;
@@ -24,14 +24,22 @@
 }
 
 body{
-    background:#f1f5f9;
+    background:
+    linear-gradient(135deg,#eef5ff,#f8fbff,#edf4ff);
+
     color:#172033;
+    min-height:100vh;
+}
+
+button,
+input{
+    font-family:inherit;
 }
 
 
-/* =========================
-   DEMO / SYSTEM BAR
-========================= */
+/* =====================================================
+   DEMO BAR
+===================================================== */
 
 .demo{
     background:#fff3cd;
@@ -43,15 +51,17 @@ body{
 }
 
 
-/* =========================
+/* =====================================================
    HEADER
-========================= */
+===================================================== */
 
 header{
     max-width:900px;
-    margin:10px auto;
-    padding:30px 20px;
+    margin:12px auto;
+    padding:32px 20px;
+
     border-radius:30px;
+
     text-align:center;
     color:white;
 
@@ -64,7 +74,7 @@ header{
     );
 
     box-shadow:
-    0 20px 45px rgba(0,0,0,.15);
+    0 25px 55px rgba(15,23,42,.18);
 
     position:relative;
     overflow:hidden;
@@ -72,79 +82,69 @@ header{
 
 header:before{
     content:"";
-
     position:absolute;
 
-    width:220px;
-    height:220px;
+    width:230px;
+    height:230px;
 
-    background:
-    rgba(255,255,255,.06);
+    right:-100px;
+    top:-100px;
 
     border-radius:50%;
 
-    right:-80px;
-    top:-100px;
+    background:
+    rgba(255,255,255,.07);
 }
 
 header:after{
     content:"";
-
     position:absolute;
 
-    width:170px;
-    height:170px;
+    width:180px;
+    height:180px;
 
-    background:
-    rgba(96,165,250,.08);
+    left:-90px;
+    bottom:-100px;
 
     border-radius:50%;
 
-    left:-70px;
-    bottom:-90px;
+    background:
+    rgba(96,165,250,.12);
 }
 
-.header-logo{
-    width:170px;
-    max-width:70%;
-
-    padding:8px;
-
-    border-radius:18px;
-
-    background:white;
-
+header .icon{
     position:relative;
-
     z-index:2;
 
-    box-shadow:
-    0 10px 30px rgba(0,0,0,.2);
+    font-size:42px;
 }
 
 header h1{
-    font-size:24px;
-    margin-top:15px;
     position:relative;
     z-index:2;
+
+    font-size:25px;
+    margin-top:12px;
 }
 
 header p{
+    position:relative;
+    z-index:2;
+
     color:#dbeafe;
     font-size:12px;
     margin-top:7px;
-    position:relative;
-    z-index:2;
 }
 
 
-/* =========================
+/* =====================================================
    NAVIGATION
-========================= */
+===================================================== */
 
 .nav{
     max-width:700px;
-    margin:12px auto;
+    margin:14px auto;
+
     padding:0 10px;
 
     display:flex;
@@ -155,38 +155,44 @@ header p{
     flex:1;
 
     text-align:center;
-
     text-decoration:none;
 
-    padding:12px;
+    padding:13px;
 
-    border-radius:13px;
+    border-radius:14px;
 
     background:#fff;
-
     color:#173f87;
 
     border:1px solid #dbeafe;
 
     font-size:11px;
-
     font-weight:bold;
+
+    transition:.25s;
+}
+
+.nav a:hover{
+    transform:translateY(-2px);
 }
 
 .nav a.primary{
     background:#2563eb;
     color:white;
+
+    box-shadow:
+    0 8px 20px rgba(37,99,235,.22);
 }
 
 
-/* =========================
+/* =====================================================
    CLOCK
-========================= */
+===================================================== */
 
 .clock{
     text-align:center;
 
-    margin:14px;
+    margin:15px;
 
     color:#64748b;
 
@@ -194,9 +200,9 @@ header p{
 }
 
 
-/* =========================
+/* =====================================================
    MAIN CONTAINER
-========================= */
+===================================================== */
 
 .container{
     max-width:700px;
@@ -207,37 +213,59 @@ header p{
 }
 
 
-/* =========================
+/* =====================================================
    SECTION
-========================= */
+===================================================== */
 
 .section{
-    background:#fff;
+    background:
+    rgba(255,255,255,.94);
 
-    margin-bottom:15px;
+    margin-bottom:17px;
 
     padding:22px;
 
-    border-radius:24px;
+    border-radius:25px;
 
     border:1px solid #e2e8f0;
 
     box-shadow:
-    0 8px 25px rgba(15,23,42,.05);
+    0 12px 35px rgba(15,23,42,.06);
+
+    position:relative;
+    overflow:hidden;
+}
+
+.section:before{
+    content:"";
+
+    position:absolute;
+
+    width:130px;
+    height:130px;
+
+    right:-70px;
+    top:-70px;
+
+    border-radius:50%;
+
+    background:
+    rgba(59,130,246,.045);
 }
 
 .title{
     font-size:19px;
-
     font-weight:900;
 
     margin-bottom:18px;
+
+    position:relative;
 }
 
 
-/* =========================
+/* =====================================================
    PROFILE
-========================= */
+===================================================== */
 
 .profile{
     text-align:center;
@@ -256,7 +284,13 @@ header p{
     background:#f8fafc;
 
     box-shadow:
-    0 10px 25px rgba(37,99,235,.12);
+    0 12px 25px rgba(37,99,235,.15);
+
+    transition:.3s;
+}
+
+.profile-photo:hover{
+    transform:scale(1.03);
 }
 
 table{
@@ -268,7 +302,7 @@ table{
 }
 
 td{
-    padding:12px 8px;
+    padding:13px 8px;
 
     border-bottom:
     1px solid #edf1f5;
@@ -289,40 +323,64 @@ td{
 .status{
     display:inline-block;
 
-    background:#16a34a;
+    background:
+    linear-gradient(
+        135deg,
+        #16a34a,
+        #22c55e
+    );
 
     color:#fff;
 
-    padding:6px 12px;
+    padding:7px 13px;
 
     border-radius:20px;
 
     font-size:10px;
-
     font-weight:bold;
+
+    box-shadow:
+    0 7px 16px rgba(34,197,94,.18);
 }
 
 
-/* =========================
+/* =====================================================
    GRID
-========================= */
+===================================================== */
 
 .grid{
     display:grid;
 
-    grid-template-columns:1fr 1fr;
+    grid-template-columns:
+    1fr 1fr;
 
     gap:12px;
 }
 
 .card{
-    padding:17px;
+    padding:18px;
 
-    background:#f8fafc;
+    background:
+    linear-gradient(
+        145deg,
+        #f8fafc,
+        #ffffff
+    );
 
     border:1px solid #e2e8f0;
 
-    border-radius:18px;
+    border-radius:19px;
+
+    transition:.25s;
+
+    position:relative;
+}
+
+.card:hover{
+    transform:translateY(-3px);
+
+    box-shadow:
+    0 10px 25px rgba(15,23,42,.07);
 }
 
 .card span{
@@ -342,25 +400,241 @@ td{
 
     line-height:1.6;
 
-    margin-top:4px;
+    margin-top:5px;
 }
 
 .ready{
     color:#16a34a !important;
-
     font-weight:bold;
 }
 
 .next-color{
     color:#2563eb !important;
+    font-weight:bold;
+}
 
+.pending{
+    color:#f59e0b !important;
     font-weight:bold;
 }
 
 
-/* =========================
+/* =====================================================
+   TRAVEL & EMPLOYER
+===================================================== */
+
+.travel-box{
+    padding:22px;
+
+    border-radius:23px;
+
+    color:white;
+
+    background:
+    linear-gradient(
+        135deg,
+        #071426,
+        #0f2d4f,
+        #2563eb
+    );
+
+    box-shadow:
+    0 18px 35px rgba(37,99,235,.16);
+}
+
+.travel-header{
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+}
+
+.travel-icon{
+    width:58px;
+    height:58px;
+
+    border-radius:18px;
+
+    display:flex;
+
+    justify-content:center;
+    align-items:center;
+
+    background:
+    rgba(255,255,255,.12);
+
+    font-size:28px;
+}
+
+.travel-header small{
+    color:#bfdbfe;
+
+    font-size:9px;
+
+    letter-spacing:1px;
+}
+
+.travel-header h2{
+    font-size:20px;
+
+    margin-top:4px;
+}
+
+.travel-header p{
+    font-size:11px;
+
+    color:#dbeafe;
+
+    margin-top:4px;
+}
+
+.travel-grid{
+    display:grid;
+
+    grid-template-columns:
+    1fr 1fr;
+
+    gap:10px;
+
+    margin-top:20px;
+}
+
+.travel-item{
+    padding:14px;
+
+    border-radius:15px;
+
+    background:
+    rgba(255,255,255,.08);
+
+    border:
+    1px solid
+    rgba(255,255,255,.1);
+}
+
+.travel-item small{
+    display:block;
+
+    color:#bfdbfe;
+
+    font-size:9px;
+}
+
+.travel-item strong{
+    display:block;
+
+    margin-top:6px;
+
+    font-size:12px;
+}
+
+
+/* =====================================================
+   SKILLS / PROFESSION
+===================================================== */
+
+.skill-banner{
+    padding:20px;
+
+    border-radius:22px;
+
+    background:
+    linear-gradient(
+        135deg,
+        #eff6ff,
+        #ffffff
+    );
+
+    border:1px solid #bfdbfe;
+}
+
+.skill-top{
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+}
+
+.skill-icon{
+    width:55px;
+    height:55px;
+
+    border-radius:17px;
+
+    background:#2563eb;
+
+    color:white;
+
+    display:flex;
+
+    justify-content:center;
+    align-items:center;
+
+    font-size:26px;
+
+    box-shadow:
+    0 10px 22px rgba(37,99,235,.2);
+}
+
+.skill-top small{
+    color:#64748b;
+
+    font-size:9px;
+
+    letter-spacing:1px;
+}
+
+.skill-top h2{
+    color:#172033;
+
+    font-size:19px;
+
+    margin-top:4px;
+}
+
+.skill-main{
+    margin-top:18px;
+
+    display:grid;
+
+    grid-template-columns:
+    1fr 1fr;
+
+    gap:10px;
+}
+
+.skill-item{
+    background:white;
+
+    border:1px solid #e2e8f0;
+
+    padding:14px;
+
+    border-radius:15px;
+}
+
+.skill-item small{
+    display:block;
+
+    color:#64748b;
+
+    font-size:9px;
+}
+
+.skill-item strong{
+    display:block;
+
+    margin-top:5px;
+
+    font-size:12px;
+}
+
+
+/* =====================================================
    MINISTRY
-========================= */
+===================================================== */
 
 .ministry{
     padding:22px;
@@ -395,7 +669,6 @@ td{
     display:flex;
 
     justify-content:center;
-
     align-items:center;
 
     background:
@@ -444,9 +717,9 @@ td{
 }
 
 
-/* =========================
-   DOCUMENT
-========================= */
+/* =====================================================
+   DOCUMENT PHOTO
+===================================================== */
 
 .document-photo-box{
     background:#fff;
@@ -458,7 +731,7 @@ td{
     overflow:hidden;
 
     box-shadow:
-    0 8px 25px rgba(15,23,42,.08);
+    0 10px 30px rgba(15,23,42,.08);
 }
 
 .document-photo-header{
@@ -593,7 +866,8 @@ td{
 .document-actions{
     display:grid;
 
-    grid-template-columns:1fr 1fr 1fr;
+    grid-template-columns:
+    1fr 1fr 1fr;
 
     gap:10px;
 
@@ -606,7 +880,6 @@ td{
     display:flex;
 
     justify-content:center;
-
     align-items:center;
 
     min-height:45px;
@@ -626,29 +899,20 @@ td{
 
 .upload-btn{
     background:#2563eb;
-    color:white;
-}
 
-.upload-btn:hover{
-    background:#1d4ed8;
+    color:white;
 }
 
 .view-btn{
     background:#071426;
-    color:white;
-}
 
-.view-btn:hover{
-    background:#0f2d4f;
+    color:white;
 }
 
 .remove-btn{
     background:#fee2e2;
-    color:#b91c1c;
-}
 
-.remove-btn:hover{
-    background:#fecaca;
+    color:#b91c1c;
 }
 
 .document-help{
@@ -662,24 +926,9 @@ td{
 }
 
 
-/* =========================
-   TRAVEL
-========================= */
-
-.travel-card{
-    padding:17px;
-
-    background:#f8fafc;
-
-    border:1px solid #e2e8f0;
-
-    border-radius:18px;
-}
-
-
-/* =========================
+/* =====================================================
    PAYMENT
-========================= */
+===================================================== */
 
 .payment{
     background:
@@ -755,6 +1004,21 @@ td{
         #2563eb,
         #38bdf8
     );
+
+    animation:
+    progressGlow 2.5s infinite;
+}
+
+@keyframes progressGlow{
+
+    0%,100%{
+        filter:brightness(1);
+    }
+
+    50%{
+        filter:brightness(1.12);
+    }
+
 }
 
 .progress-info{
@@ -796,9 +1060,9 @@ td{
 }
 
 
-/* =========================
+/* =====================================================
    RECEIPT
-========================= */
+===================================================== */
 
 .receipt{
     background:#fff;
@@ -852,28 +1116,11 @@ td{
     padding:20px;
 }
 
-.receipt-image{
-    width:100%;
-
-    max-height:600px;
-
-    object-fit:contain;
-
-    display:block;
-
-    margin-bottom:18px;
-
-    border-radius:14px;
-
-    border:1px solid #e2e8f0;
-
-    background:#f8fafc;
-}
-
 .receipt-grid{
     display:grid;
 
-    grid-template-columns:1fr 1fr;
+    grid-template-columns:
+    1fr 1fr;
 
     gap:10px;
 }
@@ -939,36 +1186,51 @@ td{
 }
 
 
-/* =========================
-   TIMELINE
-========================= */
+/* =====================================================
+   APPLICATION JOURNEY
+===================================================== */
 
-.timeline{
+.journey{
     position:relative;
 
-    padding-left:30px;
+    padding-left:34px;
 }
 
-.timeline:before{
+.journey:before{
     content:"";
 
     position:absolute;
 
-    left:8px;
+    left:9px;
 
-    top:4px;
+    top:5px;
 
-    bottom:4px;
+    bottom:5px;
 
-    width:2px;
+    width:3px;
 
-    background:#dbeafe;
+    border-radius:5px;
+
+    background:
+    linear-gradient(
+        #16a34a,
+        #2563eb,
+        #cbd5e1
+    );
 }
 
 .step{
     position:relative;
 
-    margin-bottom:24px;
+    margin-bottom:26px;
+
+    padding:15px;
+
+    border-radius:17px;
+
+    background:#f8fafc;
+
+    border:1px solid #e2e8f0;
 }
 
 .step:last-child{
@@ -980,23 +1242,31 @@ td{
 
     position:absolute;
 
-    left:-28px;
+    left:-32px;
 
-    top:2px;
+    top:17px;
 
-    width:13px;
-
-    height:13px;
+    width:15px;
+    height:15px;
 
     border-radius:50%;
 
     background:#cbd5e1;
 
-    border:3px solid white;
+    border:4px solid white;
+
+    box-shadow:
+    0 0 0 1px #cbd5e1;
 }
 
 .step.done:before{
     background:#16a34a;
+}
+
+.step.active{
+    background:#eff6ff;
+
+    border-color:#93c5fd;
 }
 
 .step.active:before{
@@ -1012,20 +1282,48 @@ td{
 
     font-size:11px;
 
-    margin-top:4px;
+    margin-top:5px;
+
+    line-height:1.6;
+}
+
+.step-badge{
+    display:inline-block;
+
+    margin-top:8px;
+
+    padding:5px 9px;
+
+    border-radius:20px;
+
+    background:#dcfce7;
+
+    color:#15803d;
+
+    font-size:9px;
+
+    font-weight:bold;
+}
+
+.step.active .step-badge{
+    background:#fef3c7;
+
+    color:#92400e;
 }
 
 
-/* =========================
+/* =====================================================
    DOCUMENT CHECKLIST
-========================= */
+===================================================== */
 
 .document{
     display:flex;
 
     justify-content:space-between;
 
-    padding:13px 0;
+    align-items:center;
+
+    padding:15px 0;
 
     border-bottom:
     1px solid #edf1f5;
@@ -1037,25 +1335,71 @@ td{
     border:0;
 }
 
+.check-icon{
+    width:28px;
+    height:28px;
 
-/* =========================
-   NOTICES
-========================= */
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    border-radius:9px;
+
+    background:#dcfce7;
+
+    color:#15803d;
+
+    margin-right:10px;
+}
+
+.document-left{
+    display:flex;
+
+    align-items:center;
+}
+
+
+/* =====================================================
+   NOTIFICATIONS
+===================================================== */
 
 .notice{
-    padding:15px;
+    padding:16px;
 
-    border-radius:15px;
+    border-radius:17px;
 
-    background:#eff6ff;
+    background:#f8fafc;
 
-    border-left:4px solid #2563eb;
+    border:1px solid #e2e8f0;
 
-    margin-bottom:10px;
+    margin-bottom:11px;
+
+    display:flex;
+
+    gap:12px;
 }
 
 .notice:last-child{
     margin-bottom:0;
+}
+
+.notice-icon{
+    width:40px;
+    height:40px;
+
+    flex-shrink:0;
+
+    display:flex;
+
+    justify-content:center;
+    align-items:center;
+
+    border-radius:12px;
+
+    background:#eff6ff;
+
+    font-size:20px;
 }
 
 .notice strong{
@@ -1067,15 +1411,129 @@ td{
 
     font-size:11px;
 
-    margin-top:5px;
+    margin-top:4px;
 
-    line-height:1.7;
+    line-height:1.6;
+}
+
+.notice-time{
+    display:block;
+
+    color:#94a3b8;
+
+    font-size:9px;
+
+    margin-top:6px;
 }
 
 
-/* =========================
+/* =====================================================
+   SECURITY
+===================================================== */
+
+.security-box{
+    padding:20px;
+
+    border-radius:22px;
+
+    background:
+    linear-gradient(
+        135deg,
+        #071426,
+        #0f2d4f,
+        #2563eb
+    );
+
+    color:white;
+}
+
+.security-header{
+    display:flex;
+
+    align-items:center;
+
+    gap:13px;
+}
+
+.security-icon{
+    width:55px;
+    height:55px;
+
+    border-radius:17px;
+
+    background:
+    rgba(255,255,255,.12);
+
+    display:flex;
+
+    justify-content:center;
+    align-items:center;
+
+    font-size:27px;
+}
+
+.security-header h2{
+    font-size:19px;
+}
+
+.security-header p{
+    color:#bfdbfe;
+
+    font-size:10px;
+
+    margin-top:4px;
+}
+
+.security-grid{
+    display:grid;
+
+    grid-template-columns:
+    1fr 1fr;
+
+    gap:10px;
+
+    margin-top:18px;
+}
+
+.security-item{
+    padding:14px;
+
+    border-radius:15px;
+
+    background:
+    rgba(255,255,255,.08);
+
+    border:
+    1px solid
+    rgba(255,255,255,.1);
+}
+
+.security-item small{
+    display:block;
+
+    color:#bfdbfe;
+
+    font-size:9px;
+}
+
+.security-item strong{
+    display:block;
+
+    margin-top:6px;
+
+    font-size:11px;
+
+    color:#fff;
+}
+
+.verified{
+    color:#86efac !important;
+}
+
+
+/* =====================================================
    SUPPORT
-========================= */
+===================================================== */
 
 .support{
     padding:20px;
@@ -1125,9 +1583,9 @@ td{
 }
 
 
-/* =========================
+/* =====================================================
    WARNING
-========================= */
+===================================================== */
 
 .warning{
     text-align:center;
@@ -1148,18 +1606,23 @@ td{
 }
 
 
-/* =========================
+/* =====================================================
    FOOTER
-========================= */
+===================================================== */
 
 footer{
     margin-top:30px;
 
-    padding:35px 15px;
+    padding:38px 15px;
 
     text-align:center;
 
-    background:#071426;
+    background:
+    linear-gradient(
+        135deg,
+        #071426,
+        #0f2d4f
+    );
 
     color:#fff;
 }
@@ -1177,9 +1640,9 @@ footer p{
 }
 
 
-/* =========================
+/* =====================================================
    MOBILE
-========================= */
+===================================================== */
 
 @media(max-width:550px){
 
@@ -1191,7 +1654,10 @@ footer p{
         padding:0 8px;
     }
 
-    .grid{
+    .grid,
+    .travel-grid,
+    .skill-main,
+    .security-grid{
         grid-template-columns:1fr 1fr;
     }
 
@@ -1203,38 +1669,36 @@ footer p{
         grid-template-columns:1fr;
     }
 
-    .ministry h2{
-        font-size:17px;
-    }
-
-    .payment h2{
-        font-size:20px;
-    }
-
     .nav{
         padding:0 8px;
+    }
+
+    .section{
+        padding:18px;
     }
 
 }
 
 @media(max-width:380px){
 
-    .grid{
+    .grid,
+    .travel-grid,
+    .skill-main,
+    .security-grid{
         grid-template-columns:1fr;
     }
 
     .profile-photo{
         width:130px;
-
         height:160px;
     }
 
 }
 
 
-/* =========================
+/* =====================================================
    PRINT
-========================= */
+===================================================== */
 
 @media print{
 
@@ -1270,9 +1734,9 @@ footer p{
 <body>
 
 
-<!-- =========================
-     DEMO NOTICE
-========================= -->
+<!-- =====================================================
+     DEMO
+===================================================== -->
 
 <div class="demo">
 
@@ -1282,32 +1746,30 @@ footer p{
 </div>
 
 
-<!-- =========================
+<!-- =====================================================
      HEADER
-========================= -->
+===================================================== -->
 
 <header>
 
-    <img
-        class="header-logo"
-        src="https://res.cloudinary.com/dwclusteb/image/upload/v1781129653/images_wnjobu.jpg"
-        alt="Logo"
-    >
+    <div class="icon">
+        🌍
+    </div>
 
     <h1>
-        Personal Information Dashboard
+        Travel & Skills Dashboard
     </h1>
 
     <p>
-        Travel • Skills • Employment Application
+        Modern Travel • Skills • Employment Application
     </p>
 
 </header>
 
 
-<!-- =========================
-     NAVIGATION
-========================= -->
+<!-- =====================================================
+     NAV
+===================================================== -->
 
 <div class="nav">
 
@@ -1315,9 +1777,8 @@ footer p{
         ← Back to Application
     </a>
 
-    <a
-        href="personal.html"
-        class="primary">
+    <a href="personal.html"
+       class="primary">
 
         Personal Information
 
@@ -1326,27 +1787,20 @@ footer p{
 </div>
 
 
-<!-- CLOCK -->
-
-<div
-    class="clock"
-    id="clock">
+<div class="clock"
+     id="clock">
 
     System time...
 
 </div>
 
 
-<!-- =========================
-     MAIN
-========================= -->
-
 <div class="container">
 
 
-<!-- =========================
+<!-- =====================================================
      PERSONAL INFORMATION
-========================= -->
+===================================================== -->
 
 <section class="section profile">
 
@@ -1354,138 +1808,66 @@ footer p{
         👤 የግል መረጃ
     </div>
 
-
     <img
         id="photo"
         class="profile-photo"
         src="https://e-lmis-online.netlify.app/image/photo_2025-11-29_18-58-10.jpg"
-        alt="Profile Photo"
+        alt="Profile"
     >
-
 
     <table>
 
         <tr>
-            <td class="label">
-                ሙሉ ስም
-            </td>
-
-            <td id="name">
-                -
-            </td>
+            <td class="label">ሙሉ ስም</td>
+            <td id="name">Demo Applicant</td>
         </tr>
 
-
         <tr>
-            <td class="label">
-                ጾታ
-            </td>
-
-            <td id="gender">
-                -
-            </td>
+            <td class="label">ጾታ</td>
+            <td id="gender">-</td>
         </tr>
 
-
         <tr>
-            <td class="label">
-                ዕድሜ
-            </td>
-
-            <td id="age">
-                -
-            </td>
+            <td class="label">ዕድሜ</td>
+            <td id="age">-</td>
         </tr>
 
-
         <tr>
-            <td class="label">
-                የትውልድ ቀን
-            </td>
-
-            <td id="dob">
-                -
-            </td>
+            <td class="label">የትውልድ ቀን</td>
+            <td id="dob">-</td>
         </tr>
 
-
         <tr>
-            <td class="label">
-                E-LMIS ID Number
-            </td>
-
-            <td id="elmis">
-                -
-            </td>
+            <td class="label">E-LMIS ID</td>
+            <td id="applicationId">DEMO-000001</td>
         </tr>
 
-
         <tr>
-            <td class="label">
-                Passport Number
-            </td>
-
-            <td id="passport">
-                -
-            </td>
+            <td class="label">Passport</td>
+            <td id="passport">DEMO-PASSPORT</td>
         </tr>
 
-
         <tr>
-            <td class="label">
-                Phone Number
-            </td>
-
-            <td id="phone">
-                -
-            </td>
+            <td class="label">Phone</td>
+            <td id="phone">-</td>
         </tr>
 
-
         <tr>
-            <td class="label">
-                Place of Birth
-            </td>
-
-            <td id="birth">
-                -
-            </td>
+            <td class="label">Place of Birth</td>
+            <td id="birth">-</td>
         </tr>
 
-
         <tr>
-            <td class="label">
-                Visa Type
-            </td>
-
-            <td id="visa">
-                -
-            </td>
+            <td class="label">Country</td>
+            <td id="country">-</td>
         </tr>
 
-
         <tr>
-            <td class="label">
-                Country
-            </td>
-
-            <td id="country">
-                -
-            </td>
-        </tr>
-
-
-        <tr>
-            <td class="label">
-                Status
-            </td>
-
+            <td class="label">Status</td>
             <td>
-
                 <span class="status">
-                    ACTIVE
+                    ✓ ACTIVE
                 </span>
-
             </td>
         </tr>
 
@@ -1494,76 +1876,95 @@ footer p{
 </section>
 
 
-<!-- =========================
-     SKILLS
-========================= -->
+<!-- =====================================================
+     TRAVEL & EMPLOYER
+===================================================== -->
 
 <section class="section">
 
     <div class="title">
-        👨‍💼 የሙያ እና ክህሎት መረጃ
+        🌍 Travel & Employer
     </div>
 
+    <div class="travel-box">
 
-    <div class="grid">
+        <div class="travel-header">
 
+            <div class="travel-icon">
+                ✈️
+            </div>
 
-        <div class="card">
+            <div>
 
-            <span>💼</span>
+                <small>
+                    TRAVEL & EMPLOYMENT
+                </small>
 
-            <h3>
-                Professional Skill
-            </h3>
+                <h2>
+                    Travel Employer
+                </h2>
 
-            <p id="skill">
-                Not Specified
-            </p>
+                <p>
+                    Overseas Employment Information
+                </p>
 
-        </div>
-
-
-        <div class="card">
-
-            <span>📋</span>
-
-            <h3>
-                Registration
-            </h3>
-
-            <p class="ready">
-                ✓ Active
-            </p>
+            </div>
 
         </div>
 
 
-        <div class="card">
+        <div class="travel-grid">
 
-            <span>🎓</span>
+            <div class="travel-item">
 
-            <h3>
-                Qualification
-            </h3>
+                <small>
+                    DESTINATION
+                </small>
 
-            <p>
-                Verified
-            </p>
+                <strong id="destination">
+                    Not Specified
+                </strong>
 
-        </div>
+            </div>
 
 
-        <div class="card">
+            <div class="travel-item">
 
-            <span>🌍</span>
+                <small>
+                    VISA CATEGORY
+                </small>
 
-            <h3>
-                Employment
-            </h3>
+                <strong id="visa">
+                    Not Specified
+                </strong>
 
-            <p>
-                Overseas Employment
-            </p>
+            </div>
+
+
+            <div class="travel-item">
+
+                <small>
+                    EMPLOYMENT TYPE
+                </small>
+
+                <strong>
+                    Overseas Employment
+                </strong>
+
+            </div>
+
+
+            <div class="travel-item">
+
+                <small>
+                    APPLICATION
+                </small>
+
+                <strong>
+                    Travel Application
+                </strong>
+
+            </div>
 
         </div>
 
@@ -1572,9 +1973,102 @@ footer p{
 </section>
 
 
-<!-- =========================
+<!-- =====================================================
+     SKILLS
+===================================================== -->
+
+<section class="section">
+
+    <div class="title">
+        👨‍💼 የሙያና ክህሎት መረጃ
+    </div>
+
+    <div class="skill-banner">
+
+        <div class="skill-top">
+
+            <div class="skill-icon">
+                💼
+            </div>
+
+            <div>
+
+                <small>
+                    PROFESSIONAL INFORMATION
+                </small>
+
+                <h2>
+                    የሙያ እና ክህሎት
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <div class="skill-main">
+
+            <div class="skill-item">
+
+                <small>
+                    PROFESSIONAL SKILL
+                </small>
+
+                <strong id="skill">
+                    Not Specified
+                </strong>
+
+            </div>
+
+
+            <div class="skill-item">
+
+                <small>
+                    REGISTRATION
+                </small>
+
+                <strong class="ready">
+                    ✓ ACTIVE
+                </strong>
+
+            </div>
+
+
+            <div class="skill-item">
+
+                <small>
+                    QUALIFICATION
+                </small>
+
+                <strong>
+                    ✓ VERIFIED
+                </strong>
+
+            </div>
+
+
+            <div class="skill-item">
+
+                <small>
+                    EMPLOYMENT
+                </small>
+
+                <strong>
+                    Overseas Employment
+                </strong>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
      MINISTRY
-========================= -->
+===================================================== -->
 
 <section class="section">
 
@@ -1585,7 +2079,6 @@ footer p{
             <div class="ministry-icon">
                 🏛️
             </div>
-
 
             <div>
 
@@ -1619,9 +2112,9 @@ footer p{
 </section>
 
 
-<!-- =========================
-     DOCUMENT
-========================= -->
+<!-- =====================================================
+     DOCUMENT PHOTO
+===================================================== -->
 
 <section class="section">
 
@@ -1638,7 +2131,7 @@ footer p{
             <div>
 
                 <small>
-                    DOCUMENT INFORMATION
+                    DOCUMENT PHOTO
                 </small>
 
                 <h3>
@@ -1646,7 +2139,6 @@ footer p{
                 </h3>
 
             </div>
-
 
             <span
                 id="documentStatus"
@@ -1667,7 +2159,7 @@ footer p{
             <img
                 id="document"
                 class="document-image"
-                src=""
+                src="https://e-lmis-online.netlify.app/image/document.jpg"
                 alt="Document"
             >
 
@@ -1696,7 +2188,6 @@ footer p{
 
         <div class="document-actions">
 
-
             <label
                 for="documentUpload"
                 class="upload-btn">
@@ -1705,14 +2196,12 @@ footer p{
 
             </label>
 
-
             <input
                 type="file"
                 id="documentUpload"
                 accept="image/jpeg,image/png,image/webp"
                 hidden
             >
-
 
             <button
                 type="button"
@@ -1722,7 +2211,6 @@ footer p{
                 🔍 View Full
 
             </button>
-
 
             <button
                 type="button"
@@ -1747,87 +2235,9 @@ footer p{
 </section>
 
 
-<!-- =========================
-     TRAVEL
-========================= -->
-
-<section class="section">
-
-    <div class="title">
-        🌍 Travel & Employment
-    </div>
-
-
-    <div class="grid">
-
-
-        <div class="card">
-
-            <span>🌎</span>
-
-            <h3>
-                Destination
-            </h3>
-
-            <p id="destination">
-                Not Specified
-            </p>
-
-        </div>
-
-
-        <div class="card">
-
-            <span>🛂</span>
-
-            <h3>
-                Visa Category
-            </h3>
-
-            <p id="visaCard">
-                Not Specified
-            </p>
-
-        </div>
-
-
-        <div class="card">
-
-            <span>💼</span>
-
-            <h3>
-                Employment Type
-            </h3>
-
-            <p>
-                Overseas Employment
-            </p>
-
-        </div>
-
-
-        <div class="card">
-
-            <span>📍</span>
-
-            <h3>
-                Application
-            </h3>
-
-            <p>
-                Travel Application
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =========================
+<!-- =====================================================
      PAYMENT
-========================= -->
+===================================================== -->
 
 <section class="section payment">
 
@@ -1844,7 +2254,6 @@ footer p{
             </h2>
 
         </div>
-
 
         <div class="paid">
             ✓ RECORDED
@@ -1888,9 +2297,9 @@ footer p{
 </section>
 
 
-<!-- =========================
-     RECEIPT
-========================= -->
+<!-- =====================================================
+     PAYMENT RECEIPT
+===================================================== -->
 
 <section class="section">
 
@@ -1901,21 +2310,19 @@ footer p{
 
     <div class="receipt">
 
-
         <div class="receipt-header">
 
             <div>
 
                 <small>
-                    PAYMENT RECEIPT
+                    DEMO PAYMENT RECEIPT
                 </small>
 
                 <h2>
-                    RECEIPT
+                    SAMPLE
                 </h2>
 
             </div>
-
 
             <div class="receipt-paid">
                 ✓ PAID
@@ -1926,17 +2333,7 @@ footer p{
 
         <div class="receipt-body">
 
-
-            <img
-                id="receiptImage"
-                class="receipt-image"
-                style="display:none;"
-                alt="Payment Receipt"
-            >
-
-
             <div class="receipt-grid">
-
 
                 <div class="receipt-item">
 
@@ -1958,7 +2355,7 @@ footer p{
                     </small>
 
                     <strong id="paymentRef">
-                        -
+                        DEMO-000000
                     </strong>
 
                 </div>
@@ -1983,8 +2380,8 @@ footer p{
                         Amount
                     </small>
 
-                    <strong id="paymentAmount">
-                        -
+                    <strong>
+                        DEMO AMOUNT
                     </strong>
 
                 </div>
@@ -2000,9 +2397,9 @@ footer p{
 
                 <br>
 
-                የክፍያ ደረሰኝ መረጃ ከዚህ
-                መሣሪያ ላይ ከተመዘገበ እዚህ
-                ይታያል።
+                ይህ ስርዓት የክፍያ መረጃ
+                እንደተመዘገበ ለማሳየት
+                የተዘጋጀ DEMO ነው።
 
             </div>
 
@@ -2022,9 +2419,9 @@ footer p{
 </section>
 
 
-<!-- =========================
+<!-- =====================================================
      APPLICATION JOURNEY
-========================= -->
+===================================================== -->
 
 <section class="section">
 
@@ -2033,7 +2430,7 @@ footer p{
     </div>
 
 
-    <div class="timeline">
+    <div class="journey">
 
 
         <div class="step done">
@@ -2043,8 +2440,12 @@ footer p{
             </h4>
 
             <p>
-                Application profile created.
+                Applicant profile has been created successfully.
             </p>
+
+            <span class="step-badge">
+                COMPLETED
+            </span>
 
         </div>
 
@@ -2056,8 +2457,13 @@ footer p{
             </h4>
 
             <p>
-                Required information added.
+                Required personal and professional
+                information has been submitted.
             </p>
+
+            <span class="step-badge">
+                COMPLETED
+            </span>
 
         </div>
 
@@ -2069,8 +2475,13 @@ footer p{
             </h4>
 
             <p>
-                Payment recorded.
+                Payment information is currently
+                recorded in the application workflow.
             </p>
+
+            <span class="step-badge">
+                CURRENT
+            </span>
 
         </div>
 
@@ -2078,23 +2489,46 @@ footer p{
         <div class="step">
 
             <h4>
-                📄 Visa Processing — Next Stage
+                📄 Visa Processing
             </h4>
 
             <p>
-                Next stage in the application journey.
+                Visa processing is the next stage
+                of the application journey.
+            </p>
+
+            <span
+                class="step-badge"
+                style="background:#e2e8f0;color:#475569;">
+
+                NEXT
+
+            </span>
+
+        </div>
+
+
+        <div class="step">
+
+            <h4>
+                ✈️ Travel Preparation
+            </h4>
+
+            <p>
+                Final travel preparation stage.
             </p>
 
         </div>
+
 
     </div>
 
 </section>
 
 
-<!-- =========================
+<!-- =====================================================
      DOCUMENT CHECKLIST
-========================= -->
+===================================================== -->
 
 <section class="section">
 
@@ -2105,12 +2539,20 @@ footer p{
 
     <div class="document">
 
-        <span>
-            Passport Information
-        </span>
+        <div class="document-left">
+
+            <div class="check-icon">
+                ✓
+            </div>
+
+            <span>
+                Passport Information
+            </span>
+
+        </div>
 
         <b class="ready">
-            ✓ READY
+            READY
         </b>
 
     </div>
@@ -2118,12 +2560,20 @@ footer p{
 
     <div class="document">
 
-        <span>
-            Professional Information
-        </span>
+        <div class="document-left">
+
+            <div class="check-icon">
+                ✓
+            </div>
+
+            <span>
+                Professional Information
+            </span>
+
+        </div>
 
         <b class="ready">
-            ✓ READY
+            READY
         </b>
 
     </div>
@@ -2131,12 +2581,20 @@ footer p{
 
     <div class="document">
 
-        <span>
-            Application Information
-        </span>
+        <div class="document-left">
+
+            <div class="check-icon">
+                ✓
+            </div>
+
+            <span>
+                Application Information
+            </span>
+
+        </div>
 
         <b class="ready">
-            ✓ READY
+            READY
         </b>
 
     </div>
@@ -2144,12 +2602,20 @@ footer p{
 
     <div class="document">
 
-        <span>
-            Payment Receipt
-        </span>
+        <div class="document-left">
+
+            <div class="check-icon">
+                ✓
+            </div>
+
+            <span>
+                Payment Receipt
+            </span>
+
+        </div>
 
         <b class="ready">
-            ✓ RECORDED
+            RECORDED
         </b>
 
     </div>
@@ -2157,9 +2623,21 @@ footer p{
 
     <div class="document">
 
-        <span>
-            Visa Processing
-        </span>
+        <div class="document-left">
+
+            <div
+                class="check-icon"
+                style="background:#dbeafe;color:#2563eb;">
+
+                →
+
+            </div>
+
+            <span>
+                Visa Processing
+            </span>
+
+        </div>
 
         <b class="next-color">
             NEXT
@@ -2170,9 +2648,9 @@ footer p{
 </section>
 
 
-<!-- =========================
+<!-- =====================================================
      NOTIFICATIONS
-========================= -->
+===================================================== -->
 
 <section class="section">
 
@@ -2183,50 +2661,87 @@ footer p{
 
     <div class="notice">
 
-        <strong>
-            Payment Update
-        </strong>
+        <div class="notice-icon">
+            💳
+        </div>
 
-        <p>
-            Payment information is displayed
-            from the saved application data.
-        </p>
+        <div>
+
+            <strong>
+                Payment Update
+            </strong>
+
+            <p>
+                Payment information has been
+                recorded in this DEMO workflow.
+            </p>
+
+            <span class="notice-time">
+                Just now
+            </span>
+
+        </div>
 
     </div>
 
 
     <div class="notice">
 
-        <strong>
-            Application Progress
-        </strong>
+        <div class="notice-icon">
+            📄
+        </div>
 
-        <p>
-            Current application progress is 60%.
-        </p>
+        <div>
+
+            <strong>
+                Document Update
+            </strong>
+
+            <p>
+                Your document information is
+                available in the document section.
+            </p>
+
+            <span class="notice-time">
+                Today
+            </span>
+
+        </div>
 
     </div>
 
 
     <div class="notice">
 
-        <strong>
-            Next Stage
-        </strong>
+        <div class="notice-icon">
+            ✈️
+        </div>
 
-        <p>
-            Visa Processing is displayed as
-            the next stage.
-        </p>
+        <div>
+
+            <strong>
+                Travel Processing
+            </strong>
+
+            <p>
+                Visa Processing is displayed as
+                the next stage.
+            </p>
+
+            <span class="notice-time">
+                Application Update
+            </span>
+
+        </div>
 
     </div>
 
 </section>
 
 
-<!-- =========================
-     SECURITY
-========================= -->
+<!-- =====================================================
+     SECURITY & VERIFICATION
+===================================================== -->
 
 <section class="section">
 
@@ -2235,35 +2750,83 @@ footer p{
     </div>
 
 
-    <div class="grid">
+    <div class="security-box">
 
+        <div class="security-header">
 
-        <div class="card">
+            <div class="security-icon">
+                🔐
+            </div>
 
-            <span>🔐</span>
+            <div>
 
-            <h3>
-                Data Protection
-            </h3>
+                <h2>
+                    Security & Verification
+                </h2>
 
-            <p>
-                Protected application interface
-            </p>
+                <p>
+                    Application security status
+                </p>
+
+            </div>
 
         </div>
 
 
-        <div class="card">
+        <div class="security-grid">
 
-            <span>✓</span>
 
-            <h3>
-                Profile Check
-            </h3>
+            <div class="security-item">
 
-            <p class="ready">
-                Verified
-            </p>
+                <small>
+                    PROFILE CHECK
+                </small>
+
+                <strong class="verified">
+                    ✓ VERIFIED
+                </strong>
+
+            </div>
+
+
+            <div class="security-item">
+
+                <small>
+                    DOCUMENT CHECK
+                </small>
+
+                <strong class="verified">
+                    ✓ CHECKED
+                </strong>
+
+            </div>
+
+
+            <div class="security-item">
+
+                <small>
+                    DATA STATUS
+                </small>
+
+                <strong>
+                    🔒 PROTECTED
+                </strong>
+
+            </div>
+
+
+            <div class="security-item">
+
+                <small>
+                    APPLICATION
+                </small>
+
+                <strong class="verified">
+                    ✓ ACTIVE
+                </strong>
+
+            </div>
+
 
         </div>
 
@@ -2272,9 +2835,9 @@ footer p{
 </section>
 
 
-<!-- =========================
+<!-- =====================================================
      SUPPORT
-========================= -->
+===================================================== -->
 
 <section class="section">
 
@@ -2297,9 +2860,9 @@ footer p{
 </section>
 
 
-<!-- =========================
+<!-- =====================================================
      WARNING
-========================= -->
+===================================================== -->
 
 <section class="section">
 
@@ -2326,9 +2889,9 @@ footer p{
 </div>
 
 
-<!-- =========================
+<!-- =====================================================
      FOOTER
-========================= -->
+===================================================== -->
 
 <footer>
 
@@ -2358,9 +2921,13 @@ function updateClock(){
     const clock =
         document.getElementById("clock");
 
-    clock.innerText =
-        "System Time: " +
-        new Date().toLocaleString();
+    if(clock){
+
+        clock.innerText =
+            "System Time: " +
+            new Date().toLocaleString();
+
+    }
 
 }
 
@@ -2373,8 +2940,61 @@ setInterval(
 
 
 /* =====================================================
+   PAYMENT REFERENCE
+===================================================== */
+
+let savedPaymentRef =
+    localStorage.getItem("paymentReference");
+
+if(!savedPaymentRef){
+
+    savedPaymentRef =
+        "DEMO-" +
+        Math.floor(
+            100000 +
+            Math.random() * 900000
+        );
+
+    localStorage.setItem(
+        "paymentReference",
+        savedPaymentRef
+    );
+
+}
+
+document.getElementById(
+    "paymentRef"
+).innerText =
+    savedPaymentRef;
+
+
+/* =====================================================
+   PAYMENT DATE
+===================================================== */
+
+let savedPaymentDate =
+    localStorage.getItem("paymentDate");
+
+if(!savedPaymentDate){
+
+    savedPaymentDate =
+        new Date().toLocaleDateString();
+
+    localStorage.setItem(
+        "paymentDate",
+        savedPaymentDate
+    );
+
+}
+
+document.getElementById(
+    "paymentDate"
+).innerText =
+    savedPaymentDate;
+
+
+/* =====================================================
    LOAD USER
-   SAME LOCALSTORAGE METHOD
 ===================================================== */
 
 let user = {};
@@ -2396,7 +3016,7 @@ try{
 
 
 /* =====================================================
-   HELPER
+   SET TEXT
 ===================================================== */
 
 function setText(id,value){
@@ -2420,73 +3040,44 @@ function setText(id,value){
 
 
 /* =====================================================
-   PERSONAL DATA
+   PERSONAL INFORMATION
 ===================================================== */
 
-setText(
-    "name",
-    user.name || "-"
-);
+setText("name",user.name);
 
-setText(
-    "gender",
-    user.gender || "-"
-);
+setText("gender",user.gender);
 
-setText(
-    "age",
-    user.age || "-"
-);
+setText("age",user.age);
 
-setText(
-    "dob",
-    user.dob || "-"
-);
+setText("dob",user.dob);
 
-setText(
-    "elmis",
-    user.elmis || "-"
-);
+setText("applicationId",user.elmis);
 
-setText(
-    "passport",
-    user.passport || "-"
-);
+setText("passport",user.passport);
 
-setText(
-    "phone",
-    user.phone || "-"
-);
+setText("phone",user.phone);
 
-setText(
-    "birth",
-    user.birth || "-"
-);
+setText("birth",user.birth);
 
-setText(
-    "visa",
-    user.visa || "-"
-);
+setText("country",user.country);
 
-setText(
-    "visaCard",
-    user.visa || "Not Specified"
-);
+setText("skill",user.skill);
 
-setText(
-    "country",
-    user.country || "-"
-);
+setText("visa",user.visa);
 
-setText(
-    "skill",
-    user.skill || "Not Specified"
-);
 
-setText(
-    "destination",
-    user.country || "Not Specified"
-);
+/* =====================================================
+   DESTINATION
+===================================================== */
+
+if(user.country){
+
+    setText(
+        "destination",
+        user.country
+    );
+
+}
 
 
 /* =====================================================
@@ -2496,27 +3087,16 @@ setText(
 const photo =
     document.getElementById("photo");
 
+if(user.photo){
 
-const defaultPhoto =
-    "https://e-lmis-online.netlify.app/image/photo_2025-11-29_18-58-10.jpg";
+    photo.src =
+        user.photo;
 
-
-photo.src =
-    user.photo ||
-    defaultPhoto;
-
-
-photo.onerror =
-function(){
-
-    this.src =
-        defaultPhoto;
-
-};
+}
 
 
 /* =====================================================
-   DOCUMENT
+   DOCUMENT ELEMENTS
 ===================================================== */
 
 const documentUpload =
@@ -2538,11 +3118,6 @@ const documentStatus =
     document.getElementById(
         "documentStatus"
     );
-
-
-const defaultDocument =
-    user.doc ||
-    "https://e-lmis-online.netlify.app/image/photo_2025-11-29_18-23-08.jpg";
 
 
 /* =====================================================
@@ -2589,37 +3164,7 @@ function showDocument(src){
 
 
 /* =====================================================
-   LOAD DOCUMENT
-   PRIORITY:
-
-   1. uploaded documentPhoto
-   2. user.doc
-   3. default image
-===================================================== */
-
-const savedDocument =
-    localStorage.getItem(
-        "documentPhoto"
-    );
-
-
-if(savedDocument){
-
-    showDocument(
-        savedDocument
-    );
-
-}else{
-
-    showDocument(
-        defaultDocument
-    );
-
-}
-
-
-/* =====================================================
-   DOCUMENT UPLOAD
+   UPLOAD DOCUMENT
 ===================================================== */
 
 documentUpload.addEventListener(
@@ -2636,11 +3181,7 @@ documentUpload.addEventListener(
         }
 
 
-        if(
-            !file.type.startsWith(
-                "image/"
-            )
-        ){
+        if(!file.type.startsWith("image/")){
 
             alert(
                 "Please select an image file."
@@ -2655,7 +3196,6 @@ documentUpload.addEventListener(
 
         const maxSize =
             8 * 1024 * 1024;
-
 
         if(file.size > maxSize){
 
@@ -2676,59 +3216,88 @@ documentUpload.addEventListener(
 
 
         reader.onload =
-        function(event){
+            function(event){
 
-            const imageData =
-                event.target.result;
-
-
-            showDocument(
-                imageData
-            );
+                const imageData =
+                    event.target.result;
 
 
-            try{
-
-                localStorage.setItem(
-                    "documentPhoto",
+                showDocument(
                     imageData
                 );
 
-            }catch(error){
 
-                console.error(error);
+                try{
 
-                alert(
-                    "The image was displayed, " +
-                    "but could not be saved because " +
-                    "browser storage is full."
-                );
+                    localStorage.setItem(
+                        "documentPhoto",
+                        imageData
+                    );
 
-            }
+                }catch(error){
 
-        };
+                    console.error(error);
+
+                    alert(
+                        "Image displayed, " +
+                        "but browser storage is full."
+                    );
+
+                }
+
+            };
 
 
         reader.onerror =
-        function(){
+            function(){
 
-            alert(
-                "Unable to read the image."
-            );
+                alert(
+                    "Unable to read the image."
+                );
 
-        };
+            };
 
 
-        reader.readAsDataURL(
-            file
-        );
+        reader.readAsDataURL(file);
 
     }
 );
 
 
 /* =====================================================
-   VIEW FULL DOCUMENT
+   LOAD SAVED DOCUMENT
+===================================================== */
+
+window.addEventListener(
+    "load",
+    function(){
+
+        const savedDocument =
+            localStorage.getItem(
+                "documentPhoto"
+            );
+
+
+        if(savedDocument){
+
+            showDocument(
+                savedDocument
+            );
+
+        }else{
+
+            showDocument(
+                documentImage.src
+            );
+
+        }
+
+    }
+);
+
+
+/* =====================================================
+   VIEW DOCUMENT
 ===================================================== */
 
 function viewDocument(){
@@ -2779,8 +3348,7 @@ function viewDocument(){
 
             <meta
                 name="viewport"
-                content="width=device-width,
-                initial-scale=1.0"
+                content="width=device-width,initial-scale=1.0"
             >
 
             <title>
@@ -2878,117 +3446,22 @@ function removeDocument(){
         "";
 
 
-    /*
-     * Return to user.doc/default
-     */
+    documentImage.src =
+        "";
 
-    showDocument(
-        defaultDocument
-    );
+    documentImage.style.display =
+        "none";
 
-}
+    documentPlaceholder.style.display =
+        "flex";
 
+    documentStatus.innerText =
+        "○ NO DOCUMENT";
 
-/* =====================================================
-   RECEIPT
-===================================================== */
-
-const receiptImage =
-    document.getElementById(
-        "receiptImage"
-    );
-
-
-const savedReceipt =
-    localStorage.getItem(
-        "receipt"
-    );
-
-
-if(savedReceipt){
-
-    receiptImage.src =
-        savedReceipt;
-
-    receiptImage.style.display =
-        "block";
+    documentStatus.style.background =
+        "#64748b";
 
 }
-
-
-/* =====================================================
-   PAYMENT REFERENCE
-===================================================== */
-
-let savedPaymentRef =
-    localStorage.getItem(
-        "paymentReference"
-    );
-
-
-if(!savedPaymentRef){
-
-    savedPaymentRef =
-        "PAY-" +
-        Math.floor(
-            100000 +
-            Math.random() * 900000
-        );
-
-    localStorage.setItem(
-        "paymentReference",
-        savedPaymentRef
-    );
-
-}
-
-
-document.getElementById(
-    "paymentRef"
-).innerText =
-    savedPaymentRef;
-
-
-/* =====================================================
-   PAYMENT DATE
-===================================================== */
-
-let paymentDate =
-    localStorage.getItem(
-        "paymentDate"
-    );
-
-
-if(!paymentDate){
-
-    paymentDate =
-        new Date()
-        .toLocaleDateString();
-
-}
-
-
-document.getElementById(
-    "paymentDate"
-).innerText =
-    paymentDate;
-
-
-/* =====================================================
-   PAYMENT AMOUNT
-===================================================== */
-
-const paymentAmount =
-    user.amount ||
-    user.payment ||
-    user.price ||
-    "-";
-
-
-document.getElementById(
-    "paymentAmount"
-).innerText =
-    paymentAmount;
 
 
 /* =====================================================
@@ -3009,13 +3482,14 @@ function printReceipt(){
 function support(){
 
     alert(
-        "SUPPORT CENTER\n\n" +
-        "Please contact the support center."
+        "DEMO SUPPORT CENTER\n\n" +
+        "This is a sample support interface."
     );
 
 }
 
 </script>
+
 
 </body>
 
