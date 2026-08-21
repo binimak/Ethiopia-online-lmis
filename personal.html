@@ -1048,7 +1048,7 @@ DEMO / TESTING INTERFACE — NOT AN OFFICIAL GOVERNMENT WEBSITE
 
 <div>
 <small>INFORMATION</small>
-<h2>ስራና ክህሎት</h2>
+<h2>ስራና ክህሎት ሚኒስቴር</h2>
 <p>Ministry / Skills Information</p>
 </div>
 
@@ -1071,97 +1071,41 @@ DEMO / TESTING INTERFACE — NOT AN OFFICIAL GOVERNMENT WEBSITE
 ========================= -->
 
 <section class="section">
+    <div class="title">📄 የሰነድ ፎቶ / Document Photo</div>
 
-<div class="title">
-📄 የሰነድ ፎቶ / Document Photo
-</div>
+    <div class="document-photo-box">
 
-<div class="document-photo-box">
+        <div class="document-photo-header">
+            <div>
+                <small>DOCUMENT PHOTO</small>
+                <h3>የተጫነ ሰነድ</h3>
+            </div>
 
-<div class="document-photo-header">
+            <span id="documentStatus"
+                  class="document-status"
+                  style="background:#64748b">
+                ○ NO DOCUMENT
+            </span>
+        </div>
 
-<div>
-<small>DOCUMENT PHOTO</small>
-<h3>የተጫነ ሰነድ</h3>
-</div>
+        <div class="document-image-container">
 
-<span
-id="documentStatus"
-class="document-status"
-style="background:#64748b"
->
-○ NO DOCUMENT
-</span>
+            <img id="document"
+                 class="document-image"
+                 alt="Document Photo"
+                 style="display:none">
 
-</div>
+            <div id="documentPlaceholder"
+                 class="document-placeholder">
 
+                <div class="icon">📄</div>
+                <p>No document available</p>
 
-<div class="document-image-container">
+            </div>
 
-<img
-id="document"
-class="document-image"
-alt="Document"
-style="display:none"
->
+        </div>
 
-<div
-id="documentPlaceholder"
-class="document-placeholder"
->
-
-<div class="icon">📄</div>
-
-<p>No document uploaded</p>
-
-<small>
-Upload JPG, PNG or WEBP
-</small>
-
-</div>
-
-</div>
-
-
-<div class="document-actions">
-
-<label
-for="documentUpload"
-class="upload-btn"
->
-📷 Upload Document
-</label>
-
-<input
-type="file"
-id="documentUpload"
-accept="image/jpeg,image/png,image/webp"
-hidden
->
-
-<button
-type="button"
-class="view-btn"
-onclick="viewDocument()"
->
-🔍 View Full
-</button>
-
-<button
-type="button"
-class="remove-btn"
-onclick="removeDocument()"
->
-🗑️ Remove
-</button>
-
-</div>
-
-<p class="document-help">
-JPG, PNG ወይም WEBP የሰነድ ፎቶ ይጫኑ።
-</p>
-
-</div>
+    </div>
 </section>
 
 
@@ -1439,8 +1383,8 @@ Not Uploaded
 <br>
 
 ይህ ክፍል የክፍያ መረጃን
-እና የተጫነውን ደረሰኝ ፎቶ
-ሁኔታ ለማሳየት የተዘጋጀ ነው።
+እና የተጫነውን ደረሰኝ ፎቶ ማሳያ
+
 
 </div>
 
@@ -1796,11 +1740,11 @@ Contact Support
 
 <br>
 
-This interface is for testing and demonstration purposes only.
+
 
 <br>
 
-It is not an official government service.
+ an official government service.
 
 </div>
 
@@ -1820,7 +1764,7 @@ Modern Travel • Skills • Employment Application
 </p>
 
 <p>
-© 2026 Interface — For Testing Only
+© 2026 Interface 
 </p>
 
 </footer>
