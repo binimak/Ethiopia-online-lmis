@@ -2068,71 +2068,88 @@ footer p{
 <section class="section">
 
     <div class="title">
-        📄 Document Checklist
+        📄 የሰነድ ፎቶ / Document Photo
     </div>
 
+    <div class="document-photo-box">
 
-    <div class="document">
+        <div class="document-photo-header">
 
-        <span>
-            Passport Information
-        </span>
+            <div>
 
-        <b class="ready">
-            ✓ READY
-        </b>
+                <small>
+                    APPLICATION DOCUMENT
+                </small>
+
+                <h3>
+                    የተጫነ ሰነድ
+                </h3>
+
+            </div>
+
+            <span
+                id="documentStatus"
+                class="document-status">
+
+                ✓ UPLOADED
+
+            </span>
+
+        </div>
+
+
+        <div
+            class="document-image-container"
+            id="documentContainer">
+
+            <img
+                id="document"
+                class="document-image"
+                alt="Application Document"
+            >
+
+            <div
+                id="documentEmpty"
+                class="document-placeholder"
+                style="display:none;">
+
+                <div class="icon">
+                    📄
+                </div>
+
+                <p>
+                    No document available
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="document-actions">
+
+            <button
+                type="button"
+                class="view-btn"
+                onclick="viewDocument()">
+
+                🔍 View Full Document
+
+            </button>
+
+        </div>
+
+
+        <p class="document-help">
+
+            ይህ ሰነድ ከApplication መረጃ ጋር
+            የተመዘገበ ነው።
+
+        </p>
 
     </div>
 
-
-    <div class="document">
-
-        <span>
-            Professional Information
-        </span>
-
-        <b class="ready">
-            ✓ READY
-        </b>
-
-    </div>
-
-
-    <div class="document">
-
-        <span>
-            Application Information
-        </span>
-
-        <b class="ready">
-            ✓ READY
-        </b>
-
-    </div>
-
-
-    <div class="document">
-
-        <span>
-            Payment Receipt
-        </span>
-
-        <b class="ready">
-            ✓ RECORDED
-        </b>
-
-    </div>
-
-
-    <div class="document">
-
-        <span>
-            Visa Processing
-        </span>
-
-        <b class="next-color">
-            NEXT
-        </b>
+</section>
 
     </div>
 
