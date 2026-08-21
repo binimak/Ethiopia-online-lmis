@@ -12,101 +12,48 @@
 
 <style>
 
-/* =====================================================
+/* =========================
    GLOBAL
-===================================================== */
+========================= */
 
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:"Inter",Arial,sans-serif;
+    font-family:Arial,sans-serif;
 }
 
 body{
-
-    background:
-    linear-gradient(
-        135deg,
-        #edf4ff,
-        #f8fbff,
-        #eef6ff
-    );
-
-    color:#0f172a;
-
-    min-height:100vh;
-
-    padding:20px;
-
-    overflow-x:hidden;
+    background:#f1f5f9;
+    color:#172033;
 }
 
 
-/* =====================================================
-   BACKGROUND
-===================================================== */
+/* =========================
+   DEMO / SYSTEM BAR
+========================= */
 
-body::before{
-
-    content:"";
-
-    position:fixed;
-
-    width:500px;
-    height:500px;
-
-    background:
-    radial-gradient(
-        rgba(59,130,246,.10),
-        transparent 70%
-    );
-
-    top:-150px;
-    right:-120px;
-
-    border-radius:50%;
-
-    z-index:-1;
-}
-
-body::after{
-
-    content:"";
-
-    position:fixed;
-
-    width:400px;
-    height:400px;
-
-    background:
-    radial-gradient(
-        rgba(96,165,250,.10),
-        transparent 70%
-    );
-
-    bottom:-120px;
-    left:-100px;
-
-    border-radius:50%;
-
-    z-index:-1;
+.demo{
+    background:#fff3cd;
+    color:#765800;
+    text-align:center;
+    padding:9px;
+    font-size:11px;
+    font-weight:bold;
 }
 
 
-/* =====================================================
+/* =========================
    HEADER
-===================================================== */
+========================= */
 
 header{
-
-    max-width:760px;
-
-    margin:auto;
-
-    padding:35px 20px;
-
-    border-radius:35px;
+    max-width:900px;
+    margin:10px auto;
+    padding:30px 20px;
+    border-radius:30px;
+    text-align:center;
+    color:white;
 
     background:
     linear-gradient(
@@ -116,166 +63,14 @@ header{
         #2563eb
     );
 
-    text-align:center;
+    box-shadow:
+    0 20px 45px rgba(0,0,0,.15);
 
     position:relative;
-
-    overflow:hidden;
-
-    box-shadow:
-    0 30px 60px rgba(15,23,42,.20);
-}
-
-header::before{
-
-    content:"";
-
-    position:absolute;
-
-    width:260px;
-    height:260px;
-
-    background:
-    rgba(255,255,255,.08);
-
-    border-radius:50%;
-
-    top:-120px;
-    right:-60px;
-}
-
-header::after{
-
-    content:"";
-
-    position:absolute;
-
-    width:180px;
-    height:180px;
-
-    background:
-    rgba(96,165,250,.12);
-
-    border-radius:50%;
-
-    bottom:-80px;
-    left:-60px;
-}
-
-.logo{
-
-    width:220px;
-
-    background:white;
-
-    padding:10px;
-
-    border-radius:22px;
-
-    position:relative;
-
-    z-index:2;
-
-    box-shadow:
-    0 10px 30px rgba(0,0,0,.20);
-}
-
-header hr{
-
-    margin-top:20px;
-
-    border:none;
-
-    height:1px;
-
-    background:
-    rgba(255,255,255,.20);
-}
-
-
-/* =====================================================
-   CLOCK
-===================================================== */
-
-#time{
-
-    text-align:center;
-
-    margin-top:18px;
-
-    color:#475569;
-
-    font-size:16px;
-
-    font-weight:700;
-}
-
-
-/* =====================================================
-   TITLE
-===================================================== */
-
-.title{
-
-    text-align:center;
-
-    font-size:18px;
-
-    margin:35px 0 25px;
-
-    font-weight:800;
-
-    color:#0f172a;
-
-    line-height:1.8;
-}
-
-
-/* =====================================================
-   MAIN CONTAINER
-===================================================== */
-
-.container,
-.upload,
-.document-box{
-
-    max-width:760px;
-
-    margin:24px auto;
-
-    background:
-    rgba(255,255,255,.88);
-
-    backdrop-filter:blur(18px);
-
-    border-radius:32px;
-
-    border:1px solid rgba(255,255,255,.70);
-
-    box-shadow:
-    0 25px 60px rgba(15,23,42,.08);
-
     overflow:hidden;
 }
 
-.container{
-
-    padding:35px;
-
-    position:relative;
-
-    background-image:
-    url('https://e-lmis-online.netlify.app/image/photo_2_2025-11-26_21-51-36.jpg');
-
-    background-size:100px;
-
-    background-repeat:no-repeat;
-
-    background-position:right bottom;
-}
-
-.container::before{
-
+header:before{
     content:"";
 
     position:absolute;
@@ -284,25 +79,318 @@ header hr{
     height:220px;
 
     background:
-    radial-gradient(
-        rgba(59,130,246,.12),
-        transparent 70%
-    );
-
-    top:-80px;
-    right:-80px;
+    rgba(255,255,255,.06);
 
     border-radius:50%;
 
-    pointer-events:none;
+    right:-80px;
+    top:-100px;
+}
+
+header:after{
+    content:"";
+
+    position:absolute;
+
+    width:170px;
+    height:170px;
+
+    background:
+    rgba(96,165,250,.08);
+
+    border-radius:50%;
+
+    left:-70px;
+    bottom:-90px;
+}
+
+.header-logo{
+    width:170px;
+    max-width:70%;
+
+    padding:8px;
+
+    border-radius:18px;
+
+    background:white;
+
+    position:relative;
+
+    z-index:2;
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,.2);
+}
+
+header h1{
+    font-size:24px;
+    margin-top:15px;
+    position:relative;
+    z-index:2;
+}
+
+header p{
+    color:#dbeafe;
+    font-size:12px;
+    margin-top:7px;
+    position:relative;
+    z-index:2;
 }
 
 
-/* =====================================================
-   COUNTDOWN
-===================================================== */
+/* =========================
+   NAVIGATION
+========================= */
 
-.countdown{
+.nav{
+    max-width:700px;
+    margin:12px auto;
+    padding:0 10px;
+
+    display:flex;
+    gap:10px;
+}
+
+.nav a{
+    flex:1;
+
+    text-align:center;
+
+    text-decoration:none;
+
+    padding:12px;
+
+    border-radius:13px;
+
+    background:#fff;
+
+    color:#173f87;
+
+    border:1px solid #dbeafe;
+
+    font-size:11px;
+
+    font-weight:bold;
+}
+
+.nav a.primary{
+    background:#2563eb;
+    color:white;
+}
+
+
+/* =========================
+   CLOCK
+========================= */
+
+.clock{
+    text-align:center;
+
+    margin:14px;
+
+    color:#64748b;
+
+    font-size:12px;
+}
+
+
+/* =========================
+   MAIN CONTAINER
+========================= */
+
+.container{
+    max-width:700px;
+
+    margin:15px auto;
+
+    padding:0 10px;
+}
+
+
+/* =========================
+   SECTION
+========================= */
+
+.section{
+    background:#fff;
+
+    margin-bottom:15px;
+
+    padding:22px;
+
+    border-radius:24px;
+
+    border:1px solid #e2e8f0;
+
+    box-shadow:
+    0 8px 25px rgba(15,23,42,.05);
+}
+
+.title{
+    font-size:19px;
+
+    font-weight:900;
+
+    margin-bottom:18px;
+}
+
+
+/* =========================
+   PROFILE
+========================= */
+
+.profile{
+    text-align:center;
+}
+
+.profile-photo{
+    width:145px;
+    height:175px;
+
+    object-fit:cover;
+
+    border-radius:20px;
+
+    border:4px solid #2563eb;
+
+    background:#f8fafc;
+
+    box-shadow:
+    0 10px 25px rgba(37,99,235,.12);
+}
+
+table{
+    width:100%;
+
+    border-collapse:collapse;
+
+    margin-top:20px;
+}
+
+td{
+    padding:12px 8px;
+
+    border-bottom:
+    1px solid #edf1f5;
+
+    font-size:13px;
+
+    text-align:left;
+}
+
+.label{
+    width:42%;
+
+    font-weight:bold;
+
+    color:#173f87;
+}
+
+.status{
+    display:inline-block;
+
+    background:#16a34a;
+
+    color:#fff;
+
+    padding:6px 12px;
+
+    border-radius:20px;
+
+    font-size:10px;
+
+    font-weight:bold;
+}
+
+
+/* =========================
+   GRID
+========================= */
+
+.grid{
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:12px;
+}
+
+.card{
+    padding:17px;
+
+    background:#f8fafc;
+
+    border:1px solid #e2e8f0;
+
+    border-radius:18px;
+}
+
+.card span{
+    font-size:25px;
+}
+
+.card h3{
+    font-size:13px;
+
+    margin-top:8px;
+}
+
+.card p{
+    color:#64748b;
+
+    font-size:11px;
+
+    line-height:1.6;
+
+    margin-top:4px;
+}
+
+.ready{
+    color:#16a34a !important;
+
+    font-weight:bold;
+}
+
+.next-color{
+    color:#2563eb !important;
+
+    font-weight:bold;
+}
+
+
+/* =========================
+   MINISTRY
+========================= */
+
+.ministry{
+    padding:22px;
+
+    border-radius:23px;
+
+    color:white;
+
+    background:
+    linear-gradient(
+        135deg,
+        #071426,
+        #0f2d4f,
+        #2563eb
+    );
+}
+
+.ministry-top{
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+}
+
+.ministry-icon{
+    width:58px;
+    height:58px;
+
+    border-radius:18px;
 
     display:flex;
 
@@ -310,22 +398,166 @@ header hr{
 
     align-items:center;
 
-    gap:15px;
+    background:
+    rgba(255,255,255,.12);
 
-    flex-wrap:wrap;
-
-    margin-bottom:30px;
-
-    position:relative;
-
-    z-index:2;
+    font-size:28px;
 }
 
-.box{
+.ministry small{
+    font-size:9px;
 
-    width:150px;
+    color:#bfdbfe;
 
-    height:110px;
+    letter-spacing:1px;
+}
+
+.ministry h2{
+    margin-top:5px;
+
+    font-size:20px;
+}
+
+.ministry p{
+    margin-top:4px;
+
+    font-size:11px;
+
+    color:#dbeafe;
+}
+
+.ministry-text{
+    margin-top:17px;
+
+    padding:15px;
+
+    border-radius:15px;
+
+    background:
+    rgba(255,255,255,.08);
+
+    font-size:12px;
+
+    line-height:1.8;
+
+    color:#dbeafe;
+}
+
+
+/* =========================
+   DOCUMENT
+========================= */
+
+.document-photo-box{
+    background:#fff;
+
+    border:1px solid #dbeafe;
+
+    border-radius:22px;
+
+    overflow:hidden;
+
+    box-shadow:
+    0 8px 25px rgba(15,23,42,.08);
+}
+
+.document-photo-header{
+    padding:18px;
+
+    background:
+    linear-gradient(
+        135deg,
+        #071426,
+        #0f2d4f,
+        #2563eb
+    );
+
+    color:#fff;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:10px;
+}
+
+.document-photo-header small{
+    color:#bfdbfe;
+
+    font-size:9px;
+
+    letter-spacing:1px;
+}
+
+.document-photo-header h3{
+    margin-top:5px;
+
+    font-size:16px;
+}
+
+.document-status{
+    background:#16a34a;
+
+    color:white;
+
+    padding:7px 11px;
+
+    border-radius:20px;
+
+    font-size:9px;
+
+    font-weight:bold;
+
+    white-space:nowrap;
+}
+
+.document-image-container{
+    padding:18px;
+
+    background:#f8fafc;
+
+    text-align:center;
+
+    min-height:250px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+}
+
+.document-image{
+    display:block;
+
+    width:100%;
+
+    max-width:620px;
+
+    height:auto;
+
+    max-height:850px;
+
+    object-fit:contain;
+
+    margin:auto;
+
+    background:white;
+
+    border-radius:12px;
+
+    border:1px solid #e2e8f0;
+
+    box-shadow:
+    0 8px 25px rgba(15,23,42,.12);
+}
+
+.document-placeholder{
+    width:100%;
+
+    min-height:220px;
 
     display:flex;
 
@@ -335,443 +567,173 @@ header hr{
 
     align-items:center;
 
-    border-radius:28px;
+    gap:10px;
 
-    background:
-    linear-gradient(
-        135deg,
-        #0052d4,
-        #1363df,
-        #1f7aff
-    );
-
-    color:white;
-
-    position:relative;
-
-    overflow:hidden;
-
-    transition:.35s ease;
-
-    box-shadow:
-    0 20px 35px rgba(0,82,212,.25);
-}
-
-.box:hover{
-
-    transform:translateY(-6px);
-}
-
-.box::before{
-
-    content:"";
-
-    position:absolute;
-
-    width:120px;
-    height:120px;
-
-    border-radius:50%;
-
-    background:
-    rgba(255,255,255,.08);
-
-    top:-40px;
-    right:-30px;
-}
-
-.box::after{
-
-    content:"";
-
-    position:absolute;
-
-    bottom:0;
-    left:0;
-
-    width:100%;
-    height:8px;
-
-    background:#00e5ff;
-}
-
-.box h1{
-
-    font-size:55px;
-
-    font-weight:800;
-
-    line-height:1;
-
-    margin-bottom:8px;
-
-    text-shadow:
-    0 3px 10px rgba(0,0,0,.15);
-}
-
-.box p{
-
-    font-size:14px;
-
-    font-weight:700;
-
-    letter-spacing:2px;
-
-    opacity:.95;
-}
-
-.box:last-child{
-
-    background:
-    linear-gradient(
-        135deg,
-        #ff004f,
-        #e6004c,
-        #d90452
-    );
-
-    box-shadow:
-    0 20px 35px rgba(255,0,79,.25);
-}
-
-.box:last-child::after{
-
-    background:#ffd000;
-}
-
-
-/* =====================================================
-   TABLE
-===================================================== */
-
-table{
-
-    width:100%;
-
-    border-collapse:collapse;
-
-    border-spacing:0;
-
-    margin-top:10px;
-
-    position:relative;
-
-    z-index:2;
-}
-
-tr{
-
-    border-bottom:
-    1px solid #dcdcdc;
-}
-
-td{
-
-    padding:12px 20px;
-
-    font-size:16px;
+    color:#64748b;
 
     background:#fff;
 
-    border:none;
+    border:2px dashed #bfdbfe;
 
+    border-radius:15px;
 }
 
-.label{
+.document-placeholder .icon{
+    font-size:45px;
+}
 
-    width:42%;
+.document-placeholder p{
+    font-size:12px;
+}
+
+.document-placeholder small{
+    font-size:10px;
+}
+
+.document-actions{
+    display:grid;
+
+    grid-template-columns:1fr 1fr 1fr;
+
+    gap:10px;
+
+    padding:18px;
+}
+
+.upload-btn,
+.view-btn,
+.remove-btn{
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    min-height:45px;
+
+    border-radius:13px;
+
+    border:0;
+
+    font-size:11px;
 
     font-weight:bold;
 
-    color:#2563eb;
-}
-
-td:last-child{
-
-    color:#222;
-}
-
-
-/* =====================================================
-   PROFILE PHOTO
-===================================================== */
-
-.photo-box{
+    cursor:pointer;
 
     text-align:center;
-
-    padding:25px 0;
 }
 
-.photo-wrapper{
-
-    position:relative;
-
-    display:inline-block;
-}
-
-.profile-photo{
-
-    width:170px;
-
-    height:200px;
-
-    object-fit:cover;
-
-    border-radius:15px;
-
-    border:4px solid #2c6fb2;
-
-    background:#f8fafc;
-
-    transition:.3s ease;
-}
-
-.profile-photo:hover{
-
-    transform:scale(1.03);
-}
-
-.stamp{
-
-    position:absolute;
-
-    width:150px;
-
-    right:-55px;
-
-    bottom:-10px;
-
-    opacity:.85;
-
-    transform:rotate(-15deg);
-
-    pointer-events:none;
-}
-
-
-/* =====================================================
-   STATUS
-===================================================== */
-
-.status{
-
-    background:
-    linear-gradient(
-        135deg,
-        #16a34a,
-        #22c55e
-    );
-
+.upload-btn{
+    background:#2563eb;
     color:white;
-
-    padding:9px 18px;
-
-    border-radius:50px;
-
-    font-size:13px;
-
-    font-weight:700;
-
-    display:inline-block;
-
-    box-shadow:
-    0 10px 20px rgba(34,197,94,.25);
 }
 
-
-/* =====================================================
-   DOCUMENT
-===================================================== */
-
-.document-box{
-
-    padding:16px;
-
-    position:relative;
-
-    min-height:200px;
+.upload-btn:hover{
+    background:#1d4ed8;
 }
 
-.document-title{
+.view-btn{
+    background:#071426;
+    color:white;
+}
 
+.view-btn:hover{
+    background:#0f2d4f;
+}
+
+.remove-btn{
+    background:#fee2e2;
+    color:#b91c1c;
+}
+
+.remove-btn:hover{
+    background:#fecaca;
+}
+
+.document-help{
     text-align:center;
 
-    font-size:20px;
+    padding:0 18px 18px;
 
-    font-weight:800;
+    color:#64748b;
 
-    color:#0f172a;
-
-    padding:15px;
-
-    margin-bottom:10px;
+    font-size:10px;
 }
 
-#doc{
 
-    width:100%;
+/* =========================
+   TRAVEL
+========================= */
 
-    max-height:900px;
-
-    object-fit:contain;
-
-    border-radius:15px;
-
-    display:none;
+.travel-card{
+    padding:17px;
 
     background:#f8fafc;
 
     border:1px solid #e2e8f0;
 
-    box-shadow:
-    0 10px 30px rgba(15,23,42,.10);
-
-    transition:.4s;
+    border-radius:18px;
 }
 
-#doc:hover{
 
-    transform:scale(1.01);
+/* =========================
+   PAYMENT
+========================= */
+
+.payment{
+    background:
+    linear-gradient(
+        145deg,
+        #eff6ff,
+        #ffffff
+    );
+
+    border:1px solid #bfdbfe;
 }
 
-.no-document{
+.payment-top{
+    display:flex;
 
-    text-align:center;
+    justify-content:space-between;
 
-    padding:55px 20px;
+    align-items:center;
+}
+
+.payment-label{
+    font-size:9px;
 
     color:#64748b;
 
-    background:
-    linear-gradient(
-        145deg,
-        #f8fafc,
-        #eef4ff
-    );
+    font-weight:bold;
 
-    border:
-    2px dashed #93c5fd;
+    letter-spacing:1px;
+}
+
+.payment h2{
+    color:#2563eb;
+
+    margin-top:5px;
+}
+
+.paid{
+    padding:9px 13px;
 
     border-radius:20px;
+
+    background:#dcfce7;
+
+    color:#15803d;
+
+    font-size:10px;
+
+    font-weight:bold;
 }
-
-.no-document .icon{
-
-    font-size:55px;
-
-    margin-bottom:15px;
-}
-
-.no-document h3{
-
-    color:#334155;
-
-    font-size:18px;
-
-    margin-bottom:8px;
-}
-
-.no-document p{
-
-    font-size:13px;
-
-    line-height:1.7;
-}
-
-.document-error{
-
-    text-align:center;
-
-    padding:45px 20px;
-
-    color:#dc2626;
-
-    background:#fff7f7;
-
-    border:
-    1px solid #fecaca;
-
-    border-radius:20px;
-}
-
-.document-error .icon{
-
-    font-size:45px;
-
-    margin-bottom:10px;
-}
-
-
-/* =====================================================
-   UPLOAD
-===================================================== */
-
-.upload{
-
-    padding:35px;
-}
-
-.upload h2{
-
-    font-size:23px;
-
-    color:#0f172a;
-
-    margin-bottom:25px;
-
-    text-align:center;
-
-    line-height:1.6;
-}
-
-.filebox{
-
-    background:
-    linear-gradient(
-        145deg,
-        #f8fbff,
-        #eef4ff
-    );
-
-    padding:30px;
-
-    border-radius:24px;
-
-    border:
-    2px dashed #93c5fd;
-
-    text-align:center;
-}
-
-.filebox p{
-
-    margin-bottom:18px;
-
-    color:#334155;
-
-    font-weight:600;
-}
-
-.filebox input{
-
-    max-width:100%;
-
-    padding:10px;
-}
-
-
-/* =====================================================
-   PROGRESS
-===================================================== */
 
 .progress{
+    height:13px;
 
-    margin-top:24px;
-
-    width:100%;
-
-    height:18px;
+    margin-top:20px;
 
     background:#e2e8f0;
 
@@ -780,23 +742,12 @@ td:last-child{
     overflow:hidden;
 }
 
-.bar{
-
-    width:80%;
+.progress-bar{
+    width:70%;
 
     height:100%;
 
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    font-size:12px;
-
-    font-weight:700;
-
-    color:white;
+    border-radius:50px;
 
     background:
     linear-gradient(
@@ -804,372 +755,511 @@ td:last-child{
         #2563eb,
         #38bdf8
     );
-
-    border-radius:50px;
-
-    animation:
-    progressMove 3s infinite linear;
 }
 
-@keyframes progressMove{
+.progress-info{
+    display:flex;
 
-    0%{
-        filter:brightness(1);
-    }
+    justify-content:space-between;
 
-    50%{
-        filter:brightness(1.1);
-    }
+    margin-top:8px;
 
-    100%{
-        filter:brightness(1);
-    }
+    font-size:10px;
+
+    color:#64748b;
+}
+
+.next{
+    margin-top:15px;
+
+    padding:14px;
+
+    border-radius:15px;
+
+    background:#fff;
+
+    border:1px dashed #93c5fd;
+}
+
+.next small{
+    color:#64748b;
+
+    font-size:9px;
+}
+
+.next strong{
+    display:block;
+
+    margin-top:5px;
+
+    color:#2563eb;
 }
 
 
-/* =====================================================
-   SUBMIT
-===================================================== */
+/* =========================
+   RECEIPT
+========================= */
 
-.submit{
+.receipt{
+    background:#fff;
 
-    margin-top:24px;
+    border:1px solid #dbeafe;
+
+    border-radius:22px;
+
+    overflow:hidden;
 }
 
-.submit button{
+.receipt-header{
+    padding:20px;
 
+    background:#0f2d4f;
+
+    color:#fff;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+}
+
+.receipt-header small{
+    font-size:9px;
+
+    color:#bfdbfe;
+}
+
+.receipt-header h2{
+    font-size:18px;
+
+    margin-top:4px;
+}
+
+.receipt-paid{
+    background:#16a34a;
+
+    padding:7px 11px;
+
+    border-radius:20px;
+
+    font-size:10px;
+
+    font-weight:bold;
+}
+
+.receipt-body{
+    padding:20px;
+}
+
+.receipt-image{
     width:100%;
 
-    border:none;
+    max-height:600px;
 
-    padding:18px;
+    object-fit:contain;
 
-    border-radius:18px;
+    display:block;
 
-    font-size:17px;
+    margin-bottom:18px;
 
-    font-weight:700;
+    border-radius:14px;
+
+    border:1px solid #e2e8f0;
+
+    background:#f8fafc;
+}
+
+.receipt-grid{
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:10px;
+}
+
+.receipt-item{
+    padding:13px;
+
+    border-radius:14px;
+
+    background:#f8fafc;
+}
+
+.receipt-item small{
+    display:block;
+
+    color:#64748b;
+
+    font-size:9px;
+}
+
+.receipt-item strong{
+    display:block;
+
+    margin-top:5px;
+
+    font-size:12px;
+}
+
+.receipt-note{
+    margin-top:15px;
+
+    padding:14px;
+
+    background:#eff6ff;
+
+    border-left:4px solid #2563eb;
+
+    border-radius:12px;
+
+    font-size:11px;
+
+    line-height:1.7;
+}
+
+.print{
+    width:100%;
+
+    margin-top:15px;
+
+    border:0;
+
+    padding:13px;
+
+    border-radius:14px;
+
+    background:#071426;
+
+    color:#fff;
+
+    font-weight:bold;
 
     cursor:pointer;
-
-    color:white;
-
-    background:
-    linear-gradient(
-        135deg,
-        #0f172a,
-        #2563eb
-    );
-
-    transition:.35s;
-
-    box-shadow:
-    0 15px 35px rgba(37,99,235,.25);
-}
-
-.submit button:hover{
-
-    transform:translateY(-3px);
-
-    box-shadow:
-    0 20px 40px rgba(37,99,235,.35);
 }
 
 
-/* =====================================================
-   FOOTER
-===================================================== */
+/* =========================
+   TIMELINE
+========================= */
 
-.footer{
+.timeline{
+    position:relative;
 
-    max-width:760px;
+    padding-left:30px;
+}
 
-    margin:60px auto 0;
+.timeline:before{
+    content:"";
 
-    padding:60px 25px 35px;
+    position:absolute;
 
-    border-radius:40px 40px 0 0;
+    left:8px;
+
+    top:4px;
+
+    bottom:4px;
+
+    width:2px;
+
+    background:#dbeafe;
+}
+
+.step{
+    position:relative;
+
+    margin-bottom:24px;
+}
+
+.step:last-child{
+    margin-bottom:0;
+}
+
+.step:before{
+    content:"";
+
+    position:absolute;
+
+    left:-28px;
+
+    top:2px;
+
+    width:13px;
+
+    height:13px;
+
+    border-radius:50%;
+
+    background:#cbd5e1;
+
+    border:3px solid white;
+}
+
+.step.done:before{
+    background:#16a34a;
+}
+
+.step.active:before{
+    background:#f59e0b;
+}
+
+.step h4{
+    font-size:13px;
+}
+
+.step p{
+    color:#64748b;
+
+    font-size:11px;
+
+    margin-top:4px;
+}
+
+
+/* =========================
+   DOCUMENT CHECKLIST
+========================= */
+
+.document{
+    display:flex;
+
+    justify-content:space-between;
+
+    padding:13px 0;
+
+    border-bottom:
+    1px solid #edf1f5;
+
+    font-size:12px;
+}
+
+.document:last-child{
+    border:0;
+}
+
+
+/* =========================
+   NOTICES
+========================= */
+
+.notice{
+    padding:15px;
+
+    border-radius:15px;
+
+    background:#eff6ff;
+
+    border-left:4px solid #2563eb;
+
+    margin-bottom:10px;
+}
+
+.notice:last-child{
+    margin-bottom:0;
+}
+
+.notice strong{
+    font-size:13px;
+}
+
+.notice p{
+    color:#64748b;
+
+    font-size:11px;
+
+    margin-top:5px;
+
+    line-height:1.7;
+}
+
+
+/* =========================
+   SUPPORT
+========================= */
+
+.support{
+    padding:20px;
+
+    border-radius:22px;
 
     background:
     linear-gradient(
         135deg,
         #071426,
-        #0f2d4f,
         #2563eb
     );
 
-    color:white;
-
-    position:relative;
-
-    overflow:hidden;
-
-    box-shadow:
-    0 -10px 40px rgba(15,23,42,.18);
+    color:#fff;
 }
 
-.footer::before{
-
-    content:"";
-
-    position:absolute;
-
-    width:260px;
-    height:260px;
-
-    border-radius:50%;
-
-    background:
-    rgba(255,255,255,.05);
-
-    top:-120px;
-    left:-80px;
+.support h3{
+    font-size:15px;
 }
 
-.footer::after{
-
-    content:"";
-
-    position:absolute;
-
-    width:180px;
-    height:180px;
-
-    border-radius:50%;
-
-    background:
-    rgba(96,165,250,.08);
-
-    bottom:-60px;
-    right:-40px;
-}
-
-.footer-container{
-
-    position:relative;
-
-    z-index:2;
-
-    text-align:center;
-}
-
-.footer h3{
-
-    font-size:30px;
-
-    margin-bottom:12px;
-
-    font-weight:800;
-}
-
-.footer p{
-
-    color:#dbeafe;
-
-    font-size:14px;
-
-    line-height:2;
-}
-
-.contact{
-
-    margin-top:28px;
-
-    padding:24px;
-
-    border-radius:26px;
-
-    background:
-    rgba(255,255,255,.08);
-
-    border:
-    1px solid rgba(255,255,255,.10);
-
-    backdrop-filter:blur(12px);
-
-    box-shadow:
-    0 10px 25px rgba(0,0,0,.12);
-}
-
-.contact p{
-
-    margin:10px 0;
-}
-
-.copy{
-
-    margin-top:30px;
-
-    padding-top:18px;
-
-    border-top:
-    1px solid rgba(255,255,255,.15);
-
-    font-size:13px;
-
+.support p{
     color:#bfdbfe;
 
-    letter-spacing:1px;
+    font-size:11px;
+
+    margin-top:5px;
+}
+
+.support button{
+    width:100%;
+
+    margin-top:15px;
+
+    padding:13px;
+
+    border:0;
+
+    border-radius:14px;
+
+    color:#173f87;
+
+    background:#fff;
+
+    font-weight:bold;
+
+    cursor:pointer;
 }
 
 
-/* =====================================================
+/* =========================
+   WARNING
+========================= */
+
+.warning{
+    text-align:center;
+
+    padding:17px;
+
+    background:#fff7ed;
+
+    border:1px solid #fed7aa;
+
+    border-radius:18px;
+
+    color:#9a3412;
+
+    font-size:10px;
+
+    line-height:1.8;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    margin-top:30px;
+
+    padding:35px 15px;
+
+    text-align:center;
+
+    background:#071426;
+
+    color:#fff;
+}
+
+footer h2{
+    font-size:18px;
+}
+
+footer p{
+    color:#bfdbfe;
+
+    font-size:10px;
+
+    margin-top:7px;
+}
+
+
+/* =========================
    MOBILE
-===================================================== */
+========================= */
 
-@media(max-width:768px){
+@media(max-width:550px){
 
-    body{
-
-        padding:10px;
+    header{
+        margin:8px;
     }
 
     .container{
-
-        padding:20px;
+        padding:0 8px;
     }
 
-    .countdown{
-
-        gap:8px;
+    .grid{
+        grid-template-columns:1fr 1fr;
     }
 
-    .box{
-
-        width:78px;
-
-        height:90px;
-
-        border-radius:18px;
+    .receipt-grid{
+        grid-template-columns:1fr;
     }
 
-    .box h1{
-
-        font-size:32px;
-
-        margin-bottom:6px;
+    .document-actions{
+        grid-template-columns:1fr;
     }
 
-    .box p{
-
-        font-size:10px;
-
-        letter-spacing:1px;
+    .ministry h2{
+        font-size:17px;
     }
 
-    .box::after{
-
-        height:6px;
+    .payment h2{
+        font-size:20px;
     }
 
-    .title{
-
-        font-size:15px;
-
-        margin:25px 5px 20px;
-    }
-
-    td{
-
-        padding:11px 10px;
-
-        font-size:13px;
-    }
-
-    .label{
-
-        width:40%;
-    }
-
-    .profile-photo{
-
-        width:150px;
-
-        height:180px;
-    }
-
-    .stamp{
-
-        width:120px;
-
-        right:-45px;
-    }
-
-    .upload{
-
-        padding:22px;
-    }
-
-    .document-box{
-
-        padding:10px;
-    }
-
-    .footer{
-
-        border-radius:30px 30px 0 0;
-
-        padding:45px 18px 30px;
+    .nav{
+        padding:0 8px;
     }
 
 }
 
 @media(max-width:380px){
 
-    .box{
-
-        width:70px;
-
-        height:82px;
+    .grid{
+        grid-template-columns:1fr;
     }
 
-    .box h1{
+    .profile-photo{
+        width:130px;
 
-        font-size:28px;
-    }
-
-    .box p{
-
-        font-size:9px;
-    }
-
-    td{
-
-        font-size:12px;
-
-        padding:10px 7px;
+        height:160px;
     }
 
 }
 
 
-/* =====================================================
+/* =========================
    PRINT
-===================================================== */
+========================= */
 
 @media print{
 
     body{
-
         background:white;
-
-        padding:0;
     }
 
-    .countdown,
-    .upload,
-    .footer{
-
+    .demo,
+    .nav,
+    header,
+    .clock,
+    .document-actions,
+    .document-help,
+    footer,
+    .support,
+    .warning{
         display:none !important;
     }
 
-    .container,
-    .document-box{
-
+    .section{
         box-shadow:none;
 
         border:1px solid #ddd;
     }
+
 }
 
 </style>
@@ -1180,210 +1270,146 @@ td:last-child{
 <body>
 
 
-<!-- =====================================================
+<!-- =========================
+     DEMO NOTICE
+========================= -->
+
+<div class="demo">
+
+    DEMO / TESTING INTERFACE —
+    NOT AN OFFICIAL GOVERNMENT WEBSITE
+
+</div>
+
+
+<!-- =========================
      HEADER
-===================================================== -->
+========================= -->
 
 <header>
 
     <img
+        class="header-logo"
         src="https://res.cloudinary.com/dwclusteb/image/upload/v1781129653/images_wnjobu.jpg"
-        class="logo"
-        alt="E-LMIS Logo">
+        alt="Logo"
+    >
 
-    <hr>
+    <h1>
+        Personal Information Dashboard
+    </h1>
+
+    <p>
+        Travel • Skills • Employment Application
+    </p>
 
 </header>
 
 
-<!-- =====================================================
-     CLOCK
-===================================================== -->
+<!-- =========================
+     NAVIGATION
+========================= -->
 
-<p id="time">
-    Loading system time...
-</p>
+<div class="nav">
+
+    <a href="index.html">
+        ← Back to Application
+    </a>
+
+    <a
+        href="personal.html"
+        class="primary">
+
+        Personal Information
+
+    </a>
+
+</div>
 
 
-<!-- =====================================================
-     TITLE
-===================================================== -->
+<!-- CLOCK -->
 
-<h1 class="title">
+<div
+    class="clock"
+    id="clock">
 
-    በስራና ክህሎት ሚኒስቴር ተመዝግቦ
-    ወደ ኩዌት የስራ ፍቃድ የተሰጠዉ
-    ባለሙያ
+    System time...
 
-</h1>
+</div>
 
 
-<!-- =====================================================
-     PERSONAL INFORMATION
-===================================================== -->
+<!-- =========================
+     MAIN
+========================= -->
 
 <div class="container">
 
 
-    <!-- COUNTDOWN -->
+<!-- =========================
+     PERSONAL INFORMATION
+========================= -->
 
-    <div class="countdown">
+<section class="section profile">
 
-
-        <div class="box">
-
-            <h1 id="days">
-                02
-            </h1>
-
-            <p>
-                DAYS
-            </p>
-
-        </div>
-
-
-        <div class="box">
-
-            <h1 id="hours">
-                00
-            </h1>
-
-            <p>
-                HRS
-            </p>
-
-        </div>
-
-
-        <div class="box">
-
-            <h1 id="minutes">
-                00
-            </h1>
-
-            <p>
-                MINS
-            </p>
-
-        </div>
-
-
-        <div class="box">
-
-            <h1 id="seconds">
-                00
-            </h1>
-
-            <p>
-                SEC
-            </p>
-
-        </div>
-
-
+    <div class="title">
+        👤 የግል መረጃ
     </div>
 
 
-    <!-- PERSONAL TABLE -->
+    <img
+        id="photo"
+        class="profile-photo"
+        src="https://e-lmis-online.netlify.app/image/photo_2025-11-29_18-58-10.jpg"
+        alt="Profile Photo"
+    >
+
 
     <table>
 
-
-        <!-- PHOTO -->
-
         <tr>
-
-            <td
-                colspan="2"
-                class="photo-box">
-
-                <div class="photo-wrapper">
-
-
-                    <img
-                        id="photo"
-                        class="profile-photo"
-                        alt="Profile Photo">
-
-
-                    <img
-                        src="https://res.cloudinary.com/dwclusteb/image/upload/v1781123212/3568-removebg-preview_vxuww6.png"
-                        class="stamp"
-                        alt="Official Stamp">
-
-
-                </div>
-
-            </td>
-
-        </tr>
-
-
-        <!-- NAME -->
-
-        <tr>
-
             <td class="label">
-                Name
+                ሙሉ ስም
             </td>
 
             <td id="name">
                 -
             </td>
-
         </tr>
 
 
-        <!-- GENDER -->
-
         <tr>
-
             <td class="label">
-                Gender
+                ጾታ
             </td>
 
             <td id="gender">
                 -
             </td>
-
         </tr>
 
 
-        <!-- AGE -->
-
         <tr>
-
             <td class="label">
-                Age
+                ዕድሜ
             </td>
 
             <td id="age">
                 -
             </td>
-
         </tr>
 
 
-        <!-- DOB -->
-
         <tr>
-
             <td class="label">
-                Date of Birth
+                የትውልድ ቀን
             </td>
 
             <td id="dob">
                 -
             </td>
-
         </tr>
 
 
-        <!-- ELMIS -->
-
         <tr>
-
             <td class="label">
                 E-LMIS ID Number
             </td>
@@ -1391,14 +1417,10 @@ td:last-child{
             <td id="elmis">
                 -
             </td>
-
         </tr>
 
 
-        <!-- PASSPORT -->
-
         <tr>
-
             <td class="label">
                 Passport Number
             </td>
@@ -1406,14 +1428,10 @@ td:last-child{
             <td id="passport">
                 -
             </td>
-
         </tr>
 
 
-        <!-- PHONE -->
-
         <tr>
-
             <td class="label">
                 Phone Number
             </td>
@@ -1421,14 +1439,10 @@ td:last-child{
             <td id="phone">
                 -
             </td>
-
         </tr>
 
 
-        <!-- BIRTH -->
-
         <tr>
-
             <td class="label">
                 Place of Birth
             </td>
@@ -1436,14 +1450,10 @@ td:last-child{
             <td id="birth">
                 -
             </td>
-
         </tr>
 
 
-        <!-- VISA -->
-
         <tr>
-
             <td class="label">
                 Visa Type
             </td>
@@ -1451,29 +1461,21 @@ td:last-child{
             <td id="visa">
                 -
             </td>
-
         </tr>
 
 
-        <!-- COUNTRY -->
-
         <tr>
-
             <td class="label">
-                Country Where Process Started
+                Country
             </td>
 
             <td id="country">
                 -
             </td>
-
         </tr>
 
 
-        <!-- STATUS -->
-
         <tr>
-
             <td class="label">
                 Status
             </td>
@@ -1481,210 +1483,866 @@ td:last-child{
             <td>
 
                 <span class="status">
-                    Verified
+                    ACTIVE
                 </span>
 
             </td>
-
         </tr>
-
 
     </table>
 
+</section>
 
-</div>
+
+<!-- =========================
+     SKILLS
+========================= -->
+
+<section class="section">
+
+    <div class="title">
+        👨‍💼 የሙያ እና ክህሎት መረጃ
+    </div>
 
 
-<!-- =====================================================
+    <div class="grid">
+
+
+        <div class="card">
+
+            <span>💼</span>
+
+            <h3>
+                Professional Skill
+            </h3>
+
+            <p id="skill">
+                Not Specified
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <span>📋</span>
+
+            <h3>
+                Registration
+            </h3>
+
+            <p class="ready">
+                ✓ Active
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <span>🎓</span>
+
+            <h3>
+                Qualification
+            </h3>
+
+            <p>
+                Verified
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <span>🌍</span>
+
+            <h3>
+                Employment
+            </h3>
+
+            <p>
+                Overseas Employment
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     MINISTRY
+========================= -->
+
+<section class="section">
+
+    <div class="ministry">
+
+        <div class="ministry-top">
+
+            <div class="ministry-icon">
+                🏛️
+            </div>
+
+
+            <div>
+
+                <small>
+                    INFORMATION
+                </small>
+
+                <h2>
+                    ስራና ክህሎት
+                </h2>
+
+                <p>
+                    Ministry / Skills Information
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="ministry-text">
+
+            ይህ ክፍል የሙያ፣ የክህሎት፣
+            የስራ እድል እና የውጭ ስራ
+            መረጃዎችን ለማሳየት የተዘጋጀ ነው።
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
      DOCUMENT
-===================================================== -->
+========================= -->
 
-<div class="document-box">
+<section class="section">
 
-
-    <div class="document-title">
-
-        📄 Document / የሰነድ ፎቶ
-
+    <div class="title">
+        📄 የሰነድ ፎቶ / Document Photo
     </div>
 
 
-    <!--
-        IMPORTANT:
-        This image gets its source from:
-
-        localStorage
-            ↓
-        user
-            ↓
-        user.doc
-    -->
-
-    <img
-        id="doc"
-        src=""
-        alt="Document Image">
+    <div class="document-photo-box">
 
 
-    <!-- Shown only when user.doc is empty -->
+        <div class="document-photo-header">
 
-    <div
-        id="noDocument"
-        class="no-document"
-        style="display:none;">
+            <div>
 
-        <div class="icon">
-            📄
+                <small>
+                    DOCUMENT INFORMATION
+                </small>
+
+                <h3>
+                    የተጫነ ሰነድ
+                </h3>
+
+            </div>
+
+
+            <span
+                id="documentStatus"
+                class="document-status">
+
+                ✓ UPLOADED
+
+            </span>
+
         </div>
 
-        <h3>
-            No Document Available
-        </h3>
 
-        <p>
-            ለዚህ ተጠቃሚ የተመዘገበ
-            ሰነድ የለም።
-        </p>
-
-    </div>
+        <div
+            class="document-image-container"
+            id="documentContainer">
 
 
-    <!-- Shown when document URL cannot load -->
+            <img
+                id="document"
+                class="document-image"
+                src=""
+                alt="Document"
+            >
 
-    <div
-        id="documentError"
-        class="document-error"
-        style="display:none;">
 
-        <div class="icon">
-            ⚠️
+            <div
+                id="documentPlaceholder"
+                class="document-placeholder"
+                style="display:none;">
+
+                <div class="icon">
+                    📄
+                </div>
+
+                <p>
+                    No document uploaded
+                </p>
+
+                <small>
+                    Upload JPG, PNG or WEBP
+                </small>
+
+            </div>
+
         </div>
 
-        <h3>
-            Document Could Not Be Loaded
-        </h3>
 
-        <p style="margin-top:8px;">
-            የሰነዱ URL ሊከፈት አልቻለም።
+        <div class="document-actions">
+
+
+            <label
+                for="documentUpload"
+                class="upload-btn">
+
+                📷 Upload Document
+
+            </label>
+
+
+            <input
+                type="file"
+                id="documentUpload"
+                accept="image/jpeg,image/png,image/webp"
+                hidden
+            >
+
+
+            <button
+                type="button"
+                class="view-btn"
+                onclick="viewDocument()">
+
+                🔍 View Full
+
+            </button>
+
+
+            <button
+                type="button"
+                class="remove-btn"
+                onclick="removeDocument()">
+
+                🗑️ Remove
+
+            </button>
+
+        </div>
+
+
+        <p class="document-help">
+
+            JPG, PNG ወይም WEBP የሰነድ ፎቶ ይጫኑ።
+
         </p>
 
     </div>
 
-
-</div>
-
-
-<!-- =====================================================
-     RECEIPT UPLOAD
-===================================================== -->
-
-<div class="upload">
+</section>
 
 
-    <h2>
+<!-- =========================
+     TRAVEL
+========================= -->
 
-        Upload receipt (photo)
-        <br>
+<section class="section">
 
-        የክፍያ ደረሰኝ ፎቶ
-
-    </h2>
-
-
-    <div class="filebox">
-
-
-        <p>
-
-            Receipt photo /
-            የክፍያ ደረሰኝ ፎቶ
-
-        </p>
-
-
-        <input
-            type="file"
-            id="receiptInput"
-            accept="image/*">
-
-
+    <div class="title">
+        🌍 Travel & Employment
     </div>
 
 
-    <!-- PROGRESS -->
+    <div class="grid">
+
+
+        <div class="card">
+
+            <span>🌎</span>
+
+            <h3>
+                Destination
+            </h3>
+
+            <p id="destination">
+                Not Specified
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <span>🛂</span>
+
+            <h3>
+                Visa Category
+            </h3>
+
+            <p id="visaCard">
+                Not Specified
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <span>💼</span>
+
+            <h3>
+                Employment Type
+            </h3>
+
+            <p>
+                Overseas Employment
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <span>📍</span>
+
+            <h3>
+                Application
+            </h3>
+
+            <p>
+                Travel Application
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     PAYMENT
+========================= -->
+
+<section class="section payment">
+
+    <div class="payment-top">
+
+        <div>
+
+            <div class="payment-label">
+                CURRENT STAGE
+            </div>
+
+            <h2>
+                💳 Payment
+            </h2>
+
+        </div>
+
+
+        <div class="paid">
+            ✓ RECORDED
+        </div>
+
+    </div>
+
 
     <div class="progress">
 
-        <div class="bar">
+        <div class="progress-bar"></div>
 
-            Process 70%
+    </div>
+
+
+    <div class="progress-info">
+
+        <span>
+            Application Progress
+        </span>
+
+        <strong>
+            60%
+        </strong>
+
+    </div>
+
+
+    <div class="next">
+
+        <small>
+            NEXT STAGE
+        </small>
+
+        <strong>
+            📄 Visa Processing
+        </strong>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     RECEIPT
+========================= -->
+
+<section class="section">
+
+    <div class="title">
+        🧾 የክፍያ ደረሰኝ
+    </div>
+
+
+    <div class="receipt">
+
+
+        <div class="receipt-header">
+
+            <div>
+
+                <small>
+                    PAYMENT RECEIPT
+                </small>
+
+                <h2>
+                    RECEIPT
+                </h2>
+
+            </div>
+
+
+            <div class="receipt-paid">
+                ✓ PAID
+            </div>
+
+        </div>
+
+
+        <div class="receipt-body">
+
+
+            <img
+                id="receiptImage"
+                class="receipt-image"
+                style="display:none;"
+                alt="Payment Receipt"
+            >
+
+
+            <div class="receipt-grid">
+
+
+                <div class="receipt-item">
+
+                    <small>
+                        Payment Status
+                    </small>
+
+                    <strong class="ready">
+                        Payment Recorded
+                    </strong>
+
+                </div>
+
+
+                <div class="receipt-item">
+
+                    <small>
+                        Reference ID
+                    </small>
+
+                    <strong id="paymentRef">
+                        -
+                    </strong>
+
+                </div>
+
+
+                <div class="receipt-item">
+
+                    <small>
+                        Payment Date
+                    </small>
+
+                    <strong id="paymentDate">
+                        --
+                    </strong>
+
+                </div>
+
+
+                <div class="receipt-item">
+
+                    <small>
+                        Amount
+                    </small>
+
+                    <strong id="paymentAmount">
+                        -
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="receipt-note">
+
+                <strong>
+                    ✓ Payment Recorded
+                </strong>
+
+                <br>
+
+                የክፍያ ደረሰኝ መረጃ ከዚህ
+                መሣሪያ ላይ ከተመዘገበ እዚህ
+                ይታያል።
+
+            </div>
+
+
+            <button
+                class="print"
+                onclick="printReceipt()">
+
+                🖨️ Print Receipt
+
+            </button>
 
         </div>
 
     </div>
 
+</section>
 
-    <!-- SUBMIT -->
 
-    <div class="submit">
+<!-- =========================
+     APPLICATION JOURNEY
+========================= -->
 
-        <button
-            type="button"
-            onclick="uploadReceipt()">
+<section class="section">
 
-            Submit receipt
+    <div class="title">
+        🔄 Application Journey
+    </div>
 
+
+    <div class="timeline">
+
+
+        <div class="step done">
+
+            <h4>
+                ✓ Profile Created
+            </h4>
+
+            <p>
+                Application profile created.
+            </p>
+
+        </div>
+
+
+        <div class="step done">
+
+            <h4>
+                ✓ Documents Submitted
+            </h4>
+
+            <p>
+                Required information added.
+            </p>
+
+        </div>
+
+
+        <div class="step active">
+
+            <h4>
+                💳 Payment — Current Stage
+            </h4>
+
+            <p>
+                Payment recorded.
+            </p>
+
+        </div>
+
+
+        <div class="step">
+
+            <h4>
+                📄 Visa Processing — Next Stage
+            </h4>
+
+            <p>
+                Next stage in the application journey.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     DOCUMENT CHECKLIST
+========================= -->
+
+<section class="section">
+
+    <div class="title">
+        📄 Document Checklist
+    </div>
+
+
+    <div class="document">
+
+        <span>
+            Passport Information
+        </span>
+
+        <b class="ready">
+            ✓ READY
+        </b>
+
+    </div>
+
+
+    <div class="document">
+
+        <span>
+            Professional Information
+        </span>
+
+        <b class="ready">
+            ✓ READY
+        </b>
+
+    </div>
+
+
+    <div class="document">
+
+        <span>
+            Application Information
+        </span>
+
+        <b class="ready">
+            ✓ READY
+        </b>
+
+    </div>
+
+
+    <div class="document">
+
+        <span>
+            Payment Receipt
+        </span>
+
+        <b class="ready">
+            ✓ RECORDED
+        </b>
+
+    </div>
+
+
+    <div class="document">
+
+        <span>
+            Visa Processing
+        </span>
+
+        <b class="next-color">
+            NEXT
+        </b>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     NOTIFICATIONS
+========================= -->
+
+<section class="section">
+
+    <div class="title">
+        🔔 Notifications
+    </div>
+
+
+    <div class="notice">
+
+        <strong>
+            Payment Update
+        </strong>
+
+        <p>
+            Payment information is displayed
+            from the saved application data.
+        </p>
+
+    </div>
+
+
+    <div class="notice">
+
+        <strong>
+            Application Progress
+        </strong>
+
+        <p>
+            Current application progress is 60%.
+        </p>
+
+    </div>
+
+
+    <div class="notice">
+
+        <strong>
+            Next Stage
+        </strong>
+
+        <p>
+            Visa Processing is displayed as
+            the next stage.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     SECURITY
+========================= -->
+
+<section class="section">
+
+    <div class="title">
+        🛡️ Security & Verification
+    </div>
+
+
+    <div class="grid">
+
+
+        <div class="card">
+
+            <span>🔐</span>
+
+            <h3>
+                Data Protection
+            </h3>
+
+            <p>
+                Protected application interface
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <span>✓</span>
+
+            <h3>
+                Profile Check
+            </h3>
+
+            <p class="ready">
+                Verified
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     SUPPORT
+========================= -->
+
+<section class="section">
+
+    <div class="support">
+
+        <h3>
+            💬 Help & Support
+        </h3>
+
+        <p>
+            Need assistance? Use the support center.
+        </p>
+
+        <button onclick="support()">
+            Contact Support
         </button>
 
     </div>
 
+</section>
+
+
+<!-- =========================
+     WARNING
+========================= -->
+
+<section class="section">
+
+    <div class="warning">
+
+        <strong>
+            ⚠ SAMPLE / DEMO
+        </strong>
+
+        <br>
+
+        This interface is for testing and
+        demonstration purposes only.
+
+        <br>
+
+        It is not an official government service.
+
+    </div>
+
+</section>
+
 
 </div>
 
 
-<!-- =====================================================
+<!-- =========================
      FOOTER
-===================================================== -->
+========================= -->
 
-<footer class="footer">
+<footer>
 
+    <h2>
+        🌍 Travel & Skills Dashboard
+    </h2>
 
-    <div class="footer-container">
+    <p>
+        Modern Travel • Skills • Employment Application
+    </p>
 
-
-        <h3>
-            E-LMIS System
-        </h3>
-
-
-        <p>
-            Secure & Verified Personal Information Platform
-        </p>
-
-
-        <div class="contact">
-
-            <p>
-                📞 Tel: +251 962513636
-            </p>
-
-            <p>
-                📍 Addis Ababa, Ethiopia
-            </p>
-
-        </div>
-
-
-        <p class="copy">
-
-            © 2026 E-LMIS.
-            All Rights Reserved.
-
-        </p>
-
-
-    </div>
-
+    <p>
+        © 2026 Interface — For Testing Only
+    </p>
 
 </footer>
 
@@ -1692,561 +2350,21 @@ td:last-child{
 <script>
 
 /* =====================================================
-   GET USER DATA
-===================================================== */
-
-let user = null;
-
-let code =
-    localStorage.getItem("vcode");
-
-
-try {
-
-    const savedUser =
-        localStorage.getItem("user");
-
-
-    if (savedUser) {
-
-        user =
-            JSON.parse(savedUser);
-
-    }
-
-} catch(error) {
-
-    console.error(
-        "Could not read user data:",
-        error
-    );
-
-    user = null;
-
-}
-
-
-/* =====================================================
-   CHECK USER
-===================================================== */
-
-if (!user) {
-
-    alert(
-        "No user data found!"
-    );
-
-    window.location.href =
-        "index.html";
-
-}
-
-
-/* =====================================================
-   HELPER
-===================================================== */
-
-function setText(
-    id,
-    value
-){
-
-    const element =
-        document.getElementById(id);
-
-
-    if (!element) {
-        return;
-    }
-
-
-    if (
-        value !== undefined &&
-        value !== null &&
-        String(value).trim() !== ""
-    ){
-
-        element.innerText =
-            String(value).trim();
-
-    }else{
-
-        element.innerText =
-            "-";
-
-    }
-
-}
-
-
-/* =====================================================
-   LOAD PERSONAL INFORMATION
-===================================================== */
-
-if (user) {
-
-
-    setText(
-        "name",
-        user.name
-    );
-
-
-    setText(
-        "gender",
-        user.gender
-    );
-
-
-    setText(
-        "age",
-        user.age
-    );
-
-
-    setText(
-        "dob",
-        user.dob
-    );
-
-
-    setText(
-        "elmis",
-        user.elmis
-    );
-
-
-    setText(
-        "passport",
-        user.passport
-    );
-
-
-    setText(
-        "phone",
-        user.phone
-    );
-
-
-    setText(
-        "birth",
-        user.birth
-    );
-
-
-    setText(
-        "visa",
-        user.visa
-    );
-
-
-    setText(
-        "country",
-        user.country
-    );
-
-}
-
-
-/* =====================================================
-   PROFILE PHOTO
-   READ FROM user.photo
-===================================================== */
-
-const photo =
-    document.getElementById(
-        "photo"
-    );
-
-
-const defaultPhoto =
-    "https://e-lmis-online.netlify.app/image/photo_2025-11-29_18-58-10.jpg";
-
-
-if (photo && user) {
-
-
-    const photoURL =
-        user.photo;
-
-
-    if (
-        photoURL &&
-        String(photoURL).trim() !== ""
-    ){
-
-        photo.src =
-            String(photoURL).trim();
-
-    }else{
-
-        photo.src =
-            defaultPhoto;
-
-    }
-
-
-    photo.onerror =
-        function(){
-
-            this.onerror = null;
-
-            this.src =
-                defaultPhoto;
-
-        };
-
-}
-
-
-/* =====================================================
-   DOCUMENT
-   READ DIRECTLY FROM user.doc
-===================================================== */
-
-const doc =
-    document.getElementById(
-        "doc"
-    );
-
-
-const noDocument =
-    document.getElementById(
-        "noDocument"
-    );
-
-
-const documentError =
-    document.getElementById(
-        "documentError"
-    );
-
-
-if (doc && user) {
-
-
-    /*
-       IMPORTANT
-
-       We do NOT use:
-
-       localStorage.getItem("documentPhoto")
-
-       We use:
-
-       user.doc
-
-       because index.html saves the complete
-       user object into localStorage.
-    */
-
-
-    const documentURL =
-        user.doc;
-
-
-    if (
-        documentURL &&
-        String(documentURL).trim() !== ""
-    ) {
-
-
-        /* =========================
-           DOCUMENT EXISTS
-        ========================= */
-
-        doc.src =
-            String(documentURL).trim();
-
-
-        doc.style.display =
-            "block";
-
-
-        if (noDocument) {
-
-            noDocument.style.display =
-                "none";
-
-        }
-
-
-        if (documentError) {
-
-            documentError.style.display =
-                "none";
-
-        }
-
-
-        /*
-           If Cloudinary/document URL fails
-        */
-
-        doc.onerror =
-            function(){
-
-
-                console.error(
-                    "Document failed to load:",
-                    this.src
-                );
-
-
-                this.style.display =
-                    "none";
-
-
-                if (noDocument) {
-
-                    noDocument.style.display =
-                        "none";
-
-                }
-
-
-                if (documentError) {
-
-                    documentError.style.display =
-                        "block";
-
-                }
-
-            };
-
-
-    }else{
-
-
-        /* =========================
-           NO DOCUMENT
-        ========================= */
-
-        doc.removeAttribute(
-            "src"
-        );
-
-
-        doc.style.display =
-            "none";
-
-
-        if (noDocument) {
-
-            noDocument.style.display =
-                "block";
-
-        }
-
-
-        if (documentError) {
-
-            documentError.style.display =
-                "none";
-
-        }
-
-    }
-
-}
-
-
-/* =====================================================
-   COUNTDOWN
-===================================================== */
-
-let expiryTime =
-    localStorage.getItem(
-        "expiryTime"
-    );
-
-
-if (
-    !expiryTime ||
-    Date.now() > Number(expiryTime)
-){
-
-    expiryTime =
-        Date.now() +
-        (2 * 24 * 60 * 60 * 1000);
-
-
-    localStorage.setItem(
-        "expiryTime",
-        expiryTime
-    );
-
-}
-
-
-const dDisplay =
-    document.getElementById(
-        "days"
-    );
-
-
-const hDisplay =
-    document.getElementById(
-        "hours"
-    );
-
-
-const mDisplay =
-    document.getElementById(
-        "minutes"
-    );
-
-
-const sDisplay =
-    document.getElementById(
-        "seconds"
-    );
-
-
-function updateTimer(){
-
-
-    let remaining =
-        Number(expiryTime) -
-        Date.now();
-
-
-    if (remaining < 0) {
-
-        remaining = 0;
-
-    }
-
-
-    const totalSeconds =
-        Math.floor(
-            remaining / 1000
-        );
-
-
-    const days =
-        Math.floor(
-            totalSeconds / 86400
-        );
-
-
-    const hours =
-        Math.floor(
-            (totalSeconds % 86400) / 3600
-        );
-
-
-    const minutes =
-        Math.floor(
-            (totalSeconds % 3600) / 60
-        );
-
-
-    const seconds =
-        totalSeconds % 60;
-
-
-    if (dDisplay) {
-
-        dDisplay.textContent =
-            String(days).padStart(
-                2,
-                "0"
-            );
-
-    }
-
-
-    if (hDisplay) {
-
-        hDisplay.textContent =
-            String(hours).padStart(
-                2,
-                "0"
-            );
-
-    }
-
-
-    if (mDisplay) {
-
-        mDisplay.textContent =
-            String(minutes).padStart(
-                2,
-                "0"
-            );
-
-    }
-
-
-    if (sDisplay) {
-
-        sDisplay.textContent =
-            String(seconds).padStart(
-                2,
-                "0"
-            );
-
-    }
-
-
-    /*
-       Do NOT automatically create a new
-       countdown repeatedly.
-    */
-
-    if (totalSeconds <= 0) {
-
-        clearInterval(
-            timerInterval
-        );
-
-    }
-
-}
-
-
-updateTimer();
-
-
-const timerInterval =
-    setInterval(
-        updateTimer,
-        1000
-    );
-
-
-/* =====================================================
    CLOCK
 ===================================================== */
 
 function updateClock(){
 
+    const clock =
+        document.getElementById("clock");
 
-    const time =
-        document.getElementById(
-            "time"
-        );
-
-
-    if (!time) {
-        return;
-    }
-
-
-    const now =
-        new Date();
-
-
-    time.innerText =
-        "Last system check: " +
-        now.toLocaleString();
+    clock.innerText =
+        "System Time: " +
+        new Date().toLocaleString();
 
 }
 
-
 updateClock();
-
 
 setInterval(
     updateClock,
@@ -2255,145 +2373,649 @@ setInterval(
 
 
 /* =====================================================
-   QR CODE
+   LOAD USER
+   SAME LOCALSTORAGE METHOD
 ===================================================== */
 
-const qr =
-    document.getElementById(
-        "qr"
-    );
+let user = {};
 
+try{
 
-if (qr) {
-
-    qr.src =
-        "https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=" +
-        encodeURIComponent(
-            window.location.href
+    user =
+        JSON.parse(
+            localStorage.getItem("user") || "{}"
         );
+
+}catch(error){
+
+    console.error(error);
+
+    user = {};
 
 }
 
 
 /* =====================================================
-   RECEIPT UPLOAD
+   HELPER
 ===================================================== */
 
-function uploadReceipt(){
+function setText(id,value){
 
+    const element =
+        document.getElementById(id);
 
-    const input =
-        document.getElementById(
-            "receiptInput"
-        );
-
-
-    if (!input) {
-
-        alert(
-            "Receipt input not found."
-        );
-
-        return;
-
-    }
-
-
-    const file =
-        input.files[0];
-
-
-    if (!file) {
-
-        alert(
-            "Select receipt photo"
-        );
-
-        return;
-
-    }
-
-
-    /*
-       Only images
-    */
-
-    if (
-        !file.type.startsWith(
-            "image/"
-        )
+    if(
+        element &&
+        value !== undefined &&
+        value !== null &&
+        value !== ""
     ){
 
-        alert(
-            "Please select an image file."
-        );
+        element.innerText =
+            value;
+
+    }
+
+}
+
+
+/* =====================================================
+   PERSONAL DATA
+===================================================== */
+
+setText(
+    "name",
+    user.name || "-"
+);
+
+setText(
+    "gender",
+    user.gender || "-"
+);
+
+setText(
+    "age",
+    user.age || "-"
+);
+
+setText(
+    "dob",
+    user.dob || "-"
+);
+
+setText(
+    "elmis",
+    user.elmis || "-"
+);
+
+setText(
+    "passport",
+    user.passport || "-"
+);
+
+setText(
+    "phone",
+    user.phone || "-"
+);
+
+setText(
+    "birth",
+    user.birth || "-"
+);
+
+setText(
+    "visa",
+    user.visa || "-"
+);
+
+setText(
+    "visaCard",
+    user.visa || "Not Specified"
+);
+
+setText(
+    "country",
+    user.country || "-"
+);
+
+setText(
+    "skill",
+    user.skill || "Not Specified"
+);
+
+setText(
+    "destination",
+    user.country || "Not Specified"
+);
+
+
+/* =====================================================
+   PROFILE PHOTO
+===================================================== */
+
+const photo =
+    document.getElementById("photo");
+
+
+const defaultPhoto =
+    "https://e-lmis-online.netlify.app/image/photo_2025-11-29_18-58-10.jpg";
+
+
+photo.src =
+    user.photo ||
+    defaultPhoto;
+
+
+photo.onerror =
+function(){
+
+    this.src =
+        defaultPhoto;
+
+};
+
+
+/* =====================================================
+   DOCUMENT
+===================================================== */
+
+const documentUpload =
+    document.getElementById(
+        "documentUpload"
+    );
+
+const documentImage =
+    document.getElementById(
+        "document"
+    );
+
+const documentPlaceholder =
+    document.getElementById(
+        "documentPlaceholder"
+    );
+
+const documentStatus =
+    document.getElementById(
+        "documentStatus"
+    );
+
+
+const defaultDocument =
+    user.doc ||
+    "https://e-lmis-online.netlify.app/image/photo_2025-11-29_18-23-08.jpg";
+
+
+/* =====================================================
+   SHOW DOCUMENT
+===================================================== */
+
+function showDocument(src){
+
+    if(!src){
+
+        documentImage.style.display =
+            "none";
+
+        documentPlaceholder.style.display =
+            "flex";
+
+        documentStatus.innerText =
+            "○ NO DOCUMENT";
+
+        documentStatus.style.background =
+            "#64748b";
 
         return;
 
     }
 
 
-    const reader =
-        new FileReader();
+    documentImage.src =
+        src;
+
+    documentImage.style.display =
+        "block";
+
+    documentPlaceholder.style.display =
+        "none";
+
+    documentStatus.innerText =
+        "✓ UPLOADED";
+
+    documentStatus.style.background =
+        "#16a34a";
+
+}
 
 
-    reader.onload =
+/* =====================================================
+   LOAD DOCUMENT
+   PRIORITY:
+
+   1. uploaded documentPhoto
+   2. user.doc
+   3. default image
+===================================================== */
+
+const savedDocument =
+    localStorage.getItem(
+        "documentPhoto"
+    );
+
+
+if(savedDocument){
+
+    showDocument(
+        savedDocument
+    );
+
+}else{
+
+    showDocument(
+        defaultDocument
+    );
+
+}
+
+
+/* =====================================================
+   DOCUMENT UPLOAD
+===================================================== */
+
+documentUpload.addEventListener(
+    "change",
+    function(){
+
+        const file =
+            this.files[0];
+
+        if(!file){
+
+            return;
+
+        }
+
+
+        if(
+            !file.type.startsWith(
+                "image/"
+            )
+        ){
+
+            alert(
+                "Please select an image file."
+            );
+
+            this.value = "";
+
+            return;
+
+        }
+
+
+        const maxSize =
+            8 * 1024 * 1024;
+
+
+        if(file.size > maxSize){
+
+            alert(
+                "Image is too large.\n\n" +
+                "Please select an image smaller than 8MB."
+            );
+
+            this.value = "";
+
+            return;
+
+        }
+
+
+        const reader =
+            new FileReader();
+
+
+        reader.onload =
         function(event){
 
+            const imageData =
+                event.target.result;
 
-            localStorage.setItem(
-                "receipt",
-                event.target.result
+
+            showDocument(
+                imageData
             );
 
 
-            window.location.href =
-                "payment-success.html";
+            try{
+
+                localStorage.setItem(
+                    "documentPhoto",
+                    imageData
+                );
+
+            }catch(error){
+
+                console.error(error);
+
+                alert(
+                    "The image was displayed, " +
+                    "but could not be saved because " +
+                    "browser storage is full."
+                );
+
+            }
 
         };
 
 
-    reader.onerror =
+        reader.onerror =
         function(){
 
             alert(
-                "Could not read receipt file."
+                "Unable to read the image."
             );
 
         };
 
 
-    reader.readAsDataURL(
-        file
-    );
-
-}
-
-
-/* =====================================================
-   STORAGE UPDATE
-   If index.html changes user data in another tab,
-   update this page automatically.
-===================================================== */
-
-window.addEventListener(
-    "storage",
-    function(event){
-
-
-        if (
-            event.key === "user"
-        ){
-
-            location.reload();
-
-        }
+        reader.readAsDataURL(
+            file
+        );
 
     }
 );
 
-</script>
 
+/* =====================================================
+   VIEW FULL DOCUMENT
+===================================================== */
+
+function viewDocument(){
+
+    const src =
+        documentImage.src;
+
+
+    if(
+        !src ||
+        documentImage.style.display === "none"
+    ){
+
+        alert(
+            "No document available."
+        );
+
+        return;
+
+    }
+
+
+    const newWindow =
+        window.open(
+            "",
+            "_blank"
+        );
+
+
+    if(!newWindow){
+
+        alert(
+            "Please allow pop-ups in your browser."
+        );
+
+        return;
+
+    }
+
+
+    newWindow.document.write(`
+
+        <!DOCTYPE html>
+
+        <html>
+
+        <head>
+
+            <meta
+                name="viewport"
+                content="width=device-width,
+                initial-scale=1.0"
+            >
+
+            <title>
+                Document Preview
+            </title>
+
+            <style>
+
+                *{
+                    box-sizing:border-box;
+                }
+
+                body{
+
+                    margin:0;
+
+                    padding:20px;
+
+                    min-height:100vh;
+
+                    background:#071426;
+
+                    display:flex;
+
+                    justify-content:center;
+
+                    align-items:center;
+
+                }
+
+                img{
+
+                    max-width:100%;
+
+                    max-height:95vh;
+
+                    object-fit:contain;
+
+                    border-radius:12px;
+
+                    box-shadow:
+                    0 10px 40px
+                    rgba(0,0,0,.5);
+
+                }
+
+            </style>
+
+        </head>
+
+        <body>
+
+            <img
+                src="${src}"
+                alt="Document"
+            >
+
+        </body>
+
+        </html>
+
+    `);
+
+
+    newWindow.document.close();
+
+}
+
+
+/* =====================================================
+   REMOVE DOCUMENT
+===================================================== */
+
+function removeDocument(){
+
+    const confirmRemove =
+        confirm(
+            "Remove uploaded document?"
+        );
+
+
+    if(!confirmRemove){
+
+        return;
+
+    }
+
+
+    localStorage.removeItem(
+        "documentPhoto"
+    );
+
+
+    documentUpload.value =
+        "";
+
+
+    /*
+     * Return to user.doc/default
+     */
+
+    showDocument(
+        defaultDocument
+    );
+
+}
+
+
+/* =====================================================
+   RECEIPT
+===================================================== */
+
+const receiptImage =
+    document.getElementById(
+        "receiptImage"
+    );
+
+
+const savedReceipt =
+    localStorage.getItem(
+        "receipt"
+    );
+
+
+if(savedReceipt){
+
+    receiptImage.src =
+        savedReceipt;
+
+    receiptImage.style.display =
+        "block";
+
+}
+
+
+/* =====================================================
+   PAYMENT REFERENCE
+===================================================== */
+
+let savedPaymentRef =
+    localStorage.getItem(
+        "paymentReference"
+    );
+
+
+if(!savedPaymentRef){
+
+    savedPaymentRef =
+        "PAY-" +
+        Math.floor(
+            100000 +
+            Math.random() * 900000
+        );
+
+    localStorage.setItem(
+        "paymentReference",
+        savedPaymentRef
+    );
+
+}
+
+
+document.getElementById(
+    "paymentRef"
+).innerText =
+    savedPaymentRef;
+
+
+/* =====================================================
+   PAYMENT DATE
+===================================================== */
+
+let paymentDate =
+    localStorage.getItem(
+        "paymentDate"
+    );
+
+
+if(!paymentDate){
+
+    paymentDate =
+        new Date()
+        .toLocaleDateString();
+
+}
+
+
+document.getElementById(
+    "paymentDate"
+).innerText =
+    paymentDate;
+
+
+/* =====================================================
+   PAYMENT AMOUNT
+===================================================== */
+
+const paymentAmount =
+    user.amount ||
+    user.payment ||
+    user.price ||
+    "-";
+
+
+document.getElementById(
+    "paymentAmount"
+).innerText =
+    paymentAmount;
+
+
+/* =====================================================
+   PRINT
+===================================================== */
+
+function printReceipt(){
+
+    window.print();
+
+}
+
+
+/* =====================================================
+   SUPPORT
+===================================================== */
+
+function support(){
+
+    alert(
+        "SUPPORT CENTER\n\n" +
+        "Please contact the support center."
+    );
+
+}
+
+</script>
 
 </body>
 
