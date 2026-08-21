@@ -1,3496 +1,381 @@
 <!DOCTYPE html>
 <html lang="am">
-
 <head>
-
 <meta charset="UTF-8">
-
-<meta name="viewport"
-      content="width=device-width, initial-scale=1.0">
-
-<title>Personal Information — DEMO</title>
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Travel & Skills Dashboard — DEMO</title>
 <style>
+*{box-sizing:border-box;margin:0;padding:0;font-family:Arial,sans-serif}
+body{background:linear-gradient(135deg,#eef5ff,#f8fbff,#edf4ff);color:#172033;min-height:100vh}
+button,input{font-family:inherit}.demo{background:#fff3cd;color:#765800;text-align:center;padding:9px;font-size:11px;font-weight:bold}
+header{max-width:900px;margin:12px auto;padding:32px 20px;border-radius:30px;text-align:center;color:#fff;background:linear-gradient(135deg,#071426,#0f2d4f,#2563eb);box-shadow:0 25px 55px #0f172a2e;position:relative;overflow:hidden}
+header .icon{font-size:42px;position:relative;z-index:2}header h1{font-size:25px;margin-top:12px;position:relative;z-index:2}header p{color:#dbeafe;font-size:12px;margin-top:7px;position:relative;z-index:2}
+.nav{max-width:700px;margin:14px auto;padding:0 10px;display:flex;gap:10px}.nav a{flex:1;text-align:center;text-decoration:none;padding:13px;border-radius:14px;background:#fff;color:#173f87;border:1px solid #dbeafe;font-size:11px;font-weight:bold}.nav a.primary{background:#2563eb;color:#fff}
+.clock{text-align:center;margin:15px;color:#64748b;font-size:12px}.container{max-width:700px;margin:15px auto;padding:0 10px}
+.section{background:#fffffff2;margin-bottom:17px;padding:22px;border-radius:25px;border:1px solid #e2e8f0;box-shadow:0 12px 35px #0f172a0f;position:relative;overflow:hidden}.title{font-size:19px;font-weight:900;margin-bottom:18px}
+.profile{text-align:center}.profile-photo{width:145px;height:175px;object-fit:cover;border-radius:20px;border:4px solid #2563eb;background:#f8fafc;box-shadow:0 12px 25px #2563eb26}
+table{width:100%;border-collapse:collapse;margin-top:20px}td{padding:13px 8px;border-bottom:1px solid #edf1f5;font-size:13px;text-align:left}.label{width:42%;font-weight:bold;color:#173f87}
+.status,.document-status,.receipt-paid{display:inline-block;background:#16a34a;color:#fff;padding:7px 13px;border-radius:20px;font-size:10px;font-weight:bold}
+.grid,.travel-grid,.skill-main,.security-grid,.receipt-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.card{padding:18px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:19px}.card span{font-size:25px}.card h3{font-size:13px;margin-top:8px}.card p{color:#64748b;font-size:11px;line-height:1.6;margin-top:5px}.ready{color:#16a34a!important;font-weight:bold}.next-color{color:#2563eb!important;font-weight:bold}
+.travel-box,.ministry,.security-box,.support{padding:22px;border-radius:23px;color:#fff;background:linear-gradient(135deg,#071426,#0f2d4f,#2563eb);box-shadow:0 18px 35px #2563eb29}.travel-header,.skill-top,.ministry-top,.security-header{display:flex;align-items:center;gap:14px}.travel-icon,.ministry-icon,.security-icon{width:58px;height:58px;border-radius:18px;display:flex;justify-content:center;align-items:center;background:#ffffff1f;font-size:28px}.travel-header small,.ministry small{color:#bfdbfe;font-size:9px;letter-spacing:1px}.travel-header h2,.ministry h2{font-size:20px;margin-top:4px}.travel-header p,.ministry p{font-size:11px;color:#dbeafe;margin-top:4px}.travel-item,.security-item{padding:14px;border-radius:15px;background:#ffffff14;border:1px solid #ffffff1a}.travel-item small,.security-item small{display:block;color:#bfdbfe;font-size:9px}.travel-item strong,.security-item strong{display:block;margin-top:6px;font-size:12px}.travel-grid{margin-top:20px}
+.skill-banner{padding:20px;border-radius:22px;background:linear-gradient(135deg,#eff6ff,#fff);border:1px solid #bfdbfe}.skill-icon{width:55px;height:55px;border-radius:17px;background:#2563eb;color:#fff;display:flex;justify-content:center;align-items:center;font-size:26px}.skill-top small{color:#64748b;font-size:9px;letter-spacing:1px}.skill-top h2{font-size:19px;margin-top:4px}.skill-main{margin-top:18px}.skill-item{background:#fff;border:1px solid #e2e8f0;padding:14px;border-radius:15px}.skill-item small{display:block;color:#64748b;font-size:9px}.skill-item strong{display:block;margin-top:5px;font-size:12px}
+.ministry-text{margin-top:17px;padding:15px;border-radius:15px;background:#ffffff14;font-size:12px;line-height:1.8;color:#dbeafe}
+.document-photo-box,.receipt{background:#fff;border:1px solid #dbeafe;border-radius:22px;overflow:hidden;box-shadow:0 10px 30px #0f172a14}
+.document-photo-header,.receipt-header{padding:18px;background:linear-gradient(135deg,#071426,#0f2d4f,#2563eb);color:#fff;display:flex;justify-content:space-between;align-items:center;gap:10px}.document-photo-header small,.receipt-header small{color:#bfdbfe;font-size:9px;letter-spacing:1px}.document-photo-header h3,.receipt-header h2{margin-top:5px;font-size:16px}
+.document-image-container{padding:18px;background:#f8fafc;text-align:center;min-height:250px;display:flex;justify-content:center;align-items:center}.document-image{display:block;width:100%;max-width:620px;max-height:850px;object-fit:contain;margin:auto;background:#fff;border-radius:12px;border:1px solid #e2e8f0;box-shadow:0 8px 25px #0f172a1f}.document-placeholder{width:100%;min-height:220px;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:10px;color:#64748b;background:#fff;border:2px dashed #93c5fd;border-radius:15px}.document-placeholder .icon{font-size:45px}.document-placeholder p{font-size:12px}.document-placeholder small{font-size:10px}
+.document-actions{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;padding:18px}.upload-btn,.view-btn,.remove-btn{display:flex;justify-content:center;align-items:center;min-height:45px;border-radius:13px;border:0;font-size:11px;font-weight:bold;cursor:pointer;text-align:center}.upload-btn{background:#2563eb;color:#fff}.view-btn{background:#071426;color:#fff}.remove-btn{background:#fee2e2;color:#b91c1c}.document-help{text-align:center;padding:0 18px 18px;color:#64748b;font-size:10px}
+.receipt-header h2{font-size:18px}.receipt-body{padding:20px}.receipt-grid{gap:10px}.receipt-item{padding:13px;border-radius:14px;background:#f8fafc}.receipt-item small{display:block;color:#64748b;font-size:9px}.receipt-item strong{display:block;margin-top:5px;font-size:12px}.receipt-note{margin-top:15px;padding:14px;background:#eff6ff;border-left:4px solid #2563eb;border-radius:12px;font-size:11px;line-height:1.7}.print{width:100%;margin-top:15px;border:0;padding:13px;border-radius:14px;background:#071426;color:#fff;font-weight:bold;cursor:pointer}
+.journey{position:relative;padding-left:34px}.journey:before{content:"";position:absolute;left:9px;top:5px;bottom:5px;width:3px;border-radius:5px;background:linear-gradient(#16a34a,#2563eb,#cbd5e1)}.step{position:relative;margin-bottom:26px;padding:15px;border-radius:17px;background:#f8fafc;border:1px solid #e2e8f0}.step:before{content:"";position:absolute;left:-32px;top:17px;width:15px;height:15px;border-radius:50%;background:#cbd5e1;border:4px solid white}.step.done:before{background:#16a34a}.step.active{background:#eff6ff;border-color:#93c5fd}.step.active:before{background:#f59e0b}.step h4{font-size:13px}.step p{color:#64748b;font-size:11px;margin-top:5px;line-height:1.6}.step-badge{display:inline-block;margin-top:8px;padding:5px 9px;border-radius:20px;background:#dcfce7;color:#15803d;font-size:9px;font-weight:bold}
+.document{display:flex;justify-content:space-between;align-items:center;padding:15px 0;border-bottom:1px solid #edf1f5;font-size:12px}.document:last-child{border:0}.document-left{display:flex;align-items:center}.check-icon{width:28px;height:28px;display:flex;align-items:center;justify-content:center;border-radius:9px;background:#dcfce7;color:#15803d;margin-right:10px}
+.notice{padding:16px;border-radius:17px;background:#f8fafc;border:1px solid #e2e8f0;margin-bottom:11px;display:flex;gap:12px}.notice-icon{width:40px;height:40px;flex-shrink:0;display:flex;justify-content:center;align-items:center;border-radius:12px;background:#eff6ff;font-size:20px}.notice strong{font-size:13px}.notice p{color:#64748b;font-size:11px;margin-top:4px;line-height:1.6}.notice-time{display:block;color:#94a3b8;font-size:9px;margin-top:6px}
+.security-header h2{font-size:19px}.security-header p{color:#bfdbfe;font-size:10px;margin-top:4px}.security-grid{margin-top:18px}.verified{color:#86efac!important}
+.support h3{font-size:15px}.support p{color:#bfdbfe;font-size:11px;margin-top:5px}.support button{width:100%;margin-top:15px;padding:13px;border:0;border-radius:14px;color:#173f87;background:#fff;font-weight:bold;cursor:pointer}
+.warning{text-align:center;padding:17px;background:#fff7ed;border:1px solid #fed7aa;border-radius:18px;color:#9a3412;font-size:10px;line-height:1.8}
+footer{margin-top:30px;padding:38px 15px;text-align:center;background:linear-gradient(135deg,#071426,#0f2d4f);color:#fff}footer h2{font-size:18px}footer p{color:#bfdbfe;font-size:10px;margin-top:7px}
+@media(max-width:550px){header{margin:8px}.container{padding:0 8px}.section{padding:18px}.document-actions{grid-template-columns:1fr}.nav{padding:0 8px}}
+@media(max-width:380px){.grid,.travel-grid,.skill-main,.security-grid,.receipt-grid{grid-template-columns:1fr}.profile-photo{width:130px;height:160px}}
+@media print{body{background:#fff}.demo,.nav,header,.clock,.document-actions,.document-help,footer,.support,.warning{display:none!important}.section{box-shadow:none;border:1px solid #ddd}}
 
-/* =====================================================
-   GLOBAL
-===================================================== */
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial,sans-serif;
-}
-
-body{
-    background:
-    linear-gradient(135deg,#eef5ff,#f8fbff,#edf4ff);
-
-    color:#172033;
-    min-height:100vh;
-}
-
-button,
-input{
-    font-family:inherit;
-}
-
-
-/* =====================================================
-   DEMO BAR
-===================================================== */
-
-.demo{
-    background:#fff3cd;
-    color:#765800;
-    text-align:center;
-    padding:9px;
-    font-size:11px;
-    font-weight:bold;
-}
-
-
-/* =====================================================
-   HEADER
-===================================================== */
-
-header{
-    max-width:900px;
-    margin:12px auto;
-    padding:32px 20px;
-
-    border-radius:30px;
-
-    text-align:center;
-    color:white;
-
-    background:
-    linear-gradient(
-        135deg,
-        #071426,
-        #0f2d4f,
-        #2563eb
-    );
-
-    box-shadow:
-    0 25px 55px rgba(15,23,42,.18);
-
-    position:relative;
-    overflow:hidden;
-}
-
-header:before{
-    content:"";
-    position:absolute;
-
-    width:230px;
-    height:230px;
-
-    right:-100px;
-    top:-100px;
-
-    border-radius:50%;
-
-    background:
-    rgba(255,255,255,.07);
-}
-
-header:after{
-    content:"";
-    position:absolute;
-
-    width:180px;
-    height:180px;
-
-    left:-90px;
-    bottom:-100px;
-
-    border-radius:50%;
-
-    background:
-    rgba(96,165,250,.12);
-}
-
-header .icon{
-    position:relative;
-    z-index:2;
-
-    font-size:42px;
-}
-
-header h1{
-    position:relative;
-    z-index:2;
-
-    font-size:25px;
-    margin-top:12px;
-}
-
-header p{
-    position:relative;
-    z-index:2;
-
-    color:#dbeafe;
-    font-size:12px;
-    margin-top:7px;
-}
-
-
-/* =====================================================
-   NAVIGATION
-===================================================== */
-
-.nav{
-    max-width:700px;
-    margin:14px auto;
-
-    padding:0 10px;
-
-    display:flex;
-    gap:10px;
-}
-
-.nav a{
-    flex:1;
-
-    text-align:center;
-    text-decoration:none;
-
-    padding:13px;
-
-    border-radius:14px;
-
+/* ===== RECEIPT UPLOAD - REFERENCE STYLE ===== */
+.receipt-upload-reference{
     background:#fff;
-    color:#173f87;
-
     border:1px solid #dbeafe;
-
-    font-size:11px;
-    font-weight:bold;
-
-    transition:.25s;
-}
-
-.nav a:hover{
-    transform:translateY(-2px);
-}
-
-.nav a.primary{
-    background:#2563eb;
-    color:white;
-
-    box-shadow:
-    0 8px 20px rgba(37,99,235,.22);
-}
-
-
-/* =====================================================
-   CLOCK
-===================================================== */
-
-.clock{
-    text-align:center;
-
-    margin:15px;
-
-    color:#64748b;
-
-    font-size:12px;
-}
-
-
-/* =====================================================
-   MAIN CONTAINER
-===================================================== */
-
-.container{
-    max-width:700px;
-
-    margin:15px auto;
-
-    padding:0 10px;
-}
-
-
-/* =====================================================
-   SECTION
-===================================================== */
-
-.section{
-    background:
-    rgba(255,255,255,.94);
-
-    margin-bottom:17px;
-
-    padding:22px;
-
-    border-radius:25px;
-
-    border:1px solid #e2e8f0;
-
-    box-shadow:
-    0 12px 35px rgba(15,23,42,.06);
-
-    position:relative;
-    overflow:hidden;
-}
-
-.section:before{
-    content:"";
-
-    position:absolute;
-
-    width:130px;
-    height:130px;
-
-    right:-70px;
-    top:-70px;
-
-    border-radius:50%;
-
-    background:
-    rgba(59,130,246,.045);
-}
-
-.title{
-    font-size:19px;
-    font-weight:900;
-
-    margin-bottom:18px;
-
-    position:relative;
-}
-
-
-/* =====================================================
-   PROFILE
-===================================================== */
-
-.profile{
-    text-align:center;
-}
-
-.profile-photo{
-    width:145px;
-    height:175px;
-
-    object-fit:cover;
-
-    border-radius:20px;
-
-    border:4px solid #2563eb;
-
-    background:#f8fafc;
-
-    box-shadow:
-    0 12px 25px rgba(37,99,235,.15);
-
-    transition:.3s;
-}
-
-.profile-photo:hover{
-    transform:scale(1.03);
-}
-
-table{
-    width:100%;
-
-    border-collapse:collapse;
-
-    margin-top:20px;
-}
-
-td{
-    padding:13px 8px;
-
-    border-bottom:
-    1px solid #edf1f5;
-
-    font-size:13px;
-
-    text-align:left;
-}
-
-.label{
-    width:42%;
-
-    font-weight:bold;
-
-    color:#173f87;
-}
-
-.status{
-    display:inline-block;
-
-    background:
-    linear-gradient(
-        135deg,
-        #16a34a,
-        #22c55e
-    );
-
-    color:#fff;
-
-    padding:7px 13px;
-
-    border-radius:20px;
-
-    font-size:10px;
-    font-weight:bold;
-
-    box-shadow:
-    0 7px 16px rgba(34,197,94,.18);
-}
-
-
-/* =====================================================
-   GRID
-===================================================== */
-
-.grid{
-    display:grid;
-
-    grid-template-columns:
-    1fr 1fr;
-
-    gap:12px;
-}
-
-.card{
-    padding:18px;
-
-    background:
-    linear-gradient(
-        145deg,
-        #f8fafc,
-        #ffffff
-    );
-
-    border:1px solid #e2e8f0;
-
-    border-radius:19px;
-
-    transition:.25s;
-
-    position:relative;
-}
-
-.card:hover{
-    transform:translateY(-3px);
-
-    box-shadow:
-    0 10px 25px rgba(15,23,42,.07);
-}
-
-.card span{
-    font-size:25px;
-}
-
-.card h3{
-    font-size:13px;
-
-    margin-top:8px;
-}
-
-.card p{
-    color:#64748b;
-
-    font-size:11px;
-
-    line-height:1.6;
-
-    margin-top:5px;
-}
-
-.ready{
-    color:#16a34a !important;
-    font-weight:bold;
-}
-
-.next-color{
-    color:#2563eb !important;
-    font-weight:bold;
-}
-
-.pending{
-    color:#f59e0b !important;
-    font-weight:bold;
-}
-
-
-/* =====================================================
-   TRAVEL & EMPLOYER
-===================================================== */
-
-.travel-box{
-    padding:22px;
-
-    border-radius:23px;
-
-    color:white;
-
-    background:
-    linear-gradient(
-        135deg,
-        #071426,
-        #0f2d4f,
-        #2563eb
-    );
-
-    box-shadow:
-    0 18px 35px rgba(37,99,235,.16);
-}
-
-.travel-header{
-    display:flex;
-
-    align-items:center;
-
-    gap:14px;
-}
-
-.travel-icon{
-    width:58px;
-    height:58px;
-
-    border-radius:18px;
-
-    display:flex;
-
-    justify-content:center;
-    align-items:center;
-
-    background:
-    rgba(255,255,255,.12);
-
-    font-size:28px;
-}
-
-.travel-header small{
-    color:#bfdbfe;
-
-    font-size:9px;
-
-    letter-spacing:1px;
-}
-
-.travel-header h2{
-    font-size:20px;
-
-    margin-top:4px;
-}
-
-.travel-header p{
-    font-size:11px;
-
-    color:#dbeafe;
-
-    margin-top:4px;
-}
-
-.travel-grid{
-    display:grid;
-
-    grid-template-columns:
-    1fr 1fr;
-
-    gap:10px;
-
-    margin-top:20px;
-}
-
-.travel-item{
-    padding:14px;
-
-    border-radius:15px;
-
-    background:
-    rgba(255,255,255,.08);
-
-    border:
-    1px solid
-    rgba(255,255,255,.1);
-}
-
-.travel-item small{
-    display:block;
-
-    color:#bfdbfe;
-
-    font-size:9px;
-}
-
-.travel-item strong{
-    display:block;
-
-    margin-top:6px;
-
-    font-size:12px;
-}
-
-
-/* =====================================================
-   SKILLS / PROFESSION
-===================================================== */
-
-.skill-banner{
-    padding:20px;
-
     border-radius:22px;
-
-    background:
-    linear-gradient(
-        135deg,
-        #eff6ff,
-        #ffffff
-    );
-
-    border:1px solid #bfdbfe;
-}
-
-.skill-top{
-    display:flex;
-
-    align-items:center;
-
-    gap:14px;
-}
-
-.skill-icon{
-    width:55px;
-    height:55px;
-
-    border-radius:17px;
-
-    background:#2563eb;
-
-    color:white;
-
-    display:flex;
-
-    justify-content:center;
-    align-items:center;
-
-    font-size:26px;
-
-    box-shadow:
-    0 10px 22px rgba(37,99,235,.2);
-}
-
-.skill-top small{
-    color:#64748b;
-
-    font-size:9px;
-
-    letter-spacing:1px;
-}
-
-.skill-top h2{
-    color:#172033;
-
-    font-size:19px;
-
-    margin-top:4px;
-}
-
-.skill-main{
-    margin-top:18px;
-
-    display:grid;
-
-    grid-template-columns:
-    1fr 1fr;
-
-    gap:10px;
-}
-
-.skill-item{
-    background:white;
-
-    border:1px solid #e2e8f0;
-
-    padding:14px;
-
-    border-radius:15px;
-}
-
-.skill-item small{
-    display:block;
-
-    color:#64748b;
-
-    font-size:9px;
-}
-
-.skill-item strong{
-    display:block;
-
-    margin-top:5px;
-
-    font-size:12px;
-}
-
-
-/* =====================================================
-   MINISTRY
-===================================================== */
-
-.ministry{
-    padding:22px;
-
-    border-radius:23px;
-
-    color:white;
-
-    background:
-    linear-gradient(
-        135deg,
-        #071426,
-        #0f2d4f,
-        #2563eb
-    );
-}
-
-.ministry-top{
-    display:flex;
-
-    align-items:center;
-
-    gap:14px;
-}
-
-.ministry-icon{
-    width:58px;
-    height:58px;
-
-    border-radius:18px;
-
-    display:flex;
-
-    justify-content:center;
-    align-items:center;
-
-    background:
-    rgba(255,255,255,.12);
-
-    font-size:28px;
-}
-
-.ministry small{
-    font-size:9px;
-
-    color:#bfdbfe;
-
-    letter-spacing:1px;
-}
-
-.ministry h2{
-    margin-top:5px;
-
-    font-size:20px;
-}
-
-.ministry p{
-    margin-top:4px;
-
-    font-size:11px;
-
-    color:#dbeafe;
-}
-
-.ministry-text{
-    margin-top:17px;
-
-    padding:15px;
-
-    border-radius:15px;
-
-    background:
-    rgba(255,255,255,.08);
-
-    font-size:12px;
-
-    line-height:1.8;
-
-    color:#dbeafe;
-}
-
-
-/* =====================================================
-   DOCUMENT PHOTO
-===================================================== */
-
-.document-photo-box{
-    background:#fff;
-
-    border:1px solid #dbeafe;
-
-    border-radius:22px;
-
-    overflow:hidden;
-
-    box-shadow:
-    0 10px 30px rgba(15,23,42,.08);
-}
-
-.document-photo-header{
     padding:18px;
-
-    background:
-    linear-gradient(
-        135deg,
-        #071426,
-        #0f2d4f,
-        #2563eb
-    );
-
-    color:#fff;
-
+}
+.receipt-upload-box{
+    min-height:300px;
+    border:4px dashed #93c5fd;
+    border-radius:28px;
+    background:#f4f8ff;
     display:flex;
-
-    justify-content:space-between;
-
-    align-items:center;
-
-    gap:10px;
-}
-
-.document-photo-header small{
-    color:#bfdbfe;
-
-    font-size:9px;
-
-    letter-spacing:1px;
-}
-
-.document-photo-header h3{
-    margin-top:5px;
-
-    font-size:16px;
-}
-
-.document-status{
-    background:#16a34a;
-
-    color:white;
-
-    padding:7px 11px;
-
-    border-radius:20px;
-
-    font-size:9px;
-
-    font-weight:bold;
-
-    white-space:nowrap;
-}
-
-.document-image-container{
-    padding:18px;
-
-    background:#f8fafc;
-
-    text-align:center;
-
-    min-height:250px;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-}
-
-.document-image{
-    display:block;
-
-    width:100%;
-
-    max-width:620px;
-
-    height:auto;
-
-    max-height:850px;
-
-    object-fit:contain;
-
-    margin:auto;
-
-    background:white;
-
-    border-radius:12px;
-
-    border:1px solid #e2e8f0;
-
-    box-shadow:
-    0 8px 25px rgba(15,23,42,.12);
-}
-
-.document-placeholder{
-    width:100%;
-
-    min-height:220px;
-
-    display:flex;
-
     flex-direction:column;
-
-    justify-content:center;
-
-    align-items:center;
-
-    gap:10px;
-
-    color:#64748b;
-
-    background:#fff;
-
-    border:2px dashed #bfdbfe;
-
-    border-radius:15px;
-}
-
-.document-placeholder .icon{
-    font-size:45px;
-}
-
-.document-placeholder p{
-    font-size:12px;
-}
-
-.document-placeholder small{
-    font-size:10px;
-}
-
-.document-actions{
-    display:grid;
-
-    grid-template-columns:
-    1fr 1fr 1fr;
-
-    gap:10px;
-
-    padding:18px;
-}
-
-.upload-btn,
-.view-btn,
-.remove-btn{
-    display:flex;
-
     justify-content:center;
     align-items:center;
-
-    min-height:45px;
-
+    text-align:center;
+    padding:28px 18px;
+    transition:.2s ease;
+}
+.receipt-upload-box:hover{
+    border-color:#2563eb;
+    background:#eff6ff;
+}
+.receipt-upload-label{
+    font-size:22px;
+    font-weight:800;
+    color:#172033;
+    margin-bottom:28px;
+}
+.receipt-upload-icon{
+    font-size:48px;
+    margin-bottom:12px;
+}
+.receipt-file-label{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    min-width:190px;
+    padding:14px 22px;
     border-radius:13px;
-
-    border:0;
-
-    font-size:11px;
-
-    font-weight:bold;
-
+    background:#fff;
+    border:1px solid #94a3b8;
+    color:#172033;
+    font-weight:700;
     cursor:pointer;
-
-    text-align:center;
+    box-shadow:0 3px 10px rgba(15,23,42,.06);
 }
-
-.upload-btn{
-    background:#2563eb;
-
-    color:white;
-}
-
-.view-btn{
-    background:#071426;
-
-    color:white;
-}
-
-.remove-btn{
-    background:#fee2e2;
-
-    color:#b91c1c;
-}
-
-.document-help{
-    text-align:center;
-
-    padding:0 18px 18px;
-
-    color:#64748b;
-
-    font-size:10px;
-}
-
-
-/* =====================================================
-   PAYMENT
-===================================================== */
-
-.payment{
-    background:
-    linear-gradient(
-        145deg,
-        #eff6ff,
-        #ffffff
-    );
-
-    border:1px solid #bfdbfe;
-}
-
-.payment-top{
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:center;
-}
-
-.payment-label{
-    font-size:9px;
-
-    color:#64748b;
-
-    font-weight:bold;
-
-    letter-spacing:1px;
-}
-
-.payment h2{
-    color:#2563eb;
-
-    margin-top:5px;
-}
-
-.paid{
-    padding:9px 13px;
-
-    border-radius:20px;
-
-    background:#dcfce7;
-
-    color:#15803d;
-
-    font-size:10px;
-
-    font-weight:bold;
-}
-
-.progress{
-    height:13px;
-
-    margin-top:20px;
-
-    background:#e2e8f0;
-
-    border-radius:50px;
-
-    overflow:hidden;
-}
-
-.progress-bar{
-    width:70%;
-
-    height:100%;
-
-    border-radius:50px;
-
-    background:
-    linear-gradient(
-        90deg,
-        #2563eb,
-        #38bdf8
-    );
-
-    animation:
-    progressGlow 2.5s infinite;
-}
-
-@keyframes progressGlow{
-
-    0%,100%{
-        filter:brightness(1);
-    }
-
-    50%{
-        filter:brightness(1.12);
-    }
-
-}
-
-.progress-info{
-    display:flex;
-
-    justify-content:space-between;
-
-    margin-top:8px;
-
-    font-size:10px;
-
-    color:#64748b;
-}
-
-.next{
-    margin-top:15px;
-
-    padding:14px;
-
-    border-radius:15px;
-
+.receipt-preview{
+    width:100%;
+    max-width:620px;
+    max-height:700px;
+    object-fit:contain;
+    border-radius:14px;
     background:#fff;
-
-    border:1px dashed #93c5fd;
-}
-
-.next small{
-    color:#64748b;
-
-    font-size:9px;
-}
-
-.next strong{
-    display:block;
-
-    margin-top:5px;
-
-    color:#2563eb;
-}
-
-
-/* =====================================================
-   RECEIPT
-===================================================== */
-
-.receipt{
-    background:#fff;
-
     border:1px solid #dbeafe;
-
-    border-radius:22px;
-
-    overflow:hidden;
+    box-shadow:0 10px 25px rgba(15,23,42,.10);
 }
-
-.receipt-header{
-    padding:20px;
-
-    background:#0f2d4f;
-
-    color:#fff;
-
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:center;
-}
-
-.receipt-header small{
-    font-size:9px;
-
-    color:#bfdbfe;
-}
-
-.receipt-header h2{
-    font-size:18px;
-
-    margin-top:4px;
-}
-
-.receipt-paid{
-    background:#16a34a;
-
-    padding:7px 11px;
-
-    border-radius:20px;
-
-    font-size:10px;
-
-    font-weight:bold;
-}
-
-.receipt-body{
-    padding:20px;
-}
-
-.receipt-grid{
-    display:grid;
-
-    grid-template-columns:
-    1fr 1fr;
-
-    gap:10px;
-}
-
-.receipt-item{
-    padding:13px;
-
-    border-radius:14px;
-
-    background:#f8fafc;
-}
-
-.receipt-item small{
-    display:block;
-
+.receipt-upload-status{
+    margin-top:12px;
+    font-size:11px;
     color:#64748b;
-
-    font-size:9px;
 }
-
-.receipt-item strong{
-    display:block;
-
-    margin-top:5px;
-
-    font-size:12px;
-}
-
-.receipt-note{
-    margin-top:15px;
-
-    padding:14px;
-
-    background:#eff6ff;
-
-    border-left:4px solid #2563eb;
-
-    border-radius:12px;
-
-    font-size:11px;
-
-    line-height:1.7;
-}
-
-.print{
-    width:100%;
-
-    margin-top:15px;
-
-    border:0;
-
-    padding:13px;
-
-    border-radius:14px;
-
-    background:#071426;
-
-    color:#fff;
-
-    font-weight:bold;
-
-    cursor:pointer;
-}
-
-
-/* =====================================================
-   APPLICATION JOURNEY
-===================================================== */
-
-.journey{
-    position:relative;
-
-    padding-left:34px;
-}
-
-.journey:before{
-    content:"";
-
-    position:absolute;
-
-    left:9px;
-
-    top:5px;
-
-    bottom:5px;
-
-    width:3px;
-
-    border-radius:5px;
-
-    background:
-    linear-gradient(
-        #16a34a,
-        #2563eb,
-        #cbd5e1
-    );
-}
-
-.step{
-    position:relative;
-
-    margin-bottom:26px;
-
-    padding:15px;
-
-    border-radius:17px;
-
-    background:#f8fafc;
-
-    border:1px solid #e2e8f0;
-}
-
-.step:last-child{
-    margin-bottom:0;
-}
-
-.step:before{
-    content:"";
-
-    position:absolute;
-
-    left:-32px;
-
-    top:17px;
-
-    width:15px;
-    height:15px;
-
-    border-radius:50%;
-
-    background:#cbd5e1;
-
-    border:4px solid white;
-
-    box-shadow:
-    0 0 0 1px #cbd5e1;
-}
-
-.step.done:before{
-    background:#16a34a;
-}
-
-.step.active{
-    background:#eff6ff;
-
-    border-color:#93c5fd;
-}
-
-.step.active:before{
-    background:#f59e0b;
-}
-
-.step h4{
-    font-size:13px;
-}
-
-.step p{
-    color:#64748b;
-
-    font-size:11px;
-
-    margin-top:5px;
-
-    line-height:1.6;
-}
-
-.step-badge{
-    display:inline-block;
-
-    margin-top:8px;
-
-    padding:5px 9px;
-
-    border-radius:20px;
-
-    background:#dcfce7;
-
-    color:#15803d;
-
-    font-size:9px;
-
-    font-weight:bold;
-}
-
-.step.active .step-badge{
-    background:#fef3c7;
-
-    color:#92400e;
-}
-
-
-/* =====================================================
-   DOCUMENT CHECKLIST
-===================================================== */
-
-.document{
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:center;
-
-    padding:15px 0;
-
-    border-bottom:
-    1px solid #edf1f5;
-
-    font-size:12px;
-}
-
-.document:last-child{
-    border:0;
-}
-
-.check-icon{
-    width:28px;
-    height:28px;
-
-    display:flex;
-
-    align-items:center;
-    justify-content:center;
-
-    border-radius:9px;
-
-    background:#dcfce7;
-
-    color:#15803d;
-
-    margin-right:10px;
-}
-
-.document-left{
-    display:flex;
-
-    align-items:center;
-}
-
-
-/* =====================================================
-   NOTIFICATIONS
-===================================================== */
-
-.notice{
-    padding:16px;
-
-    border-radius:17px;
-
-    background:#f8fafc;
-
-    border:1px solid #e2e8f0;
-
-    margin-bottom:11px;
-
-    display:flex;
-
-    gap:12px;
-}
-
-.notice:last-child{
-    margin-bottom:0;
-}
-
-.notice-icon{
-    width:40px;
-    height:40px;
-
-    flex-shrink:0;
-
-    display:flex;
-
-    justify-content:center;
-    align-items:center;
-
-    border-radius:12px;
-
-    background:#eff6ff;
-
-    font-size:20px;
-}
-
-.notice strong{
-    font-size:13px;
-}
-
-.notice p{
-    color:#64748b;
-
-    font-size:11px;
-
-    margin-top:4px;
-
-    line-height:1.6;
-}
-
-.notice-time{
-    display:block;
-
-    color:#94a3b8;
-
-    font-size:9px;
-
-    margin-top:6px;
-}
-
-
-/* =====================================================
-   SECURITY
-===================================================== */
-
-.security-box{
-    padding:20px;
-
-    border-radius:22px;
-
-    background:
-    linear-gradient(
-        135deg,
-        #071426,
-        #0f2d4f,
-        #2563eb
-    );
-
-    color:white;
-}
-
-.security-header{
-    display:flex;
-
-    align-items:center;
-
-    gap:13px;
-}
-
-.security-icon{
-    width:55px;
-    height:55px;
-
-    border-radius:17px;
-
-    background:
-    rgba(255,255,255,.12);
-
-    display:flex;
-
-    justify-content:center;
-    align-items:center;
-
-    font-size:27px;
-}
-
-.security-header h2{
-    font-size:19px;
-}
-
-.security-header p{
-    color:#bfdbfe;
-
-    font-size:10px;
-
-    margin-top:4px;
-}
-
-.security-grid{
-    display:grid;
-
-    grid-template-columns:
-    1fr 1fr;
-
-    gap:10px;
-
-    margin-top:18px;
-}
-
-.security-item{
-    padding:14px;
-
-    border-radius:15px;
-
-    background:
-    rgba(255,255,255,.08);
-
-    border:
-    1px solid
-    rgba(255,255,255,.1);
-}
-
-.security-item small{
-    display:block;
-
-    color:#bfdbfe;
-
-    font-size:9px;
-}
-
-.security-item strong{
-    display:block;
-
-    margin-top:6px;
-
-    font-size:11px;
-
-    color:#fff;
-}
-
-.verified{
-    color:#86efac !important;
-}
-
-
-/* =====================================================
-   SUPPORT
-===================================================== */
-
-.support{
-    padding:20px;
-
-    border-radius:22px;
-
-    background:
-    linear-gradient(
-        135deg,
-        #071426,
-        #2563eb
-    );
-
-    color:#fff;
-}
-
-.support h3{
-    font-size:15px;
-}
-
-.support p{
-    color:#bfdbfe;
-
-    font-size:11px;
-
-    margin-top:5px;
-}
-
-.support button{
-    width:100%;
-
-    margin-top:15px;
-
-    padding:13px;
-
-    border:0;
-
-    border-radius:14px;
-
-    color:#173f87;
-
-    background:#fff;
-
-    font-weight:bold;
-
-    cursor:pointer;
-}
-
-
-/* =====================================================
-   WARNING
-===================================================== */
-
-.warning{
-    text-align:center;
-
-    padding:17px;
-
-    background:#fff7ed;
-
-    border:1px solid #fed7aa;
-
-    border-radius:18px;
-
-    color:#9a3412;
-
-    font-size:10px;
-
-    line-height:1.8;
-}
-
-
-/* =====================================================
-   FOOTER
-===================================================== */
-
-footer{
-    margin-top:30px;
-
-    padding:38px 15px;
-
-    text-align:center;
-
-    background:
-    linear-gradient(
-        135deg,
-        #071426,
-        #0f2d4f
-    );
-
-    color:#fff;
-}
-
-footer h2{
-    font-size:18px;
-}
-
-footer p{
-    color:#bfdbfe;
-
-    font-size:10px;
-
-    margin-top:7px;
-}
-
-
-/* =====================================================
-   MOBILE
-===================================================== */
-
 @media(max-width:550px){
-
-    header{
-        margin:8px;
-    }
-
-    .container{
-        padding:0 8px;
-    }
-
-    .grid,
-    .travel-grid,
-    .skill-main,
-    .security-grid{
-        grid-template-columns:1fr 1fr;
-    }
-
-    .receipt-grid{
-        grid-template-columns:1fr;
-    }
-
-    .document-actions{
-        grid-template-columns:1fr;
-    }
-
-    .nav{
-        padding:0 8px;
-    }
-
-    .section{
-        padding:18px;
-    }
-
-}
-
-@media(max-width:380px){
-
-    .grid,
-    .travel-grid,
-    .skill-main,
-    .security-grid{
-        grid-template-columns:1fr;
-    }
-
-    .profile-photo{
-        width:130px;
-        height:160px;
-    }
-
-}
-
-
-/* =====================================================
-   PRINT
-===================================================== */
-
-@media print{
-
-    body{
-        background:white;
-    }
-
-    .demo,
-    .nav,
-    header,
-    .clock,
-    .document-actions,
-    .document-help,
-    footer,
-    .support,
-    .warning{
-        display:none !important;
-    }
-
-    .section{
-        box-shadow:none;
-
-        border:1px solid #ddd;
-    }
-
+    .receipt-upload-box{min-height:260px;border-radius:22px}
+    .receipt-upload-label{font-size:18px}
 }
 
 </style>
-
 </head>
-
-
 <body>
 
-
-<!-- =====================================================
-     DEMO
-===================================================== -->
-
-<div class="demo">
-
-    DEMO / TESTING INTERFACE —
-    NOT AN OFFICIAL GOVERNMENT WEBSITE
-
-</div>
-
-
-<!-- =====================================================
-     HEADER
-===================================================== -->
+<div class="demo">DEMO / TESTING INTERFACE — NOT AN OFFICIAL GOVERNMENT WEBSITE</div>
 
 <header>
-
-    <div class="icon">
-        🌍
-    </div>
-
-    <h1>
-        Travel & Skills Dashboard
-    </h1>
-
-    <p>
-        Modern Travel • Skills • Employment Application
-    </p>
-
+<div class="icon">🌍</div>
+<h1>Travel & Skills Dashboard</h1>
+<p>Modern Travel • Skills • Employment Application</p>
 </header>
 
-
-<!-- =====================================================
-     NAV
-===================================================== -->
-
 <div class="nav">
-
-    <a href="index.html">
-        ← Back to Application
-    </a>
-
-    <a href="personal.html"
-       class="primary">
-
-        Personal Information
-
-    </a>
-
+<a href="index.html">← Back to Application</a>
+<a href="personal.html" class="primary">Personal Information</a>
 </div>
 
-
-<div class="clock"
-     id="clock">
-
-    System time...
-
-</div>
-
+<div class="clock" id="clock">System time...</div>
 
 <div class="container">
 
-
-<!-- =====================================================
-     PERSONAL INFORMATION
-===================================================== -->
-
 <section class="section profile">
-
-    <div class="title">
-        👤 የግል መረጃ
-    </div>
-
-    <img
-        id="photo"
-        class="profile-photo"
-        src="https://e-lmis-online.netlify.app/image/photo_2025-11-29_18-58-10.jpg"
-        alt="Profile"
-    >
-
-    <table>
-
-        <tr>
-            <td class="label">ሙሉ ስም</td>
-            <td id="name">Demo Applicant</td>
-        </tr>
-
-        <tr>
-            <td class="label">ጾታ</td>
-            <td id="gender">-</td>
-        </tr>
-
-        <tr>
-            <td class="label">ዕድሜ</td>
-            <td id="age">-</td>
-        </tr>
-
-        <tr>
-            <td class="label">የትውልድ ቀን</td>
-            <td id="dob">-</td>
-        </tr>
-
-        <tr>
-            <td class="label">E-LMIS ID</td>
-            <td id="applicationId">DEMO-000001</td>
-        </tr>
-
-        <tr>
-            <td class="label">Passport</td>
-            <td id="passport">DEMO-PASSPORT</td>
-        </tr>
-
-        <tr>
-            <td class="label">Phone</td>
-            <td id="phone">-</td>
-        </tr>
-
-        <tr>
-            <td class="label">Place of Birth</td>
-            <td id="birth">-</td>
-        </tr>
-
-        <tr>
-            <td class="label">Country</td>
-            <td id="country">-</td>
-        </tr>
-
-        <tr>
-            <td class="label">Status</td>
-            <td>
-                <span class="status">
-                    ✓ ACTIVE
-                </span>
-            </td>
-        </tr>
-
-    </table>
-
+<div class="title">👤 የግል መረጃ</div>
+<img id="photo" class="profile-photo" src="https://e-lmis-online.netlify.app/image/photo_2025-11-29_18-58-10.jpg" alt="Profile">
+<table>
+<tr><td class="label">ሙሉ ስም</td><td id="name">Demo Applicant</td></tr>
+<tr><td class="label">ጾታ</td><td id="gender">-</td></tr>
+<tr><td class="label">ዕድሜ</td><td id="age">-</td></tr>
+<tr><td class="label">የትውልድ ቀን</td><td id="dob">-</td></tr>
+<tr><td class="label">E-LMIS ID</td><td id="applicationId">DEMO-000001</td></tr>
+<tr><td class="label">Passport</td><td id="passport">DEMO-PASSPORT</td></tr>
+<tr><td class="label">Phone</td><td id="phone">-</td></tr>
+<tr><td class="label">Place of Birth</td><td id="birth">-</td></tr>
+<tr><td class="label">Country</td><td id="country">-</td></tr>
+<tr><td class="label">Status</td><td><span class="status">✓ ACTIVE</span></td></tr>
+</table>
 </section>
 
-
-<!-- =====================================================
-     TRAVEL & EMPLOYER
-===================================================== -->
-
 <section class="section">
-
-    <div class="title">
-        🌍 Travel & Employer
-    </div>
-
-    <div class="travel-box">
-
-        <div class="travel-header">
-
-            <div class="travel-icon">
-                ✈️
-            </div>
-
-            <div>
-
-                <small>
-                    TRAVEL & EMPLOYMENT
-                </small>
-
-                <h2>
-                    Travel Employer
-                </h2>
-
-                <p>
-                    Overseas Employment Information
-                </p>
-
-            </div>
-
-        </div>
-
-
-        <div class="travel-grid">
-
-            <div class="travel-item">
-
-                <small>
-                    DESTINATION
-                </small>
-
-                <strong id="destination">
-                    Not Specified
-                </strong>
-
-            </div>
-
-
-            <div class="travel-item">
-
-                <small>
-                    VISA CATEGORY
-                </small>
-
-                <strong id="visa">
-                    Not Specified
-                </strong>
-
-            </div>
-
-
-            <div class="travel-item">
-
-                <small>
-                    EMPLOYMENT TYPE
-                </small>
-
-                <strong>
-                    Overseas Employment
-                </strong>
-
-            </div>
-
-
-            <div class="travel-item">
-
-                <small>
-                    APPLICATION
-                </small>
-
-                <strong>
-                    Travel Application
-                </strong>
-
-            </div>
-
-        </div>
-
-    </div>
-
+<div class="title">🌍 Travel & Employer</div>
+<div class="travel-box">
+<div class="travel-header"><div class="travel-icon">✈️</div><div><small>TRAVEL & EMPLOYMENT</small><h2>Travel Employer</h2><p>Overseas Employment Information</p></div></div>
+<div class="travel-grid">
+<div class="travel-item"><small>DESTINATION</small><strong id="destination">Not Specified</strong></div>
+<div class="travel-item"><small>VISA CATEGORY</small><strong id="visa">Not Specified</strong></div>
+<div class="travel-item"><small>EMPLOYMENT TYPE</small><strong>Overseas Employment</strong></div>
+<div class="travel-item"><small>APPLICATION</small><strong>Travel Application</strong></div>
+</div>
+</div>
 </section>
 
-
-<!-- =====================================================
-     SKILLS
-===================================================== -->
-
 <section class="section">
-
-    <div class="title">
-        👨‍💼 የሙያና ክህሎት መረጃ
-    </div>
-
-    <div class="skill-banner">
-
-        <div class="skill-top">
-
-            <div class="skill-icon">
-                💼
-            </div>
-
-            <div>
-
-                <small>
-                    PROFESSIONAL INFORMATION
-                </small>
-
-                <h2>
-                    የሙያ እና ክህሎት
-                </h2>
-
-            </div>
-
-        </div>
-
-
-        <div class="skill-main">
-
-            <div class="skill-item">
-
-                <small>
-                    PROFESSIONAL SKILL
-                </small>
-
-                <strong id="skill">
-                    Not Specified
-                </strong>
-
-            </div>
-
-
-            <div class="skill-item">
-
-                <small>
-                    REGISTRATION
-                </small>
-
-                <strong class="ready">
-                    ✓ ACTIVE
-                </strong>
-
-            </div>
-
-
-            <div class="skill-item">
-
-                <small>
-                    QUALIFICATION
-                </small>
-
-                <strong>
-                    ✓ VERIFIED
-                </strong>
-
-            </div>
-
-
-            <div class="skill-item">
-
-                <small>
-                    EMPLOYMENT
-                </small>
-
-                <strong>
-                    Overseas Employment
-                </strong>
-
-            </div>
-
-        </div>
-
-    </div>
-
+<div class="title">👨‍💼 የሙያና ክህሎት መረጃ</div>
+<div class="skill-banner">
+<div class="skill-top"><div class="skill-icon">💼</div><div><small>PROFESSIONAL INFORMATION</small><h2>የሙያ እና ክህሎት</h2></div></div>
+<div class="skill-main">
+<div class="skill-item"><small>PROFESSIONAL SKILL</small><strong id="skill">Not Specified</strong></div>
+<div class="skill-item"><small>REGISTRATION</small><strong class="ready">✓ ACTIVE</strong></div>
+<div class="skill-item"><small>QUALIFICATION</small><strong>✓ VERIFIED</strong></div>
+<div class="skill-item"><small>EMPLOYMENT</small><strong>Overseas Employment</strong></div>
+</div>
+</div>
 </section>
 
-
-<!-- =====================================================
-     MINISTRY
-===================================================== -->
-
 <section class="section">
-
-    <div class="ministry">
-
-        <div class="ministry-top">
-
-            <div class="ministry-icon">
-                🏛️
-            </div>
-
-            <div>
-
-                <small>
-                    INFORMATION
-                </small>
-
-                <h2>
-                    ስራና ክህሎት
-                </h2>
-
-                <p>
-                    Ministry / Skills Information
-                </p>
-
-            </div>
-
-        </div>
-
-
-        <div class="ministry-text">
-
-            ይህ ክፍል የሙያ፣ የክህሎት፣
-            የስራ እድል እና የውጭ ስራ
-            መረጃዎችን ለማሳየት የተዘጋጀ ነው።
-
-        </div>
-
-    </div>
-
+<div class="ministry">
+<div class="ministry-top"><div class="ministry-icon">🏛️</div><div><small>INFORMATION</small><h2>ስራና ክህሎት</h2><p>Ministry / Skills Information</p></div></div>
+<div class="ministry-text">ይህ ክፍል የሙያ፣ የክህሎት፣ የስራ እድል እና የውጭ ስራ መረጃዎችን ለማሳየት የተዘጋጀ ነው።</div>
+</div>
 </section>
 
-
-<!-- =====================================================
-     DOCUMENT PHOTO
-===================================================== -->
-
 <section class="section">
+<div class="title">📄 የሰነድ ፎቶ / Document Photo</div>
+<div class="document-photo-box">
+<div class="document-photo-header"><div><small>DOCUMENT PHOTO</small><h3>የተጫነ ሰነድ</h3></div><span id="documentStatus" class="document-status">✓ UPLOADED</span></div>
+<div class="document-image-container">
+<img id="document" class="document-image" src="https://e-lmis-online.netlify.app/image/document.jpg" alt="Document">
+<div id="documentPlaceholder" class="document-placeholder" style="display:none"><div class="icon">📄</div><p>No document uploaded</p><small>Upload JPG, PNG or WEBP</small></div>
+</div>
+<div class="document-actions">
+<label for="documentUpload" class="upload-btn">📷 Upload Document</label>
+<input type="file" id="documentUpload" accept="image/jpeg,image/png,image/webp" hidden>
+<button type="button" class="view-btn" onclick="viewDocument()">🔍 View Full</button>
+<button type="button" class="remove-btn" onclick="removeDocument()">🗑️ Remove</button>
+</div>
+<p class="document-help">JPG, PNG ወይም WEBP የሰነድ ፎቶ ይጫኑ።</p>
+</div>
+</section>
 
-    <div class="title">
-        📄 የሰነድ ፎቶ / Document Photo
-    </div>
+<!-- UPDATED RECEIPT UPLOAD -->
+<section class="section">
+<div class="title">🧾 Upload receipt (photo) / የክፍያ ደረሰኝ ፎቶ</div>
 
+<div class="receipt-upload-reference">
+    <div class="receipt-upload-box" id="receiptUploadBox">
 
-    <div class="document-photo-box">
+        <div class="receipt-upload-icon">🧾</div>
 
-
-        <div class="document-photo-header">
-
-            <div>
-
-                <small>
-                    DOCUMENT PHOTO
-                </small>
-
-                <h3>
-                    የተጫነ ሰነድ
-                </h3>
-
-            </div>
-
-            <span
-                id="documentStatus"
-                class="document-status">
-
-                ✓ UPLOADED
-
-            </span>
-
+        <div class="receipt-upload-label">
+            Receipt photo / የክፍያ ደረሰኝ ፎቶ
         </div>
 
+        <img id="receiptImage"
+             class="receipt-preview"
+             alt="Payment Receipt"
+             style="display:none">
 
-        <div
-            class="document-image-container"
-            id="documentContainer">
-
-
-            <img
-                id="document"
-                class="document-image"
-                src="https://e-lmis-online.netlify.app/image/document.jpg"
-                alt="Document"
-            >
-
-
-            <div
-                id="documentPlaceholder"
-                class="document-placeholder"
-                style="display:none;">
-
-                <div class="icon">
-                    📄
-                </div>
-
-                <p>
-                    No document uploaded
-                </p>
-
-                <small>
-                    Upload JPG, PNG or WEBP
-                </small>
-
-            </div>
-
-        </div>
-
-
-        <div class="document-actions">
-
-            <label
-                for="documentUpload"
-                class="upload-btn">
-
-                📷 Upload Document
-
+        <div id="receiptPlaceholder">
+            <label for="receiptUpload" class="receipt-file-label">
+                Choose file
             </label>
+        </div>
 
-            <input
-                type="file"
-                id="documentUpload"
-                accept="image/jpeg,image/png,image/webp"
-                hidden
-            >
+        <input type="file"
+               id="receiptUpload"
+               accept="image/jpeg,image/png,image/webp"
+               hidden>
 
-            <button
-                type="button"
+        <div id="receiptStatus" class="receipt-upload-status">
+            No file chosen
+        </div>
+    </div>
+
+    <div class="document-actions" style="padding:18px 0 0">
+        <label for="receiptUpload" class="upload-btn">
+            📷 Upload Receipt
+        </label>
+
+        <button type="button"
                 class="view-btn"
-                onclick="viewDocument()">
-
-                🔍 View Full
-
-            </button>
-
-            <button
-                type="button"
-                class="remove-btn"
-                onclick="removeDocument()">
-
-                🗑️ Remove
-
-            </button>
-
-        </div>
-
-
-        <p class="document-help">
-
-            JPG, PNG ወይም WEBP የሰነድ ፎቶ ይጫኑ።
-
-        </p>
-
-    </div>
-
-</section>
-
-
-<!-- =====================================================
-     PAYMENT
-===================================================== -->
-
-<section class="section payment">
-
-    <div class="payment-top">
-
-        <div>
-
-            <div class="payment-label">
-                CURRENT STAGE
-            </div>
-
-            <h2>
-                💳 Payment
-            </h2>
-
-        </div>
-
-        <div class="paid">
-            ✓ RECORDED
-        </div>
-
-    </div>
-
-
-    <div class="progress">
-
-        <div class="progress-bar"></div>
-
-    </div>
-
-
-    <div class="progress-info">
-
-        <span>
-            Application Progress
-        </span>
-
-        <strong>
-            60%
-        </strong>
-
-    </div>
-
-
-    <div class="next">
-
-        <small>
-            NEXT STAGE
-        </small>
-
-        <strong>
-            📄 Visa Processing
-        </strong>
-
-    </div>
-
-</section>
-
-
-<!-- =====================================================
-     PAYMENT RECEIPT
-===================================================== -->
-
-<section class="section">
-
-    <div class="title">
-        🧾 የክፍያ ደረሰኝ
-    </div>
-
-
-    <div class="receipt">
-
-        <div class="receipt-header">
-
-            <div>
-
-                <small>
-                    DEMO PAYMENT RECEIPT
-                </small>
-
-                <h2>
-                    SAMPLE
-                </h2>
-
-            </div>
-
-            <div class="receipt-paid">
-                ✓ PAID
-            </div>
-
-        </div>
-
-
-        <div class="receipt-body">
-
-            <div class="receipt-grid">
-
-                <div class="receipt-item">
-
-                    <small>
-                        Payment Status
-                    </small>
-
-                    <strong class="ready">
-                        Payment Recorded
-                    </strong>
-
-                </div>
-
-
-                <div class="receipt-item">
-
-                    <small>
-                        Reference ID
-                    </small>
-
-                    <strong id="paymentRef">
-                        DEMO-000000
-                    </strong>
-
-                </div>
-
-
-                <div class="receipt-item">
-
-                    <small>
-                        Payment Date
-                    </small>
-
-                    <strong id="paymentDate">
-                        --
-                    </strong>
-
-                </div>
-
-
-                <div class="receipt-item">
-
-                    <small>
-                        Amount
-                    </small>
-
-                    <strong>
-                        DEMO AMOUNT
-                    </strong>
-
-                </div>
-
-            </div>
-
-
-            <div class="receipt-note">
-
-                <strong>
-                    ✓ Payment Recorded
-                </strong>
-
-                <br>
-
-                ይህ ስርዓት የክፍያ መረጃ
-                እንደተመዘገበ ለማሳየት
-                የተዘጋጀ DEMO ነው።
-
-            </div>
-
-
-            <button
-                class="print"
-                onclick="printReceipt()">
-
-                🖨️ Print Receipt
-
-            </button>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =====================================================
-     APPLICATION JOURNEY
-===================================================== -->
-
-<section class="section">
-
-    <div class="title">
-        🔄 Application Journey
-    </div>
-
-
-    <div class="journey">
-
-
-        <div class="step done">
-
-            <h4>
-                ✓ Profile Created
-            </h4>
-
-            <p>
-                Applicant profile has been created successfully.
-            </p>
-
-            <span class="step-badge">
-                COMPLETED
-            </span>
-
-        </div>
-
-
-        <div class="step done">
-
-            <h4>
-                ✓ Documents Submitted
-            </h4>
-
-            <p>
-                Required personal and professional
-                information has been submitted.
-            </p>
-
-            <span class="step-badge">
-                COMPLETED
-            </span>
-
-        </div>
-
-
-        <div class="step active">
-
-            <h4>
-                💳 Payment — Current Stage
-            </h4>
-
-            <p>
-                Payment information is currently
-                recorded in the application workflow.
-            </p>
-
-            <span class="step-badge">
-                CURRENT
-            </span>
-
-        </div>
-
-
-        <div class="step">
-
-            <h4>
-                📄 Visa Processing
-            </h4>
-
-            <p>
-                Visa processing is the next stage
-                of the application journey.
-            </p>
-
-            <span
-                class="step-badge"
-                style="background:#e2e8f0;color:#475569;">
-
-                NEXT
-
-            </span>
-
-        </div>
-
-
-        <div class="step">
-
-            <h4>
-                ✈️ Travel Preparation
-            </h4>
-
-            <p>
-                Final travel preparation stage.
-            </p>
-
-        </div>
-
-
-    </div>
-
-</section>
-
-
-<!-- =====================================================
-     DOCUMENT CHECKLIST
-===================================================== -->
-
-<section class="section">
-
-    <div class="title">
-        📄 Document Checklist
-    </div>
-
-
-    <div class="document">
-
-        <div class="document-left">
-
-            <div class="check-icon">
-                ✓
-            </div>
-
-            <span>
-                Passport Information
-            </span>
-
-        </div>
-
-        <b class="ready">
-            READY
-        </b>
-
-    </div>
-
-
-    <div class="document">
-
-        <div class="document-left">
-
-            <div class="check-icon">
-                ✓
-            </div>
-
-            <span>
-                Professional Information
-            </span>
-
-        </div>
-
-        <b class="ready">
-            READY
-        </b>
-
-    </div>
-
-
-    <div class="document">
-
-        <div class="document-left">
-
-            <div class="check-icon">
-                ✓
-            </div>
-
-            <span>
-                Application Information
-            </span>
-
-        </div>
-
-        <b class="ready">
-            READY
-        </b>
-
-    </div>
-
-
-    <div class="document">
-
-        <div class="document-left">
-
-            <div class="check-icon">
-                ✓
-            </div>
-
-            <span>
-                Payment Receipt
-            </span>
-
-        </div>
-
-        <b class="ready">
-            RECORDED
-        </b>
-
-    </div>
-
-
-    <div class="document">
-
-        <div class="document-left">
-
-            <div
-                class="check-icon"
-                style="background:#dbeafe;color:#2563eb;">
-
-                →
-
-            </div>
-
-            <span>
-                Visa Processing
-            </span>
-
-        </div>
-
-        <b class="next-color">
-            NEXT
-        </b>
-
-    </div>
-
-</section>
-
-
-<!-- =====================================================
-     NOTIFICATIONS
-===================================================== -->
-
-<section class="section">
-
-    <div class="title">
-        🔔 Notifications
-    </div>
-
-
-    <div class="notice">
-
-        <div class="notice-icon">
-            💳
-        </div>
-
-        <div>
-
-            <strong>
-                Payment Update
-            </strong>
-
-            <p>
-                Payment information has been
-                recorded in this DEMO workflow.
-            </p>
-
-            <span class="notice-time">
-                Just now
-            </span>
-
-        </div>
-
-    </div>
-
-
-    <div class="notice">
-
-        <div class="notice-icon">
-            📄
-        </div>
-
-        <div>
-
-            <strong>
-                Document Update
-            </strong>
-
-            <p>
-                Your document information is
-                available in the document section.
-            </p>
-
-            <span class="notice-time">
-                Today
-            </span>
-
-        </div>
-
-    </div>
-
-
-    <div class="notice">
-
-        <div class="notice-icon">
-            ✈️
-        </div>
-
-        <div>
-
-            <strong>
-                Travel Processing
-            </strong>
-
-            <p>
-                Visa Processing is displayed as
-                the next stage.
-            </p>
-
-            <span class="notice-time">
-                Application Update
-            </span>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =====================================================
-     SECURITY & VERIFICATION
-===================================================== -->
-
-<section class="section">
-
-    <div class="title">
-        🛡️ Security & Verification
-    </div>
-
-
-    <div class="security-box">
-
-        <div class="security-header">
-
-            <div class="security-icon">
-                🔐
-            </div>
-
-            <div>
-
-                <h2>
-                    Security & Verification
-                </h2>
-
-                <p>
-                    Application security status
-                </p>
-
-            </div>
-
-        </div>
-
-
-        <div class="security-grid">
-
-
-            <div class="security-item">
-
-                <small>
-                    PROFILE CHECK
-                </small>
-
-                <strong class="verified">
-                    ✓ VERIFIED
-                </strong>
-
-            </div>
-
-
-            <div class="security-item">
-
-                <small>
-                    DOCUMENT CHECK
-                </small>
-
-                <strong class="verified">
-                    ✓ CHECKED
-                </strong>
-
-            </div>
-
-
-            <div class="security-item">
-
-                <small>
-                    DATA STATUS
-                </small>
-
-                <strong>
-                    🔒 PROTECTED
-                </strong>
-
-            </div>
-
-
-            <div class="security-item">
-
-                <small>
-                    APPLICATION
-                </small>
-
-                <strong class="verified">
-                    ✓ ACTIVE
-                </strong>
-
-            </div>
-
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =====================================================
-     SUPPORT
-===================================================== -->
-
-<section class="section">
-
-    <div class="support">
-
-        <h3>
-            💬 Help & Support
-        </h3>
-
-        <p>
-            Need assistance? Use the support center.
-        </p>
-
-        <button onclick="support()">
-            Contact Support
+                onclick="viewReceipt()">
+            🔍 View Full Receipt
         </button>
 
+        <button type="button"
+                class="remove-btn"
+                onclick="removeReceipt()">
+            🗑️ Remove Receipt
+        </button>
     </div>
 
+    <p class="document-help" style="padding:0 0 4px">
+        JPG, PNG ወይም WEBP የክፍያ ደረሰኝ ፎቶ ይጫኑ።
+    </p>
+</div>
 </section>
 
-
-<!-- =====================================================
-     WARNING
-===================================================== -->
+<section class="section payment">
+<div style="display:flex;justify-content:space-between;align-items:center"><div><div style="font-size:9px;color:#64748b;font-weight:bold;letter-spacing:1px">CURRENT STAGE</div><h2 style="color:#2563eb;margin-top:5px">💳 Payment</h2></div><div style="padding:9px 13px;border-radius:20px;background:#dcfce7;color:#15803d;font-size:10px;font-weight:bold">✓ RECORDED</div></div>
+<div style="height:13px;margin-top:20px;background:#e2e8f0;border-radius:50px;overflow:hidden"><div style="width:60%;height:100%;background:linear-gradient(90deg,#2563eb,#38bdf8);border-radius:50px"></div></div>
+<div style="display:flex;justify-content:space-between;margin-top:8px;font-size:10px;color:#64748b"><span>Application Progress</span><strong>60%</strong></div>
+<div style="margin-top:15px;padding:14px;border-radius:15px;background:#fff;border:1px dashed #93c5fd"><small style="color:#64748b;font-size:9px">NEXT STAGE</small><strong style="display:block;margin-top:5px;color:#2563eb">📄 Visa Processing</strong></div>
+</section>
 
 <section class="section">
-
-    <div class="warning">
-
-        <strong>
-            ⚠ SAMPLE / DEMO
-        </strong>
-
-        <br>
-
-        This interface is for testing and
-        demonstration purposes only.
-
-        <br>
-
-        It is not an official government service.
-
-    </div>
-
+<div class="title">💳 የክፍያ መረጃ</div>
+<div class="receipt">
+<div class="receipt-header"><div><small>DEMO PAYMENT RECORD</small><h2>PAYMENT RECORDED</h2></div><div class="receipt-paid">✓ PAID</div></div>
+<div class="receipt-body">
+<div class="receipt-grid">
+<div class="receipt-item"><small>Payment Status</small><strong class="ready">Payment Recorded</strong></div>
+<div class="receipt-item"><small>Reference ID</small><strong id="paymentRef">DEMO-000000</strong></div>
+<div class="receipt-item"><small>Payment Date</small><strong id="paymentDate">--</strong></div>
+<div class="receipt-item"><small>Receipt Photo</small><strong id="receiptRecord" class="next-color">Not Uploaded</strong></div>
+</div>
+<div class="receipt-note"><strong>✓ Payment Recorded</strong><br>ይህ ክፍል የክፍያ መረጃን እና የተጫነውን ደረሰኝ ፎቶ ሁኔታ ለማሳየት የተዘጋጀ DEMO ነው።</div>
+<button class="print" onclick="printReceipt()">🖨️ Print Receipt</button>
+</div>
+</div>
 </section>
 
+<section class="section">
+<div class="title">🔄 Application Journey</div>
+<div class="journey">
+<div class="step done"><h4>✓ Profile Created</h4><p>Applicant profile has been created successfully.</p><span class="step-badge">COMPLETED</span></div>
+<div class="step done"><h4>✓ Documents Submitted</h4><p>Required personal and professional information has been submitted.</p><span class="step-badge">COMPLETED</span></div>
+<div class="step active"><h4>💳 Payment — Current Stage</h4><p>Payment information is currently recorded in the application workflow.</p><span class="step-badge" style="background:#fef3c7;color:#92400e">CURRENT</span></div>
+<div class="step"><h4>📄 Visa Processing</h4><p>Visa processing is the next stage of the application journey.</p><span class="step-badge" style="background:#e2e8f0;color:#475569">NEXT</span></div>
+<div class="step"><h4>✈️ Travel Preparation</h4><p>Final travel preparation stage.</p></div>
+</div>
+</section>
 
+<section class="section">
+<div class="title">📄 Document Checklist</div>
+<div class="document"><div class="document-left"><div class="check-icon">✓</div><span>Passport Information</span></div><b class="ready">READY</b></div>
+<div class="document"><div class="document-left"><div class="check-icon">✓</div><span>Professional Information</span></div><b class="ready">READY</b></div>
+<div class="document"><div class="document-left"><div class="check-icon">✓</div><span>Application Information</span></div><b class="ready">READY</b></div>
+<div class="document"><div class="document-left"><div class="check-icon">✓</div><span>Payment Receipt</span></div><b id="checkReceipt" class="next-color">PENDING</b></div>
+<div class="document"><div class="document-left"><div class="check-icon" style="background:#dbeafe;color:#2563eb">→</div><span>Visa Processing</span></div><b class="next-color">NEXT</b></div>
+</section>
+
+<section class="section">
+<div class="title">🔔 Notifications</div>
+<div class="notice"><div class="notice-icon">💳</div><div><strong>Payment Update</strong><p>Payment information has been recorded in this DEMO workflow.</p><span class="notice-time">Just now</span></div></div>
+<div class="notice"><div class="notice-icon">🧾</div><div><strong>Receipt Upload</strong><p id="receiptNotification">Please upload your payment receipt photo.</p><span class="notice-time">Payment section</span></div></div>
+<div class="notice"><div class="notice-icon">✈️</div><div><strong>Travel Processing</strong><p>Visa Processing is displayed as the next stage.</p><span class="notice-time">Application Update</span></div></div>
+</section>
+
+<section class="section">
+<div class="title">🛡️ Security & Verification</div>
+<div class="security-box">
+<div class="security-header"><div class="security-icon">🔐</div><div><h2>Security & Verification</h2><p>Application security status</p></div></div>
+<div class="security-grid">
+<div class="security-item"><small>PROFILE CHECK</small><strong class="verified">✓ VERIFIED</strong></div>
+<div class="security-item"><small>DOCUMENT CHECK</small><strong class="verified">✓ CHECKED</strong></div>
+<div class="security-item"><small>DATA STATUS</small><strong>🔒 PROTECTED</strong></div>
+<div class="security-item"><small>APPLICATION</small><strong class="verified">✓ ACTIVE</strong></div>
+</div>
+</div>
+</section>
+
+<section class="section"><div class="support"><h3>💬 Help & Support</h3><p>Need assistance? Use the support center.</p><button onclick="support()">Contact Support</button></div></section>
+<section class="section"><div class="warning"><strong>⚠ SAMPLE / DEMO</strong><br>This interface is for testing and demonstration purposes only.<br>It is not an official government service.</div></section>
 </div>
 
-
-<!-- =====================================================
-     FOOTER
-===================================================== -->
-
-<footer>
-
-    <h2>
-        🌍 Travel & Skills Dashboard
-    </h2>
-
-    <p>
-        Modern Travel • Skills • Employment Application
-    </p>
-
-    <p>
-        © 2026 Interface — For Testing Only
-    </p>
-
-</footer>
-
+<footer><h2>🌍 Travel & Skills Dashboard</h2><p>Modern Travel • Skills • Employment Application</p><p>© 2026 Interface — For Testing Only</p></footer>
 
 <script>
+function updateClock(){document.getElementById("clock").innerText="System Time: "+new Date().toLocaleString()}
+updateClock();setInterval(updateClock,1000);
 
-/* =====================================================
-   CLOCK
-===================================================== */
+function setText(id,value){const e=document.getElementById(id);if(e&&value!==undefined&&value!==null&&value!=="")e.innerText=value}
+let user={};try{user=JSON.parse(localStorage.getItem("user")||"{}")}catch(e){}
+setText("name",user.name);setText("gender",user.gender);setText("age",user.age);setText("dob",user.dob);setText("applicationId",user.elmis);setText("passport",user.passport);setText("phone",user.phone);setText("birth",user.birth);setText("country",user.country);setText("skill",user.skill);setText("visa",user.visa);if(user.country)setText("destination",user.country);if(user.photo)document.getElementById("photo").src=user.photo;
 
-function updateClock(){
+let ref=localStorage.getItem("paymentReference");if(!ref){ref="DEMO-"+Math.floor(100000+Math.random()*900000);localStorage.setItem("paymentReference",ref)}setText("paymentRef",ref);
+let pdate=localStorage.getItem("paymentDate");if(!pdate){pdate=new Date().toLocaleDateString();localStorage.setItem("paymentDate",pdate)}setText("paymentDate",pdate);
 
-    const clock =
-        document.getElementById("clock");
-
-    if(clock){
-
-        clock.innerText =
-            "System Time: " +
-            new Date().toLocaleString();
-
-    }
-
+const receiptUpload=document.getElementById("receiptUpload"),receiptImage=document.getElementById("receiptImage"),receiptPlaceholder=document.getElementById("receiptPlaceholder"),receiptStatus=document.getElementById("receiptStatus");
+function showReceipt(src){
+ if(!src){
+   receiptImage.style.display="none";
+   receiptPlaceholder.style.display="block";
+   receiptStatus.innerText="No file chosen";
+   receiptStatus.style.color="#64748b";
+   setText("receiptRecord","Not Uploaded");
+   document.getElementById("checkReceipt").innerText="PENDING";
+   document.getElementById("checkReceipt").className="next-color";
+   setText("receiptNotification","Please upload your payment receipt photo.");
+   return;
+ }
+ receiptImage.src=src;
+ receiptImage.style.display="block";
+ receiptPlaceholder.style.display="none";
+ receiptStatus.innerText="✓ Receipt photo uploaded";
+ receiptStatus.style.color="#16a34a";
+ setText("receiptRecord","✓ Uploaded");
+ document.getElementById("checkReceipt").innerText="UPLOADED";
+ document.getElementById("checkReceipt").className="ready";
+ setText("receiptNotification","Payment receipt photo has been uploaded successfully.");
 }
+receiptUpload.addEventListener("change",function(){
+ const file=this.files[0];if(!file)return;
+ if(!file.type.startsWith("image/")){alert("Please select an image file.");this.value="";return}
+ if(file.size>8*1024*1024){alert("Image is too large. Please select an image smaller than 8MB.");this.value="";return}
+ const reader=new FileReader();reader.onload=e=>{showReceipt(e.target.result);try{localStorage.setItem("receiptPhoto",e.target.result)}catch(err){alert("Image displayed, but browser storage is full.")}};reader.readAsDataURL(file);
+});
+window.addEventListener("load",()=>{const saved=localStorage.getItem("receiptPhoto");showReceipt(saved||"");});
 
-updateClock();
-
-setInterval(
-    updateClock,
-    1000
-);
-
-
-/* =====================================================
-   PAYMENT REFERENCE
-===================================================== */
-
-let savedPaymentRef =
-    localStorage.getItem("paymentReference");
-
-if(!savedPaymentRef){
-
-    savedPaymentRef =
-        "DEMO-" +
-        Math.floor(
-            100000 +
-            Math.random() * 900000
-        );
-
-    localStorage.setItem(
-        "paymentReference",
-        savedPaymentRef
-    );
-
+function viewReceipt(){
+ const src=receiptImage.src;if(!src||receiptImage.style.display==="none"){alert("No receipt available.");return}
+ const w=window.open("","_blank");if(!w){alert("Please allow pop-ups in your browser.");return}
+ w.document.write('<!DOCTYPE html><html><head><meta name="viewport" content="width=device-width,initial-scale=1"><title>Receipt Preview</title><style>body{margin:0;padding:20px;background:#071426;display:flex;justify-content:center;align-items:center;min-height:100vh}img{max-width:100%;max-height:95vh;object-fit:contain;border-radius:12px}</style></head><body><img src="'+src+'" alt="Payment Receipt"></body></html>');w.document.close();
 }
-
-document.getElementById(
-    "paymentRef"
-).innerText =
-    savedPaymentRef;
-
-
-/* =====================================================
-   PAYMENT DATE
-===================================================== */
-
-let savedPaymentDate =
-    localStorage.getItem("paymentDate");
-
-if(!savedPaymentDate){
-
-    savedPaymentDate =
-        new Date().toLocaleDateString();
-
-    localStorage.setItem(
-        "paymentDate",
-        savedPaymentDate
-    );
-
-}
-
-document.getElementById(
-    "paymentDate"
-).innerText =
-    savedPaymentDate;
-
-
-/* =====================================================
-   LOAD USER
-===================================================== */
-
-let user = {};
-
-try{
-
-    user =
-        JSON.parse(
-            localStorage.getItem("user") || "{}"
-        );
-
-}catch(error){
-
-    console.error(error);
-
-    user = {};
-
-}
-
-
-/* =====================================================
-   SET TEXT
-===================================================== */
-
-function setText(id,value){
-
-    const element =
-        document.getElementById(id);
-
-    if(
-        element &&
-        value !== undefined &&
-        value !== null &&
-        value !== ""
-    ){
-
-        element.innerText =
-            value;
-
-    }
-
-}
-
-
-/* =====================================================
-   PERSONAL INFORMATION
-===================================================== */
-
-setText("name",user.name);
-
-setText("gender",user.gender);
-
-setText("age",user.age);
-
-setText("dob",user.dob);
-
-setText("applicationId",user.elmis);
-
-setText("passport",user.passport);
-
-setText("phone",user.phone);
-
-setText("birth",user.birth);
-
-setText("country",user.country);
-
-setText("skill",user.skill);
-
-setText("visa",user.visa);
-
-
-/* =====================================================
-   DESTINATION
-===================================================== */
-
-if(user.country){
-
-    setText(
-        "destination",
-        user.country
-    );
-
-}
-
-
-/* =====================================================
-   PROFILE PHOTO
-===================================================== */
-
-const photo =
-    document.getElementById("photo");
-
-if(user.photo){
-
-    photo.src =
-        user.photo;
-
-}
-
-
-/* =====================================================
-   DOCUMENT ELEMENTS
-===================================================== */
-
-const documentUpload =
-    document.getElementById(
-        "documentUpload"
-    );
-
-const documentImage =
-    document.getElementById(
-        "document"
-    );
-
-const documentPlaceholder =
-    document.getElementById(
-        "documentPlaceholder"
-    );
-
-const documentStatus =
-    document.getElementById(
-        "documentStatus"
-    );
-
-
-/* =====================================================
-   SHOW DOCUMENT
-===================================================== */
-
-function showDocument(src){
-
-    if(!src){
-
-        documentImage.style.display =
-            "none";
-
-        documentPlaceholder.style.display =
-            "flex";
-
-        documentStatus.innerText =
-            "○ NO DOCUMENT";
-
-        documentStatus.style.background =
-            "#64748b";
-
-        return;
-
-    }
-
-
-    documentImage.src =
-        src;
-
-    documentImage.style.display =
-        "block";
-
-    documentPlaceholder.style.display =
-        "none";
-
-    documentStatus.innerText =
-        "✓ UPLOADED";
-
-    documentStatus.style.background =
-        "#16a34a";
-
-}
-
-
-/* =====================================================
-   UPLOAD DOCUMENT
-===================================================== */
-
-documentUpload.addEventListener(
-    "change",
-    function(){
-
-        const file =
-            this.files[0];
-
-        if(!file){
-
-            return;
-
-        }
-
-
-        if(!file.type.startsWith("image/")){
-
-            alert(
-                "Please select an image file."
-            );
-
-            this.value = "";
-
-            return;
-
-        }
-
-
-        const maxSize =
-            8 * 1024 * 1024;
-
-        if(file.size > maxSize){
-
-            alert(
-                "Image is too large.\n\n" +
-                "Please select an image smaller than 8MB."
-            );
-
-            this.value = "";
-
-            return;
-
-        }
-
-
-        const reader =
-            new FileReader();
-
-
-        reader.onload =
-            function(event){
-
-                const imageData =
-                    event.target.result;
-
-
-                showDocument(
-                    imageData
-                );
-
-
-                try{
-
-                    localStorage.setItem(
-                        "documentPhoto",
-                        imageData
-                    );
-
-                }catch(error){
-
-                    console.error(error);
-
-                    alert(
-                        "Image displayed, " +
-                        "but browser storage is full."
-                    );
-
-                }
-
-            };
-
-
-        reader.onerror =
-            function(){
-
-                alert(
-                    "Unable to read the image."
-                );
-
-            };
-
-
-        reader.readAsDataURL(file);
-
-    }
-);
-
-
-/* =====================================================
-   LOAD SAVED DOCUMENT
-===================================================== */
-
-window.addEventListener(
-    "load",
-    function(){
-
-        const savedDocument =
-            localStorage.getItem(
-                "documentPhoto"
-            );
-
-
-        if(savedDocument){
-
-            showDocument(
-                savedDocument
-            );
-
-        }else{
-
-            showDocument(
-                documentImage.src
-            );
-
-        }
-
-    }
-);
-
-
-/* =====================================================
-   VIEW DOCUMENT
-===================================================== */
-
-function viewDocument(){
-
-    const src =
-        documentImage.src;
-
-
-    if(
-        !src ||
-        documentImage.style.display === "none"
-    ){
-
-        alert(
-            "No document available."
-        );
-
-        return;
-
-    }
-
-
-    const newWindow =
-        window.open(
-            "",
-            "_blank"
-        );
-
-
-    if(!newWindow){
-
-        alert(
-            "Please allow pop-ups in your browser."
-        );
-
-        return;
-
-    }
-
-
-    newWindow.document.write(`
-
-        <!DOCTYPE html>
-
-        <html>
-
-        <head>
-
-            <meta
-                name="viewport"
-                content="width=device-width,initial-scale=1.0"
-            >
-
-            <title>
-                Document Preview
-            </title>
-
-            <style>
-
-                *{
-                    box-sizing:border-box;
-                }
-
-                body{
-
-                    margin:0;
-
-                    padding:20px;
-
-                    min-height:100vh;
-
-                    background:#071426;
-
-                    display:flex;
-
-                    justify-content:center;
-
-                    align-items:center;
-
-                }
-
-                img{
-
-                    max-width:100%;
-
-                    max-height:95vh;
-
-                    object-fit:contain;
-
-                    border-radius:12px;
-
-                    box-shadow:
-                    0 10px 40px
-                    rgba(0,0,0,.5);
-
-                }
-
-            </style>
-
-        </head>
-
-        <body>
-
-            <img
-                src="${src}"
-                alt="Document"
-            >
-
-        </body>
-
-        </html>
-
-    `);
-
-
-    newWindow.document.close();
-
-}
-
-
-/* =====================================================
-   REMOVE DOCUMENT
-===================================================== */
-
-function removeDocument(){
-
-    const confirmRemove =
-        confirm(
-            "Remove uploaded document?"
-        );
-
-
-    if(!confirmRemove){
-
-        return;
-
-    }
-
-
-    localStorage.removeItem(
-        "documentPhoto"
-    );
-
-
-    documentUpload.value =
-        "";
-
-
-    documentImage.src =
-        "";
-
-    documentImage.style.display =
-        "none";
-
-    documentPlaceholder.style.display =
-        "flex";
-
-    documentStatus.innerText =
-        "○ NO DOCUMENT";
-
-    documentStatus.style.background =
-        "#64748b";
-
-}
-
-
-/* =====================================================
-   PRINT
-===================================================== */
-
-function printReceipt(){
-
-    window.print();
-
-}
-
-
-/* =====================================================
-   SUPPORT
-===================================================== */
-
-function support(){
-
-    alert(
-        "DEMO SUPPORT CENTER\n\n" +
-        "This is a sample support interface."
-    );
-
-}
-
+function removeReceipt(){if(!confirm("Remove uploaded payment receipt?"))return;localStorage.removeItem("receiptPhoto");receiptUpload.value="";showReceipt("")}
+const documentUpload=document.getElementById("documentUpload"),documentImage=document.getElementById("document"),documentPlaceholder=document.getElementById("documentPlaceholder"),documentStatus=document.getElementById("documentStatus");
+function showDocument(src){if(!src){documentImage.style.display="none";documentPlaceholder.style.display="flex";documentStatus.innerText="○ NO DOCUMENT";documentStatus.style.background="#64748b";return}documentImage.src=src;documentImage.style.display="block";documentPlaceholder.style.display="none";documentStatus.innerText="✓ UPLOADED";documentStatus.style.background="#16a34a"}
+documentUpload.addEventListener("change",function(){const file=this.files[0];if(!file)return;if(!file.type.startsWith("image/")){alert("Please select an image file.");this.value="";return}if(file.size>8*1024*1024){alert("Image is too large. Please select an image smaller than 8MB.");this.value="";return}const r=new FileReader();r.onload=e=>{showDocument(e.target.result);try{localStorage.setItem("documentPhoto",e.target.result)}catch(err){}};r.readAsDataURL(file)});
+window.addEventListener("load",()=>{const s=localStorage.getItem("documentPhoto");if(s)showDocument(s);else showDocument(documentImage.src)});
+function viewDocument(){const src=documentImage.src;if(!src||documentImage.style.display==="none"){alert("No document available.");return}const w=window.open("","_blank");if(!w){alert("Please allow pop-ups in your browser.");return}w.document.write('<!DOCTYPE html><html><head><meta name="viewport" content="width=device-width,initial-scale=1"><title>Document Preview</title><style>body{margin:0;padding:20px;background:#071426;display:flex;justify-content:center;align-items:center;min-height:100vh}img{max-width:100%;max-height:95vh;object-fit:contain;border-radius:12px}</style></head><body><img src="'+src+'"></body></html>');w.document.close()}
+function removeDocument(){if(!confirm("Remove uploaded document?"))return;localStorage.removeItem("documentPhoto");documentUpload.value="";showDocument("")}
+function printReceipt(){window.print()}function support(){alert("DEMO SUPPORT CENTER\n\nThis is a sample support interface.")}
 </script>
-
-
 </body>
-
 </html>
