@@ -259,11 +259,6 @@ td{
     font-weight:bold;
 }
 
-.next-color{
-    color:#2563eb !important;
-    font-weight:bold;
-}
-
 
 /* =========================
    MINISTRY
@@ -339,7 +334,7 @@ td{
 
 
 /* =========================
-   DOCUMENT PHOTO
+   DOCUMENT
 ========================= */
 
 .document-photo-box{
@@ -354,9 +349,6 @@ td{
     box-shadow:
     0 8px 25px rgba(15,23,42,.08);
 }
-
-
-/* HEADER */
 
 .document-photo-header{
     padding:18px;
@@ -382,20 +374,17 @@ td{
 
 .document-photo-header small{
     color:#bfdbfe;
-
     font-size:9px;
-
     letter-spacing:1px;
 }
 
 .document-photo-header h3{
     margin-top:5px;
-
     font-size:16px;
 }
 
 .document-status{
-    background:#16a34a;
+    background:#64748b;
 
     color:white;
 
@@ -411,10 +400,11 @@ td{
 }
 
 
-/* IMAGE AREA */
+/* =========================
+   DOCUMENT IMAGE
+========================= */
 
 .document-image-container{
-
     padding:18px;
 
     background:#f8fafc;
@@ -430,12 +420,8 @@ td{
     align-items:center;
 }
 
-
-/* DOCUMENT IMAGE */
-
 .document-image{
-
-    display:block;
+    display:none;
 
     width:100%;
 
@@ -457,11 +443,12 @@ td{
 
     box-shadow:
     0 8px 25px rgba(15,23,42,.12);
-
 }
 
 
-/* EMPTY DOCUMENT */
+/* =========================
+   PLACEHOLDER
+========================= */
 
 .document-placeholder{
 
@@ -486,41 +473,32 @@ td{
     border:2px dashed #bfdbfe;
 
     border-radius:15px;
-
 }
 
 .document-placeholder .icon{
-
     font-size:45px;
 }
 
 .document-placeholder p{
-
     font-size:12px;
 }
 
 .document-placeholder small{
-
     font-size:10px;
 }
 
 
-/* ACTIONS */
+/* =========================
+   DOCUMENT ACTION
+========================= */
 
 .document-actions{
-
-    display:grid;
-
-    grid-template-columns:1fr 1fr 1fr;
-
-    gap:10px;
-
     padding:18px;
 }
 
-.upload-btn,
-.view-btn,
-.remove-btn{
+.view-btn{
+
+    width:100%;
 
     display:flex;
 
@@ -540,65 +518,16 @@ td{
 
     cursor:pointer;
 
-    text-align:center;
-}
-
-
-/* UPLOAD */
-
-.upload-btn{
-
-    background:#2563eb;
-
-    color:white;
-
-}
-
-.upload-btn:hover{
-
-    background:#1d4ed8;
-
-}
-
-
-/* VIEW */
-
-.view-btn{
-
     background:#071426;
 
     color:white;
-
 }
 
 .view-btn:hover{
-
     background:#0f2d4f;
-
 }
-
-
-/* REMOVE */
-
-.remove-btn{
-
-    background:#fee2e2;
-
-    color:#b91c1c;
-
-}
-
-.remove-btn:hover{
-
-    background:#fecaca;
-
-}
-
-
-/* HELP */
 
 .document-help{
-
     text-align:center;
 
     padding:0 18px 18px;
@@ -606,7 +535,6 @@ td{
     color:#64748b;
 
     font-size:10px;
-
 }
 
 
@@ -615,7 +543,6 @@ td{
 ========================= */
 
 .payment{
-
     background:
     linear-gradient(
         145deg,
@@ -627,66 +554,43 @@ td{
 }
 
 .payment-top{
-
     display:flex;
-
     justify-content:space-between;
-
     align-items:center;
 }
 
 .payment-label{
-
     font-size:9px;
-
     color:#64748b;
-
     font-weight:bold;
-
     letter-spacing:1px;
 }
 
 .payment h2{
-
     color:#2563eb;
-
     margin-top:5px;
 }
 
 .paid{
-
     padding:9px 13px;
-
     border-radius:20px;
-
     background:#dcfce7;
-
     color:#15803d;
-
     font-size:10px;
-
     font-weight:bold;
 }
 
 .progress{
-
     height:13px;
-
     margin-top:20px;
-
     background:#e2e8f0;
-
     border-radius:50px;
-
     overflow:hidden;
 }
 
 .progress-bar{
-
     width:70%;
-
     height:100%;
-
     border-radius:50px;
 
     background:
@@ -698,44 +602,29 @@ td{
 }
 
 .progress-info{
-
     display:flex;
-
     justify-content:space-between;
-
     margin-top:8px;
-
     font-size:10px;
-
     color:#64748b;
 }
 
 .next{
-
     margin-top:15px;
-
     padding:14px;
-
     border-radius:15px;
-
     background:#fff;
-
     border:1px dashed #93c5fd;
 }
 
 .next small{
-
     color:#64748b;
-
     font-size:9px;
 }
 
 .next strong{
-
     display:block;
-
     margin-top:5px;
-
     color:#2563eb;
 }
 
@@ -745,134 +634,87 @@ td{
 ========================= */
 
 .receipt{
-
     background:#fff;
-
     border:1px solid #dbeafe;
-
     border-radius:22px;
-
     overflow:hidden;
 }
 
 .receipt-header{
-
     padding:20px;
-
     background:#0f2d4f;
-
     color:#fff;
 
     display:flex;
-
     justify-content:space-between;
-
     align-items:center;
 }
 
 .receipt-header small{
-
     font-size:9px;
-
     color:#bfdbfe;
 }
 
 .receipt-header h2{
-
     font-size:18px;
-
     margin-top:4px;
 }
 
 .receipt-paid{
-
     background:#16a34a;
-
     padding:7px 11px;
-
     border-radius:20px;
-
     font-size:10px;
-
     font-weight:bold;
 }
 
 .receipt-body{
-
     padding:20px;
 }
 
 .receipt-grid{
-
     display:grid;
-
     grid-template-columns:1fr 1fr;
-
     gap:10px;
 }
 
 .receipt-item{
-
     padding:13px;
-
     border-radius:14px;
-
     background:#f8fafc;
 }
 
 .receipt-item small{
-
     display:block;
-
     color:#64748b;
-
     font-size:9px;
 }
 
 .receipt-item strong{
-
     display:block;
-
     margin-top:5px;
-
     font-size:12px;
 }
 
 .receipt-note{
-
     margin-top:15px;
-
     padding:14px;
-
     background:#eff6ff;
-
     border-left:4px solid #2563eb;
-
     border-radius:12px;
-
     font-size:11px;
-
     line-height:1.7;
 }
 
 .print{
-
     width:100%;
-
     margin-top:15px;
-
     border:0;
-
     padding:13px;
-
     border-radius:14px;
-
     background:#071426;
-
     color:#fff;
-
     font-weight:bold;
-
     cursor:pointer;
 }
 
@@ -882,14 +724,11 @@ td{
 ========================= */
 
 .timeline{
-
     position:relative;
-
     padding-left:30px;
 }
 
 .timeline:before{
-
     content:"";
 
     position:absolute;
@@ -906,19 +745,15 @@ td{
 }
 
 .step{
-
     position:relative;
-
     margin-bottom:24px;
 }
 
 .step:last-child{
-
     margin-bottom:0;
 }
 
 .step:before{
-
     content:"";
 
     position:absolute;
@@ -939,50 +774,21 @@ td{
 }
 
 .step.done:before{
-
     background:#16a34a;
 }
 
 .step.active:before{
-
     background:#f59e0b;
 }
 
 .step h4{
-
     font-size:13px;
 }
 
 .step p{
-
     color:#64748b;
-
     font-size:11px;
-
     margin-top:4px;
-}
-
-
-/* =========================
-   DOCUMENT CHECKLIST
-========================= */
-
-.document{
-
-    display:flex;
-
-    justify-content:space-between;
-
-    padding:13px 0;
-
-    border-bottom:1px solid #edf1f5;
-
-    font-size:12px;
-}
-
-.document:last-child{
-
-    border:0;
 }
 
 
@@ -991,7 +797,6 @@ td{
 ========================= */
 
 .notice{
-
     padding:15px;
 
     border-radius:15px;
@@ -1004,17 +809,14 @@ td{
 }
 
 .notice:last-child{
-
     margin-bottom:0;
 }
 
 .notice strong{
-
     font-size:13px;
 }
 
 .notice p{
-
     color:#64748b;
 
     font-size:11px;
@@ -1030,7 +832,6 @@ td{
 ========================= */
 
 .support{
-
     padding:20px;
 
     border-radius:22px;
@@ -1046,37 +847,24 @@ td{
 }
 
 .support h3{
-
     font-size:15px;
 }
 
 .support p{
-
     color:#bfdbfe;
-
     font-size:11px;
-
     margin-top:5px;
 }
 
 .support button{
-
     width:100%;
-
     margin-top:15px;
-
     padding:13px;
-
     border:0;
-
     border-radius:14px;
-
     color:#173f87;
-
     background:#fff;
-
     font-weight:bold;
-
     cursor:pointer;
 }
 
@@ -1086,7 +874,6 @@ td{
 ========================= */
 
 .warning{
-
     text-align:center;
 
     padding:17px;
@@ -1110,7 +897,6 @@ td{
 ========================= */
 
 footer{
-
     margin-top:30px;
 
     padding:35px 15px;
@@ -1123,12 +909,10 @@ footer{
 }
 
 footer h2{
-
     font-size:18px;
 }
 
 footer p{
-
     color:#bfdbfe;
 
     font-size:10px;
@@ -1144,42 +928,18 @@ footer p{
 @media(max-width:550px){
 
     header{
-
         margin:8px;
     }
 
     .container{
-
         padding:0 8px;
     }
 
-    .grid{
-
-        grid-template-columns:1fr 1fr;
-    }
-
     .receipt-grid{
-
         grid-template-columns:1fr;
-    }
-
-    .document-actions{
-
-        grid-template-columns:1fr;
-    }
-
-    .ministry h2{
-
-        font-size:17px;
-    }
-
-    .payment h2{
-
-        font-size:20px;
     }
 
     .nav{
-
         padding:0 8px;
     }
 
@@ -1188,14 +948,11 @@ footer p{
 @media(max-width:380px){
 
     .grid{
-
         grid-template-columns:1fr;
     }
 
     .profile-photo{
-
         width:130px;
-
         height:160px;
     }
 
@@ -1209,7 +966,6 @@ footer p{
 @media print{
 
     body{
-
         background:white;
     }
 
@@ -1222,14 +978,11 @@ footer p{
     footer,
     .support,
     .warning{
-
         display:none !important;
     }
 
     .section{
-
         box-shadow:none;
-
         border:1px solid #ddd;
     }
 
@@ -1243,10 +996,6 @@ footer p{
 <body>
 
 
-<!-- =========================
-     DEMO NOTICE
-========================= -->
-
 <div class="demo">
 
     DEMO / TESTING INTERFACE —
@@ -1254,10 +1003,6 @@ footer p{
 
 </div>
 
-
-<!-- =========================
-     HEADER
-========================= -->
 
 <header>
 
@@ -1273,10 +1018,6 @@ footer p{
 
 </header>
 
-
-<!-- =========================
-     NAVIGATION
-========================= -->
 
 <div class="nav">
 
@@ -1294,160 +1035,82 @@ footer p{
 </div>
 
 
-<!-- CLOCK -->
-
-<div class="clock"
-     id="clock">
-
+<div class="clock" id="clock">
     System time...
-
 </div>
 
-
-<!-- =========================
-     MAIN
-========================= -->
 
 <div class="container">
 
 
-<!-- PERSONAL INFORMATION -->
+<!-- =========================
+     PERSONAL INFORMATION
+========================= -->
 
 <section class="section profile">
 
     <div class="title">
-
         👤 የግል መረጃ
-
     </div>
 
 
     <img
         id="photo"
         class="profile-photo"
-        src="https://e-lmis-online.netlify.app/image/photo_2025-11-29_18-58-10.jpg"
-        alt="Demo Profile"
+        src=""
+        alt="Profile Photo"
     >
 
 
     <table>
 
         <tr>
-
-            <td class="label">
-                ሙሉ ስም
-            </td>
-
-            <td id="name">
-                Demo Applicant
-            </td>
-
+            <td class="label">ሙሉ ስም</td>
+            <td id="name">-</td>
         </tr>
 
-
         <tr>
-
-            <td class="label">
-                ጾታ
-            </td>
-
-            <td id="gender">
-                -
-            </td>
-
+            <td class="label">ጾታ</td>
+            <td id="gender">-</td>
         </tr>
 
-
         <tr>
-
-            <td class="label">
-                ዕድሜ
-            </td>
-
-            <td id="age">
-                -
-            </td>
-
+            <td class="label">ዕድሜ</td>
+            <td id="age">-</td>
         </tr>
 
-
         <tr>
-
-            <td class="label">
-                የትውልድ ቀን
-            </td>
-
-            <td id="dob">
-                -
-            </td>
-
+            <td class="label">የትውልድ ቀን</td>
+            <td id="dob">-</td>
         </tr>
 
-
         <tr>
-
-            <td class="label">
-                Application ID
-            </td>
-
-            <td id="applicationId">
-                DEMO-000001
-            </td>
-
+            <td class="label">Application ID</td>
+            <td id="applicationId">DEMO-000001</td>
         </tr>
 
-
         <tr>
-
-            <td class="label">
-                Passport
-            </td>
-
-            <td id="passport">
-                DEMO-PASSPORT
-            </td>
-
+            <td class="label">Passport</td>
+            <td id="passport">-</td>
         </tr>
 
-
         <tr>
-
-            <td class="label">
-                Phone
-            </td>
-
-            <td id="phone">
-                -
-            </td>
-
+            <td class="label">Phone</td>
+            <td id="phone">-</td>
         </tr>
 
-
         <tr>
-
-            <td class="label">
-                Country
-            </td>
-
-            <td id="country">
-                -
-            </td>
-
+            <td class="label">Country</td>
+            <td id="country">-</td>
         </tr>
 
-
         <tr>
-
-            <td class="label">
-                Status
-            </td>
+            <td class="label">Status</td>
 
             <td>
-
                 <span class="status">
                     ACTIVE
                 </span>
-
             </td>
 
         </tr>
@@ -1457,19 +1120,18 @@ footer p{
 </section>
 
 
-<!-- SKILLS -->
+<!-- =========================
+     SKILLS
+========================= -->
 
 <section class="section">
 
     <div class="title">
-
         👨‍💼 የሙያ እና ክህሎት መረጃ
-
     </div>
 
 
     <div class="grid">
-
 
         <div class="card">
 
@@ -1535,19 +1197,19 @@ footer p{
 </section>
 
 
-<!-- MINISTRY -->
+<!-- =========================
+     MINISTRY
+========================= -->
 
 <section class="section">
 
     <div class="ministry">
-
 
         <div class="ministry-top">
 
             <div class="ministry-icon">
                 🏛️
             </div>
-
 
             <div>
 
@@ -1588,25 +1250,20 @@ footer p{
 
 <section class="section">
 
-
     <div class="title">
-
         📄 የሰነድ ፎቶ / Document Photo
-
     </div>
 
 
     <div class="document-photo-box">
 
 
-        <!-- HEADER -->
-
         <div class="document-photo-header">
 
             <div>
 
                 <small>
-                    DEMO DOCUMENT PHOTO
+                    APPLICATION DOCUMENT
                 </small>
 
                 <h3>
@@ -1620,36 +1277,28 @@ footer p{
                 id="documentStatus"
                 class="document-status">
 
-                ✓ UPLOADED
+                ○ NO DOCUMENT
 
             </span>
 
         </div>
 
 
-        <!-- IMAGE CONTAINER -->
-
         <div
             class="document-image-container"
             id="documentContainer">
 
 
-            <!-- DEFAULT DOCUMENT -->
-
             <img
-                id="document"
+                id="documentImage"
                 class="document-image"
-                src="https://e-lmis-online.netlify.app/image/document.jpg"
-                alt="Demo Document"
+                alt="Application Document"
             >
 
 
-            <!-- EMPTY PLACEHOLDER -->
-
             <div
                 id="documentPlaceholder"
-                class="document-placeholder"
-                style="display:none;">
+                class="document-placeholder">
 
                 <div class="icon">
                     📄
@@ -1660,7 +1309,7 @@ footer p{
                 </p>
 
                 <small>
-                    Upload JPG, PNG or WEBP
+                    Upload document from Application page
                 </small>
 
             </div>
@@ -1668,70 +1317,35 @@ footer p{
         </div>
 
 
-        <!-- ACTIONS -->
-
         <div class="document-actions">
-
-
-            <!-- UPLOAD -->
-
-            <label
-                for="documentUpload"
-                class="upload-btn">
-
-                📷 Upload Document
-
-            </label>
-
-
-            <input
-                type="file"
-                id="documentUpload"
-                accept="image/jpeg,image/png,image/webp"
-                hidden
-            >
-
-
-            <!-- VIEW -->
 
             <button
                 type="button"
                 class="view-btn"
                 onclick="viewDocument()">
 
-                🔍 View Full
+                🔍 View Full Document
 
             </button>
-
-
-            <!-- REMOVE -->
-
-            <button
-                type="button"
-                class="remove-btn"
-                onclick="removeDocument()">
-
-                🗑️ Remove
-
-            </button>
-
 
         </div>
 
 
         <p class="document-help">
 
-            JPG, PNG ወይም WEBP የሰነድ ፎቶ ይጫኑ።
+            ይህ ሰነድ ከ Application መረጃ ጋር
+            የተመዘገበ ነው።
 
         </p>
-
 
     </div>
 
 </section>
 
 
-<!-- TRAVEL -->
+<!-- =========================
+     TRAVEL
+========================= -->
 
 <section class="section">
 
@@ -1741,7 +1355,6 @@ footer p{
 
 
     <div class="grid">
-
 
         <div class="card">
 
@@ -1807,7 +1420,9 @@ footer p{
 </section>
 
 
-<!-- PAYMENT -->
+<!-- =========================
+     PAYMENT
+========================= -->
 
 <section class="section payment">
 
@@ -1824,7 +1439,6 @@ footer p{
             </h2>
 
         </div>
-
 
         <div class="paid">
             ✓ RECORDED
@@ -1868,7 +1482,9 @@ footer p{
 </section>
 
 
-<!-- PAYMENT RECEIPT -->
+<!-- =========================
+     RECEIPT
+========================= -->
 
 <section class="section">
 
@@ -1986,7 +1602,6 @@ footer p{
 
             </button>
 
-
         </div>
 
     </div>
@@ -1994,7 +1609,9 @@ footer p{
 </section>
 
 
-<!-- APPLICATION JOURNEY -->
+<!-- =========================
+     APPLICATION JOURNEY
+========================= -->
 
 <section class="section">
 
@@ -2057,106 +1674,14 @@ footer p{
 
         </div>
 
-
     </div>
 
 </section>
 
 
-<!-- DOCUMENT CHECKLIST -->
-
-<section class="section">
-
-    <div class="title">
-        📄 የሰነድ ፎቶ / Document Photo
-    </div>
-
-    <div class="document-photo-box">
-
-        <div class="document-photo-header">
-
-            <div>
-
-                <small>
-                    APPLICATION DOCUMENT
-                </small>
-
-                <h3>
-                    የተጫነ ሰነድ
-                </h3>
-
-            </div>
-
-            <span
-                id="documentStatus"
-                class="document-status">
-
-                ✓ UPLOADED
-
-            </span>
-
-        </div>
-
-
-        <div
-            class="document-image-container"
-            id="documentContainer">
-
-            <img
-                id="document"
-                class="document-image"
-                alt="Application Document"
-            >
-
-            <div
-                id="documentEmpty"
-                class="document-placeholder"
-                style="display:none;">
-
-                <div class="icon">
-                    📄
-                </div>
-
-                <p>
-                    No document available
-                </p>
-
-            </div>
-
-        </div>
-
-
-        <div class="document-actions">
-
-            <button
-                type="button"
-                class="view-btn"
-                onclick="viewDocument()">
-
-                🔍 View Full Document
-
-            </button>
-
-        </div>
-
-
-        <p class="document-help">
-
-            ይህ ሰነድ ከApplication መረጃ ጋር
-            የተመዘገበ ነው።
-
-        </p>
-
-    </div>
-
-</section>
-
-    </div>
-
-</section>
-
-
-<!-- NOTIFICATIONS -->
+<!-- =========================
+     NOTIFICATIONS
+========================= -->
 
 <section class="section">
 
@@ -2208,7 +1733,9 @@ footer p{
 </section>
 
 
-<!-- SECURITY -->
+<!-- =========================
+     SECURITY
+========================= -->
 
 <section class="section">
 
@@ -2249,13 +1776,14 @@ footer p{
 
         </div>
 
-
     </div>
 
 </section>
 
 
-<!-- SUPPORT -->
+<!-- =========================
+     SUPPORT
+========================= -->
 
 <section class="section">
 
@@ -2278,7 +1806,9 @@ footer p{
 </section>
 
 
-<!-- WARNING -->
+<!-- =========================
+     WARNING
+========================= -->
 
 <section class="section">
 
@@ -2379,27 +1909,78 @@ document.getElementById(
 
 
 /* =========================
-   USER DATA
+   READ USER DATA
 ========================= */
 
-let user = {};
+function loadUserData(){
 
-try{
+    let user = {};
 
-    user =
-        JSON.parse(
-            localStorage.getItem("user") || "{}"
+    try{
+
+        user =
+            JSON.parse(
+                localStorage.getItem("user") || "{}"
+            );
+
+    }catch(error){
+
+        console.error(
+            "User data error:",
+            error
         );
 
-}catch(error){
+        user = {};
 
-    user = {};
+    }
+
+
+    setText("name", user.name);
+    setText("gender", user.gender);
+    setText("age", user.age);
+    setText("dob", user.dob);
+    setText("passport", user.passport);
+    setText("phone", user.phone);
+    setText("country", user.country);
+    setText("skill", user.skill);
+    setText("visa", user.visa);
+
+
+    if(user.applicationId){
+
+        setText(
+            "applicationId",
+            user.applicationId
+        );
+
+    }
+
+
+    if(user.country){
+
+        setText(
+            "destination",
+            user.country
+        );
+
+    }
+
+
+    /* PROFILE PHOTO */
+
+    if(user.photo){
+
+        document.getElementById(
+            "photo"
+        ).src = user.photo;
+
+    }
 
 }
 
 
 /* =========================
-   PERSONAL INFORMATION
+   SET TEXT
 ========================= */
 
 function setText(id,value){
@@ -2407,7 +1988,12 @@ function setText(id,value){
     const element =
         document.getElementById(id);
 
-    if(element && value){
+    if(
+        element &&
+        value !== undefined &&
+        value !== null &&
+        String(value).trim() !== ""
+    ){
 
         element.innerText =
             value;
@@ -2417,61 +2003,13 @@ function setText(id,value){
 }
 
 
-setText("name",user.name);
-
-setText("gender",user.gender);
-
-setText("age",user.age);
-
-setText("dob",user.dob);
-
-setText("passport",user.passport);
-
-setText("phone",user.phone);
-
-setText("country",user.country);
-
-setText("skill",user.skill);
-
-setText("visa",user.visa);
-
-
-if(user.country){
-
-    setText(
-        "destination",
-        user.country
-    );
-
-}
-
-
 /* =========================
-   PROFILE PHOTO
+   DOCUMENT
 ========================= */
-
-if(user.photo){
-
-    document.getElementById(
-        "photo"
-    ).src =
-        user.photo;
-
-}
-
-
-/* =========================
-   DOCUMENT ELEMENTS
-========================= */
-
-const documentUpload =
-    document.getElementById(
-        "documentUpload"
-    );
 
 const documentImage =
     document.getElementById(
-        "document"
+        "documentImage"
     );
 
 const documentPlaceholder =
@@ -2486,12 +2024,14 @@ const documentStatus =
 
 
 /* =========================
-   SHOW IMAGE
+   SHOW DOCUMENT
 ========================= */
 
 function showDocument(src){
 
     if(!src){
+
+        documentImage.src = "";
 
         documentImage.style.display =
             "none";
@@ -2529,153 +2069,30 @@ function showDocument(src){
 
 
 /* =========================
-   UPLOAD DOCUMENT
+   LOAD DOCUMENT
 ========================= */
 
-documentUpload.addEventListener(
-    "change",
-    function(){
+function loadDocument(){
 
-        const file =
-            this.files[0];
-
-        if(!file){
-
-            return;
-
-        }
+    const savedDocument =
+        localStorage.getItem(
+            "documentPhoto"
+        );
 
 
-        /* CHECK FILE */
+    if(savedDocument){
 
-        if(!file.type.startsWith("image/")){
+        showDocument(
+            savedDocument
+        );
 
-            alert(
-                "Please select an image file."
-            );
+    }else{
 
-            this.value = "";
-
-            return;
-
-        }
-
-
-        /* CHECK SIZE */
-
-        const maxSize =
-            8 * 1024 * 1024;
-
-        if(file.size > maxSize){
-
-            alert(
-                "Image is too large.\n\n" +
-                "Please select an image smaller than 8MB."
-            );
-
-            this.value = "";
-
-            return;
-
-        }
-
-
-        /* READ IMAGE */
-
-        const reader =
-            new FileReader();
-
-
-        reader.onload =
-            function(event){
-
-                const imageData =
-                    event.target.result;
-
-
-                /* SHOW */
-
-                showDocument(
-                    imageData
-                );
-
-
-                /* SAVE */
-
-                try{
-
-                    localStorage.setItem(
-                        "documentPhoto",
-                        imageData
-                    );
-
-                }catch(error){
-
-                    console.error(
-                        error
-                    );
-
-                    alert(
-                        "The image was displayed, " +
-                        "but could not be saved permanently " +
-                        "because the browser storage is full."
-                    );
-
-                }
-
-            };
-
-
-        reader.onerror =
-            function(){
-
-                alert(
-                    "Unable to read the image."
-                );
-
-            };
-
-
-        reader.readAsDataURL(file);
+        showDocument(null);
 
     }
-);
 
-
-/* =========================
-   LOAD SAVED DOCUMENT
-========================= */
-
-window.addEventListener(
-    "load",
-    function(){
-
-        const savedDocument =
-            localStorage.getItem(
-                "documentPhoto"
-            );
-
-
-        if(savedDocument){
-
-            showDocument(
-                savedDocument
-            );
-
-        }else{
-
-            /*
-             * Keep default document image.
-             */
-
-            showDocument(
-                documentImage.src
-            );
-
-        }
-
-    }
-);
+}
 
 
 /* =========================
@@ -2736,7 +2153,6 @@ function viewDocument(){
             <title>
                 Document Preview
             </title>
-
 
             <style>
 
@@ -2803,61 +2219,7 @@ function viewDocument(){
 
 
 /* =========================
-   REMOVE DOCUMENT
-========================= */
-
-function removeDocument(){
-
-    const confirmRemove =
-        confirm(
-            "Remove uploaded document?"
-        );
-
-
-    if(!confirmRemove){
-
-        return;
-
-    }
-
-
-    localStorage.removeItem(
-        "documentPhoto"
-    );
-
-
-    documentUpload.value =
-        "";
-
-
-    /*
-     * Show empty placeholder
-     */
-
-    documentImage.src =
-        "";
-
-
-    documentImage.style.display =
-        "none";
-
-
-    documentPlaceholder.style.display =
-        "flex";
-
-
-    documentStatus.innerText =
-        "○ NO DOCUMENT";
-
-
-    documentStatus.style.background =
-        "#64748b";
-
-}
-
-
-/* =========================
-   PRINT RECEIPT
+   PRINT
 ========================= */
 
 function printReceipt(){
@@ -2879,6 +2241,41 @@ function support(){
     );
 
 }
+
+
+/* =========================
+   INITIAL LOAD
+========================= */
+
+loadUserData();
+
+loadDocument();
+
+
+/* =========================
+   AUTO UPDATE
+   IF INDEX.HTML CHANGES DATA
+========================= */
+
+window.addEventListener(
+    "storage",
+    function(event){
+
+        if(event.key === "user"){
+
+            loadUserData();
+
+        }
+
+
+        if(event.key === "documentPhoto"){
+
+            loadDocument();
+
+        }
+
+    }
+);
 
 </script>
 
