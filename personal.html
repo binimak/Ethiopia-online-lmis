@@ -1,984 +1,1433 @@
-<!DOCTYPE html>  <html>  
-<head>  <meta name="viewport" content="width=device-width, initial-scale=1.0">  
-<title>Personal Information</title>  <style>  
-*{  
-  margin:0;  
-  padding:0;  
-  box-sizing:border-box;  
-   font-family:"Inter",Arial,sans-serif;  
-}  
-  
-body{
-    background:#f3f6fb;
+<!DOCTYPE html>
+<html lang="am">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Travel & Skills Dashboard — DEMO</title>
+
+<style>
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
     font-family:Arial, sans-serif;
 }
-.countdown{
-    display:flex;
-    justify-content:flex-end;
-    gap:6px;
-    padding:12px 15px;
+
+body{
+    background:#f1f5f9;
+    color:#172033;
 }
 
-.box{
-    width:38px;
-    height:32px;
-    border-radius:8px;
-    background:#0b53b6;
-    color:#fff;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    position:relative;
-    overflow:hidden;
-}
-
-.box:last-child{
-    background:#d90429;
-}
-
-.box h1{
-    font-size:10px;
-    margin:0;
-    line-height:1;
-}
-
-.box p{
-    font-size:9px;
-    margin-top:3px;
-}
-body::after{  
-  content:"";  
-  
-  position:fixed;  
-  
-  width:300px;  
-  height:300px;  
-  
-  background:  
-  radial-gradient(  
-    rgba(96,165,250,0.1),  
-    transparent 70%  
-  );  
-  
-  bottom:-120px;  
-  left:-100px;  
-  
-  border-radius:50%;  
-  
-  z-index:-1;  
-}  
-header{  
-  max-width:760px;  
-  
-  margin:auto;  
-  
-  padding:35px 20px;  
-  
-  border-radius:35px;  
-  
-  background:  
-  linear-gradient(  
-    135deg,  
-    #071426,  
-    #0f2d4f,  
-    #2563eb  
-  );  
-  
-  text-align:center;  
-  
-  position:relative;  
-  
-  overflow:hidden;  
-  
-  box-shadow:  
-  0 30px 60px rgba(15,23,42,0.2);  
-}  
-header::before{  
-  content:"";  
-  
-  position:absolute;  
-  
-  width:260px;  
-  height:260px;  
-  
-  background:  
-  rgba(255,255,255,0.08);  
-  
-  border-radius:50%;  
-  
-  top:-120px;  
-  right:-60px;  
-}  
-  
-header::after{  
-  content:"";  
-  
-  position:absolute;  
-  
-  width:180px;  
-  height:180px;  
-  
-  background:  
-  rgba(96,165,250,0.12);  
-  
-  border-radius:50%;  
-  
-  bottom:-80px;  
-  left:-60px;  
-}  
-.logo{  
-  width:220px;  
-  
-  background:white;  
-  
-  padding:10px;  
-  
-  border-radius:22px;  
-  
-  position:relative;  
-  z-index:2;  
-  
-  box-shadow:  
-  0 10px 30px rgba(0,0,0,0.2);  
-}  
-header hr{  
-  margin-top:20px;  
-  border:none;  
-  height:1px;  
-  
-  background:  
-  rgba(255,255,255,0.2);  
-}  
-#time{  
-  text-align:center;  
-  
-  margin-top:18px;  
-  
-  color:#475569;  
-  
-  font-size:20px;  
-  
-  font-weight:700;  
-}  
-.title{
-    background:#0b53b6;
-    color:#fff;
+.demo{
+    background:#fff3cd;
+    color:#765800;
     text-align:center;
-    font-size:20px;
-    font-weight:700;
-    padding:15px;
-    line-height:1.5;
-}
-  .container{
-    max-width:480px;
-    margin:20px auto;
-    background:#fff;
-    border:3px solid #4a8bd8;
-    border-radius:24px;
-    overflow:hidden;
-    padding:0;
-    box-shadow:0 5px 15px rgba(0,0,0,.08);
+    padding:9px;
+    font-size:11px;
+    font-weight:bold;
 }
 
-.container::before{  
-  content:"";  
-  
-  position:absolute;  
-  
-  width:220px;  
-  height:220px;  
-  
-  background:  
-  radial-gradient(  
-    rgba(59,130,246,0.12),  
-    transparent 70%  
-  );  
-  
-  top:-50px;  
-  right:-50px;  
-  
-  border-radius:50%;  
-}  
-  
-.photo-wrapper{  
-  position:relative;  
-  display:inline-block;  
-}  
-  
-.stamp{
-    position:absolute;
-    width:135px;
-    right:-10px;
-    bottom:-10px;
-    transform:translateX(25px);
+/* HEADER */
+
+header{
+    max-width:900px;
+    margin:10px auto;
+    padding:32px 20px;
+    border-radius:30px;
+    text-align:center;
+    color:white;
+    background:
+        linear-gradient(
+            135deg,
+            #071426,
+            #0f2d4f,
+            #2563eb
+        );
+    box-shadow:0 20px 45px rgba(0,0,0,.15);
 }
-  
+
+header h1{
+    font-size:25px;
+    margin-top:12px;
+}
+
+header p{
+    color:#dbeafe;
+    font-size:12px;
+    margin-top:6px;
+}
+
+.icon{
+    font-size:42px;
+}
+
+.clock{
+    text-align:center;
+    margin:14px;
+    color:#64748b;
+    font-size:12px;
+}
+
+/* CONTAINER */
+
+.container{
+    max-width:700px;
+    margin:15px auto;
+    padding:0 10px;
+}
+
+.section{
+    background:#fff;
+    margin-bottom:15px;
+    padding:22px;
+    border-radius:24px;
+    border:1px solid #e2e8f0;
+    box-shadow:0 8px 25px rgba(15,23,42,.05);
+}
+
+.title{
+    font-size:19px;
+    font-weight:900;
+    margin-bottom:18px;
+}
+
+/* PROFILE */
+
+.profile{
+    text-align:center;
+}
 
 .profile-photo{
-    width:150px;
-    height:180px;
+    width:145px;
+    height:175px;
     object-fit:cover;
-    border:2px solid #3b78c4;
-    border-radius:18px;
-text-align:center;  
-}  
-.photo{  
-text-align:center;  
-}  
-.profile-photo:hover{  
-  transform:scale(1.03);  
-}  
-.photo img{  
-width:50px;  
-border-radius:15px;  
-border:3px solid #2b6cb0;  
-}  
-  table{
-    width:100%;
-    border-collapse:collapse;
+    border-radius:20px;
+    border:4px solid #2563eb;
 }
 
-tr{
-    border-bottom:1px solid #d9d9d9;
+table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:20px;
 }
 
 td{
-    padding:14px 22px;
-    font-size:17px;
-    line-height:1.35;
+    padding:12px 8px;
+    border-bottom:1px solid #edf1f5;
+    font-size:13px;
 }
 
 .label{
     width:42%;
-    font-weight:700;
+    font-weight:bold;
     color:#173f87;
 }
 
-td:last-child{
-    color:#333;
-}
 .status{
-    background:#18a64b;
+    background:#16a34a;
     color:#fff;
-    padding:4px 12px;
-    border-radius:6px;
-    font-size:15px;
+    padding:6px 12px;
+    border-radius:20px;
+    font-size:10px;
     font-weight:bold;
 }
-  
-.logo{  
-  width:220px;  
-  background:#fff;  
-  padding:8px;  
-  border-radius:14px;  
-}  
-  
-.upload{  
-  padding:35px;  
-}  
-  
-.upload h2{  
-  font-size:26px;  
-  
-  color:#0f172a;  
-  
-  margin-bottom:25px;  
-}  
-.filebox{  
-  background:  
-  linear-gradient(  
-    145deg,  
-    #f8fbff,  
-    #eef4ff  
-  );  
-  
-  padding:30px;  
-  
-  border-radius:24px;  
-  
-  border:2px dashed #93c5fd;  
-  
-  text-align:center;  
-}  
-  
-.filebox p{  
-  margin-bottom:18px;  
-  
-  color:#334155;  
-  
-  font-weight:600;  
-}  
-  
-    
-.submit{  
-  margin-top:24px;  
-}  
-  
-.photo-box{  
-text-align:center;  
-padding:10px;  
-}  
-  
-.container{  
-background-image:url('https://e-lmis-online.netlify.app/image/photo_2_2025-11-26_21-51-36.jpg');  
-background-size:100px;  
-background-repeat:no-repeat;  
-background-position:right bottom;  
-}  
-.progress{  
-  margin-top:24px;  
-  
-  width:100%;  
-  
-  height:18px;  
-  
-  background:#e2e8f0;  
-  
-  border-radius:50px;  
-  
-  overflow:hidden;  
-}  
-  
-.bar{  
-  width:80%;  
-  height:100%;  
-  
-  display:flex;  
-  align-items:center;  
-  justify-content:center;  
-  
-  font-size:12px;  
-  font-weight:700;  
-  
-  color:white;  
-  
-  background:  
-  linear-gradient(  
-    90deg,  
-    #2563eb,  
-    #38bdf8  
-  );  
-  
-  border-radius:50px;  
-  
-  animation:progressMove 3s infinite linear;  
-}  
-  
-@keyframes progressMove{  
-  0%{  
-    filter:brightness(1);  
-  }  
-  
-  50%{  
-    filter:brightness(1.1);  
-  }  
-  
-  100%{  
-    filter:brightness(1);  
-  }  
-}  
-  
 
-.social a{  
-color:#90cdf4;  
-text-decoration:none;  
-margin:0 5px;  
-}  
-  .document-box{  
-  padding:16px;  
-  
-  position:relative;  
-}  
-  
-.document-box img{  
-  width:100%;  
-  
-  border-radius:24px;  
-  
-  display:block;  
-  
-  transition:0.4s;  
-}  
-  
-.document-box img:hover{  
-  transform:scale(1.01);  
-}  
-  
-  
-/* IMAGE */  
-.document-box img{  
-  width:100%;  
-  display:block;  
-  border-radius:8px;  
-  background:#f8fafc;  
-}  
-table{  
-    width:100%;  
-    border-collapse:collapse;  
-    border-spacing:0;  
-    margin-top:10px;  
-}  
-  
-tr{  
-    border-bottom:1px solid #dcdcdc;  
-}  
-  
-td{  
-    padding:10px 20px;  
-    font-size:16px;  
-    background:#fff;  
-    border:none;  
-    box-shadow:none;  
-}  
-  
-.label{  
-    width:42%;  
-    font-weight:bold;  
-    color:#000;  
-}  
-  
-td:last-child{  
-    color:#222;  
-}  
-  
-  box-shadow:  
-  0 8px 20px rgba(15,23,42,0.05);  
-  
-  font-size:5px;  
-  
-  transition:0.3s;  
-}  
-  
-td:hover{  
-  transform:translateY(-2px);  
-}  
-  
-/* paper overlay effect */  
-.document-box::before{  
-  content:"";  
-  position:absolute;  
-  top:0;  
-  left:0;  
-  width:100%;  
-  height:100%;  
-  background:linear-gradient(  
-    rgba(255,255,255,0.2),  
-    rgba(0,0,0,0.05)  
-  );  
-  pointer-events:none;  
-}  
-.submit{  
-  margin-top:24px;  
-}  
-  
-.submit button{  
-  width:100%;  
-  
-  border:none;  
-  
-  padding:18px;  
-  
-  border-radius:18px;  
-  
-  font-size:17px;  
-  font-weight:700;  
-  
-  cursor:pointer;  
-  
-  color:white;  
-  
-  background:  
-  linear-gradient(  
-    135deg,  
-    #0f172a,  
-    #2563eb  
-  );  
-  
-  transition:0.35s;  
-  
-  box-shadow:  
-  0 15px 35px rgba(37,99,235,0.25);  
-}  
-  
-.submit button:hover{  
-  transform:translateY(-3px);  
-  
-  box-shadow:  
-  0 20px 40px rgba(37,99,235,0.35);  
-}  
-.footer{  
-background:#0f2d4f;  
-color:white;  
-margin-top:40px;  
-padding:30px 15px;  
-text-align:center;  
-}  
-  
-.secure-text{  
-text-align:center;  
-color:#dc2626;  
-font-size:13px;  
-margin-top:20px;  
-}  
-@keyframes float{  
-0%{transform:translateY(0);}  
-50%{transform:translateY(-5px);}  
-100%{transform:translateY(0);}  
-}  
-/* =========================  
-   MODERN QR SECTION  
-========================= */  
-  
-.qr-container{  
-  margin-top:40px;  
-  
-  padding:40px 25px;  
-  
-  border-radius:32px;  
-  
-  background:  
-  linear-gradient(  
-    145deg,  
-    rgba(255,255,255,0.95),  
-    rgba(219,234,254,0.9)  
-  );  
-  
-  position:relative;  
-  
-  overflow:hidden;  
-  
-  box-shadow:  
-  0 25px 50px rgba(37,99,235,0.12);  
-  
-  text-align:center;  
-}  
-  
-.qr-wrapper{  
-  width:240px;  
-  height:240px;  
-  
-  margin:auto;  
-  
-  padding:18px;  
-  
-  border-radius:35px;  
-  
-  background:white;  
-  
-  position:relative;  
-  
-  display:flex;  
-  align-items:center;  
-  justify-content:center;  
-  
-  box-shadow:  
-  0 25px 50px rgba(15,23,42,0.12);  
-  
-  animation:floatQR 4s ease-in-out infinite;  
-}  
-  
-.qr-wrapper img#qr{  
-  width:100%;  
-  height:100%;  
-  
-  border-radius:24px;  
-}  
-  
-.qr-logo{  
-  position:absolute;  
-  
-  width:68px;  
-  height:68px;  
-  
-  border-radius:22px;  
-  
-  background:white;  
-  
-  padding:8px;  
-  
-  border:4px solid white;  
-  
-  box-shadow:  
-  0 10px 25px rgba(0,0,0,0.15);  
-}  
-  
-@keyframes floatQR{  
-  0%{  
-    transform:translateY(0px);  
-  }  
-  
-  50%{  
-    transform:translateY(-10px);  
-  }  
-  
-  100%{  
-    transform:translateY(0px);  
-  }  
-}  
-  
-.secure-text{  
-  margin-top:25px;  
-  
-  padding:15px;  
-  
-  border-radius:18px;  
-  
-  background:  
-  rgba(220,38,38,0.08);  
-  
-  border:1px solid rgba(220,38,38,0.15);  
-  
-  color:#dc2626;  
-  
-  font-size:13px;  
-  
-  line-height:1.8;  
-  
-  font-weight:600;  
-}  
-  
-/* =========================  
-   MODERN FOOTER  
-========================= */  
-  
-  
-.footer{  
-  margin-top:60px;  
-  
-  padding:60px 25px 35px;  
-  
-  border-radius:40px 40px 0 0;  
-  
-  background:  
-  linear-gradient(  
-    135deg,  
-    #071426,  
-    #0f2d4f,  
-    #2563eb  
-  );  
-  
-  color:white;  
-  
-  position:relative;  
-  
-  overflow:hidden;  
-  
-  box-shadow:  
-  0 -10px 40px rgba(15,23,42,0.18);  
-}  
-  
-.footer::before{  
-  content:"";  
-  
-  position:absolute;  
-  
-  width:260px;  
-  height:260px;  
-  
-  border-radius:50%;  
-  
-  background:  
-  rgba(255,255,255,0.05);  
-  
-  top:-120px;  
-  left:-80px;  
-}  
-  
-.footer::after{  
-  content:"";  
-  
-  position:absolute;  
-  
-  width:180px;  
-  height:180px;  
-  
-  border-radius:50%;  
-  
-  background:  
-  rgba(96,165,250,0.08);  
-  
-  bottom:-60px;  
-  right:-40px;  
-}  
-  
-.footer-container{  
-  position:relative;  
-  z-index:2;  
-  
-  text-align:center;  
-}  
-  
-.footer h3{  
-  font-size:34px;  
-  
-  margin-bottom:12px;  
-  
-  font-weight:800;  
-}  
-  
-.footer p{  
-  color:#dbeafe;  
-  
-  font-size:15px;  
-  
-  line-height:2;  
-}  
-  
-.contact{  
-  margin-top:28px;  
-  
-  padding:24px;  
-  
-  border-radius:26px;  
-  
-  background:  
-  rgba(255,255,255,0.08);  
-  
-  border:1px solid rgba(255,255,255,0.1);  
-  
-  backdrop-filter:blur(12px);  
-  
-  box-shadow:  
-  0 10px 25px rgba(0,0,0,0.12);  
-}  
-  
-.contact p{  
-  margin:10px 0;  
-}  
-  
-.copy{  
-  margin-top:30px;  
-  
-  padding-top:18px;  
-  
-  border-top:  
-  1px solid rgba(255,255,255,0.15);  
-  
-  font-size:13px;  
-  
-  color:#bfdbfe;  
-  
-  letter-spacing:1px;  
-}  
-  
-</style>  </head>  <body>  <header>  
-<img src="https://res.cloudinary.com/dwclusteb/image/upload/v1781129653/images_wnjobu.jpg" class="logo">  
-<hr>  
-</header>  
-<p id="time" style="text-align:center;"></p>  
-<h1 class="title">በስራና ክህሎት ሚኒስቴር ተመዝግቦ  
-የስራ ፍቃድ የተሰጠዉ ባለሙያ  </h1>  <div class="container">  
-<div class="countdown">    <div class="box">  
-    <h1 id="days">02</h1>  
-    <p>DAYS</p>  
-  </div>    <div class="box">  
-    <h1 id="hours">00</h1>  
-    <p>HRS</p>  
-  </div>    <div class="box">  
-    <h1 id="minutes">00</h1>  
-    <p>MINS</p>  
-  </div>    <div class="box">  
-    <h1 id="seconds">00</h1>  
-    <p>SEC</p>  
-  </div>  </div>  
-<table>  <tr>  
-<td colspan="2" class="photo-box">  <div class="photo-wrapper">  
-  <img id="photo" class="profile-photo">  <img  
-src="https://res.cloudinary.com/dwclusteb/image/upload/v1781123212/3568-removebg-preview_vxuww6.png"  
-class="stamp"  
-alt="Official Stamp">
+/* CARDS */
 
-</div>  </td>  
-</tr>  <tr>  
-<td class="label">Name</td>  
-<td id="name"></td>  
-</tr>  <tr>  
-<td class="label">Gender</td>  
-<td id="gender"></td>  
-</tr>  <tr>  
-<td class="label">Age</td>  
-<td id="age"></td>  
-</tr>  <tr>  
-<td class="label">Date of Birth</td>  
-<td id="dob"></td>  
-</tr>  <tr>  
-<td class="label">E-LMIS ID Number</td>  
-<td id="elmis"></td>  
-</tr>  <tr>  
-<td class="label">Passport Number</td>  
-<td id="passport"></td>  
-</tr>  <tr>  
-<td class="label">Phone Number</td>  
-<td id="phone"></td>  
-</tr>  <tr>  
-<td class="label">Place of Birth</td>  
-<td id="birth"></td>  
-</tr>  <tr>  
-<td class="label">Visa Type</td>  
-<td id="visa"></td>  
-</tr>  <tr>  
-<td class="label">Country Where Process Started</td>  
-<td id="country"></td>  
-</tr>  <tr>  
-<td class="label">Status</td>  
-<td><span class="status">Verified</span></td>  
-</tr>  </table>  
-</div>  <div class="document-box">  
-  <img id="doc" src="" alt="Document Image">  
-</div>  <div class="upload">  <h2>Upload receipt (photo)/የክፍያ ደረሰኝ ፎቶ</h2>  <div class="filebox">  <p>Receipt photo / የክፍያ ደረሰኝ ፎቶ</p>  <input type="file" id="receiptInput">  </div>  <div class="progress">  
-  <div class="bar">Process 70%</div>  
-</div>  
-<div class="submit">  
-<button onclick="uploadReceipt()">Submit receipt</button>  </div>  
-  <footer class="footer">  
-  <div class="footer-container">  <h3>E-LMIS System</h3>  
-<p>Secure & Verified Personal Information Platform</p>  
-
-<div class="contact">  
-  <p>📞 Tel: +251 978744462</p>  
-  <p>📍 Addis Ababa, Ethiopia</p>  
-</div>  
-
-<p class="copy">© 2026 E-LMIS. All Rights Reserved.</p>
-
-  </div>  
-</footer>  
-<script> 
-  document.addEventListener('DOMContentLoaded', () => {
-
-let expiryTime = localStorage.getItem("expiryTime");
-
-// ካልነበረ ወይም ካለቀ → reset
-if (!expiryTime || Date.now() > expiryTime) {
-    expiryTime = Date.now() + (2 * 24 * 60 * 60 * 1000);
-    localStorage.setItem("expiryTime", expiryTime);
+.grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
 }
 
-const dDisplay = document.getElementById('days');
-const hDisplay = document.getElementById('hours');
-const mDisplay = document.getElementById('minutes');
-const sDisplay = document.getElementById('seconds');
+.card{
+    padding:17px;
+    background:#f8fafc;
+    border:1px solid #e2e8f0;
+    border-radius:18px;
+}
 
-function updateTimer() {
+.card span{
+    font-size:25px;
+}
 
-    let remaining = expiryTime - Date.now();
+.card h3{
+    font-size:13px;
+    margin-top:8px;
+}
 
-    if (remaining < 0) remaining = 0;
+.card p{
+    color:#64748b;
+    font-size:11px;
+    line-height:1.6;
+    margin-top:4px;
+}
 
-    const totalSeconds = Math.floor(remaining / 1000);
+/* MINISTRY */
 
-    const days = Math.floor(totalSeconds / 86400);
-    const hours = Math.floor((totalSeconds % 86400) / 3600);
-    const minutes = Math.floor((totalSeconds % 3600) / 60);
-    const seconds = totalSeconds % 60;
+.ministry{
+    padding:22px;
+    border-radius:23px;
+    color:white;
+    background:
+        linear-gradient(
+            135deg,
+            #071426,
+            #0f2d4f,
+            #2563eb
+        );
+}
 
-    dDisplay.textContent = String(days).padStart(2, '0');
-    hDisplay.textContent = String(hours).padStart(2, '0');
-    mDisplay.textContent = String(minutes).padStart(2, '0');
-    sDisplay.textContent = String(seconds).padStart(2, '0');
+.ministry-top{
+    display:flex;
+    align-items:center;
+    gap:14px;
+}
 
-    // ⛔ ጊዜ ካለቀ → auto reset
-    if (totalSeconds <= 0) {
-        let newTime = Date.now() + (2 * 24 * 60 * 60 * 1000);
-        localStorage.setItem("expiryTime", newTime);
-        location.reload();
+.ministry-icon{
+    width:58px;
+    height:58px;
+    border-radius:18px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:rgba(255,255,255,.12);
+    font-size:28px;
+}
+
+.ministry small{
+    font-size:9px;
+    color:#bfdbfe;
+    letter-spacing:1px;
+}
+
+.ministry h2{
+    margin-top:5px;
+    font-size:20px;
+}
+
+.ministry p{
+    margin-top:4px;
+    font-size:11px;
+    color:#dbeafe;
+}
+
+.ministry-text{
+    margin-top:17px;
+    padding:15px;
+    border-radius:15px;
+    background:rgba(255,255,255,.08);
+    font-size:12px;
+    line-height:1.8;
+    color:#dbeafe;
+}
+
+/* PAYMENT */
+
+.payment{
+    background:
+        linear-gradient(
+            145deg,
+            #eff6ff,
+            #ffffff
+        );
+    border:1px solid #bfdbfe;
+}
+
+.payment-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.payment-label{
+    font-size:9px;
+    color:#64748b;
+    font-weight:bold;
+    letter-spacing:1px;
+}
+
+.payment h2{
+    color:#2563eb;
+    margin-top:5px;
+}
+
+.paid{
+    padding:9px 13px;
+    border-radius:20px;
+    background:#dcfce7;
+    color:#15803d;
+    font-size:10px;
+    font-weight:bold;
+}
+
+.progress{
+    height:13px;
+    margin-top:20px;
+    background:#e2e8f0;
+    border-radius:50px;
+    overflow:hidden;
+}
+
+.progress-bar{
+    width:70%;
+    height:100%;
+    border-radius:50px;
+    background:
+        linear-gradient(
+            90deg,
+            #2563eb,
+            #38bdf8
+        );
+}
+
+.next{
+    margin-top:15px;
+    padding:14px;
+    border-radius:15px;
+    background:#fff;
+    border:1px dashed #93c5fd;
+}
+
+.next small{
+    color:#64748b;
+    font-size:9px;
+}
+
+.next strong{
+    display:block;
+    margin-top:5px;
+    color:#2563eb;
+}
+
+/* RECEIPT */
+
+.receipt{
+    background:#fff;
+    border:1px solid #dbeafe;
+    border-radius:22px;
+    overflow:hidden;
+}
+
+.receipt-header{
+    padding:20px;
+    background:#0f2d4f;
+    color:#fff;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.receipt-header small{
+    font-size:9px;
+    color:#bfdbfe;
+}
+
+.receipt-header h2{
+    font-size:18px;
+    margin-top:4px;
+}
+
+.receipt-paid{
+    background:#16a34a;
+    padding:7px 11px;
+    border-radius:20px;
+    font-size:10px;
+    font-weight:bold;
+}
+
+.receipt-body{
+    padding:20px;
+}
+
+.receipt-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+}
+
+.receipt-item{
+    padding:13px;
+    border-radius:14px;
+    background:#f8fafc;
+}
+
+.receipt-item small{
+    display:block;
+    color:#64748b;
+    font-size:9px;
+}
+
+.receipt-item strong{
+    display:block;
+    margin-top:5px;
+    font-size:12px;
+}
+
+.receipt-note{
+    margin-top:15px;
+    padding:14px;
+    background:#eff6ff;
+    border-left:4px solid #2563eb;
+    border-radius:12px;
+    font-size:11px;
+    line-height:1.7;
+}
+
+.print{
+    width:100%;
+    margin-top:15px;
+    border:0;
+    padding:13px;
+    border-radius:14px;
+    background:#071426;
+    color:#fff;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+/* JOURNEY */
+
+.timeline{
+    position:relative;
+    padding-left:30px;
+}
+
+.timeline:before{
+    content:"";
+    position:absolute;
+    left:8px;
+    top:4px;
+    bottom:4px;
+    width:2px;
+    background:#dbeafe;
+}
+
+.step{
+    position:relative;
+    margin-bottom:24px;
+}
+
+.step:last-child{
+    margin-bottom:0;
+}
+
+.step:before{
+    content:"";
+    position:absolute;
+    left:-28px;
+    top:2px;
+    width:13px;
+    height:13px;
+    border-radius:50%;
+    background:#cbd5e1;
+    border:3px solid white;
+}
+
+.step.done:before{
+    background:#16a34a;
+}
+
+.step.active:before{
+    background:#f59e0b;
+}
+
+.step h4{
+    font-size:13px;
+}
+
+.step p{
+    color:#64748b;
+    font-size:11px;
+    margin-top:4px;
+}
+
+/* DOCUMENT */
+
+.document{
+    display:flex;
+    justify-content:space-between;
+    padding:13px 0;
+    border-bottom:1px solid #edf1f5;
+    font-size:12px;
+}
+
+.document:last-child{
+    border:0;
+}
+
+.ready{
+    color:#16a34a;
+    font-weight:bold;
+}
+
+.pending{
+    color:#f59e0b;
+    font-weight:bold;
+}
+
+.next-color{
+    color:#2563eb;
+    font-weight:bold;
+}
+
+/* NOTICE */
+
+.notice{
+    padding:15px;
+    border-radius:15px;
+    background:#eff6ff;
+    border-left:4px solid #2563eb;
+    margin-bottom:10px;
+}
+
+.notice:last-child{
+    margin-bottom:0;
+}
+
+.notice strong{
+    font-size:13px;
+}
+
+.notice p{
+    color:#64748b;
+    font-size:11px;
+    margin-top:5px;
+    line-height:1.7;
+}
+
+/* SUPPORT */
+
+.support{
+    padding:20px;
+    border-radius:22px;
+    background:
+        linear-gradient(
+            135deg,
+            #071426,
+            #2563eb
+        );
+    color:#fff;
+}
+
+.support h3{
+    font-size:15px;
+}
+
+.support p{
+    color:#bfdbfe;
+    font-size:11px;
+    margin-top:5px;
+}
+
+.support button{
+    width:100%;
+    margin-top:15px;
+    padding:13px;
+    border:0;
+    border-radius:14px;
+    color:#173f87;
+    background:#fff;
+    font-weight:bold;
+}
+
+/* DEMO WARNING */
+
+.warning{
+    text-align:center;
+    padding:17px;
+    background:#fff7ed;
+    border:1px solid #fed7aa;
+    border-radius:18px;
+    color:#9a3412;
+    font-size:10px;
+    line-height:1.8;
+}
+
+/* FOOTER */
+
+footer{
+    margin-top:30px;
+    padding:35px 15px;
+    text-align:center;
+    background:#071426;
+    color:#fff;
+}
+
+footer h2{
+    font-size:18px;
+}
+
+footer p{
+    color:#bfdbfe;
+    font-size:10px;
+    margin-top:7px;
+}
+
+/* MOBILE */
+
+@media(max-width:550px){
+
+    .container{
+        padding:0 8px;
+    }
+
+    .grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .receipt-grid{
+        grid-template-columns:1fr;
+    }
+
+    .ministry h2{
+        font-size:17px;
+    }
+
+    .payment h2{
+        font-size:20px;
     }
 }
 
-updateTimer();
-setInterval(updateTimer, 1000);
+@media(max-width:380px){
 
-});
-// =====================
-// LOAD USER
-// ===================
-let user = JSON.parse(localStorage.getItem("user"));
-let code = localStorage.getItem("vcode");
+    .grid{
+        grid-template-columns:1fr;
+    }
 
-if (!user) {
-alert("No user data found!");
-window.location.href = "index.html";
+}
+</style>
+</head>
+
+
+<body>
+
+<div class="demo">
+⚠️ DEMO / SAMPLE — NOT AN OFFICIAL GOVERNMENT DOCUMENT
+</div>
+
+
+<header>
+
+<div class="icon">🌍</div>
+
+<h1>
+Travel & Skills Dashboard
+</h1>
+
+<p>
+Modern Travel • Skills • Employment Application
+</p>
+
+</header>
+
+
+<div class="clock" id="clock">
+System time...
+</div>
+
+
+<div class="container">
+
+
+<!-- PERSONAL INFORMATION -->
+
+<section class="section profile">
+
+<div class="title">
+👤 የግል መረጃ
+</div>
+
+<img
+id="photo"
+class="profile-photo"
+src="https://e-lmis-online.netlify.app/image/photo_2025-11-29_18-58-10.jpg"
+alt="Demo Profile">
+
+<table>
+
+<tr>
+<td class="label">ሙሉ ስም</td>
+<td id="name">Demo Applicant</td>
+</tr>
+
+<tr>
+<td class="label">ጾታ</td>
+<td id="gender">-</td>
+</tr>
+
+<tr>
+<td class="label">ዕድሜ</td>
+<td id="age">-</td>
+</tr>
+
+<tr>
+<td class="label">የትውልድ ቀን</td>
+<td id="dob">-</td>
+</tr>
+
+<tr>
+<td class="label">Application ID</td>
+<td id="applicationId">DEMO-000001</td>
+</tr>
+
+<tr>
+<td class="label">Passport</td>
+<td id="passport">DEMO-PASSPORT</td>
+</tr>
+
+<tr>
+<td class="label">Phone</td>
+<td id="phone">-</td>
+</tr>
+
+<tr>
+<td class="label">Country</td>
+<td id="country">-</td>
+</tr>
+
+<tr>
+<td class="label">Status</td>
+<td>
+<span class="status">
+ACTIVE
+</span>
+</td>
+</tr>
+
+</table>
+
+</section>
+
+
+<!-- MINISTRY -->
+
+<section class="section">
+
+<div class="ministry">
+
+<div class="ministry-top">
+
+<div class="ministry-icon">
+🏛️
+</div>
+
+<div>
+
+<small>
+DEMO INFORMATION
+</small>
+
+<h2>
+ስራና ክህሎት
+</h2>
+
+<p>
+Ministry / Skills Information — DEMO
+</p>
+
+</div>
+
+</div>
+
+<div class="ministry-text">
+
+ይህ ክፍል የሙያ፣ የክህሎት፣
+የስራ እድል እና የውጭ ስራ
+መረጃዎችን በmodern dashboard
+ለማሳየት የተዘጋጀ የሙከራ ክፍል ነው።
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- SKILL -->
+
+<section class="section">
+
+<div class="title">
+👨‍💼 የሙያ እና ክህሎት መረጃ
+</div>
+
+<div class="grid">
+
+<div class="card">
+<span>💼</span>
+<h3>Professional Skill</h3>
+<p id="skill">
+Not Specified
+</p>
+</div>
+
+<div class="card">
+<span>📋</span>
+<h3>Registration</h3>
+<p class="ready">
+✓ Active
+</p>
+</div>
+
+<div class="card">
+<span>🎓</span>
+<h3>Qualification</h3>
+<p>
+Verified — Demo
+</p>
+</div>
+
+<div class="card">
+<span>🌍</span>
+<h3>Employment</h3>
+<p>
+Overseas Employment
+</p>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- TRAVEL -->
+
+<section class="section">
+
+<div class="title">
+🌍 Travel & Employment
+</div>
+
+<div class="grid">
+
+<div class="card">
+<span>🌎</span>
+<h3>Destination</h3>
+<p id="destination">
+Not Specified
+</p>
+</div>
+
+<div class="card">
+<span>🛂</span>
+<h3>Visa Category</h3>
+<p id="visa">
+Not Specified
+</p>
+</div>
+
+<div class="card">
+<span>💼</span>
+<h3>Employment Type</h3>
+<p>
+Overseas Employment
+</p>
+</div>
+
+<div class="card">
+<span>📍</span>
+<h3>Application</h3>
+<p>
+Travel Application Demo
+</p>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- PAYMENT STATUS -->
+
+<section class="section payment">
+
+<div class="payment-top">
+
+<div>
+
+<div class="payment-label">
+CURRENT STAGE
+</div>
+
+<h2>
+💳 Payment
+</h2>
+
+</div>
+
+<div class="paid">
+✓ RECORDED
+</div>
+
+</div>
+
+<div class="progress">
+
+<div class="progress-bar"></div>
+
+</div>
+
+<div style="
+display:flex;
+justify-content:space-between;
+margin-top:8px;
+font-size:10px;
+color:#64748b;
+">
+
+<span>Application Progress</span>
+
+<strong>70%</strong>
+
+</div>
+
+<div class="next">
+
+<small>
+NEXT DEMO STAGE
+</small>
+
+<strong>
+📄 Visa Processing
+</strong>
+
+</div>
+
+</section>
+
+
+<!-- PAYMENT RECEIPT -->
+
+<section class="section">
+
+<div class="title">
+🧾 የክፍያ ደረሰኝ
+</div>
+
+<div class="receipt">
+
+<div class="receipt-header">
+
+<div>
+
+<small>
+PAYMENT RECEIPT
+</small>
+
+<h2>
+DEMO / SAMPLE
+</h2>
+
+</div>
+
+<div class="receipt-paid">
+✓ PAID
+</div>
+
+</div>
+
+
+<div class="receipt-body">
+
+<div class="receipt-grid">
+
+<div class="receipt-item">
+
+<small>
+Payment Status
+</small>
+
+<strong class="ready">
+Payment Recorded
+</strong>
+
+</div>
+
+<div class="receipt-item">
+
+<small>
+Reference ID
+</small>
+
+<strong id="paymentRef">
+DEMO-000000
+</strong>
+
+</div>
+
+<div class="receipt-item">
+
+<small>
+Payment Date
+</small>
+
+<strong id="paymentDate">
+--
+</strong>
+
+</div>
+
+<div class="receipt-item">
+
+<small>
+Amount
+</small>
+
+<strong>
+DEMO AMOUNT
+</strong>
+
+</div>
+
+</div>
+
+
+<div class="receipt-note">
+
+<strong>
+✓ Payment Recorded
+</strong>
+
+<br>
+
+ይህ የDEMO ስርዓት የክፍያ
+መረጃ እንደተመዘገበ
+ለማሳየት ብቻ የተዘጋጀ ነው።
+
+</div>
+
+
+<button
+class="print"
+onclick="printReceipt()">
+
+🖨️ Print Demo Receipt
+
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- APPLICATION JOURNEY -->
+
+<section class="section">
+
+<div class="title">
+🔄 Application Journey
+</div>
+
+<div class="timeline">
+
+<div class="step done">
+
+<h4>
+✓ Profile Created
+</h4>
+
+<p>
+Application profile created.
+</p>
+
+</div>
+
+
+<div class="step done">
+
+<h4>
+✓ Documents Submitted
+</h4>
+
+<p>
+Required information added.
+</p>
+
+</div>
+
+
+<div class="step active">
+
+<h4>
+💳 Payment — Current Stage
+</h4>
+
+<p>
+Payment recorded in this demo workflow.
+</p>
+
+</div>
+
+
+<div class="step">
+
+<h4>
+📄 Visa Processing — Next Stage
+</h4>
+
+<p>
+Next stage in the demo application journey.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- DOCUMENTS -->
+
+<section class="section">
+
+<div class="title">
+📄 Document Checklist
+</div>
+
+<div class="document">
+
+<span>
+Passport Information
+</span>
+
+<b class="ready">
+✓ READY
+</b>
+
+</div>
+
+<div class="document">
+
+<span>
+Professional Information
+</span>
+
+<b class="ready">
+✓ READY
+</b>
+
+</div>
+
+<div class="document">
+
+<span>
+Application Information
+</span>
+
+<b class="ready">
+✓ READY
+</b>
+
+</div>
+
+<div class="document">
+
+<span>
+Payment Receipt
+</span>
+
+<b class="ready">
+✓ RECORDED
+</b>
+
+</div>
+
+<div class="document">
+
+<span>
+Visa Processing
+</span>
+
+<b class="next-color">
+NEXT
+</b>
+
+</div>
+
+</section>
+
+
+<!-- NOTIFICATIONS -->
+
+<section class="section">
+
+<div class="title">
+🔔 Notifications
+</div>
+
+<div class="notice">
+
+<strong>
+Payment Update
+</strong>
+
+<p>
+Payment is displayed as recorded
+in this demo application.
+</p>
+
+</div>
+
+<div class="notice">
+
+<strong>
+Application Progress
+</strong>
+
+<p>
+Current progress is displayed at 70%.
+</p>
+
+</div>
+
+<div class="notice">
+
+<strong>
+Next Stage
+</strong>
+
+<p>
+Visa Processing is displayed as
+the next demo stage.
+</p>
+
+</div>
+
+</section>
+
+
+<!-- SECURITY -->
+
+<section class="section">
+
+<div class="title">
+🛡️ Security & Verification
+</div>
+
+<div class="grid">
+
+<div class="card">
+
+<span>🔐</span>
+
+<h3>
+Data Protection
+</h3>
+
+<p>
+Demo security interface
+</p>
+
+</div>
+
+<div class="card">
+
+<span>✓</span>
+
+<h3>
+Profile Check
+</h3>
+
+<p class="ready">
+Verified — Demo
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- SUPPORT -->
+
+<section class="section">
+
+<div class="support">
+
+<h3>
+💬 Help & Support
+</h3>
+
+<p>
+Need assistance? Use the demo support center.
+</p>
+
+<button onclick="support()">
+Contact Support
+</button>
+
+</div>
+
+</section>
+
+
+<!-- WARNING -->
+
+<section class="section">
+
+<div class="warning">
+
+⚠️ <strong>DEMO / SAMPLE</strong>
+
+<br>
+
+ይህ ገጽ ለUI design እና testing
+የተዘጋጀ የሙከራ ስርዓት ነው።
+
+<br>
+
+የማንኛውም መንግስታዊ ተቋም
+ኦፊሴላዊ ድረ-ገጽ፣ ደረሰኝ፣
+ማረጋገጫ ወይም የቪዛ ሰነድ አይደለም።
+
+</div>
+
+</section>
+
+
+</div>
+
+
+<footer>
+
+<h2>
+🌍 Travel & Skills Dashboard
+</h2>
+
+<p>
+Modern Travel • Skills • Employment
+Application Demo
+</p>
+
+<p>
+© 2026 Demo Interface — For Testing Only
+</p>
+
+</footer>
+
+
+<script>
+
+/* CLOCK */
+
+function updateClock(){
+
+document.getElementById("clock")
+.innerText =
+"System Time: " +
+new Date().toLocaleString();
+
 }
 
-// =====================
-// TEXT DATA
-// =====================
-document.getElementById("name").innerText = user.name || "-";
-document.getElementById("gender").innerText = user.gender || "-";
-document.getElementById("age").innerText = user.age || "-";
-document.getElementById("dob").innerText = user.dob || "-";
-document.getElementById("elmis").innerText = user.elmis || "-";
-document.getElementById("passport").innerText = user.passport || "-";
-document.getElementById("phone").innerText = user.phone || "-";
-document.getElementById("birth").innerText = user.birth || "-";
-document.getElementById("visa").innerText = user.visa || "-";
-document.getElementById("country").innerText = user.country || "-";
+updateClock();
 
-// =====================
-// IMAGE FIX
-// =====================
-let photo = document.getElementById("photo");
-let doc = document.getElementById("doc");
-let doc2 = document.getElementById("doc2");
+setInterval(
+updateClock,
+1000
+);
 
-photo.src = user.photo ||
-"https://e-lmis-online.netlify.app/image/photo_2025-11-29_18-58-10.jpg";
 
-doc.src = user.doc ||
-"https://e-lmis-online.netlify.app/image/photo_2025-11-29_18-23-08.jpg";
+/* PAYMENT REFERENCE */
 
-doc2.src = user.doc2 ||
-"https://res.cloudinary.com/dwclusteb/image/upload/v1778544516/IMG_20260512_030753_949_ra4igh.jpg";
-// fallback
-photo.onerror = function () {
-this.src = "https://e-lmis-online.netlify.app/image/photo_2025-11-29_18-58-10.jpg";
-};
+const paymentRef =
+"DEMO-" +
+Math.floor(
+100000 +
+Math.random()*900000
+);
 
-doc.onerror = function () {
-this.src = "https://e-lmis-online.netlify.app/image/photo_2025-11-29_18-23-08.jpg";
-};
+document.getElementById(
+"paymentRef"
+).innerText =
+paymentRef;
 
-doc2.onerror = function () {
-this.src = "https://res.cloudinary.com/dwclusteb/image/upload/v1778747958/IMG_20260514_113852_165_cuklbx.jpg";
-};
-// =====================
-// CLOCK
-// =====================
-setInterval(() => {
-let now = new Date();
-document.getElementById("time").innerText =
-"Last system check: " + now.toLocaleString();
-}, 1000);
 
-// =====================
-// QR CODE
-// =====================
-document.getElementById("qr").src =
-"https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=" +
-encodeURIComponent(window.location.href);
+/* PAYMENT DATE */
 
-// =====================
-// RECEIPT UPLOAD
-// =====================
-function uploadReceipt() {
-let file = document.getElementById("receiptInput").files[0];
+document.getElementById(
+"paymentDate"
+).innerText =
+new Date().toLocaleDateString();
 
-if (!file) {
-alert("Select receipt photo");
-return;
+
+/* LOCAL STORAGE DATA */
+
+const user =
+JSON.parse(
+localStorage.getItem("user") || "{}"
+);
+
+if(user.name)
+document.getElementById("name")
+.innerText=user.name;
+
+if(user.gender)
+document.getElementById("gender")
+.innerText=user.gender;
+
+if(user.age)
+document.getElementById("age")
+.innerText=user.age;
+
+if(user.dob)
+document.getElementById("dob")
+.innerText=user.dob;
+
+if(user.passport)
+document.getElementById("passport")
+.innerText=user.passport;
+
+if(user.phone)
+document.getElementById("phone")
+.innerText=user.phone;
+
+if(user.country)
+document.getElementById("country")
+.innerText=user.country;
+
+if(user.country)
+document.getElementById("destination")
+.innerText=user.country;
+
+if(user.visa)
+document.getElementById("visa")
+.innerText=user.visa;
+
+if(user.skill)
+document.getElementById("skill")
+.innerText=user.skill;
+
+if(user.photo)
+document.getElementById("photo")
+.src=user.photo;
+
+
+/* PRINT */
+
+function printReceipt(){
+
+window.print();
+
 }
 
-let reader = new FileReader();
 
-reader.onload = function (e) {
-localStorage.setItem("receipt", e.target.result);
-window.location.href = "payment-success.html";
-};
+/* SUPPORT */
 
-reader.readAsDataURL(file);
+function support(){
+
+alert(
+"DEMO SUPPORT CENTER\n\n"+
+"This is a sample support interface."
+);
+
 }
 
-</script>  
-</body>  
-</html>  
+</script>
+
+</body>
+</html>
