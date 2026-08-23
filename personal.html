@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="am">
+
 <head>
 
 <meta charset="UTF-8">
@@ -13,11 +14,15 @@ content="width=device-width, initial-scale=1.0"
 
 <style>
 
+/* =========================
+   RESET
+========================= */
+
 *{
     box-sizing:border-box;
     margin:0;
     padding:0;
-    font-family:Arial,sans-serif
+    font-family:Arial,sans-serif;
 }
 
 body{
@@ -28,12 +33,18 @@ body{
         #edf4ff
     );
     color:#172033;
-    min-height:100vh
+    min-height:100vh;
 }
 
-button,input{
-    font-family:inherit
+button,
+input{
+    font-family:inherit;
 }
+
+
+/* =========================
+   DEMO
+========================= */
 
 .demo{
     background:#fff3cd;
@@ -41,8 +52,13 @@ button,input{
     text-align:center;
     padding:9px;
     font-size:11px;
-    font-weight:bold
+    font-weight:bold;
 }
+
+
+/* =========================
+   HEADER
+========================= */
 
 header{
     max-width:900px;
@@ -51,6 +67,7 @@ header{
     border-radius:30px;
     text-align:center;
     color:#fff;
+
     background:
         linear-gradient(
             135deg,
@@ -58,30 +75,36 @@ header{
             #0f2d4f,
             #2563eb
         );
-    box-shadow:0 25px 55px #0f172a2e
+
+    box-shadow:0 25px 55px #0f172a2e;
 }
 
 header .icon{
-    font-size:42px
+    font-size:42px;
 }
 
 header h1{
     font-size:25px;
-    margin-top:12px
+    margin-top:12px;
 }
 
 header p{
     color:#dbeafe;
     font-size:12px;
-    margin-top:7px
+    margin-top:7px;
 }
+
+
+/* =========================
+   NAV
+========================= */
 
 .nav{
     max-width:700px;
     margin:14px auto;
     padding:0 10px;
     display:flex;
-    gap:10px
+    gap:10px;
 }
 
 .nav a{
@@ -94,25 +117,35 @@ header p{
     color:#173f87;
     border:1px solid #dbeafe;
     font-size:11px;
-    font-weight:bold
+    font-weight:bold;
 }
 
 .nav a.primary{
     background:#2563eb;
-    color:#fff
+    color:#fff;
 }
+
+
+/* =========================
+   CLOCK
+========================= */
 
 .clock{
     text-align:center;
     margin:15px;
     color:#64748b;
-    font-size:12px
+    font-size:12px;
 }
+
+
+/* =========================
+   CONTAINER
+========================= */
 
 .container{
     max-width:700px;
     margin:15px auto;
-    padding:0 10px
+    padding:0 10px;
 }
 
 .section{
@@ -122,17 +155,22 @@ header p{
     border-radius:25px;
     border:1px solid #e2e8f0;
     box-shadow:0 12px 35px #0f172a0f;
-    overflow:hidden
+    overflow:hidden;
 }
 
 .title{
     font-size:19px;
     font-weight:900;
-    margin-bottom:18px
+    margin-bottom:18px;
 }
 
+
+/* =========================
+   PROFILE
+========================= */
+
 .profile{
-    text-align:center
+    text-align:center;
 }
 
 .profile-photo{
@@ -142,30 +180,29 @@ header p{
     border-radius:20px;
     border:4px solid #2563eb;
     background:#f8fafc;
-    box-shadow:0 12px 25px #2563eb26
+    box-shadow:0 12px 25px #2563eb26;
 }
 
 table{
     width:100%;
     border-collapse:collapse;
-    margin-top:20px
+    margin-top:20px;
 }
 
 td{
     padding:13px 8px;
     border-bottom:1px solid #edf1f5;
     font-size:13px;
-    text-align:left
+    text-align:left;
 }
 
 .label{
     width:42%;
     font-weight:bold;
-    color:#173f87
+    color:#173f87;
 }
 
 .status,
-.document-status,
 .receipt-paid{
     display:inline-block;
     background:#16a34a;
@@ -173,8 +210,13 @@ td{
     padding:7px 13px;
     border-radius:20px;
     font-size:10px;
-    font-weight:bold
+    font-weight:bold;
 }
+
+
+/* =========================
+   TRAVEL
+========================= */
 
 .travel-grid,
 .skill-main,
@@ -182,14 +224,7 @@ td{
 .receipt-grid{
     display:grid;
     grid-template-columns:1fr 1fr;
-    gap:12px
-}
-
-.card{
-    padding:18px;
-    background:#f8fafc;
-    border:1px solid #e2e8f0;
-    border-radius:19px
+    gap:12px;
 }
 
 .travel-box,
@@ -199,6 +234,7 @@ td{
     padding:22px;
     border-radius:23px;
     color:#fff;
+
     background:
         linear-gradient(
             135deg,
@@ -206,7 +242,8 @@ td{
             #0f2d4f,
             #2563eb
         );
-    box-shadow:0 18px 35px #2563eb29
+
+    box-shadow:0 18px 35px #2563eb29;
 }
 
 .travel-header,
@@ -215,7 +252,7 @@ td{
 .security-header{
     display:flex;
     align-items:center;
-    gap:14px
+    gap:14px;
 }
 
 .travel-icon,
@@ -228,27 +265,27 @@ td{
     justify-content:center;
     align-items:center;
     background:#ffffff1f;
-    font-size:28px
+    font-size:28px;
 }
 
 .travel-header small,
 .ministry small{
     color:#bfdbfe;
     font-size:9px;
-    letter-spacing:1px
+    letter-spacing:1px;
 }
 
 .travel-header h2,
 .ministry h2{
     font-size:20px;
-    margin-top:4px
+    margin-top:4px;
 }
 
 .travel-header p,
 .ministry p{
     font-size:11px;
     color:#dbeafe;
-    margin-top:4px
+    margin-top:4px;
 }
 
 .travel-item,
@@ -256,32 +293,41 @@ td{
     padding:14px;
     border-radius:15px;
     background:#ffffff14;
-    border:1px solid #ffffff1a
+    border:1px solid #ffffff1a;
 }
 
 .travel-item small,
 .security-item small{
     display:block;
     color:#bfdbfe;
-    font-size:9px
+    font-size:9px;
 }
 
 .travel-item strong,
 .security-item strong{
     display:block;
     margin-top:6px;
-    font-size:12px
+    font-size:12px;
 }
 
 .travel-grid{
-    margin-top:20px
+    margin-top:20px;
 }
+
+
+/* =========================
+   SKILL
+========================= */
 
 .skill-banner{
     padding:20px;
     border-radius:22px;
-    background:linear-gradient(135deg,#eff6ff,#fff);
-    border:1px solid #bfdbfe
+    background:linear-gradient(
+        135deg,
+        #eff6ff,
+        #fff
+    );
+    border:1px solid #bfdbfe;
 }
 
 .skill-icon{
@@ -293,42 +339,47 @@ td{
     display:flex;
     justify-content:center;
     align-items:center;
-    font-size:26px
+    font-size:26px;
 }
 
 .skill-top small{
     color:#64748b;
     font-size:9px;
-    letter-spacing:1px
+    letter-spacing:1px;
 }
 
 .skill-top h2{
     font-size:19px;
-    margin-top:4px
+    margin-top:4px;
 }
 
 .skill-main{
-    margin-top:18px
+    margin-top:18px;
 }
 
 .skill-item{
     background:#fff;
     border:1px solid #e2e8f0;
     padding:14px;
-    border-radius:15px
+    border-radius:15px;
 }
 
 .skill-item small{
     display:block;
     color:#64748b;
-    font-size:9px
+    font-size:9px;
 }
 
 .skill-item strong{
     display:block;
     margin-top:5px;
-    font-size:12px
+    font-size:12px;
 }
+
+
+/* =========================
+   MINISTRY
+========================= */
 
 .ministry-text{
     margin-top:17px;
@@ -337,12 +388,13 @@ td{
     background:#ffffff14;
     font-size:12px;
     line-height:1.8;
-    color:#dbeafe
+    color:#dbeafe;
 }
 
 
 /* =========================
    DOCUMENT PHOTO
+   PHOTO ONLY
 ========================= */
 
 .document-photo-box{
@@ -350,161 +402,45 @@ td{
     border:1px solid #dbeafe;
     border-radius:22px;
     overflow:hidden;
-    box-shadow:0 10px 30px #0f172a14
-}
-
-.document-photo-header{
-    padding:18px;
-    background:
-        linear-gradient(
-            135deg,
-            #071426,
-            #0f2d4f,
-            #2563eb
-        );
-    color:#fff;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    gap:10px
-}
-
-.document-photo-header small{
-    color:#bfdbfe;
-    font-size:9px;
-    letter-spacing:1px
-}
-
-.document-photo-header h3{
-    margin-top:5px;
-    font-size:16px
+    box-shadow:0 10px 30px #0f172a14;
 }
 
 .document-image-container{
-    padding:18px;
+    padding:10px;
     background:#f8fafc;
-    min-height:250px;
     display:flex;
     justify-content:center;
-    align-items:center
+    align-items:center;
 }
+
+/*
+   Document photo only
+*/
 
 .document-image{
     display:block;
     width:100%;
     max-width:620px;
-    max-height:850px;
+    max-height:900px;
     object-fit:contain;
     margin:auto;
     background:#fff;
     border-radius:12px;
-    border:1px solid #e2e8f0;
-    box-shadow:0 8px 25px #0f172a1f
-}
-
-.document-placeholder{
-    width:100%;
-    min-height:220px;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    gap:10px;
-    color:#64748b;
-    background:#fff;
-    border:2px dashed #93c5fd;
-    border-radius:15px
-}
-
-.document-placeholder .icon{
-    font-size:45px
-}
-
-.document-placeholder p{
-    font-size:12px
-}
-
-.document-placeholder small{
-    font-size:10px
 }
 
 
-/* IMPORTANT:
-   Document upload input
+/*
+   If there is no document
 */
 
-.document-upload-area{
-    padding:18px;
-    background:#fff
-}
-
-.document-upload-label{
+.document-empty{
     width:100%;
-    min-height:48px;
+    min-height:120px;
     display:flex;
     justify-content:center;
     align-items:center;
-    border-radius:14px;
-    background:#2563eb;
-    color:#fff;
-    font-size:12px;
-    font-weight:bold;
-    cursor:pointer
-}
-
-.document-upload-label:active{
-    transform:scale(.98)
-}
-
-.document-file-name{
-    margin-top:10px;
-    text-align:center;
-    font-size:10px;
-    color:#64748b
-}
-
-.document-actions{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:10px;
-    padding:18px
-}
-
-.upload-btn,
-.view-btn,
-.remove-btn{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    min-height:45px;
-    border-radius:13px;
-    border:0;
+    color:#94a3b8;
     font-size:11px;
-    font-weight:bold;
-    cursor:pointer;
-    text-align:center
-}
-
-.upload-btn{
-    background:#2563eb;
-    color:#fff
-}
-
-.view-btn{
-    background:#071426;
-    color:#fff
-}
-
-.remove-btn{
-    background:#fee2e2;
-    color:#b91c1c
-}
-
-.document-help{
-    text-align:center;
-    padding:0 18px 18px;
-    color:#64748b;
-    font-size:10px
 }
 
 
@@ -516,7 +452,7 @@ td{
     background:#fff;
     border:1px solid #dbeafe;
     border-radius:22px;
-    padding:18px
+    padding:18px;
 }
 
 .receipt-upload-box{
@@ -529,19 +465,19 @@ td{
     justify-content:center;
     align-items:center;
     text-align:center;
-    padding:28px 18px
+    padding:28px 18px;
 }
 
 .receipt-upload-label{
     font-size:22px;
     font-weight:800;
     color:#172033;
-    margin-bottom:28px
+    margin-bottom:28px;
 }
 
 .receipt-upload-icon{
     font-size:48px;
-    margin-bottom:12px
+    margin-bottom:12px;
 }
 
 .receipt-file-label{
@@ -555,7 +491,7 @@ td{
     border:1px solid #94a3b8;
     color:#172033;
     font-weight:700;
-    cursor:pointer
+    cursor:pointer;
 }
 
 .receipt-preview{
@@ -567,39 +503,39 @@ td{
     background:#fff;
     border:1px solid #dbeafe;
     box-shadow:0 10px 25px #0f172a19;
-    margin-bottom:15px
+    margin-bottom:15px;
 }
 
 .receipt-upload-status{
     margin-top:12px;
     font-size:11px;
-    color:#64748b
+    color:#64748b;
 }
 
 .receipt-body{
-    padding:20px
+    padding:20px;
 }
 
 .receipt-grid{
-    gap:10px
+    gap:10px;
 }
 
 .receipt-item{
     padding:13px;
     border-radius:14px;
-    background:#f8fafc
+    background:#f8fafc;
 }
 
 .receipt-item small{
     display:block;
     color:#64748b;
-    font-size:9px
+    font-size:9px;
 }
 
 .receipt-item strong{
     display:block;
     margin-top:5px;
-    font-size:12px
+    font-size:12px;
 }
 
 .receipt-note{
@@ -609,7 +545,7 @@ td{
     border-left:4px solid #2563eb;
     border-radius:12px;
     font-size:11px;
-    line-height:1.7
+    line-height:1.7;
 }
 
 .print{
@@ -621,15 +557,17 @@ td{
     background:#071426;
     color:#fff;
     font-weight:bold;
-    cursor:pointer
+    cursor:pointer;
 }
 
 
-/* JOURNEY */
+/* =========================
+   JOURNEY
+========================= */
 
 .journey{
     position:relative;
-    padding-left:34px
+    padding-left:34px;
 }
 
 .journey:before{
@@ -640,12 +578,13 @@ td{
     bottom:5px;
     width:3px;
     border-radius:5px;
+
     background:
         linear-gradient(
             #16a34a,
             #2563eb,
             #cbd5e1
-        )
+        );
 }
 
 .step{
@@ -654,7 +593,7 @@ td{
     padding:15px;
     border-radius:17px;
     background:#f8fafc;
-    border:1px solid #e2e8f0
+    border:1px solid #e2e8f0;
 }
 
 .step:before{
@@ -666,31 +605,31 @@ td{
     height:15px;
     border-radius:50%;
     background:#cbd5e1;
-    border:4px solid white
+    border:4px solid white;
 }
 
 .step.done:before{
-    background:#16a34a
+    background:#16a34a;
 }
 
 .step.active{
     background:#eff6ff;
-    border-color:#93c5fd
+    border-color:#93c5fd;
 }
 
 .step.active:before{
-    background:#f59e0b
+    background:#f59e0b;
 }
 
 .step h4{
-    font-size:13px
+    font-size:13px;
 }
 
 .step p{
     color:#64748b;
     font-size:11px;
     margin-top:5px;
-    line-height:1.6
+    line-height:1.6;
 }
 
 .step-badge{
@@ -701,8 +640,13 @@ td{
     background:#dcfce7;
     color:#15803d;
     font-size:9px;
-    font-weight:bold
+    font-weight:bold;
 }
+
+
+/* =========================
+   DOCUMENT CHECKLIST
+========================= */
 
 .document{
     display:flex;
@@ -710,16 +654,16 @@ td{
     align-items:center;
     padding:15px 0;
     border-bottom:1px solid #edf1f5;
-    font-size:12px
+    font-size:12px;
 }
 
 .document:last-child{
-    border:0
+    border:0;
 }
 
 .document-left{
     display:flex;
-    align-items:center
+    align-items:center;
 }
 
 .check-icon{
@@ -731,16 +675,21 @@ td{
     border-radius:9px;
     background:#dcfce7;
     color:#15803d;
-    margin-right:10px
+    margin-right:10px;
 }
 
 .ready{
-    color:#16a34a!important
+    color:#16a34a!important;
 }
 
 .next-color{
-    color:#2563eb!important
+    color:#2563eb!important;
 }
+
+
+/* =========================
+   NOTICES
+========================= */
 
 .notice{
     padding:16px;
@@ -749,7 +698,7 @@ td{
     border:1px solid #e2e8f0;
     margin-bottom:11px;
     display:flex;
-    gap:12px
+    gap:12px;
 }
 
 .notice-icon{
@@ -761,53 +710,63 @@ td{
     align-items:center;
     border-radius:12px;
     background:#eff6ff;
-    font-size:20px
+    font-size:20px;
 }
 
 .notice strong{
-    font-size:13px
+    font-size:13px;
 }
 
 .notice p{
     color:#64748b;
     font-size:11px;
     margin-top:4px;
-    line-height:1.6
+    line-height:1.6;
 }
 
 .notice-time{
     display:block;
     color:#94a3b8;
     font-size:9px;
-    margin-top:6px
+    margin-top:6px;
 }
 
+
+/* =========================
+   SECURITY
+========================= */
+
 .security-header h2{
-    font-size:19px
+    font-size:19px;
 }
 
 .security-header p{
     color:#bfdbfe;
     font-size:10px;
-    margin-top:4px
+    margin-top:4px;
 }
 
 .security-grid{
-    margin-top:18px
+    margin-top:18px;
 }
 
 .verified{
-    color:#86efac!important
+    color:#86efac!important;
 }
 
+
+/* =========================
+   SUPPORT
+========================= */
+
 .support h3{
-    font-size:15px
+    font-size:15px;
 }
 
 .support p{
     color:#bfdbfe;
     font-size:11px;
-    margin-top:5px
+    margin-top:5px;
 }
 
 .support button{
@@ -819,8 +778,13 @@ td{
     color:#173f87;
     background:#fff;
     font-weight:bold;
-    cursor:pointer
+    cursor:pointer;
 }
+
+
+/* =========================
+   WARNING
+========================= */
 
 .warning{
     text-align:center;
@@ -830,49 +794,60 @@ td{
     border-radius:18px;
     color:#9a3412;
     font-size:10px;
-    line-height:1.8
+    line-height:1.8;
 }
+
+
+/* =========================
+   FOOTER
+========================= */
 
 footer{
     margin-top:30px;
     padding:38px 15px;
     text-align:center;
+
     background:
         linear-gradient(
             135deg,
             #071426,
             #0f2d4f
         );
-    color:#fff
+
+    color:#fff;
 }
 
 footer h2{
-    font-size:18px
+    font-size:18px;
 }
 
 footer p{
     color:#bfdbfe;
     font-size:10px;
-    margin-top:7px
+    margin-top:7px;
 }
 
+
+/* =========================
+   MOBILE
+========================= */
 
 @media(max-width:550px){
 
     header{
-        margin:8px
+        margin:8px;
     }
 
     .container{
-        padding:0 8px
+        padding:0 8px;
     }
 
     .section{
-        padding:18px
+        padding:18px;
     }
 
     .nav{
-        padding:0 8px
+        padding:0 8px;
     }
 
 }
@@ -884,43 +859,40 @@ footer p{
     .skill-main,
     .security-grid,
     .receipt-grid{
-        grid-template-columns:1fr
+        grid-template-columns:1fr;
     }
 
     .profile-photo{
         width:130px;
-        height:160px
-    }
-
-    .document-actions{
-        grid-template-columns:1fr
+        height:160px;
     }
 
 }
 
 
+/* =========================
+   PRINT
+========================= */
+
 @media print{
 
     body{
-        background:#fff
+        background:#fff;
     }
 
     .demo,
     .nav,
     header,
     .clock,
-    .document-upload-area,
-    .document-actions,
-    .document-help,
     footer,
     .support,
     .warning{
-        display:none!important
+        display:none!important;
     }
 
     .section{
         box-shadow:none;
-        border:1px solid #ddd
+        border:1px solid #ddd;
     }
 
 }
@@ -929,17 +901,28 @@ footer p{
 
 </head>
 
+
 <body>
 
+
+<!-- =========================
+     DEMO
+========================= -->
 
 <div class="demo">
 DEMO / TESTING INTERFACE — NOT AN OFFICIAL GOVERNMENT WEBSITE
 </div>
 
 
+<!-- =========================
+     HEADER
+========================= -->
+
 <header>
 
-<div class="icon">🌍</div>
+<div class="icon">
+🌍
+</div>
 
 <h1>
 Travel & Skills Dashboard
@@ -951,6 +934,10 @@ Modern Travel • Skills • Employment Application
 
 </header>
 
+
+<!-- =========================
+     NAV
+========================= -->
 
 <div class="nav">
 
@@ -968,6 +955,10 @@ Personal Information
 </div>
 
 
+<!-- =========================
+     CLOCK
+========================= -->
+
 <div
 class="clock"
 id="clock"
@@ -979,13 +970,16 @@ System time...
 <div class="container">
 
 
-<!-- PROFILE -->
+<!-- =====================================================
+     PROFILE
+===================================================== -->
 
 <section class="section profile">
 
 <div class="title">
 👤 የግል መረጃ
 </div>
+
 
 <img
 id="photo"
@@ -994,68 +988,152 @@ src=""
 alt="Profile"
 >
 
+
 <table>
 
-<tr>
-<td class="label">ሙሉ ስም</td>
-<td id="name">Demo Applicant</td>
-</tr>
 
 <tr>
-<td class="label">ጾታ</td>
-<td id="gender">-</td>
+
+<td class="label">
+ሙሉ ስም
+</td>
+
+<td id="name">
+Demo Applicant
+</td>
+
 </tr>
 
-<tr>
-<td class="label">ዕድሜ</td>
-<td id="age">-</td>
-</tr>
 
 <tr>
-<td class="label">የትውልድ ቀን</td>
-<td id="dob">-</td>
+
+<td class="label">
+ጾታ
+</td>
+
+<td id="gender">
+-
+</td>
+
 </tr>
 
-<tr>
-<td class="label">E-LMIS ID</td>
-<td id="applicationId">DEMO-000001</td>
-</tr>
 
 <tr>
-<td class="label">Passport</td>
-<td id="passport">DEMO-PASSPORT</td>
+
+<td class="label">
+ዕድሜ
+</td>
+
+<td id="age">
+-
+</td>
+
 </tr>
 
-<tr>
-<td class="label">Phone</td>
-<td id="phone">-</td>
-</tr>
 
 <tr>
-<td class="label">Place of Birth</td>
-<td id="birth">-</td>
+
+<td class="label">
+የትውልድ ቀን
+</td>
+
+<td id="dob">
+-
+</td>
+
 </tr>
 
-<tr>
-<td class="label">Country</td>
-<td id="country">-</td>
-</tr>
 
 <tr>
-<td class="label">Status</td>
+
+<td class="label">
+E-LMIS ID
+</td>
+
+<td id="applicationId">
+DEMO-000001
+</td>
+
+</tr>
+
+
+<tr>
+
+<td class="label">
+Passport
+</td>
+
+<td id="passport">
+DEMO-PASSPORT
+</td>
+
+</tr>
+
+
+<tr>
+
+<td class="label">
+Phone
+</td>
+
+<td id="phone">
+-
+</td>
+
+</tr>
+
+
+<tr>
+
+<td class="label">
+Place of Birth
+</td>
+
+<td id="birth">
+-
+</td>
+
+</tr>
+
+
+<tr>
+
+<td class="label">
+Country
+</td>
+
+<td id="country">
+-
+</td>
+
+</tr>
+
+
+<tr>
+
+<td class="label">
+Status
+</td>
+
 <td>
+
 <span class="status">
 ✓ ACTIVE
 </span>
+
 </td>
+
 </tr>
+
 
 </table>
 
 </section>
 
 
-<!-- TRAVEL -->
+<!-- =====================================================
+     TRAVEL
+===================================================== -->
 
 <section class="section">
 
@@ -1063,7 +1141,9 @@ alt="Profile"
 🌍 Travel & Employer
 </div>
 
+
 <div class="travel-box">
+
 
 <div class="travel-header">
 
@@ -1091,6 +1171,7 @@ Overseas Employment Information
 
 
 <div class="travel-grid">
+
 
 <div class="travel-item">
 
@@ -1143,6 +1224,7 @@ Travel Application
 
 </div>
 
+
 </div>
 
 </div>
@@ -1150,7 +1232,9 @@ Travel Application
 </section>
 
 
-<!-- SKILL -->
+<!-- =====================================================
+     SKILL
+===================================================== -->
 
 <section class="section">
 
@@ -1158,7 +1242,9 @@ Travel Application
 👨‍💼 የሙያና ክህሎት መረጃ
 </div>
 
+
 <div class="skill-banner">
+
 
 <div class="skill-top">
 
@@ -1182,6 +1268,7 @@ PROFESSIONAL INFORMATION
 
 
 <div class="skill-main">
+
 
 <div class="skill-item">
 
@@ -1234,6 +1321,7 @@ Overseas Employment
 
 </div>
 
+
 </div>
 
 </div>
@@ -1241,11 +1329,14 @@ Overseas Employment
 </section>
 
 
-<!-- MINISTRY -->
+<!-- =====================================================
+     MINISTRY
+===================================================== -->
 
 <section class="section">
 
 <div class="ministry">
+
 
 <div class="ministry-top">
 
@@ -1280,14 +1371,18 @@ Ministry / Skills Information
 
 </div>
 
+
 </div>
 
 </section>
 
 
-<!-- =========================
+<!-- =====================================================
      DOCUMENT PHOTO
-========================= -->
+     
+     IMPORTANT:
+     PHOTO ONLY
+===================================================== -->
 
 <section class="section">
 
@@ -1297,32 +1392,6 @@ Ministry / Skills Information
 
 
 <div class="document-photo-box">
-
-
-<div class="document-photo-header">
-
-<div>
-
-<small>
-DOCUMENT PHOTO
-</small>
-
-<h3>
-የተጫነ ሰነድ
-</h3>
-
-</div>
-
-
-<span
-id="documentStatus"
-class="document-status"
-style="background:#64748b"
->
-○ NO DOCUMENT
-</span>
-
-</div>
 
 
 <div class="document-image-container">
@@ -1337,81 +1406,15 @@ style="display:none"
 
 
 <div
-id="documentPlaceholder"
-class="document-placeholder"
+id="documentEmpty"
+class="document-empty"
+style="display:none"
 >
-
-<div class="icon">
-📄
-</div>
-
-<p>
 No document available
-</p>
-
-<small>
-Please upload document photo
-</small>
-
-</div>
-
 </div>
 
 
-<!-- DOCUMENT UPLOAD -->
-
-<div class="document-upload-area">
-
-<label
-for="documentUpload"
-class="document-upload-label"
->
-📷 Upload Document Photo
-</label>
-
-<input
-type="file"
-id="documentUpload"
-accept="image/jpeg,image/png,image/webp"
-hidden
->
-
-<div
-id="documentFileName"
-class="document-file-name"
->
-No file selected
 </div>
-
-</div>
-
-
-<div class="document-actions">
-
-<button
-type="button"
-class="view-btn"
-onclick="viewDocument()"
->
-🔍 View Full Document
-</button>
-
-
-<button
-type="button"
-class="remove-btn"
-onclick="removeDocument()"
->
-🗑️ Remove Document
-</button>
-
-</div>
-
-
-<p class="document-help">
-JPG, PNG ወይም WEBP የሰነድ ፎቶ ይጫኑ።
-Maximum size: 15MB
-</p>
 
 
 </div>
@@ -1419,9 +1422,9 @@ Maximum size: 15MB
 </section>
 
 
-<!-- =========================
-     RECEIPT
-========================= -->
+<!-- =====================================================
+     RECEIPT UPLOAD
+===================================================== -->
 
 <section class="section">
 
@@ -1433,11 +1436,14 @@ Maximum size: 15MB
 
 <div class="receipt-upload-reference">
 
+
 <div class="receipt-upload-box">
+
 
 <div class="receipt-upload-icon">
 🧾
 </div>
+
 
 <div class="receipt-upload-label">
 Receipt photo /
@@ -1480,18 +1486,36 @@ class="receipt-upload-status"
 No file chosen
 </div>
 
+
 </div>
 
 
 <div
 class="document-actions"
-style="padding:18px 0 0"
+style="
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:10px;
+padding:18px 0 0;
+"
 >
 
 
 <label
 for="receiptUpload"
 class="upload-btn"
+style="
+display:flex;
+justify-content:center;
+align-items:center;
+min-height:45px;
+border-radius:13px;
+background:#2563eb;
+color:#fff;
+font-size:11px;
+font-weight:bold;
+cursor:pointer;
+"
 >
 📷 Upload Receipt
 </label>
@@ -1501,6 +1525,19 @@ class="upload-btn"
 type="button"
 class="view-btn"
 onclick="viewReceipt()"
+style="
+display:flex;
+justify-content:center;
+align-items:center;
+min-height:45px;
+border-radius:13px;
+border:0;
+background:#071426;
+color:#fff;
+font-size:11px;
+font-weight:bold;
+cursor:pointer;
+"
 >
 🔍 View Full Receipt
 </button>
@@ -1510,6 +1547,19 @@ onclick="viewReceipt()"
 type="button"
 class="remove-btn"
 onclick="removeReceipt()"
+style="
+display:flex;
+justify-content:center;
+align-items:center;
+min-height:45px;
+border-radius:13px;
+border:0;
+background:#fee2e2;
+color:#b91c1c;
+font-size:11px;
+font-weight:bold;
+cursor:pointer;
+"
 >
 🗑️ Remove Receipt
 </button>
@@ -1519,28 +1569,37 @@ onclick="removeReceipt()"
 
 
 <p
-class="document-help"
-style="padding:0 0 4px"
+style="
+text-align:center;
+padding:0 0 4px;
+color:#64748b;
+font-size:10px;
+"
 >
 JPG, PNG ወይም WEBP የክፍያ ደረሰኝ ፎቶ ይጫኑ።
 </p>
+
 
 </div>
 
 </section>
 
 
-<!-- PAYMENT STAGE -->
+<!-- =====================================================
+     PAYMENT STAGE
+===================================================== -->
 
 <section class="section">
+
 
 <div
 style="
 display:flex;
 justify-content:space-between;
-align-items:center
+align-items:center;
 "
 >
+
 
 <div>
 
@@ -1549,16 +1608,17 @@ style="
 font-size:9px;
 color:#64748b;
 font-weight:bold;
-letter-spacing:1px
+letter-spacing:1px;
 "
 >
 CURRENT STAGE
 </div>
 
+
 <h2
 style="
 color:#2563eb;
-margin-top:5px
+margin-top:5px;
 "
 >
 💳 Payment
@@ -1574,11 +1634,12 @@ border-radius:20px;
 background:#dcfce7;
 color:#15803d;
 font-size:10px;
-font-weight:bold
+font-weight:bold;
 "
 >
 ✓ RECORDED
 </div>
+
 
 </div>
 
@@ -1589,7 +1650,7 @@ height:13px;
 margin-top:20px;
 background:#e2e8f0;
 border-radius:50px;
-overflow:hidden
+overflow:hidden;
 "
 >
 
@@ -1597,8 +1658,12 @@ overflow:hidden
 style="
 width:60%;
 height:100%;
-background:linear-gradient(90deg,#2563eb,#38bdf8);
-border-radius:50px
+background:linear-gradient(
+90deg,
+#2563eb,
+#38bdf8
+);
+border-radius:50px;
 "
 >
 </div>
@@ -1612,7 +1677,7 @@ display:flex;
 justify-content:space-between;
 margin-top:8px;
 font-size:10px;
-color:#64748b
+color:#64748b;
 "
 >
 
@@ -1633,24 +1698,25 @@ margin-top:15px;
 padding:14px;
 border-radius:15px;
 background:#fff;
-border:1px dashed #93c5fd
+border:1px dashed #93c5fd;
 "
 >
 
 <small
 style="
 color:#64748b;
-font-size:9px
+font-size:9px;
 "
 >
 NEXT STAGE
 </small>
 
+
 <strong
 style="
 display:block;
 margin-top:5px;
-color:#2563eb
+color:#2563eb;
 "
 >
 📄 Visa Processing
@@ -1658,10 +1724,13 @@ color:#2563eb
 
 </div>
 
+
 </section>
 
 
-<!-- PAYMENT INFO -->
+<!-- =====================================================
+     PAYMENT INFO
+===================================================== -->
 
 <section class="section">
 
@@ -1670,9 +1739,32 @@ color:#2563eb
 </div>
 
 
-<div class="receipt">
+<div class="receipt"
+style="
+background:#fff;
+border:1px solid #dbeafe;
+border-radius:22px;
+overflow:hidden;
+"
+>
 
-<div class="receipt-header">
+
+<div
+style="
+padding:20px;
+background:linear-gradient(
+135deg,
+#071426,
+#0f2d4f,
+#2563eb
+);
+color:#fff;
+display:flex;
+justify-content:space-between;
+align-items:center;
+"
+>
+
 
 <div>
 
@@ -1691,12 +1783,15 @@ PAYMENT RECORDED
 ✓ PAID
 </div>
 
+
 </div>
 
 
 <div class="receipt-body">
 
+
 <div class="receipt-grid">
+
 
 <div class="receipt-item">
 
@@ -1752,6 +1847,7 @@ Not Uploaded
 
 </div>
 
+
 </div>
 
 
@@ -1776,6 +1872,7 @@ onclick="printReceipt()"
 🖨️ Print Receipt
 </button>
 
+
 </div>
 
 </div>
@@ -1783,7 +1880,9 @@ onclick="printReceipt()"
 </section>
 
 
-<!-- JOURNEY -->
+<!-- =====================================================
+     JOURNEY
+===================================================== -->
 
 <section class="section">
 
@@ -1793,6 +1892,7 @@ onclick="printReceipt()"
 
 
 <div class="journey">
+
 
 <div class="step done">
 
@@ -1844,7 +1944,7 @@ in the application workflow.
 class="step-badge"
 style="
 background:#fef3c7;
-color:#92400e
+color:#92400e;
 "
 >
 CURRENT
@@ -1868,7 +1968,7 @@ of the application journey.
 class="step-badge"
 style="
 background:#e2e8f0;
-color:#475569
+color:#475569;
 "
 >
 NEXT
@@ -1889,12 +1989,15 @@ Final travel preparation stage.
 
 </div>
 
+
 </div>
 
 </section>
 
 
-<!-- DOCUMENT CHECKLIST -->
+<!-- =====================================================
+     DOCUMENT CHECKLIST
+===================================================== -->
 
 <section class="section">
 
@@ -1998,7 +2101,7 @@ PENDING
 class="check-icon"
 style="
 background:#dbeafe;
-color:#2563eb
+color:#2563eb;
 "
 >
 →
@@ -2016,10 +2119,13 @@ NEXT
 
 </div>
 
+
 </section>
 
 
-<!-- NOTIFICATIONS -->
+<!-- =====================================================
+     NOTIFICATIONS
+===================================================== -->
 
 <section class="section">
 
@@ -2103,10 +2209,13 @@ Application Update
 
 </div>
 
+
 </section>
 
 
-<!-- SECURITY -->
+<!-- =====================================================
+     SECURITY
+===================================================== -->
 
 <section class="section">
 
@@ -2116,6 +2225,7 @@ Application Update
 
 
 <div class="security-box">
+
 
 <div class="security-header">
 
@@ -2139,6 +2249,7 @@ Application security status
 
 
 <div class="security-grid">
+
 
 <div class="security-item">
 
@@ -2191,6 +2302,7 @@ APPLICATION
 
 </div>
 
+
 </div>
 
 </div>
@@ -2198,7 +2310,9 @@ APPLICATION
 </section>
 
 
-<!-- SUPPORT -->
+<!-- =====================================================
+     SUPPORT
+===================================================== -->
 
 <section class="section">
 
@@ -2221,7 +2335,9 @@ Contact Support
 </section>
 
 
-<!-- WARNING -->
+<!-- =====================================================
+     WARNING
+===================================================== -->
 
 <section class="section">
 
@@ -2243,6 +2359,10 @@ This interface is not an official government service.
 </div>
 
 
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
 <footer>
 
 <h2>
@@ -2261,6 +2381,7 @@ Modern Travel • Skills • Employment Application
 
 
 <script>
+
 
 /* =====================================================
    CLOCK
@@ -2315,6 +2436,7 @@ function setText(id,value){
 
 let user = {};
 
+
 try{
 
     user =
@@ -2332,7 +2454,9 @@ try{
 }
 
 
-/* USER INFORMATION */
+/* =====================================================
+   USER INFORMATION
+===================================================== */
 
 setText(
     "name",
@@ -2399,6 +2523,10 @@ if(user.country){
 
 }
 
+
+/* =====================================================
+   PROFILE PHOTO
+===================================================== */
 
 if(user.photo){
 
@@ -2470,282 +2598,9 @@ setText(
 
 
 /* =====================================================
-   INDEXED DB
+   DOCUMENT PHOTO
+   PHOTO ONLY
 ===================================================== */
-
-const DB_NAME =
-    "TravelSkillsDashboardDB";
-
-const DB_VERSION = 1;
-
-const STORE_NAME =
-    "uploads";
-
-let db = null;
-
-
-function openDatabase(){
-
-    return new Promise(
-        function(resolve,reject){
-
-            if(db){
-
-                resolve(db);
-
-                return;
-
-            }
-
-
-            if(!window.indexedDB){
-
-                reject(
-                    new Error(
-                        "IndexedDB is not supported."
-                    )
-                );
-
-                return;
-
-            }
-
-
-            const request =
-                indexedDB.open(
-                    DB_NAME,
-                    DB_VERSION
-                );
-
-
-            request.onupgradeneeded =
-                function(event){
-
-                    const database =
-                        event.target.result;
-
-
-                    if(
-                        !database.objectStoreNames.contains(
-                            STORE_NAME
-                        )
-                    ){
-
-                        database.createObjectStore(
-                            STORE_NAME
-                        );
-
-                    }
-
-                };
-
-
-            request.onsuccess =
-                function(event){
-
-                    db =
-                        event.target.result;
-
-                    resolve(db);
-
-                };
-
-
-            request.onerror =
-                function(){
-
-                    reject(
-                        request.error
-                    );
-
-                };
-
-        }
-    );
-
-}
-
-
-/* =====================================================
-   SAVE IMAGE
-===================================================== */
-
-async function saveImage(
-    key,
-    data
-){
-
-    const database =
-        await openDatabase();
-
-
-    return new Promise(
-        function(resolve,reject){
-
-            const transaction =
-                database.transaction(
-                    STORE_NAME,
-                    "readwrite"
-                );
-
-
-            const store =
-                transaction.objectStore(
-                    STORE_NAME
-                );
-
-
-            const request =
-                store.put(
-                    data,
-                    key
-                );
-
-
-            request.onsuccess =
-                function(){
-
-                    resolve(true);
-
-                };
-
-
-            request.onerror =
-                function(){
-
-                    reject(
-                        request.error
-                    );
-
-                };
-
-        }
-    );
-
-}
-
-
-/* =====================================================
-   GET IMAGE
-===================================================== */
-
-async function getImage(
-    key
-){
-
-    const database =
-        await openDatabase();
-
-
-    return new Promise(
-        function(resolve,reject){
-
-            const transaction =
-                database.transaction(
-                    STORE_NAME,
-                    "readonly"
-                );
-
-
-            const store =
-                transaction.objectStore(
-                    STORE_NAME
-                );
-
-
-            const request =
-                store.get(key);
-
-
-            request.onsuccess =
-                function(){
-
-                    resolve(
-                        request.result || null
-                    );
-
-                };
-
-
-            request.onerror =
-                function(){
-
-                    reject(
-                        request.error
-                    );
-
-                };
-
-        }
-    );
-
-}
-
-
-/* =====================================================
-   DELETE IMAGE
-===================================================== */
-
-async function deleteImage(
-    key
-){
-
-    const database =
-        await openDatabase();
-
-
-    return new Promise(
-        function(resolve,reject){
-
-            const transaction =
-                database.transaction(
-                    STORE_NAME,
-                    "readwrite"
-                );
-
-
-            const store =
-                transaction.objectStore(
-                    STORE_NAME
-                );
-
-
-            const request =
-                store.delete(key);
-
-
-            request.onsuccess =
-                function(){
-
-                    resolve(true);
-
-                };
-
-
-            request.onerror =
-                function(){
-
-                    reject(
-                        request.error
-                    );
-
-                };
-
-        }
-    );
-
-}
-
-
-/* =====================================================
-   DOCUMENT ELEMENTS
-===================================================== */
-
-const documentUpload =
-    document.getElementById(
-        "documentUpload"
-    );
-
 
 const documentImage =
     document.getElementById(
@@ -2753,50 +2608,27 @@ const documentImage =
     );
 
 
-const documentPlaceholder =
+const documentEmpty =
     document.getElementById(
-        "documentPlaceholder"
+        "documentEmpty"
     );
 
-
-const documentStatus =
-    document.getElementById(
-        "documentStatus"
-    );
-
-
-const documentFileName =
-    document.getElementById(
-        "documentFileName"
-    );
-
-
-/* =====================================================
-   SHOW DOCUMENT
-===================================================== */
 
 function showDocument(src){
 
-    if(
-        !src ||
-        String(src).trim() === ""
-    ){
+    src =
+        src ?
+        String(src).trim() :
+        "";
 
-        documentImage.removeAttribute(
-            "src"
-        );
+
+    if(!src){
 
         documentImage.style.display =
             "none";
 
-        documentPlaceholder.style.display =
+        documentEmpty.style.display =
             "flex";
-
-        documentStatus.innerText =
-            "○ NO DOCUMENT";
-
-        documentStatus.style.background =
-            "#64748b";
 
         return;
 
@@ -2809,14 +2641,8 @@ function showDocument(src){
             documentImage.style.display =
                 "block";
 
-            documentPlaceholder.style.display =
+            documentEmpty.style.display =
                 "none";
-
-            documentStatus.innerText =
-                "✓ UPLOADED";
-
-            documentStatus.style.background =
-                "#16a34a";
 
         };
 
@@ -2824,392 +2650,41 @@ function showDocument(src){
     documentImage.onerror =
         function(){
 
-            documentImage.removeAttribute(
-                "src"
-            );
-
             documentImage.style.display =
                 "none";
 
-            documentPlaceholder.style.display =
+            documentEmpty.style.display =
                 "flex";
-
-            documentStatus.innerText =
-                "○ NO DOCUMENT";
-
-            documentStatus.style.background =
-                "#64748b";
 
         };
 
 
     documentImage.src =
-        String(src).trim();
+        src;
 
 }
 
 
 /* =====================================================
-   DOCUMENT FILE SELECT
+   LOAD DOCUMENT DIRECTLY FROM USER DATA
 ===================================================== */
 
-documentUpload.addEventListener(
-    "change",
-    async function(){
+function loadDocument(){
 
-        const file =
-            this.files &&
-            this.files[0];
+    if(
+        user.doc &&
+        String(user.doc).trim() !== ""
+    ){
 
-
-        if(!file){
-
-            return;
-
-        }
-
-
-        const allowedTypes = [
-
-            "image/jpeg",
-            "image/png",
-            "image/webp"
-
-        ];
-
-
-        if(
-            !allowedTypes.includes(
-                file.type
-            )
-        ){
-
-            alert(
-                "Please select JPG, PNG or WEBP image."
-            );
-
-            this.value = "";
-
-            return;
-
-        }
-
-
-        if(
-            file.size >
-            15 * 1024 * 1024
-        ){
-
-            alert(
-                "Image is too large. Maximum size is 15MB."
-            );
-
-            this.value = "";
-
-            return;
-
-        }
-
-
-        documentFileName.innerText =
-            file.name;
-
-
-        const reader =
-            new FileReader();
-
-
-        reader.onload =
-            async function(event){
-
-                const imageData =
-                    event.target.result;
-
-
-                /*
-                   Show immediately
-                */
-
-                showDocument(
-                    imageData
-                );
-
-
-                /*
-                   Save permanently
-                   inside IndexedDB
-                */
-
-                try{
-
-                    await saveImage(
-                        "documentPhoto",
-                        imageData
-                    );
-
-                    documentStatus.innerText =
-                        "✓ UPLOADED";
-
-                    documentStatus.style.background =
-                        "#16a34a";
-
-                }catch(error){
-
-                    console.error(
-                        "Document save error:",
-                        error
-                    );
-
-                    alert(
-                        "Document photo was read, but could not be saved."
-                    );
-
-                }
-
-            };
-
-
-        reader.onerror =
-            function(){
-
-                alert(
-                    "Unable to read the selected document."
-                );
-
-            };
-
-
-        /*
-           This is what actually reads
-           the selected document photo.
-        */
-
-        reader.readAsDataURL(
-            file
+        showDocument(
+            String(user.doc).trim()
         );
 
-    }
-);
-
-
-/* =====================================================
-   LOAD DOCUMENT
-===================================================== */
-
-async function loadDocument(){
-
-    try{
-
-        const saved =
-            await getImage(
-                "documentPhoto"
-            );
-
-
-        if(saved){
-
-            showDocument(
-                saved
-            );
-
-            documentFileName.innerText =
-                "Saved document photo";
-
-            return;
-
-        }
-
-
-        /*
-           If no IndexedDB image exists,
-           check localStorage user.doc
-        */
-
-        if(
-            user.doc &&
-            String(user.doc).trim() !== ""
-        ){
-
-            showDocument(
-                String(user.doc).trim()
-            );
-
-            documentFileName.innerText =
-                "Document from user data";
-
-            return;
-
-        }
-
-
-        showDocument("");
-
-    }catch(error){
-
-        console.error(
-            "Document load error:",
-            error
-        );
+    }else{
 
         showDocument("");
 
     }
-
-}
-
-
-/* =====================================================
-   VIEW FULL DOCUMENT
-===================================================== */
-
-function viewDocument(){
-
-    const src =
-        documentImage.getAttribute(
-            "src"
-        );
-
-
-    if(
-        !src ||
-        documentImage.style.display ===
-        "none"
-    ){
-
-        alert(
-            "No document available. Please upload a document first."
-        );
-
-        return;
-
-    }
-
-
-    const newWindow =
-        window.open(
-            "",
-            "_blank"
-        );
-
-
-    if(!newWindow){
-
-        alert(
-            "Please allow pop-ups in your browser."
-        );
-
-        return;
-
-    }
-
-
-    newWindow.document.open();
-
-
-    newWindow.document.write(`
-<!DOCTYPE html>
-
-<html>
-
-<head>
-
-<meta charset="UTF-8">
-
-<meta
-name="viewport"
-content="width=device-width,initial-scale=1.0"
->
-
-<title>Document Photo</title>
-
-<style>
-
-html,
-body{
-    margin:0;
-    padding:0;
-    background:#111;
-    width:100%;
-    min-height:100%;
-}
-
-body{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-}
-
-img{
-    max-width:100%;
-    max-height:100vh;
-    width:auto;
-    height:auto;
-    object-fit:contain;
-}
-
-</style>
-
-</head>
-
-<body>
-
-<img
-src="${src}"
-alt="Document Photo"
->
-
-</body>
-
-</html>
-    `);
-
-
-    newWindow.document.close();
-
-}
-
-
-/* =====================================================
-   REMOVE DOCUMENT
-===================================================== */
-
-async function removeDocument(){
-
-    if(
-        !confirm(
-            "Remove uploaded document?"
-        )
-    ){
-
-        return;
-
-    }
-
-
-    try{
-
-        await deleteImage(
-            "documentPhoto"
-        );
-
-    }catch(error){
-
-        console.error(
-            "Delete document error:",
-            error
-        );
-
-    }
-
-
-    documentUpload.value =
-        "";
-
-    documentFileName.innerText =
-        "No file selected";
-
-
-    showDocument("");
 
 }
 
@@ -3436,7 +2911,7 @@ receiptUpload.addEventListener(
 
 
         reader.onload =
-            async function(event){
+            function(event){
 
                 const data =
                     event.target.result;
@@ -3447,9 +2922,14 @@ receiptUpload.addEventListener(
                 );
 
 
+                /*
+                   Save receipt locally
+                   so it remains after refresh.
+                */
+
                 try{
 
-                    await saveImage(
+                    localStorage.setItem(
                         "receiptPhoto",
                         data
                     );
@@ -3459,10 +2939,6 @@ receiptUpload.addEventListener(
                     console.error(
                         "Receipt save error:",
                         error
-                    );
-
-                    alert(
-                        "Receipt displayed, but could not be saved."
                     );
 
                 }
@@ -3492,12 +2968,12 @@ receiptUpload.addEventListener(
    LOAD RECEIPT
 ===================================================== */
 
-async function loadReceipt(){
+function loadReceipt(){
 
     try{
 
         const saved =
-            await getImage(
+            localStorage.getItem(
                 "receiptPhoto"
             );
 
@@ -3636,7 +3112,7 @@ alt="Payment Receipt"
    REMOVE RECEIPT
 ===================================================== */
 
-async function removeReceipt(){
+function removeReceipt(){
 
     if(
         !confirm(
@@ -3651,14 +3127,14 @@ async function removeReceipt(){
 
     try{
 
-        await deleteImage(
+        localStorage.removeItem(
             "receiptPhoto"
         );
 
     }catch(error){
 
         console.error(
-            "Delete receipt error:",
+            "Receipt delete error:",
             error
         );
 
@@ -3674,7 +3150,7 @@ async function removeReceipt(){
 
 
 /* =====================================================
-   OTHER
+   PRINT
 ===================================================== */
 
 function printReceipt(){
@@ -3683,6 +3159,10 @@ function printReceipt(){
 
 }
 
+
+/* =====================================================
+   SUPPORT
+===================================================== */
 
 function support(){
 
@@ -3701,29 +3181,27 @@ This is a sample support interface.`
 
 window.addEventListener(
     "DOMContentLoaded",
-    async function(){
+    function(){
 
-        try{
+        /*
+           Load profile document
+           directly from user.doc
+        */
 
-            await openDatabase();
+        loadDocument();
 
-            await loadDocument();
 
-            await loadReceipt();
+        /*
+           Load saved receipt
+        */
 
-        }catch(error){
-
-            console.error(
-                "Application startup error:",
-                error
-            );
-
-        }
+        loadReceipt();
 
     }
 );
 
 </script>
+
 
 </body>
 </html>
