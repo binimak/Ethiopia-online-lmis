@@ -1,12 +1,18 @@
 <!DOCTYPE html>
 <html lang="am">
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0"
+>
 
 <title>Travel & Skills Dashboard — DEMO</title>
 
 <style>
+
 *{
     box-sizing:border-box;
     margin:0;
@@ -15,7 +21,12 @@
 }
 
 body{
-    background:linear-gradient(135deg,#eef5ff,#f8fbff,#edf4ff);
+    background:linear-gradient(
+        135deg,
+        #eef5ff,
+        #f8fbff,
+        #edf4ff
+    );
     color:#172033;
     min-height:100vh
 }
@@ -40,7 +51,13 @@ header{
     border-radius:30px;
     text-align:center;
     color:#fff;
-    background:linear-gradient(135deg,#071426,#0f2d4f,#2563eb);
+    background:
+        linear-gradient(
+            135deg,
+            #071426,
+            #0f2d4f,
+            #2563eb
+        );
     box-shadow:0 25px 55px #0f172a2e
 }
 
@@ -159,7 +176,6 @@ td{
     font-weight:bold
 }
 
-.grid,
 .travel-grid,
 .skill-main,
 .security-grid,
@@ -183,7 +199,13 @@ td{
     padding:22px;
     border-radius:23px;
     color:#fff;
-    background:linear-gradient(135deg,#071426,#0f2d4f,#2563eb);
+    background:
+        linear-gradient(
+            135deg,
+            #071426,
+            #0f2d4f,
+            #2563eb
+        );
     box-shadow:0 18px 35px #2563eb29
 }
 
@@ -318,12 +340,12 @@ td{
     color:#dbeafe
 }
 
+
 /* =========================
-   DOCUMENT
+   DOCUMENT PHOTO
 ========================= */
 
-.document-photo-box,
-.receipt{
+.document-photo-box{
     background:#fff;
     border:1px solid #dbeafe;
     border-radius:22px;
@@ -331,10 +353,15 @@ td{
     box-shadow:0 10px 30px #0f172a14
 }
 
-.document-photo-header,
-.receipt-header{
+.document-photo-header{
     padding:18px;
-    background:linear-gradient(135deg,#071426,#0f2d4f,#2563eb);
+    background:
+        linear-gradient(
+            135deg,
+            #071426,
+            #0f2d4f,
+            #2563eb
+        );
     color:#fff;
     display:flex;
     justify-content:space-between;
@@ -342,15 +369,13 @@ td{
     gap:10px
 }
 
-.document-photo-header small,
-.receipt-header small{
+.document-photo-header small{
     color:#bfdbfe;
     font-size:9px;
     letter-spacing:1px
 }
 
-.document-photo-header h3,
-.receipt-header h2{
+.document-photo-header h3{
     margin-top:5px;
     font-size:16px
 }
@@ -403,9 +428,44 @@ td{
     font-size:10px
 }
 
+
+/* IMPORTANT:
+   Document upload input
+*/
+
+.document-upload-area{
+    padding:18px;
+    background:#fff
+}
+
+.document-upload-label{
+    width:100%;
+    min-height:48px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    border-radius:14px;
+    background:#2563eb;
+    color:#fff;
+    font-size:12px;
+    font-weight:bold;
+    cursor:pointer
+}
+
+.document-upload-label:active{
+    transform:scale(.98)
+}
+
+.document-file-name{
+    margin-top:10px;
+    text-align:center;
+    font-size:10px;
+    color:#64748b
+}
+
 .document-actions{
     display:grid;
-    grid-template-columns:1fr 1fr 1fr;
+    grid-template-columns:1fr 1fr;
     gap:10px;
     padding:18px
 }
@@ -447,8 +507,9 @@ td{
     font-size:10px
 }
 
+
 /* =========================
-   RECEIPT UPLOAD
+   RECEIPT
 ========================= */
 
 .receipt-upload-reference{
@@ -563,6 +624,7 @@ td{
     cursor:pointer
 }
 
+
 /* JOURNEY */
 
 .journey{
@@ -578,7 +640,12 @@ td{
     bottom:5px;
     width:3px;
     border-radius:5px;
-    background:linear-gradient(#16a34a,#2563eb,#cbd5e1)
+    background:
+        linear-gradient(
+            #16a34a,
+            #2563eb,
+            #cbd5e1
+        )
 }
 
 .step{
@@ -770,7 +837,12 @@ footer{
     margin-top:30px;
     padding:38px 15px;
     text-align:center;
-    background:linear-gradient(135deg,#071426,#0f2d4f);
+    background:
+        linear-gradient(
+            135deg,
+            #071426,
+            #0f2d4f
+        );
     color:#fff
 }
 
@@ -783,6 +855,7 @@ footer p{
     font-size:10px;
     margin-top:7px
 }
+
 
 @media(max-width:550px){
 
@@ -798,18 +871,15 @@ footer p{
         padding:18px
     }
 
-    .document-actions{
-        grid-template-columns:1fr
-    }
-
     .nav{
         padding:0 8px
     }
+
 }
+
 
 @media(max-width:380px){
 
-    .grid,
     .travel-grid,
     .skill-main,
     .security-grid,
@@ -821,7 +891,13 @@ footer p{
         width:130px;
         height:160px
     }
+
+    .document-actions{
+        grid-template-columns:1fr
+    }
+
 }
+
 
 @media print{
 
@@ -833,6 +909,7 @@ footer p{
     .nav,
     header,
     .clock,
+    .document-upload-area,
     .document-actions,
     .document-help,
     footer,
@@ -845,42 +922,76 @@ footer p{
         box-shadow:none;
         border:1px solid #ddd
     }
+
 }
+
 </style>
+
 </head>
 
 <body>
+
 
 <div class="demo">
 DEMO / TESTING INTERFACE — NOT AN OFFICIAL GOVERNMENT WEBSITE
 </div>
 
+
 <header>
-    <div class="icon">🌍</div>
-    <h1>Travel & Skills Dashboard</h1>
-    <p>Modern Travel • Skills • Employment Application</p>
+
+<div class="icon">🌍</div>
+
+<h1>
+Travel & Skills Dashboard
+</h1>
+
+<p>
+Modern Travel • Skills • Employment Application
+</p>
+
 </header>
 
+
 <div class="nav">
-    <a href="index.html">← Back to Application</a>
-    <a href="personal.html" class="primary">Personal Information</a>
+
+<a href="index.html">
+← Back to Application
+</a>
+
+<a
+href="personal.html"
+class="primary"
+>
+Personal Information
+</a>
+
 </div>
 
-<div class="clock" id="clock">System time...</div>
+
+<div
+class="clock"
+id="clock"
+>
+System time...
+</div>
+
 
 <div class="container">
+
 
 <!-- PROFILE -->
 
 <section class="section profile">
 
-<div class="title">👤 የግል መረጃ</div>
+<div class="title">
+👤 የግል መረጃ
+</div>
 
 <img
-    id="photo"
-    class="profile-photo"
-    src=""
-    alt="Profile"
+id="photo"
+class="profile-photo"
+src=""
+alt="Profile"
 >
 
 <table>
@@ -933,11 +1044,14 @@ DEMO / TESTING INTERFACE — NOT AN OFFICIAL GOVERNMENT WEBSITE
 <tr>
 <td class="label">Status</td>
 <td>
-<span class="status">✓ ACTIVE</span>
+<span class="status">
+✓ ACTIVE
+</span>
 </td>
 </tr>
 
 </table>
+
 </section>
 
 
@@ -945,46 +1059,94 @@ DEMO / TESTING INTERFACE — NOT AN OFFICIAL GOVERNMENT WEBSITE
 
 <section class="section">
 
-<div class="title">🌍 Travel & Employer</div>
+<div class="title">
+🌍 Travel & Employer
+</div>
 
 <div class="travel-box">
 
 <div class="travel-header">
 
-<div class="travel-icon">✈️</div>
+<div class="travel-icon">
+✈️
+</div>
 
 <div>
-<small>TRAVEL & EMPLOYMENT</small>
-<h2>Travel Employer</h2>
-<p>Overseas Employment Information</p>
+
+<small>
+TRAVEL & EMPLOYMENT
+</small>
+
+<h2>
+Travel Employer
+</h2>
+
+<p>
+Overseas Employment Information
+</p>
+
 </div>
 
 </div>
+
 
 <div class="travel-grid">
 
 <div class="travel-item">
-<small>DESTINATION</small>
-<strong id="destination">Not Specified</strong>
+
+<small>
+DESTINATION
+</small>
+
+<strong id="destination">
+Not Specified
+</strong>
+
 </div>
+
 
 <div class="travel-item">
-<small>VISA CATEGORY</small>
-<strong id="visa">Not Specified</strong>
+
+<small>
+VISA CATEGORY
+</small>
+
+<strong id="visa">
+Not Specified
+</strong>
+
 </div>
+
 
 <div class="travel-item">
-<small>EMPLOYMENT TYPE</small>
-<strong>Overseas Employment</strong>
+
+<small>
+EMPLOYMENT TYPE
+</small>
+
+<strong>
+Overseas Employment
+</strong>
+
 </div>
+
 
 <div class="travel-item">
-<small>APPLICATION</small>
-<strong>Travel Application</strong>
+
+<small>
+APPLICATION
+</small>
+
+<strong>
+Travel Application
+</strong>
+
 </div>
 
 </div>
+
 </div>
+
 </section>
 
 
@@ -1000,39 +1162,82 @@ DEMO / TESTING INTERFACE — NOT AN OFFICIAL GOVERNMENT WEBSITE
 
 <div class="skill-top">
 
-<div class="skill-icon">💼</div>
+<div class="skill-icon">
+💼
+</div>
 
 <div>
-<small>PROFESSIONAL INFORMATION</small>
-<h2>የሙያ እና ክህሎት</h2>
+
+<small>
+PROFESSIONAL INFORMATION
+</small>
+
+<h2>
+የሙያ እና ክህሎት
+</h2>
+
 </div>
 
 </div>
+
 
 <div class="skill-main">
 
 <div class="skill-item">
-<small>PROFESSIONAL SKILL</small>
-<strong id="skill">Not Specified</strong>
+
+<small>
+PROFESSIONAL SKILL
+</small>
+
+<strong id="skill">
+Not Specified
+</strong>
+
 </div>
+
 
 <div class="skill-item">
-<small>REGISTRATION</small>
-<strong class="ready">✓ ACTIVE</strong>
+
+<small>
+REGISTRATION
+</small>
+
+<strong class="ready">
+✓ ACTIVE
+</strong>
+
 </div>
+
 
 <div class="skill-item">
-<small>QUALIFICATION</small>
-<strong>✓ VERIFIED</strong>
+
+<small>
+QUALIFICATION
+</small>
+
+<strong>
+✓ VERIFIED
+</strong>
+
 </div>
+
 
 <div class="skill-item">
-<small>EMPLOYMENT</small>
-<strong>Overseas Employment</strong>
+
+<small>
+EMPLOYMENT
+</small>
+
+<strong>
+Overseas Employment
+</strong>
+
 </div>
 
 </div>
+
 </div>
+
 </section>
 
 
@@ -1044,15 +1249,28 @@ DEMO / TESTING INTERFACE — NOT AN OFFICIAL GOVERNMENT WEBSITE
 
 <div class="ministry-top">
 
-<div class="ministry-icon">🏛️</div>
+<div class="ministry-icon">
+🏛️
+</div>
 
 <div>
-<small>INFORMATION</small>
-<h2>ስራና ክህሎት ሚኒስቴር</h2>
-<p>Ministry / Skills Information</p>
+
+<small>
+INFORMATION
+</small>
+
+<h2>
+ስራና ክህሎት ሚኒስቴር
+</h2>
+
+<p>
+Ministry / Skills Information
+</p>
+
 </div>
 
 </div>
+
 
 <div class="ministry-text">
 
@@ -1063,49 +1281,141 @@ DEMO / TESTING INTERFACE — NOT AN OFFICIAL GOVERNMENT WEBSITE
 </div>
 
 </div>
+
 </section>
 
 
 <!-- =========================
-     DOCUMENT UPLOAD
+     DOCUMENT PHOTO
 ========================= -->
 
 <section class="section">
-    <div class="title">📄 የሰነድ ፎቶ / Document Photo</div>
 
-    <div class="document-photo-box">
+<div class="title">
+📄 የሰነድ ፎቶ / Document Photo
+</div>
 
-        <div class="document-photo-header">
-            <div>
-                <small>DOCUMENT PHOTO</small>
-                <h3>የተጫነ ሰነድ</h3>
-            </div>
 
-            <span id="documentStatus"
-                  class="document-status"
-                  style="background:#64748b">
-                ○ NO DOCUMENT
-            </span>
-        </div>
+<div class="document-photo-box">
 
-        <div class="document-image-container">
 
-            <img id="document"
-                 class="document-image"
-                 alt="Document Photo"
-                 style="display:none">
+<div class="document-photo-header">
 
-            <div id="documentPlaceholder"
-                 class="document-placeholder">
+<div>
 
-                <div class="icon">📄</div>
-                <p>No document available</p>
+<small>
+DOCUMENT PHOTO
+</small>
 
-            </div>
+<h3>
+የተጫነ ሰነድ
+</h3>
 
-        </div>
+</div>
 
-    </div>
+
+<span
+id="documentStatus"
+class="document-status"
+style="background:#64748b"
+>
+○ NO DOCUMENT
+</span>
+
+</div>
+
+
+<div class="document-image-container">
+
+
+<img
+id="document"
+class="document-image"
+alt="Document Photo"
+style="display:none"
+>
+
+
+<div
+id="documentPlaceholder"
+class="document-placeholder"
+>
+
+<div class="icon">
+📄
+</div>
+
+<p>
+No document available
+</p>
+
+<small>
+Please upload document photo
+</small>
+
+</div>
+
+</div>
+
+
+<!-- DOCUMENT UPLOAD -->
+
+<div class="document-upload-area">
+
+<label
+for="documentUpload"
+class="document-upload-label"
+>
+📷 Upload Document Photo
+</label>
+
+<input
+type="file"
+id="documentUpload"
+accept="image/jpeg,image/png,image/webp"
+hidden
+>
+
+<div
+id="documentFileName"
+class="document-file-name"
+>
+No file selected
+</div>
+
+</div>
+
+
+<div class="document-actions">
+
+<button
+type="button"
+class="view-btn"
+onclick="viewDocument()"
+>
+🔍 View Full Document
+</button>
+
+
+<button
+type="button"
+class="remove-btn"
+onclick="removeDocument()"
+>
+🗑️ Remove Document
+</button>
+
+</div>
+
+
+<p class="document-help">
+JPG, PNG ወይም WEBP የሰነድ ፎቶ ይጫኑ።
+Maximum size: 15MB
+</p>
+
+
+</div>
+
 </section>
 
 
@@ -1120,6 +1430,7 @@ DEMO / TESTING INTERFACE — NOT AN OFFICIAL GOVERNMENT WEBSITE
 የክፍያ ደረሰኝ ፎቶ
 </div>
 
+
 <div class="receipt-upload-reference">
 
 <div class="receipt-upload-box">
@@ -1133,12 +1444,14 @@ Receipt photo /
 የክፍያ ደረሰኝ ፎቶ
 </div>
 
+
 <img
 id="receiptImage"
 class="receipt-preview"
 alt="Payment Receipt"
 style="display:none"
 >
+
 
 <div id="receiptPlaceholder">
 
@@ -1151,12 +1464,14 @@ Choose file
 
 </div>
 
+
 <input
 type="file"
 id="receiptUpload"
 accept="image/jpeg,image/png,image/webp"
 hidden
 >
+
 
 <div
 id="receiptStatus"
@@ -1173,12 +1488,14 @@ class="document-actions"
 style="padding:18px 0 0"
 >
 
+
 <label
 for="receiptUpload"
 class="upload-btn"
 >
 📷 Upload Receipt
 </label>
+
 
 <button
 type="button"
@@ -1188,15 +1505,18 @@ onclick="viewReceipt()"
 🔍 View Full Receipt
 </button>
 
+
 <button
 type="button"
 class="remove-btn"
 onclick="removeReceipt()"
 >
-
+🗑️ Remove Receipt
 </button>
 
+
 </div>
+
 
 <p
 class="document-help"
@@ -1206,6 +1526,7 @@ JPG, PNG ወይም WEBP የክፍያ ደረሰኝ ፎቶ ይጫኑ።
 </p>
 
 </div>
+
 </section>
 
 
@@ -1213,99 +1534,125 @@ JPG, PNG ወይም WEBP የክፍያ ደረሰኝ ፎቶ ይጫኑ።
 
 <section class="section">
 
-<div style="
+<div
+style="
 display:flex;
 justify-content:space-between;
 align-items:center
-">
+"
+>
 
 <div>
 
-<div style="
+<div
+style="
 font-size:9px;
 color:#64748b;
 font-weight:bold;
 letter-spacing:1px
-">
+"
+>
 CURRENT STAGE
 </div>
 
-<h2 style="
+<h2
+style="
 color:#2563eb;
 margin-top:5px
-">
+"
+>
 💳 Payment
 </h2>
 
 </div>
 
-<div style="
+
+<div
+style="
 padding:9px 13px;
 border-radius:20px;
 background:#dcfce7;
 color:#15803d;
 font-size:10px;
 font-weight:bold
-">
+"
+>
 ✓ RECORDED
 </div>
 
 </div>
 
 
-<div style="
+<div
+style="
 height:13px;
 margin-top:20px;
 background:#e2e8f0;
 border-radius:50px;
 overflow:hidden
-">
+"
+>
 
-<div style="
+<div
+style="
 width:60%;
 height:100%;
 background:linear-gradient(90deg,#2563eb,#38bdf8);
 border-radius:50px
-">
+"
+>
 </div>
 
 </div>
 
 
-<div style="
+<div
+style="
 display:flex;
 justify-content:space-between;
 margin-top:8px;
 font-size:10px;
 color:#64748b
-">
+"
+>
 
-<span>Application Progress</span>
-<strong>60%</strong>
+<span>
+Application Progress
+</span>
+
+<strong>
+60%
+</strong>
 
 </div>
 
 
-<div style="
+<div
+style="
 margin-top:15px;
 padding:14px;
 border-radius:15px;
 background:#fff;
 border:1px dashed #93c5fd
-">
+"
+>
 
-<small style="
+<small
+style="
 color:#64748b;
 font-size:9px
-">
+"
+>
 NEXT STAGE
 </small>
 
-<strong style="
+<strong
+style="
 display:block;
 margin-top:5px;
 color:#2563eb
-">
+"
+>
 📄 Visa Processing
 </strong>
 
@@ -1322,14 +1669,23 @@ color:#2563eb
 💳 የክፍያ መረጃ
 </div>
 
+
 <div class="receipt">
 
 <div class="receipt-header">
 
 <div>
-<small> PAYMENT RECORD</small>
-<h2>PAYMENT RECORDED</h2>
+
+<small>
+PAYMENT RECORD
+</small>
+
+<h2>
+PAYMENT RECORDED
+</h2>
+
 </div>
+
 
 <div class="receipt-paid">
 ✓ PAID
@@ -1343,34 +1699,57 @@ color:#2563eb
 <div class="receipt-grid">
 
 <div class="receipt-item">
-<small>Payment Status</small>
+
+<small>
+Payment Status
+</small>
+
 <strong class="ready">
 Payment Recorded
 </strong>
+
 </div>
 
+
 <div class="receipt-item">
-<small>Reference ID</small>
+
+<small>
+Reference ID
+</small>
+
 <strong id="paymentRef">
 DEMO-00087412598
 </strong>
+
 </div>
 
+
 <div class="receipt-item">
-<small>Payment Date</small>
+
+<small>
+Payment Date
+</small>
+
 <strong id="paymentDate">
 --
 </strong>
+
 </div>
 
+
 <div class="receipt-item">
-<small>Receipt Photo</small>
+
+<small>
+Receipt Photo
+</small>
+
 <strong
 id="receiptRecord"
 class="next-color"
 >
 Not Uploaded
 </strong>
+
 </div>
 
 </div>
@@ -1378,13 +1757,14 @@ Not Uploaded
 
 <div class="receipt-note">
 
-<strong>✓ Payment Recorded</strong>
+<strong>
+✓ Payment Recorded
+</strong>
 
 <br>
 
 ይህ ክፍል የክፍያ መረጃን
-እና የተጫነውን ደረሰኝ ፎቶ ማሳያ
-
+እና የተጫነውን ደረሰኝ ፎቶ ማሳያ ነው።
 
 </div>
 
@@ -1397,7 +1777,9 @@ onclick="printReceipt()"
 </button>
 
 </div>
+
 </div>
+
 </section>
 
 
@@ -1409,65 +1791,106 @@ onclick="printReceipt()"
 🔄 Application Journey
 </div>
 
+
 <div class="journey">
 
 <div class="step done">
-<h4>✓ Profile Created</h4>
+
+<h4>
+✓ Profile Created
+</h4>
+
 <p>
 Applicant profile has been created successfully.
 </p>
+
 <span class="step-badge">
 COMPLETED
 </span>
+
 </div>
 
+
 <div class="step done">
-<h4>✓ Documents Submitted</h4>
+
+<h4>
+✓ Documents Submitted
+</h4>
+
 <p>
 Required personal and professional information
 has been submitted.
 </p>
+
 <span class="step-badge">
 COMPLETED
 </span>
+
 </div>
 
+
 <div class="step active">
-<h4>💳 Payment — Current Stage</h4>
+
+<h4>
+💳 Payment — Current Stage
+</h4>
+
 <p>
 Payment information is currently recorded
 in the application workflow.
 </p>
+
 <span
 class="step-badge"
-style="background:#fef3c7;color:#92400e"
+style="
+background:#fef3c7;
+color:#92400e
+"
 >
 CURRENT
 </span>
+
 </div>
 
+
 <div class="step">
-<h4>📄 Visa Processing</h4>
+
+<h4>
+📄 Visa Processing
+</h4>
+
 <p>
 Visa processing is the next stage
 of the application journey.
 </p>
+
 <span
 class="step-badge"
-style="background:#e2e8f0;color:#475569"
+style="
+background:#e2e8f0;
+color:#475569
+"
 >
 NEXT
 </span>
+
 </div>
 
+
 <div class="step">
-<h4>✈️ Travel Preparation</h4>
+
+<h4>
+✈️ Travel Preparation
+</h4>
+
 <p>
 Final travel preparation stage.
 </p>
+
 </div>
 
 </div>
+
 </section>
 
 
@@ -1479,38 +1902,24 @@ Final travel preparation stage.
 📄 Document Checklist
 </div>
 
-<div class="document">
-
-<div class="document-left">
-<div class="check-icon">✓</div>
-<span>Passport Information</span>
-</div>
-
-<b class="ready">READY</b>
-
-</div>
-
 
 <div class="document">
 
 <div class="document-left">
-<div class="check-icon">✓</div>
-<span>Professional Information</span>
+
+<div class="check-icon">
+✓
 </div>
 
-<b class="ready">READY</b>
+<span>
+Passport Information
+</span>
 
 </div>
 
-
-<div class="document">
-
-<div class="document-left">
-<div class="check-icon">✓</div>
-<span>Application Information</span>
-</div>
-
-<b class="ready">READY</b>
+<b class="ready">
+READY
+</b>
 
 </div>
 
@@ -1518,11 +1927,63 @@ Final travel preparation stage.
 <div class="document">
 
 <div class="document-left">
-<div class="check-icon">✓</div>
-<span>Payment Receipt</span>
+
+<div class="check-icon">
+✓
 </div>
 
-<b id="checkReceipt" class="next-color">
+<span>
+Professional Information
+</span>
+
+</div>
+
+<b class="ready">
+READY
+</b>
+
+</div>
+
+
+<div class="document">
+
+<div class="document-left">
+
+<div class="check-icon">
+✓
+</div>
+
+<span>
+Application Information
+</span>
+
+</div>
+
+<b class="ready">
+READY
+</b>
+
+</div>
+
+
+<div class="document">
+
+<div class="document-left">
+
+<div class="check-icon">
+✓
+</div>
+
+<span>
+Payment Receipt
+</span>
+
+</div>
+
+<b
+id="checkReceipt"
+class="next-color"
+>
 PENDING
 </b>
 
@@ -1532,14 +1993,20 @@ PENDING
 <div class="document">
 
 <div class="document-left">
+
 <div
 class="check-icon"
-style="background:#dbeafe;color:#2563eb"
+style="
+background:#dbeafe;
+color:#2563eb
+"
 >
 →
 </div>
 
-<span>Visa Processing</span>
+<span>
+Visa Processing
+</span>
 
 </div>
 
@@ -1560,13 +2027,18 @@ NEXT
 🔔 Notifications
 </div>
 
+
 <div class="notice">
 
-<div class="notice-icon">💳</div>
+<div class="notice-icon">
+💳
+</div>
 
 <div>
 
-<strong>Payment Update</strong>
+<strong>
+Payment Update
+</strong>
 
 <p>
 Payment information has been recorded
@@ -1584,11 +2056,15 @@ Just now
 
 <div class="notice">
 
-<div class="notice-icon">🧾</div>
+<div class="notice-icon">
+🧾
+</div>
 
 <div>
 
-<strong>Receipt Upload</strong>
+<strong>
+Receipt Upload
+</strong>
 
 <p id="receiptNotification">
 Please upload your payment receipt photo.
@@ -1605,11 +2081,15 @@ Payment section
 
 <div class="notice">
 
-<div class="notice-icon">✈️</div>
+<div class="notice-icon">
+✈️
+</div>
 
 <div>
 
-<strong>Travel Processing</strong>
+<strong>
+Travel Processing
+</strong>
 
 <p>
 Visa Processing is displayed as the next stage.
@@ -1633,6 +2113,7 @@ Application Update
 <div class="title">
 🛡️ Security & Verification
 </div>
+
 
 <div class="security-box">
 
@@ -1661,7 +2142,9 @@ Application security status
 
 <div class="security-item">
 
-<small>PROFILE CHECK</small>
+<small>
+PROFILE CHECK
+</small>
 
 <strong class="verified">
 ✓ VERIFIED
@@ -1672,7 +2155,9 @@ Application security status
 
 <div class="security-item">
 
-<small>DOCUMENT CHECK</small>
+<small>
+DOCUMENT CHECK
+</small>
 
 <strong class="verified">
 ✓ CHECKED
@@ -1683,7 +2168,9 @@ Application security status
 
 <div class="security-item">
 
-<small>DATA STATUS</small>
+<small>
+DATA STATUS
+</small>
 
 <strong>
 🔒 PROTECTED
@@ -1694,7 +2181,9 @@ Application security status
 
 <div class="security-item">
 
-<small>APPLICATION</small>
+<small>
+APPLICATION
+</small>
 
 <strong class="verified">
 ✓ ACTIVE
@@ -1703,7 +2192,9 @@ Application security status
 </div>
 
 </div>
+
 </div>
+
 </section>
 
 
@@ -1736,19 +2227,18 @@ Contact Support
 
 <div class="warning">
 
-<strong></strong>
+<strong>
+DEMO / TESTING INTERFACE
+</strong>
 
 <br>
 
-
-
-<br>
-
- an official government service.
+This interface is not an official government service.
 
 </div>
 
 </section>
+
 
 </div>
 
@@ -1764,7 +2254,7 @@ Modern Travel • Skills • Employment Application
 </p>
 
 <p>
-© 2026 Interface 
+© 2026 Interface
 </p>
 
 </footer>
@@ -1778,7 +2268,8 @@ Modern Travel • Skills • Employment Application
 
 function updateClock(){
 
-    const clock = document.getElementById("clock");
+    const clock =
+        document.getElementById("clock");
 
     if(clock){
 
@@ -1792,7 +2283,10 @@ function updateClock(){
 
 updateClock();
 
-setInterval(updateClock,1000);
+setInterval(
+    updateClock,
+    1000
+);
 
 
 /* =====================================================
@@ -1840,17 +2334,61 @@ try{
 
 /* USER INFORMATION */
 
-setText("name",user.name);
-setText("gender",user.gender);
-setText("age",user.age);
-setText("dob",user.dob);
-setText("applicationId",user.elmis);
-setText("passport",user.passport);
-setText("phone",user.phone);
-setText("birth",user.birth);
-setText("country",user.country);
-setText("skill",user.skill);
-setText("visa",user.visa);
+setText(
+    "name",
+    user.name
+);
+
+setText(
+    "gender",
+    user.gender
+);
+
+setText(
+    "age",
+    user.age
+);
+
+setText(
+    "dob",
+    user.dob
+);
+
+setText(
+    "applicationId",
+    user.elmis
+);
+
+setText(
+    "passport",
+    user.passport
+);
+
+setText(
+    "phone",
+    user.phone
+);
+
+setText(
+    "birth",
+    user.birth
+);
+
+setText(
+    "country",
+    user.country
+);
+
+setText(
+    "skill",
+    user.skill
+);
+
+setText(
+    "visa",
+    user.visa
+);
+
 
 if(user.country){
 
@@ -1878,7 +2416,10 @@ if(user.photo){
 ===================================================== */
 
 let ref =
-    localStorage.getItem("paymentReference");
+    localStorage.getItem(
+        "paymentReference"
+    );
+
 
 if(!ref){
 
@@ -1896,6 +2437,7 @@ if(!ref){
 
 }
 
+
 setText(
     "paymentRef",
     ref
@@ -1903,7 +2445,10 @@ setText(
 
 
 let pdate =
-    localStorage.getItem("paymentDate");
+    localStorage.getItem(
+        "paymentDate"
+    );
+
 
 if(!pdate){
 
@@ -1917,6 +2462,7 @@ if(!pdate){
 
 }
 
+
 setText(
     "paymentDate",
     pdate
@@ -1925,12 +2471,15 @@ setText(
 
 /* =====================================================
    INDEXED DB
-   Used instead of localStorage for images
 ===================================================== */
 
-const DB_NAME = "TravelSkillsDashboardDB";
+const DB_NAME =
+    "TravelSkillsDashboardDB";
+
 const DB_VERSION = 1;
-const STORE_NAME = "uploads";
+
+const STORE_NAME =
+    "uploads";
 
 let db = null;
 
@@ -1943,9 +2492,24 @@ function openDatabase(){
             if(db){
 
                 resolve(db);
+
                 return;
 
             }
+
+
+            if(!window.indexedDB){
+
+                reject(
+                    new Error(
+                        "IndexedDB is not supported."
+                    )
+                );
+
+                return;
+
+            }
+
 
             const request =
                 indexedDB.open(
@@ -1959,6 +2523,7 @@ function openDatabase(){
 
                     const database =
                         event.target.result;
+
 
                     if(
                         !database.objectStoreNames.contains(
@@ -2001,12 +2566,18 @@ function openDatabase(){
 }
 
 
-/* SAVE IMAGE */
+/* =====================================================
+   SAVE IMAGE
+===================================================== */
 
-async function saveImage(key,data){
+async function saveImage(
+    key,
+    data
+){
 
     const database =
         await openDatabase();
+
 
     return new Promise(
         function(resolve,reject){
@@ -2017,66 +2588,27 @@ async function saveImage(key,data){
                     "readwrite"
                 );
 
-            const store =
-                transaction.objectStore(
-                    STORE_NAME
-                );
-
-            store.put(
-                data,
-                key
-            );
-
-            transaction.oncomplete =
-                function(){
-                    resolve(true);
-                };
-
-            transaction.onerror =
-                function(){
-                    reject(
-                        transaction.error
-                    );
-                };
-
-        }
-    );
-
-}
-
-
-/* GET IMAGE */
-
-async function getImage(key){
-
-    const database =
-        await openDatabase();
-
-    return new Promise(
-        function(resolve,reject){
-
-            const transaction =
-                database.transaction(
-                    STORE_NAME,
-                    "readonly"
-                );
 
             const store =
                 transaction.objectStore(
                     STORE_NAME
                 );
+
 
             const request =
-                store.get(key);
+                store.put(
+                    data,
+                    key
+                );
+
 
             request.onsuccess =
                 function(){
 
-                    resolve(
-                        request.result || null
-                    );
+                    resolve(true);
 
                 };
+
 
             request.onerror =
                 function(){
@@ -2093,12 +2625,74 @@ async function getImage(key){
 }
 
 
-/* DELETE IMAGE */
+/* =====================================================
+   GET IMAGE
+===================================================== */
 
-async function deleteImage(key){
+async function getImage(
+    key
+){
 
     const database =
         await openDatabase();
+
+
+    return new Promise(
+        function(resolve,reject){
+
+            const transaction =
+                database.transaction(
+                    STORE_NAME,
+                    "readonly"
+                );
+
+
+            const store =
+                transaction.objectStore(
+                    STORE_NAME
+                );
+
+
+            const request =
+                store.get(key);
+
+
+            request.onsuccess =
+                function(){
+
+                    resolve(
+                        request.result || null
+                    );
+
+                };
+
+
+            request.onerror =
+                function(){
+
+                    reject(
+                        request.error
+                    );
+
+                };
+
+        }
+    );
+
+}
+
+
+/* =====================================================
+   DELETE IMAGE
+===================================================== */
+
+async function deleteImage(
+    key
+){
+
+    const database =
+        await openDatabase();
+
 
     return new Promise(
         function(resolve,reject){
@@ -2109,23 +2703,32 @@ async function deleteImage(key){
                     "readwrite"
                 );
 
+
             const store =
                 transaction.objectStore(
                     STORE_NAME
                 );
 
-            store.delete(key);
 
-            transaction.oncomplete =
+            const request =
+                store.delete(key);
+
+
+            request.onsuccess =
                 function(){
+
                     resolve(true);
+
                 };
 
-            transaction.onerror =
+
+            request.onerror =
                 function(){
+
                     reject(
-                        transaction.error
+                        request.error
                     );
+
                 };
 
         }
@@ -2135,7 +2738,7 @@ async function deleteImage(key){
 
 
 /* =====================================================
-   DOCUMENT
+   DOCUMENT ELEMENTS
 ===================================================== */
 
 const documentUpload =
@@ -2143,15 +2746,18 @@ const documentUpload =
         "documentUpload"
     );
 
+
 const documentImage =
     document.getElementById(
         "document"
     );
 
+
 const documentPlaceholder =
     document.getElementById(
         "documentPlaceholder"
     );
+
 
 const documentStatus =
     document.getElementById(
@@ -2159,9 +2765,22 @@ const documentStatus =
     );
 
 
+const documentFileName =
+    document.getElementById(
+        "documentFileName"
+    );
+
+
+/* =====================================================
+   SHOW DOCUMENT
+===================================================== */
+
 function showDocument(src){
 
-    if(!src){
+    if(
+        !src ||
+        String(src).trim() === ""
+    ){
 
         documentImage.removeAttribute(
             "src"
@@ -2225,19 +2844,23 @@ function showDocument(src){
 
 
     documentImage.src =
-        src;
+        String(src).trim();
 
 }
 
 
-/* DOCUMENT FILE SELECT */
+/* =====================================================
+   DOCUMENT FILE SELECT
+===================================================== */
 
 documentUpload.addEventListener(
     "change",
     async function(){
 
         const file =
+            this.files &&
             this.files[0];
+
 
         if(!file){
 
@@ -2247,9 +2870,11 @@ documentUpload.addEventListener(
 
 
         const allowedTypes = [
+
             "image/jpeg",
             "image/png",
             "image/webp"
+
         ];
 
 
@@ -2270,12 +2895,6 @@ documentUpload.addEventListener(
         }
 
 
-        /*
-          15MB maximum.
-          IndexedDB can store much larger
-          images than localStorage.
-        */
-
         if(
             file.size >
             15 * 1024 * 1024
@@ -2292,6 +2911,10 @@ documentUpload.addEventListener(
         }
 
 
+        documentFileName.innerText =
+            file.name;
+
+
         const reader =
             new FileReader();
 
@@ -2303,10 +2926,19 @@ documentUpload.addEventListener(
                     event.target.result;
 
 
+                /*
+                   Show immediately
+                */
+
                 showDocument(
                     imageData
                 );
 
+
+                /*
+                   Save permanently
+                   inside IndexedDB
+                */
 
                 try{
 
@@ -2315,9 +2947,11 @@ documentUpload.addEventListener(
                         imageData
                     );
 
-                    console.log(
-                        "Document saved successfully."
-                    );
+                    documentStatus.innerText =
+                        "✓ UPLOADED";
+
+                    documentStatus.style.background =
+                        "#16a34a";
 
                 }catch(error){
 
@@ -2327,7 +2961,7 @@ documentUpload.addEventListener(
                     );
 
                     alert(
-                        "Document displayed, but could not be saved in browser storage."
+                        "Document photo was read, but could not be saved."
                     );
 
                 }
@@ -2345,6 +2979,11 @@ documentUpload.addEventListener(
             };
 
 
+        /*
+           This is what actually reads
+           the selected document photo.
+        */
+
         reader.readAsDataURL(
             file
         );
@@ -2353,7 +2992,9 @@ documentUpload.addEventListener(
 );
 
 
-/* LOAD DOCUMENT */
+/* =====================================================
+   LOAD DOCUMENT
+===================================================== */
 
 async function loadDocument(){
 
@@ -2371,32 +3012,37 @@ async function loadDocument(){
                 saved
             );
 
-        }else{
+            documentFileName.innerText =
+                "Saved document photo";
 
-            /*
-              Also check the user object.
-              This allows:
-              doc: "data:image/..."
-              or
-              doc: "https://..."
-            */
-
-            if(
-                user.doc &&
-                String(user.doc).trim() !== ""
-            ){
-
-                showDocument(
-                    String(user.doc).trim()
-                );
-
-            }else{
-
-                showDocument("");
-
-            }
+            return;
 
         }
+
+
+        /*
+           If no IndexedDB image exists,
+           check localStorage user.doc
+        */
+
+        if(
+            user.doc &&
+            String(user.doc).trim() !== ""
+        ){
+
+            showDocument(
+                String(user.doc).trim()
+            );
+
+            documentFileName.innerText =
+                "Document from user data";
+
+            return;
+
+        }
+
+
+        showDocument("");
 
     }catch(error){
 
@@ -2412,7 +3058,9 @@ async function loadDocument(){
 }
 
 
-/* VIEW DOCUMENT */
+/* =====================================================
+   VIEW FULL DOCUMENT
+===================================================== */
 
 function viewDocument(){
 
@@ -2458,57 +3106,45 @@ function viewDocument(){
     newWindow.document.open();
 
 
-    newWindow.document.write(
-`
+    newWindow.document.write(`
 <!DOCTYPE html>
 
 <html>
 
 <head>
 
+<meta charset="UTF-8">
+
 <meta
 name="viewport"
 content="width=device-width,initial-scale=1.0"
 >
 
-<title>Document Preview</title>
+<title>Document Photo</title>
 
 <style>
 
-*{
-box-sizing:border-box
-}
-
 html,
 body{
-
-margin:0;
-width:100%;
-min-height:100%;
-background:#071426
-
+    margin:0;
+    padding:0;
+    background:#111;
+    width:100%;
+    min-height:100%;
 }
 
 body{
-
-display:flex;
-justify-content:center;
-align-items:center;
-padding:15px
-
+    display:flex;
+    justify-content:center;
+    align-items:center;
 }
 
 img{
-
-display:block;
-max-width:100%;
-max-height:95vh;
-width:auto;
-height:auto;
-object-fit:contain;
-border-radius:12px;
-background:#fff
-
+    max-width:100%;
+    max-height:100vh;
+    width:auto;
+    height:auto;
+    object-fit:contain;
 }
 
 </style>
@@ -2519,14 +3155,13 @@ background:#fff
 
 <img
 src="${src}"
-alt="Document"
+alt="Document Photo"
 >
 
 </body>
 
 </html>
-`
-    );
+    `);
 
 
     newWindow.document.close();
@@ -2534,7 +3169,9 @@ alt="Document"
 }
 
 
-/* REMOVE DOCUMENT */
+/* =====================================================
+   REMOVE DOCUMENT
+===================================================== */
 
 async function removeDocument(){
 
@@ -2558,6 +3195,7 @@ async function removeDocument(){
     }catch(error){
 
         console.error(
+            "Delete document error:",
             error
         );
 
@@ -2566,6 +3204,10 @@ async function removeDocument(){
 
     documentUpload.value =
         "";
+
+    documentFileName.innerText =
+        "No file selected";
+
 
     showDocument("");
 
@@ -2581,15 +3223,18 @@ const receiptUpload =
         "receiptUpload"
     );
 
+
 const receiptImage =
     document.getElementById(
         "receiptImage"
     );
 
+
 const receiptPlaceholder =
     document.getElementById(
         "receiptPlaceholder"
     );
+
 
 const receiptStatus =
     document.getElementById(
@@ -2599,7 +3244,10 @@ const receiptStatus =
 
 function showReceipt(src){
 
-    if(!src){
+    if(
+        !src ||
+        String(src).trim() === ""
+    ){
 
         receiptImage.style.display =
             "none";
@@ -2714,19 +3362,23 @@ function showReceipt(src){
 
 
     receiptImage.src =
-        src;
+        String(src).trim();
 
 }
 
 
-/* RECEIPT UPLOAD */
+/* =====================================================
+   RECEIPT UPLOAD
+===================================================== */
 
 receiptUpload.addEventListener(
     "change",
     function(){
 
         const file =
+            this.files &&
             this.files[0];
+
 
         if(!file){
 
@@ -2736,9 +3388,11 @@ receiptUpload.addEventListener(
 
 
         const allowedTypes = [
+
             "image/jpeg",
             "image/png",
             "image/webp"
+
         ];
 
 
@@ -2800,10 +3454,6 @@ receiptUpload.addEventListener(
                         data
                     );
 
-                    console.log(
-                        "Receipt saved successfully."
-                    );
-
                 }catch(error){
 
                     console.error(
@@ -2812,7 +3462,7 @@ receiptUpload.addEventListener(
                     );
 
                     alert(
-                        "Receipt displayed, but could not be saved in browser storage."
+                        "Receipt displayed, but could not be saved."
                     );
 
                 }
@@ -2838,7 +3488,9 @@ receiptUpload.addEventListener(
 );
 
 
-/* LOAD RECEIPT */
+/* =====================================================
+   LOAD RECEIPT
+===================================================== */
 
 async function loadReceipt(){
 
@@ -2869,7 +3521,9 @@ async function loadReceipt(){
 }
 
 
-/* VIEW RECEIPT */
+/* =====================================================
+   VIEW RECEIPT
+===================================================== */
 
 function viewReceipt(){
 
@@ -2915,11 +3569,62 @@ function viewReceipt(){
     newWindow.document.open();
 
 
-    newWindow.document.write(
-`
+    newWindow.document.write(`
+<!DOCTYPE html>
 
-`
-    );
+<html>
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+name="viewport"
+content="width=device-width,initial-scale=1.0"
+>
+
+<title>Payment Receipt</title>
+
+<style>
+
+html,
+body{
+    margin:0;
+    padding:0;
+    background:#111;
+    width:100%;
+    min-height:100%;
+}
+
+body{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+img{
+    max-width:100%;
+    max-height:100vh;
+    width:auto;
+    height:auto;
+    object-fit:contain;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<img
+src="${src}"
+alt="Payment Receipt"
+>
+
+</body>
+
+</html>
+    `);
 
 
     newWindow.document.close();
@@ -2927,7 +3632,9 @@ function viewReceipt(){
 }
 
 
-/* REMOVE RECEIPT */
+/* =====================================================
+   REMOVE RECEIPT
+===================================================== */
 
 async function removeReceipt(){
 
@@ -2951,6 +3658,7 @@ async function removeReceipt(){
     }catch(error){
 
         console.error(
+            "Delete receipt error:",
             error
         );
 
@@ -2966,7 +3674,7 @@ async function removeReceipt(){
 
 
 /* =====================================================
-   OTHER BUTTONS
+   OTHER
 ===================================================== */
 
 function printReceipt(){
