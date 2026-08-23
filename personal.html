@@ -2917,71 +2917,7 @@ function viewReceipt(){
 
     newWindow.document.write(
 `
-<!DOCTYPE html>
 
-<html>
-
-<head>
-
-<meta
-name="viewport"
-content="width=device-width,initial-scale=1.0"
->
-
-<title>Receipt Preview</title>
-
-<style>
-
-*{
-box-sizing:border-box
-}
-
-html,
-body{
-
-margin:0;
-width:100%;
-min-height:100%;
-background:#071426
-
-}
-
-body{
-
-display:flex;
-justify-content:center;
-align-items:center;
-padding:15px
-
-}
-
-img{
-
-display:block;
-max-width:100%;
-max-height:95vh;
-width:auto;
-height:auto;
-object-fit:contain;
-border-radius:12px;
-background:#fff
-
-}
-
-</style>
-
-</head>
-
-<body>
-
-<img
-src="${src}"
-alt="Payment Receipt"
->
-
-</body>
-
-</html>
 `
     );
 
