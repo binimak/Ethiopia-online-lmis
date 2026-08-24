@@ -25,13 +25,13 @@ content="width=device-width, initial-scale=1.0"
     font-family:Arial,sans-serif;
 }
 
+html{
+    scroll-behavior:smooth;
+}
+
 body{
-    background:linear-gradient(
-        135deg,
-        #eef5ff,
-        #f8fbff,
-        #edf4ff
-    );
+    background:
+        linear-gradient(135deg,#eef5ff,#f8fbff,#edf4ff);
     color:#172033;
     min-height:100vh;
 }
@@ -41,10 +41,9 @@ input{
     font-family:inherit;
 }
 
-
-/* =========================
-   DEMO
-========================= */
+button{
+    cursor:pointer;
+}
 
 .demo{
     background:#fff3cd;
@@ -67,7 +66,6 @@ header{
     border-radius:30px;
     text-align:center;
     color:#fff;
-
     background:
         linear-gradient(
             135deg,
@@ -75,8 +73,8 @@ header{
             #0f2d4f,
             #2563eb
         );
-
-    box-shadow:0 25px 55px #0f172a2e;
+    box-shadow:
+        0 25px 55px #0f172a2e;
 }
 
 header .icon{
@@ -96,7 +94,7 @@ header p{
 
 
 /* =========================
-   NAV
+   NAVIGATION
 ========================= */
 
 .nav{
@@ -154,7 +152,8 @@ header p{
     padding:22px;
     border-radius:25px;
     border:1px solid #e2e8f0;
-    box-shadow:0 12px 35px #0f172a0f;
+    box-shadow:
+        0 12px 35px #0f172a0f;
     overflow:hidden;
 }
 
@@ -180,7 +179,8 @@ header p{
     border-radius:20px;
     border:4px solid #2563eb;
     background:#f8fafc;
-    box-shadow:0 12px 25px #2563eb26;
+    box-shadow:
+        0 12px 25px #2563eb26;
 }
 
 table{
@@ -215,7 +215,7 @@ td{
 
 
 /* =========================
-   TRAVEL
+   GENERAL GRIDS
 ========================= */
 
 .travel-grid,
@@ -227,6 +227,11 @@ td{
     gap:12px;
 }
 
+
+/* =========================
+   BLUE CARDS
+========================= */
+
 .travel-box,
 .ministry,
 .security-box,
@@ -234,7 +239,6 @@ td{
     padding:22px;
     border-radius:23px;
     color:#fff;
-
     background:
         linear-gradient(
             135deg,
@@ -242,8 +246,8 @@ td{
             #0f2d4f,
             #2563eb
         );
-
-    box-shadow:0 18px 35px #2563eb29;
+    box-shadow:
+        0 18px 35px #2563eb29;
 }
 
 .travel-header,
@@ -288,6 +292,10 @@ td{
     margin-top:4px;
 }
 
+.travel-grid{
+    margin-top:20px;
+}
+
 .travel-item,
 .security-item{
     padding:14px;
@@ -308,10 +316,7 @@ td{
     display:block;
     margin-top:6px;
     font-size:12px;
-}
-
-.travel-grid{
-    margin-top:20px;
+    word-break:break-word;
 }
 
 
@@ -322,11 +327,12 @@ td{
 .skill-banner{
     padding:20px;
     border-radius:22px;
-    background:linear-gradient(
-        135deg,
-        #eff6ff,
-        #fff
-    );
+    background:
+        linear-gradient(
+            135deg,
+            #eff6ff,
+            #fff
+        );
     border:1px solid #bfdbfe;
 }
 
@@ -374,6 +380,7 @@ td{
     display:block;
     margin-top:5px;
     font-size:12px;
+    word-break:break-word;
 }
 
 
@@ -391,10 +398,33 @@ td{
     color:#dbeafe;
 }
 
+.ministry-links{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+    margin-top:15px;
+}
+
+.ministry-link{
+    padding:12px;
+    border-radius:13px;
+    background:#ffffff12;
+    border:1px solid #ffffff20;
+}
+
+.ministry-link small{
+    display:block;
+}
+
+.ministry-link strong{
+    display:block;
+    margin-top:5px;
+    font-size:11px;
+}
+
 
 /* =========================
    DOCUMENT PHOTO
-   PHOTO ONLY
 ========================= */
 
 .document-photo-box{
@@ -402,10 +432,13 @@ td{
     border:1px solid #dbeafe;
     border-radius:22px;
     overflow:hidden;
-    box-shadow:0 10px 30px #0f172a14;
+    box-shadow:
+        0 10px 30px #0f172a14;
 }
 
 .document-image-container{
+    width:100%;
+    min-height:150px;
     padding:10px;
     background:#f8fafc;
     display:flex;
@@ -413,13 +446,10 @@ td{
     align-items:center;
 }
 
-/*
-   Document photo only
-*/
-
 .document-image{
     display:block;
     width:100%;
+    height:auto;
     max-width:620px;
     max-height:900px;
     object-fit:contain;
@@ -428,14 +458,9 @@ td{
     border-radius:12px;
 }
 
-
-/*
-   If there is no document
-*/
-
 .document-empty{
     width:100%;
-    min-height:120px;
+    min-height:150px;
     display:flex;
     justify-content:center;
     align-items:center;
@@ -469,10 +494,10 @@ td{
 }
 
 .receipt-upload-label{
-    font-size:22px;
+    font-size:20px;
     font-weight:800;
     color:#172033;
-    margin-bottom:28px;
+    margin-bottom:20px;
 }
 
 .receipt-upload-icon{
@@ -502,7 +527,8 @@ td{
     border-radius:14px;
     background:#fff;
     border:1px solid #dbeafe;
-    box-shadow:0 10px 25px #0f172a19;
+    box-shadow:
+        0 10px 25px #0f172a19;
     margin-bottom:15px;
 }
 
@@ -512,18 +538,44 @@ td{
     color:#64748b;
 }
 
-.receipt-body{
-    padding:20px;
+
+/* =========================
+   PAYMENT
+========================= */
+
+.progress-wrap{
+    margin-top:20px;
 }
 
-.receipt-grid{
-    gap:10px;
+.progress-bar{
+    height:13px;
+    background:#e2e8f0;
+    border-radius:50px;
+    overflow:hidden;
 }
+
+.progress-fill{
+    width:60%;
+    height:100%;
+    background:
+        linear-gradient(
+            90deg,
+            #2563eb,
+            #38bdf8
+        );
+    border-radius:50px;
+}
+
+
+/* =========================
+   RECEIPT ITEMS
+========================= */
 
 .receipt-item{
-    padding:13px;
-    border-radius:14px;
     background:#f8fafc;
+    border:1px solid #e2e8f0;
+    border-radius:14px;
+    padding:14px;
 }
 
 .receipt-item small{
@@ -534,30 +586,21 @@ td{
 
 .receipt-item strong{
     display:block;
-    margin-top:5px;
-    font-size:12px;
-}
-
-.receipt-note{
-    margin-top:15px;
-    padding:14px;
-    background:#eff6ff;
-    border-left:4px solid #2563eb;
-    border-radius:12px;
+    margin-top:6px;
     font-size:11px;
-    line-height:1.7;
+    word-break:break-word;
 }
 
 .print{
     width:100%;
     margin-top:15px;
-    border:0;
     padding:13px;
+    border:0;
     border-radius:14px;
-    background:#071426;
+    background:#2563eb;
     color:#fff;
+    font-size:11px;
     font-weight:bold;
-    cursor:pointer;
 }
 
 
@@ -578,7 +621,6 @@ td{
     bottom:5px;
     width:3px;
     border-radius:5px;
-
     background:
         linear-gradient(
             #16a34a,
@@ -778,7 +820,6 @@ td{
     color:#173f87;
     background:#fff;
     font-weight:bold;
-    cursor:pointer;
 }
 
 
@@ -806,14 +847,12 @@ footer{
     margin-top:30px;
     padding:38px 15px;
     text-align:center;
-
     background:
         linear-gradient(
             135deg,
             #071426,
             #0f2d4f
         );
-
     color:#fff;
 }
 
@@ -836,6 +875,11 @@ footer p{
 
     header{
         margin:8px;
+        padding:28px 16px;
+    }
+
+    header h1{
+        font-size:22px;
     }
 
     .container{
@@ -850,21 +894,55 @@ footer p{
         padding:0 8px;
     }
 
+    .nav a{
+        padding:11px 7px;
+    }
+
+    td{
+        font-size:12px;
+    }
+
+    .label{
+        width:40%;
+    }
+
+    .document-image{
+        max-height:750px;
+    }
+
+    .receipt-preview{
+        max-height:600px;
+    }
+
 }
 
+
+/* =========================
+   SMALL MOBILE
+========================= */
 
 @media(max-width:380px){
 
     .travel-grid,
     .skill-main,
     .security-grid,
-    .receipt-grid{
+    .receipt-grid,
+    .ministry-links{
         grid-template-columns:1fr;
     }
 
     .profile-photo{
         width:130px;
         height:160px;
+    }
+
+    .travel-header h2,
+    .ministry h2{
+        font-size:17px;
+    }
+
+    .receipt-upload-label{
+        font-size:17px;
     }
 
 }
@@ -886,7 +964,8 @@ footer p{
     .clock,
     footer,
     .support,
-    .warning{
+    .warning,
+    .receipt-upload-reference{
         display:none!important;
     }
 
@@ -906,11 +985,14 @@ footer p{
 
 
 <!-- =========================
-     DEMO
+     DEMO NOTICE
 ========================= -->
 
 <div class="demo">
-DEMO / TESTING INTERFACE — NOT AN OFFICIAL GOVERNMENT WEBSITE
+
+DEMO / TESTING INTERFACE —
+NOT AN OFFICIAL GOVERNMENT WEBSITE
+
 </div>
 
 
@@ -920,1438 +1002,1438 @@ DEMO / TESTING INTERFACE — NOT AN OFFICIAL GOVERNMENT WEBSITE
 
 <header>
 
-<div class="icon">
-🌍
-</div>
+    <div class="icon">🌍</div>
 
-<h1>
-Travel & Skills Dashboard
-</h1>
+    <h1>
+        Travel & Skills Dashboard
+    </h1>
 
-<p>
-Modern Travel • Skills • Employment Application
-</p>
+    <p>
+        Modern Travel • Skills • Employment Application
+    </p>
 
 </header>
 
 
 <!-- =========================
-     NAV
+     NAVIGATION
 ========================= -->
 
 <div class="nav">
 
-<a href="index.html">
-← Back to Application
-</a>
+    <a href="index.html">
+        ← Back to Application
+    </a>
 
-<a
-href="personal.html"
-class="primary"
->
-Personal Information
-</a>
+    <a
+        href="personal.html"
+        class="primary">
+        Personal Information
+    </a>
 
 </div>
 
 
-<!-- =========================
-     CLOCK
-========================= -->
-
 <div
-class="clock"
-id="clock"
->
-System time...
+    class="clock"
+    id="clock">
+    System time...
 </div>
 
 
 <div class="container">
 
 
-<!-- =====================================================
+<!-- =========================
      PROFILE
-===================================================== -->
+========================= -->
 
 <section class="section profile">
 
-<div class="title">
-👤 የግል መረጃ
-</div>
+    <div class="title">
+        👤 የግል መረጃ
+    </div>
 
 
-<img
-id="photo"
-class="profile-photo"
-src=""
-alt="Profile"
->
+    <img
+        id="photo"
+        class="profile-photo"
+        src=""
+        alt="Profile"
+        style="display:none"
+    >
 
 
-<table>
+    <table>
+
+        <tr>
+            <td class="label">
+                ሙሉ ስም
+            </td>
+
+            <td id="name">
+                Demo Applicant
+            </td>
+        </tr>
 
 
-<tr>
+        <tr>
+            <td class="label">
+                ጾታ
+            </td>
 
-<td class="label">
-ሙሉ ስም
-</td>
-
-<td id="name">
-Demo Applicant
-</td>
-
-</tr>
+            <td id="gender">
+                -
+            </td>
+        </tr>
 
 
-<tr>
+        <tr>
+            <td class="label">
+                ዕድሜ
+            </td>
 
-<td class="label">
-ጾታ
-</td>
-
-<td id="gender">
--
-</td>
-
-</tr>
+            <td id="age">
+                -
+            </td>
+        </tr>
 
 
-<tr>
+        <tr>
+            <td class="label">
+                የትውልድ ቀን
+            </td>
 
-<td class="label">
-ዕድሜ
-</td>
-
-<td id="age">
--
-</td>
-
-</tr>
+            <td id="dob">
+                -
+            </td>
+        </tr>
 
 
-<tr>
+        <tr>
+            <td class="label">
+                E-LMIS ID
+            </td>
 
-<td class="label">
-የትውልድ ቀን
-</td>
-
-<td id="dob">
--
-</td>
-
-</tr>
+            <td id="applicationId">
+                DEMO-000001
+            </td>
+        </tr>
 
 
-<tr>
+        <tr>
+            <td class="label">
+                Passport
+            </td>
 
-<td class="label">
-E-LMIS ID
-</td>
-
-<td id="applicationId">
-DEMO-000001
-</td>
-
-</tr>
+            <td id="passport">
+                DEMO-PASSPORT
+            </td>
+        </tr>
 
 
-<tr>
+        <tr>
+            <td class="label">
+                Phone
+            </td>
 
-<td class="label">
-Passport
-</td>
-
-<td id="passport">
-DEMO-PASSPORT
-</td>
-
-</tr>
+            <td id="phone">
+                -
+            </td>
+        </tr>
 
 
-<tr>
+        <tr>
+            <td class="label">
+                Place of Birth
+            </td>
 
-<td class="label">
-Phone
-</td>
-
-<td id="phone">
--
-</td>
-
-</tr>
+            <td id="birth">
+                -
+            </td>
+        </tr>
 
 
-<tr>
+        <tr>
+            <td class="label">
+                Country
+            </td>
 
-<td class="label">
-Place of Birth
-</td>
-
-<td id="birth">
--
-</td>
-
-</tr>
+            <td id="country">
+                -
+            </td>
+        </tr>
 
 
-<tr>
+        <tr>
+            <td class="label">
+                Status
+            </td>
 
-<td class="label">
-Country
-</td>
+            <td>
+                <span class="status">
+                    ✓ ACTIVE
+                </span>
+            </td>
+        </tr>
 
-<td id="country">
--
-</td>
-
-</tr>
-
-
-<tr>
-
-<td class="label">
-Status
-</td>
-
-<td>
-
-<span class="status">
-✓ ACTIVE
-</span>
-
-</td>
-
-</tr>
-
-
-</table>
+    </table>
 
 </section>
 
 
-<!-- =====================================================
+<!-- =========================
      TRAVEL
-===================================================== -->
+========================= -->
 
 <section class="section">
 
-<div class="title">
-🌍 Travel & Employer
-</div>
+    <div class="title">
+        🌍 Travel & Employer
+    </div>
 
 
-<div class="travel-box">
+    <div class="travel-box">
+
+        <div class="travel-header">
+
+            <div class="travel-icon">
+                ✈️
+            </div>
 
 
-<div class="travel-header">
+            <div>
 
-<div class="travel-icon">
-✈️
-</div>
+                <small>
+                    TRAVEL & EMPLOYMENT
+                </small>
 
-<div>
+                <h2>
+                    Travel Employer
+                </h2>
 
-<small>
-TRAVEL & EMPLOYMENT
-</small>
+                <p>
+                    Overseas Employment Information
+                </p>
 
-<h2>
-Travel Employer
-</h2>
+            </div>
 
-<p>
-Overseas Employment Information
-</p>
-
-</div>
-
-</div>
+        </div>
 
 
-<div class="travel-grid">
+        <div class="travel-grid">
+
+            <div class="travel-item">
+
+                <small>
+                    DESTINATION
+                </small>
+
+                <strong id="destination">
+                    Not Specified
+                </strong>
+
+            </div>
 
 
-<div class="travel-item">
+            <div class="travel-item">
 
-<small>
-DESTINATION
-</small>
+                <small>
+                    VISA CATEGORY
+                </small>
 
-<strong id="destination">
-Not Specified
-</strong>
+                <strong id="visa">
+                    Not Specified
+                </strong>
 
-</div>
-
-
-<div class="travel-item">
-
-<small>
-VISA CATEGORY
-</small>
-
-<strong id="visa">
-Not Specified
-</strong>
-
-</div>
+            </div>
 
 
-<div class="travel-item">
+            <div class="travel-item">
 
-<small>
-EMPLOYMENT TYPE
-</small>
+                <small>
+                    EMPLOYMENT TYPE
+                </small>
 
-<strong>
-Overseas Employment
-</strong>
+                <strong>
+                    Overseas Employment
+                </strong>
 
-</div>
-
-
-<div class="travel-item">
-
-<small>
-APPLICATION
-</small>
-
-<strong>
-Travel Application
-</strong>
-
-</div>
+            </div>
 
 
-</div>
+            <div class="travel-item">
 
-</div>
+                <small>
+                    APPLICATION
+                </small>
+
+                <strong>
+                    Travel Application
+                </strong>
+
+            </div>
+
+        </div>
+
+    </div>
 
 </section>
 
 
-<!-- =====================================================
-     SKILL
-===================================================== -->
+<!-- =========================
+     SKILLS
+========================= -->
 
 <section class="section">
 
-<div class="title">
-👨‍💼 የሙያና ክህሎት መረጃ
-</div>
+    <div class="title">
+        👨‍💼 የሙያና ክህሎት መረጃ
+    </div>
 
 
-<div class="skill-banner">
+    <div class="skill-banner">
+
+        <div class="skill-top">
+
+            <div class="skill-icon">
+                💼
+            </div>
 
 
-<div class="skill-top">
+            <div>
 
-<div class="skill-icon">
-💼
-</div>
+                <small>
+                    PROFESSIONAL INFORMATION
+                </small>
 
-<div>
+                <h2>
+                    የሙያ እና ክህሎት
+                </h2>
 
-<small>
-PROFESSIONAL INFORMATION
-</small>
+            </div>
 
-<h2>
-የሙያ እና ክህሎት
-</h2>
-
-</div>
-
-</div>
+        </div>
 
 
-<div class="skill-main">
+        <div class="skill-main">
+
+            <div class="skill-item">
+
+                <small>
+                    PROFESSIONAL SKILL
+                </small>
+
+                <strong id="skill">
+                    Not Specified
+                </strong>
+
+            </div>
 
 
-<div class="skill-item">
+            <div class="skill-item">
 
-<small>
-PROFESSIONAL SKILL
-</small>
+                <small>
+                    REGISTRATION
+                </small>
 
-<strong id="skill">
-Not Specified
-</strong>
+                <strong class="ready">
+                    ✓ ACTIVE
+                </strong>
 
-</div>
-
-
-<div class="skill-item">
-
-<small>
-REGISTRATION
-</small>
-
-<strong class="ready">
-✓ ACTIVE
-</strong>
-
-</div>
+            </div>
 
 
-<div class="skill-item">
+            <div class="skill-item">
 
-<small>
-QUALIFICATION
-</small>
+                <small>
+                    QUALIFICATION
+                </small>
 
-<strong>
-✓ VERIFIED
-</strong>
+                <strong>
+                    ✓ VERIFIED
+                </strong>
 
-</div>
-
-
-<div class="skill-item">
-
-<small>
-EMPLOYMENT
-</small>
-
-<strong>
-Overseas Employment
-</strong>
-
-</div>
+            </div>
 
 
-</div>
+            <div class="skill-item">
 
-</div>
+                <small>
+                    EMPLOYMENT
+                </small>
+
+                <strong>
+                    Overseas Employment
+                </strong>
+
+            </div>
+
+        </div>
+
+    </div>
 
 </section>
 
 
-<!-- =====================================================
+<!-- =========================
      MINISTRY
-===================================================== -->
+========================= -->
 
 <section class="section">
 
-<div class="ministry">
+    <div class="ministry">
+
+        <div class="ministry-top">
+
+            <div class="ministry-icon">
+                🏛️
+            </div>
 
 
-<div class="ministry-top">
+            <div>
 
-<div class="ministry-icon">
-🏛️
-</div>
+                <small>
+                    MINISTRY INFORMATION
+                </small>
 
-<div>
+                <h2>
+                    ስራና ክህሎት ሚኒስቴር
+                </h2>
 
-<small>
-INFORMATION
-</small>
+                <p>
+                    Ministry of Labor and Skills Information
+                </p>
 
-<h2>
-ስራና ክህሎት ሚኒስቴር
-</h2>
+            </div>
 
-<p>
-Ministry / Skills Information
-</p>
-
-</div>
-
-</div>
+        </div>
 
 
-<div class="ministry-text">
+        <div class="ministry-text">
 
-ይህ ክፍል የሙያ፣ የክህሎት፣
-የስራ እድል እና የውጭ ስራ
-መረጃዎችን ለማሳየት የተዘጋጀ ነው።
+            ይህ ክፍል የሙያ፣ የክህሎት፣
+            የስራ እድል እና የውጭ ስራ
+            መረጃዎችን ለማሳየት የተዘጋጀ
+            የDEMO ክፍል ነው።
 
-</div>
+        </div>
 
 
-</div>
+        <div class="ministry-links">
+
+            <div class="ministry-link">
+
+                <small>
+                    SKILLS
+                </small>
+
+                <strong>
+                    የክህሎት መረጃ
+                </strong>
+
+            </div>
+
+
+            <div class="ministry-link">
+
+                <small>
+                    EMPLOYMENT
+                </small>
+
+                <strong>
+                    የስራ እድል
+                </strong>
+
+            </div>
+
+
+            <div class="ministry-link">
+
+                <small>
+                    TRAINING
+                </small>
+
+                <strong>
+                    የስልጠና መረጃ
+                </strong>
+
+            </div>
+
+
+            <div class="ministry-link">
+
+                <small>
+                    OVERSEAS
+                </small>
+
+                <strong>
+                    የውጭ ስራ መረጃ
+                </strong>
+
+            </div>
+
+        </div>
+
+    </div>
 
 </section>
 
 
-<!-- =====================================================
+<!-- =========================
      DOCUMENT PHOTO
-     
-     IMPORTANT:
      PHOTO ONLY
-===================================================== -->
+========================= -->
 
 <section class="section">
 
-<div class="title">
-📄 የሰነድ ፎቶ / Document Photo
-</div>
+    <div class="title">
+        📄 የሰነድ ፎቶ / Document Photo
+    </div>
 
 
-<div class="document-photo-box">
+    <div class="document-photo-box">
+
+        <div class="document-image-container">
+
+            <img
+                id="document"
+                class="document-image"
+                alt="Document Photo"
+                style="display:none"
+            >
 
 
-<div class="document-image-container">
+            <div
+                id="documentEmpty"
+                class="document-empty">
 
+                No document available
 
-<img
-id="document"
-class="document-image"
-alt="Document Photo"
-style="display:none"
->
+            </div>
 
+        </div>
 
-<div
-id="documentEmpty"
-class="document-empty"
-style="display:none"
->
-No document available
-</div>
-
-
-</div>
-
-
-</div>
+    </div>
 
 </section>
 
 
-<!-- =====================================================
-     RECEIPT UPLOAD
-===================================================== -->
+<!-- =========================
+     RECEIPT
+========================= -->
 
 <section class="section">
 
-<div class="title">
-🧾 Upload receipt (photo) /
-የክፍያ ደረሰኝ ፎቶ
-</div>
+    <div class="title">
+        🧾 የክፍያ ደረሰኝ ፎቶ
+    </div>
 
 
-<div class="receipt-upload-reference">
+    <div class="receipt-upload-reference">
+
+        <div class="receipt-upload-box">
+
+            <div class="receipt-upload-icon">
+                🧾
+            </div>
 
 
-<div class="receipt-upload-box">
+            <div class="receipt-upload-label">
+                Receipt photo /
+                የክፍያ ደረሰኝ ፎቶ
+            </div>
 
 
-<div class="receipt-upload-icon">
-🧾
-</div>
+            <img
+                id="receiptImage"
+                class="receipt-preview"
+                alt="Payment Receipt"
+                style="display:none"
+            >
 
 
-<div class="receipt-upload-label">
-Receipt photo /
-የክፍያ ደረሰኝ ፎቶ
-</div>
+            <div id="receiptPlaceholder">
+
+                <label
+                    for="receiptUpload"
+                    class="receipt-file-label">
+
+                    📷 Choose Receipt
+
+                </label>
+
+            </div>
 
 
-<img
-id="receiptImage"
-class="receipt-preview"
-alt="Payment Receipt"
-style="display:none"
->
+            <input
+                type="file"
+                id="receiptUpload"
+                accept="image/jpeg,image/png,image/webp"
+                hidden
+            >
 
 
-<div id="receiptPlaceholder">
+            <div
+                id="receiptStatus"
+                class="receipt-upload-status">
 
-<label
-for="receiptUpload"
-class="receipt-file-label"
->
-Choose file
-</label>
+                No file chosen
 
-</div>
+            </div>
 
-
-<input
-type="file"
-id="receiptUpload"
-accept="image/jpeg,image/png,image/webp"
-hidden
->
+        </div>
 
 
-<div
-id="receiptStatus"
-class="receipt-upload-status"
->
-No file chosen
-</div>
+        <div
+            style="
+            display:grid;
+            grid-template-columns:1fr 1fr 1fr;
+            gap:10px;
+            padding-top:18px;
+            ">
 
 
-</div>
+            <label
+                for="receiptUpload"
+                style="
+                display:flex;
+                justify-content:center;
+                align-items:center;
+                min-height:45px;
+                border-radius:13px;
+                background:#2563eb;
+                color:#fff;
+                font-size:11px;
+                font-weight:bold;
+                cursor:pointer;
+                ">
+
+                📷 Upload
+
+            </label>
 
 
-<div
-class="document-actions"
-style="
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:10px;
-padding:18px 0 0;
-"
->
+            <button
+                type="button"
+                onclick="viewReceipt()"
+                style="
+                border:0;
+                border-radius:13px;
+                background:#071426;
+                color:#fff;
+                font-size:11px;
+                font-weight:bold;
+                cursor:pointer;
+                ">
+
+                🔍 View
+
+            </button>
 
 
-<label
-for="receiptUpload"
-class="upload-btn"
-style="
-display:flex;
-justify-content:center;
-align-items:center;
-min-height:45px;
-border-radius:13px;
-background:#2563eb;
-color:#fff;
-font-size:11px;
-font-weight:bold;
-cursor:pointer;
-"
->
-📷 Upload Receipt
-</label>
+            <button
+                type="button"
+                onclick="removeReceipt()"
+                style="
+                border:0;
+                border-radius:13px;
+                background:#fee2e2;
+                color:#b91c1c;
+                font-size:11px;
+                font-weight:bold;
+                cursor:pointer;
+                ">
+
+                🗑️ Remove
+
+            </button>
+
+        </div>
 
 
-<button
-type="button"
-class="view-btn"
-onclick="viewReceipt()"
-style="
-display:flex;
-justify-content:center;
-align-items:center;
-min-height:45px;
-border-radius:13px;
-border:0;
-background:#071426;
-color:#fff;
-font-size:11px;
-font-weight:bold;
-cursor:pointer;
-"
->
-🔍 View Full Receipt
-</button>
+        <p
+            style="
+            text-align:center;
+            padding-top:12px;
+            color:#64748b;
+            font-size:10px;
+            ">
 
+            JPG, PNG ወይም WEBP
+            የክፍያ ደረሰኝ ፎቶ ይጫኑ።
 
-<button
-type="button"
-class="remove-btn"
-onclick="removeReceipt()"
-style="
-display:flex;
-justify-content:center;
-align-items:center;
-min-height:45px;
-border-radius:13px;
-border:0;
-background:#fee2e2;
-color:#b91c1c;
-font-size:11px;
-font-weight:bold;
-cursor:pointer;
-"
->
-🗑️ Remove Receipt
-</button>
+        </p>
 
-
-</div>
-
-
-<p
-style="
-text-align:center;
-padding:0 0 4px;
-color:#64748b;
-font-size:10px;
-"
->
-JPG, PNG ወይም WEBP የክፍያ ደረሰኝ ፎቶ ይጫኑ።
-</p>
-
-
-</div>
+    </div>
 
 </section>
 
 
-<!-- =====================================================
+<!-- =========================
      PAYMENT STAGE
-===================================================== -->
+========================= -->
 
 <section class="section">
 
+    <div
+        style="
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+        ">
 
-<div
-style="
-display:flex;
-justify-content:space-between;
-align-items:center;
-"
->
+        <div>
 
+            <div
+                style="
+                font-size:9px;
+                color:#64748b;
+                font-weight:bold;
+                letter-spacing:1px;
+                ">
 
-<div>
+                CURRENT STAGE
 
-<div
-style="
-font-size:9px;
-color:#64748b;
-font-weight:bold;
-letter-spacing:1px;
-"
->
-CURRENT STAGE
-</div>
+            </div>
 
 
-<h2
-style="
-color:#2563eb;
-margin-top:5px;
-"
->
-💳 Payment
-</h2>
+            <h2
+                style="
+                color:#2563eb;
+                margin-top:5px;
+                ">
 
-</div>
+                💳 Payment
 
+            </h2>
 
-<div
-style="
-padding:9px 13px;
-border-radius:20px;
-background:#dcfce7;
-color:#15803d;
-font-size:10px;
-font-weight:bold;
-"
->
-✓ RECORDED
-</div>
+        </div>
 
 
-</div>
+        <div
+            style="
+            padding:9px 13px;
+            border-radius:20px;
+            background:#dcfce7;
+            color:#15803d;
+            font-size:10px;
+            font-weight:bold;
+            ">
+
+            ✓ RECORDED
+
+        </div>
+
+    </div>
 
 
-<div
-style="
-height:13px;
-margin-top:20px;
-background:#e2e8f0;
-border-radius:50px;
-overflow:hidden;
-"
->
+    <div class="progress-wrap">
 
-<div
-style="
-width:60%;
-height:100%;
-background:linear-gradient(
-90deg,
-#2563eb,
-#38bdf8
-);
-border-radius:50px;
-"
->
-</div>
+        <div class="progress-bar">
 
-</div>
+            <div class="progress-fill"></div>
+
+        </div>
 
 
-<div
-style="
-display:flex;
-justify-content:space-between;
-margin-top:8px;
-font-size:10px;
-color:#64748b;
-"
->
+        <div
+            style="
+            display:flex;
+            justify-content:space-between;
+            margin-top:8px;
+            font-size:10px;
+            color:#64748b;
+            ">
 
-<span>
-Application Progress
-</span>
+            <span>
+                Application Progress
+            </span>
 
-<strong>
-60%
-</strong>
+            <strong>
+                60%
+            </strong>
 
-</div>
+        </div>
 
-
-<div
-style="
-margin-top:15px;
-padding:14px;
-border-radius:15px;
-background:#fff;
-border:1px dashed #93c5fd;
-"
->
-
-<small
-style="
-color:#64748b;
-font-size:9px;
-"
->
-NEXT STAGE
-</small>
+    </div>
 
 
-<strong
-style="
-display:block;
-margin-top:5px;
-color:#2563eb;
-"
->
-📄 Visa Processing
-</strong>
+    <div
+        style="
+        margin-top:15px;
+        padding:14px;
+        border-radius:15px;
+        background:#fff;
+        border:1px dashed #93c5fd;
+        ">
 
-</div>
+        <small
+            style="
+            color:#64748b;
+            font-size:9px;
+            ">
 
+            NEXT STAGE
+
+        </small>
+
+
+        <strong
+            style="
+            display:block;
+            margin-top:5px;
+            color:#2563eb;
+            ">
+
+            📄 Visa Processing
+
+        </strong>
+
+    </div>
 
 </section>
 
 
-<!-- =====================================================
-     PAYMENT INFO
-===================================================== -->
+<!-- =========================
+     PAYMENT INFORMATION
+========================= -->
 
 <section class="section">
 
-<div class="title">
-💳 የክፍያ መረጃ
-</div>
+    <div class="title">
+        💳 የክፍያ መረጃ
+    </div>
 
 
-<div class="receipt"
-style="
-background:#fff;
-border:1px solid #dbeafe;
-border-radius:22px;
-overflow:hidden;
-"
->
+    <div
+        style="
+        background:#fff;
+        border:1px solid #dbeafe;
+        border-radius:22px;
+        overflow:hidden;
+        ">
 
 
-<div
-style="
-padding:20px;
-background:linear-gradient(
-135deg,
-#071426,
-#0f2d4f,
-#2563eb
-);
-color:#fff;
-display:flex;
-justify-content:space-between;
-align-items:center;
-"
->
+        <div
+            style="
+            padding:20px;
+            background:
+                linear-gradient(
+                    135deg,
+                    #071426,
+                    #0f2d4f,
+                    #2563eb
+                );
+            color:#fff;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            ">
+
+            <div>
+
+                <small>
+                    PAYMENT RECORD
+                </small>
+
+                <h2>
+                    PAYMENT RECORDED
+                </h2>
+
+            </div>
 
 
-<div>
+            <div class="receipt-paid">
+                ✓ PAID
+            </div>
 
-<small>
-PAYMENT RECORD
-</small>
-
-<h2>
-PAYMENT RECORDED
-</h2>
-
-</div>
+        </div>
 
 
-<div class="receipt-paid">
-✓ PAID
-</div>
+        <div style="padding:20px;">
+
+            <div class="receipt-grid">
+
+                <div class="receipt-item">
+
+                    <small>
+                        Payment Status
+                    </small>
+
+                    <strong class="ready">
+                        Payment Recorded
+                    </strong>
+
+                </div>
 
 
-</div>
+                <div class="receipt-item">
+
+                    <small>
+                        Reference ID
+                    </small>
+
+                    <strong id="paymentRef">
+                        DEMO-00087412598
+                    </strong>
+
+                </div>
 
 
-<div class="receipt-body">
+                <div class="receipt-item">
+
+                    <small>
+                        Payment Date
+                    </small>
+
+                    <strong id="paymentDate">
+                        --
+                    </strong>
+
+                </div>
 
 
-<div class="receipt-grid">
+                <div class="receipt-item">
+
+                    <small>
+                        Receipt Photo
+                    </small>
+
+                    <strong
+                        id="receiptRecord"
+                        class="next-color">
+
+                        Not Uploaded
+
+                    </strong>
+
+                </div>
+
+            </div>
 
 
-<div class="receipt-item">
+            <div
+                style="
+                margin-top:15px;
+                padding:14px;
+                background:#eff6ff;
+                border-left:4px solid #2563eb;
+                border-radius:12px;
+                font-size:11px;
+                line-height:1.7;
+                ">
 
-<small>
-Payment Status
-</small>
+                <strong>
+                    ✓ Payment Recorded
+                </strong>
 
-<strong class="ready">
-Payment Recorded
-</strong>
+                <br>
 
-</div>
+                ይህ የDEMO ክፍል
+                የክፍያ መረጃን
+                እና የተጫነውን
+                ደረሰኝ ፎቶ ያሳያል።
 
-
-<div class="receipt-item">
-
-<small>
-Reference ID
-</small>
-
-<strong id="paymentRef">
-DEMO-00087412598
-</strong>
-
-</div>
-
-
-<div class="receipt-item">
-
-<small>
-Payment Date
-</small>
-
-<strong id="paymentDate">
---
-</strong>
-
-</div>
+            </div>
 
 
-<div class="receipt-item">
+            <button
+                class="print"
+                onclick="printReceipt()">
 
-<small>
-Receipt Photo
-</small>
+                🖨️ Print Receipt
 
-<strong
-id="receiptRecord"
-class="next-color"
->
-Not Uploaded
-</strong>
+            </button>
 
-</div>
+        </div>
 
-
-</div>
-
-
-<div class="receipt-note">
-
-<strong>
-✓ Payment Recorded
-</strong>
-
-<br>
-
-ይህ ክፍል የክፍያ መረጃን
-እና የተጫነውን ደረሰኝ ፎቶ ማሳያ ነው።
-
-</div>
-
-
-<button
-class="print"
-onclick="printReceipt()"
->
-🖨️ Print Receipt
-</button>
-
-
-</div>
-
-</div>
+    </div>
 
 </section>
 
 
-<!-- =====================================================
+<!-- =========================
      JOURNEY
-===================================================== -->
+========================= -->
 
 <section class="section">
 
-<div class="title">
-🔄 Application Journey
-</div>
+    <div class="title">
+        🔄 Application Journey
+    </div>
 
 
-<div class="journey">
+    <div class="journey">
 
 
-<div class="step done">
+        <div class="step done">
 
-<h4>
-✓ Profile Created
-</h4>
+            <h4>
+                ✓ Profile Created
+            </h4>
 
-<p>
-Applicant profile has been created successfully.
-</p>
+            <p>
+                Applicant profile has been
+                created successfully.
+            </p>
 
-<span class="step-badge">
-COMPLETED
-</span>
+            <span class="step-badge">
+                COMPLETED
+            </span>
 
-</div>
-
-
-<div class="step done">
-
-<h4>
-✓ Documents Submitted
-</h4>
-
-<p>
-Required personal and professional information
-has been submitted.
-</p>
-
-<span class="step-badge">
-COMPLETED
-</span>
-
-</div>
+        </div>
 
 
-<div class="step active">
+        <div class="step done">
 
-<h4>
-💳 Payment — Current Stage
-</h4>
+            <h4>
+                ✓ Documents Submitted
+            </h4>
 
-<p>
-Payment information is currently recorded
-in the application workflow.
-</p>
+            <p>
+                Required personal and
+                professional information
+                has been submitted.
+            </p>
 
-<span
-class="step-badge"
-style="
-background:#fef3c7;
-color:#92400e;
-"
->
-CURRENT
-</span>
+            <span class="step-badge">
+                COMPLETED
+            </span>
 
-</div>
+        </div>
 
 
-<div class="step">
+        <div class="step active">
 
-<h4>
-📄 Visa Processing
-</h4>
+            <h4>
+                💳 Payment — Current Stage
+            </h4>
 
-<p>
-Visa processing is the next stage
-of the application journey.
-</p>
+            <p>
+                Payment information is
+                currently recorded in the
+                application workflow.
+            </p>
 
-<span
-class="step-badge"
-style="
-background:#e2e8f0;
-color:#475569;
-"
->
-NEXT
-</span>
+            <span
+                class="step-badge"
+                style="
+                background:#fef3c7;
+                color:#92400e;
+                ">
 
-</div>
+                CURRENT
 
+            </span>
 
-<div class="step">
-
-<h4>
-✈️ Travel Preparation
-</h4>
-
-<p>
-Final travel preparation stage.
-</p>
-
-</div>
+        </div>
 
 
-</div>
+        <div class="step">
+
+            <h4>
+                📄 Visa Processing
+            </h4>
+
+            <p>
+                Visa processing is the next
+                stage of the application journey.
+            </p>
+
+            <span
+                class="step-badge"
+                style="
+                background:#e2e8f0;
+                color:#475569;
+                ">
+
+                NEXT
+
+            </span>
+
+        </div>
+
+
+        <div class="step">
+
+            <h4>
+                ✈️ Travel Preparation
+            </h4>
+
+            <p>
+                Final travel preparation stage.
+            </p>
+
+        </div>
+
+    </div>
 
 </section>
 
 
-<!-- =====================================================
-     DOCUMENT CHECKLIST
-===================================================== -->
+<!-- =========================
+     CHECKLIST
+========================= -->
 
 <section class="section">
 
-<div class="title">
-📄 Document Checklist
-</div>
+    <div class="title">
+        📄 Document Checklist
+    </div>
 
 
-<div class="document">
+    <div class="document">
 
-<div class="document-left">
+        <div class="document-left">
 
-<div class="check-icon">
-✓
-</div>
+            <div class="check-icon">
+                ✓
+            </div>
 
-<span>
-Passport Information
-</span>
+            <span>
+                Passport Information
+            </span>
 
-</div>
+        </div>
 
-<b class="ready">
-READY
-</b>
+        <b class="ready">
+            READY
+        </b>
 
-</div>
-
-
-<div class="document">
-
-<div class="document-left">
-
-<div class="check-icon">
-✓
-</div>
-
-<span>
-Professional Information
-</span>
-
-</div>
-
-<b class="ready">
-READY
-</b>
-
-</div>
+    </div>
 
 
-<div class="document">
+    <div class="document">
 
-<div class="document-left">
+        <div class="document-left">
 
-<div class="check-icon">
-✓
-</div>
+            <div class="check-icon">
+                ✓
+            </div>
 
-<span>
-Application Information
-</span>
+            <span>
+                Professional Information
+            </span>
 
-</div>
+        </div>
 
-<b class="ready">
-READY
-</b>
+        <b class="ready">
+            READY
+        </b>
 
-</div>
-
-
-<div class="document">
-
-<div class="document-left">
-
-<div class="check-icon">
-✓
-</div>
-
-<span>
-Payment Receipt
-</span>
-
-</div>
-
-<b
-id="checkReceipt"
-class="next-color"
->
-PENDING
-</b>
-
-</div>
+    </div>
 
 
-<div class="document">
+    <div class="document">
 
-<div class="document-left">
+        <div class="document-left">
 
-<div
-class="check-icon"
-style="
-background:#dbeafe;
-color:#2563eb;
-"
->
-→
-</div>
+            <div class="check-icon">
+                ✓
+            </div>
 
-<span>
-Visa Processing
-</span>
+            <span>
+                Application Information
+            </span>
 
-</div>
+        </div>
 
-<b class="next-color">
-NEXT
-</b>
+        <b class="ready">
+            READY
+        </b>
 
-</div>
+    </div>
 
+
+    <div class="document">
+
+        <div class="document-left">
+
+            <div class="check-icon">
+                ✓
+            </div>
+
+            <span>
+                Payment Receipt
+            </span>
+
+        </div>
+
+        <b
+            id="checkReceipt"
+            class="next-color">
+
+            PENDING
+
+        </b>
+
+    </div>
+
+
+    <div class="document">
+
+        <div class="document-left">
+
+            <div
+                class="check-icon"
+                style="
+                background:#dbeafe;
+                color:#2563eb;
+                ">
+
+                →
+
+            </div>
+
+            <span>
+                Visa Processing
+            </span>
+
+        </div>
+
+        <b class="next-color">
+            NEXT
+        </b>
+
+    </div>
 
 </section>
 
 
-<!-- =====================================================
+<!-- =========================
      NOTIFICATIONS
-===================================================== -->
+========================= -->
 
 <section class="section">
 
-<div class="title">
-🔔 Notifications
-</div>
+    <div class="title">
+        🔔 Notifications
+    </div>
 
 
-<div class="notice">
+    <div class="notice">
 
-<div class="notice-icon">
-💳
-</div>
-
-<div>
-
-<strong>
-Payment Update
-</strong>
-
-<p>
-Payment information has been recorded
-in this workflow.
-</p>
-
-<span class="notice-time">
-Just now
-</span>
-
-</div>
-
-</div>
+        <div class="notice-icon">
+            💳
+        </div>
 
 
-<div class="notice">
+        <div>
 
-<div class="notice-icon">
-🧾
-</div>
+            <strong>
+                Payment Update
+            </strong>
 
-<div>
+            <p>
+                Payment information has
+                been recorded in this workflow.
+            </p>
 
-<strong>
-Receipt Upload
-</strong>
+            <span class="notice-time">
+                Just now
+            </span>
 
-<p id="receiptNotification">
-Please upload your payment receipt photo.
-</p>
+        </div>
 
-<span class="notice-time">
-Payment section
-</span>
-
-</div>
-
-</div>
+    </div>
 
 
-<div class="notice">
+    <div class="notice">
 
-<div class="notice-icon">
-✈️
-</div>
+        <div class="notice-icon">
+            🧾
+        </div>
 
-<div>
 
-<strong>
-Travel Processing
-</strong>
+        <div>
 
-<p>
-Visa Processing is displayed as the next stage.
-</p>
+            <strong>
+                Receipt Upload
+            </strong>
 
-<span class="notice-time">
-Application Update
-</span>
+            <p id="receiptNotification">
+                Please upload your
+                payment receipt photo.
+            </p>
 
-</div>
+            <span class="notice-time">
+                Payment section
+            </span>
 
-</div>
+        </div>
 
+    </div>
+
+
+    <div class="notice">
+
+        <div class="notice-icon">
+            ✈️
+        </div>
+
+
+        <div>
+
+            <strong>
+                Travel Processing
+            </strong>
+
+            <p>
+                Visa Processing is displayed
+                as the next stage.
+            </p>
+
+            <span class="notice-time">
+                Application Update
+            </span>
+
+        </div>
+
+    </div>
 
 </section>
 
 
-<!-- =====================================================
+<!-- =========================
      SECURITY
-===================================================== -->
+========================= -->
 
 <section class="section">
 
-<div class="title">
-🛡️ Security & Verification
-</div>
+    <div class="title">
+        🛡️ Security & Verification
+    </div>
 
 
-<div class="security-box">
+    <div class="security-box">
+
+        <div class="security-header">
+
+            <div class="security-icon">
+                🔐
+            </div>
 
 
-<div class="security-header">
+            <div>
 
-<div class="security-icon">
-🔐
-</div>
+                <h2>
+                    Security & Verification
+                </h2>
 
-<div>
+                <p>
+                    Application security status
+                </p>
 
-<h2>
-Security & Verification
-</h2>
+            </div>
 
-<p>
-Application security status
-</p>
-
-</div>
-
-</div>
+        </div>
 
 
-<div class="security-grid">
+        <div class="security-grid">
+
+            <div class="security-item">
+
+                <small>
+                    PROFILE CHECK
+                </small>
+
+                <strong class="verified">
+                    ✓ VERIFIED
+                </strong>
+
+            </div>
 
 
-<div class="security-item">
+            <div class="security-item">
 
-<small>
-PROFILE CHECK
-</small>
+                <small>
+                    DOCUMENT CHECK
+                </small>
 
-<strong class="verified">
-✓ VERIFIED
-</strong>
+                <strong class="verified">
+                    ✓ CHECKED
+                </strong>
 
-</div>
-
-
-<div class="security-item">
-
-<small>
-DOCUMENT CHECK
-</small>
-
-<strong class="verified">
-✓ CHECKED
-</strong>
-
-</div>
+            </div>
 
 
-<div class="security-item">
+            <div class="security-item">
 
-<small>
-DATA STATUS
-</small>
+                <small>
+                    DATA STATUS
+                </small>
 
-<strong>
-🔒 PROTECTED
-</strong>
+                <strong>
+                    🔒 PROTECTED
+                </strong>
 
-</div>
-
-
-<div class="security-item">
-
-<small>
-APPLICATION
-</small>
-
-<strong class="verified">
-✓ ACTIVE
-</strong>
-
-</div>
+            </div>
 
 
-</div>
+            <div class="security-item">
 
-</div>
+                <small>
+                    APPLICATION
+                </small>
+
+                <strong class="verified">
+                    ✓ ACTIVE
+                </strong>
+
+            </div>
+
+        </div>
+
+    </div>
 
 </section>
 
 
-<!-- =====================================================
+<!-- =========================
      SUPPORT
-===================================================== -->
+========================= -->
 
 <section class="section">
 
-<div class="support">
+    <div class="support">
 
-<h3>
-💬 Help & Support
-</h3>
+        <h3>
+            💬 Help & Support
+        </h3>
 
-<p>
-Need assistance? Use the support center.
-</p>
+        <p>
+            Need assistance?
+            Use the support center.
+        </p>
 
-<button onclick="support()">
-Contact Support
-</button>
+        <button onclick="support()">
+            Contact Support
+        </button>
 
-</div>
+    </div>
 
 </section>
 
 
-<!-- =====================================================
+<!-- =========================
      WARNING
-===================================================== -->
+========================= -->
 
 <section class="section">
 
-<div class="warning">
+    <div class="warning">
 
-<strong>
-DEMO / TESTING INTERFACE
-</strong>
+        <strong>
+            DEMO / TESTING INTERFACE
+        </strong>
 
-<br>
+        <br>
 
-This interface is not an official government service.
+        This interface is not an
+        official government service.
 
-</div>
+    </div>
 
 </section>
 
@@ -2359,33 +2441,32 @@ This interface is not an official government service.
 </div>
 
 
-<!-- =====================================================
+<!-- =========================
      FOOTER
-===================================================== -->
+========================= -->
 
 <footer>
 
-<h2>
-🌍 Travel & Skills Dashboard
-</h2>
+    <h2>
+        🌍 Travel & Skills Dashboard
+    </h2>
 
-<p>
-Modern Travel • Skills • Employment Application
-</p>
+    <p>
+        Modern Travel • Skills • Employment Application
+    </p>
 
-<p>
-© 2026 Interface
-</p>
+    <p>
+        © 2026 Interface
+    </p>
 
 </footer>
 
 
 <script>
 
-
-/* =====================================================
+/* =====================================
    CLOCK
-===================================================== */
+===================================== */
 
 function updateClock(){
 
@@ -2404,15 +2485,12 @@ function updateClock(){
 
 updateClock();
 
-setInterval(
-    updateClock,
-    1000
-);
+setInterval(updateClock,1000);
 
 
-/* =====================================================
-   USER DATA
-===================================================== */
+/* =====================================
+   TEXT HELPER
+===================================== */
 
 function setText(id,value){
 
@@ -2434,8 +2512,11 @@ function setText(id,value){
 }
 
 
-let user = {};
+/* =====================================
+   LOAD USER
+===================================== */
 
+let user = {};
 
 try{
 
@@ -2447,71 +2528,28 @@ try{
 }catch(error){
 
     console.error(
-        "Unable to read user data:",
+        "User data error:",
         error
     );
 
 }
 
 
-/* =====================================================
+/* =====================================
    USER INFORMATION
-===================================================== */
+===================================== */
 
-setText(
-    "name",
-    user.name
-);
-
-setText(
-    "gender",
-    user.gender
-);
-
-setText(
-    "age",
-    user.age
-);
-
-setText(
-    "dob",
-    user.dob
-);
-
-setText(
-    "applicationId",
-    user.elmis
-);
-
-setText(
-    "passport",
-    user.passport
-);
-
-setText(
-    "phone",
-    user.phone
-);
-
-setText(
-    "birth",
-    user.birth
-);
-
-setText(
-    "country",
-    user.country
-);
-
-setText(
-    "skill",
-    user.skill
-);
-
-setText(
-    "visa",
-    user.visa
-);
+setText("name",user.name);
+setText("gender",user.gender);
+setText("age",user.age);
+setText("dob",user.dob);
+setText("applicationId",user.elmis);
+setText("passport",user.passport);
+setText("phone",user.phone);
+setText("birth",user.birth);
+setText("country",user.country);
+setText("skill",user.skill);
+setText("visa",user.visa);
 
 
 if(user.country){
@@ -2524,14 +2562,34 @@ if(user.country){
 }
 
 
-/* =====================================================
+/* =====================================
    PROFILE PHOTO
-===================================================== */
+===================================== */
 
-if(user.photo){
+const profilePhoto =
+    document.getElementById("photo");
 
-    const profilePhoto =
-        document.getElementById("photo");
+
+if(
+    user.photo &&
+    String(user.photo).trim() !== ""
+){
+
+    profilePhoto.onload = function(){
+
+        profilePhoto.style.display =
+            "block";
+
+    };
+
+
+    profilePhoto.onerror = function(){
+
+        profilePhoto.style.display =
+            "none";
+
+    };
+
 
     profilePhoto.src =
         String(user.photo).trim();
@@ -2539,9 +2597,9 @@ if(user.photo){
 }
 
 
-/* =====================================================
-   PAYMENT
-===================================================== */
+/* =====================================
+   PAYMENT REFERENCE
+===================================== */
 
 let ref =
     localStorage.getItem(
@@ -2555,7 +2613,7 @@ if(!ref){
         "DEMO-" +
         Math.floor(
             100000 +
-            Math.random() * 900000
+            Math.random()*900000
         );
 
     localStorage.setItem(
@@ -2571,6 +2629,10 @@ setText(
     ref
 );
 
+
+/* =====================================
+   PAYMENT DATE
+===================================== */
 
 let pdate =
     localStorage.getItem(
@@ -2597,21 +2659,17 @@ setText(
 );
 
 
-/* =====================================================
+/* =====================================
    DOCUMENT PHOTO
    PHOTO ONLY
-===================================================== */
+===================================== */
 
 const documentImage =
-    document.getElementById(
-        "document"
-    );
+    document.getElementById("document");
 
 
 const documentEmpty =
-    document.getElementById(
-        "documentEmpty"
-    );
+    document.getElementById("documentEmpty");
 
 
 function showDocument(src){
@@ -2626,6 +2684,10 @@ function showDocument(src){
 
         documentImage.style.display =
             "none";
+
+        documentImage.removeAttribute(
+            "src"
+        );
 
         documentEmpty.style.display =
             "flex";
@@ -2653,45 +2715,72 @@ function showDocument(src){
             documentImage.style.display =
                 "none";
 
+            documentImage.removeAttribute(
+                "src"
+            );
+
             documentEmpty.style.display =
                 "flex";
 
         };
 
 
-    documentImage.src =
-        src;
+    documentImage.src = src;
 
 }
 
 
-/* =====================================================
-   LOAD DOCUMENT DIRECTLY FROM USER DATA
-===================================================== */
+/* =====================================
+   LOAD DOCUMENT
+===================================== */
 
 function loadDocument(){
 
-    if(
-        user.doc &&
-        String(user.doc).trim() !== ""
-    ){
+    let doc = "";
 
-        showDocument(
-            String(user.doc).trim()
+    try{
+
+        /*
+         Priority:
+         1. user.doc
+         2. localStorage.documentPhoto
+        */
+
+        if(
+            user.doc &&
+            String(user.doc).trim() !== ""
+        ){
+
+            doc =
+                String(user.doc).trim();
+
+        }else{
+
+            doc =
+                localStorage.getItem(
+                    "documentPhoto"
+                ) || "";
+
+        }
+
+    }catch(error){
+
+        console.error(
+            "Document load error:",
+            error
         );
 
-    }else{
-
-        showDocument("");
-
     }
+
+
+    showDocument(doc);
 
 }
 
 
-/* =====================================================
-   RECEIPT
-===================================================== */
+/* =====================================
+   RECEIPT ELEMENTS
+===================================== */
 
 const receiptUpload =
     document.getElementById(
@@ -2716,6 +2805,10 @@ const receiptStatus =
         "receiptStatus"
     );
 
+
+/* =====================================
+   SHOW RECEIPT
+===================================== */
 
 function showReceipt(src){
 
@@ -2753,18 +2846,21 @@ function showReceipt(src){
             );
 
 
-        check.innerText =
-            "PENDING";
+        if(check){
 
-        check.className =
-            "next-color";
+            check.innerText =
+                "PENDING";
+
+            check.className =
+                "next-color";
+
+        }
 
 
         setText(
             "receiptNotification",
             "Please upload your payment receipt photo."
         );
-
 
         return;
 
@@ -2799,11 +2895,15 @@ function showReceipt(src){
                 );
 
 
-            check.innerText =
-                "UPLOADED";
+            if(check){
 
-            check.className =
-                "ready";
+                check.innerText =
+                    "UPLOADED";
+
+                check.className =
+                    "ready";
+
+            }
 
 
             setText(
@@ -2842,9 +2942,9 @@ function showReceipt(src){
 }
 
 
-/* =====================================================
+/* =====================================
    RECEIPT UPLOAD
-===================================================== */
+===================================== */
 
 receiptUpload.addEventListener(
     "change",
@@ -2881,13 +2981,16 @@ receiptUpload.addEventListener(
                 "Please select JPG, PNG or WEBP image."
             );
 
-            this.value =
-                "";
+            this.value = "";
 
             return;
 
         }
 
+
+        /*
+         Maximum 15 MB
+        */
 
         if(
             file.size >
@@ -2898,8 +3001,7 @@ receiptUpload.addEventListener(
                 "Image is too large. Maximum size is 15MB."
             );
 
-            this.value =
-                "";
+            this.value = "";
 
             return;
 
@@ -2917,15 +3019,8 @@ receiptUpload.addEventListener(
                     event.target.result;
 
 
-                showReceipt(
-                    data
-                );
+                showReceipt(data);
 
-
-                /*
-                   Save receipt locally
-                   so it remains after refresh.
-                */
 
                 try{
 
@@ -2939,6 +3034,10 @@ receiptUpload.addEventListener(
                     console.error(
                         "Receipt save error:",
                         error
+                    );
+
+                    alert(
+                        "Receipt is too large for browser storage."
                     );
 
                 }
@@ -2956,17 +3055,15 @@ receiptUpload.addEventListener(
             };
 
 
-        reader.readAsDataURL(
-            file
-        );
+        reader.readAsDataURL(file);
 
     }
 );
 
 
-/* =====================================================
+/* =====================================
    LOAD RECEIPT
-===================================================== */
+===================================== */
 
 function loadReceipt(){
 
@@ -2982,7 +3079,6 @@ function loadReceipt(){
             saved || ""
         );
 
-
     }catch(error){
 
         console.error(
@@ -2997,9 +3093,9 @@ function loadReceipt(){
 }
 
 
-/* =====================================================
+/* =====================================
    VIEW RECEIPT
-===================================================== */
+===================================== */
 
 function viewReceipt(){
 
@@ -3011,8 +3107,7 @@ function viewReceipt(){
 
     if(
         !src ||
-        receiptImage.style.display ===
-        "none"
+        receiptImage.style.display === "none"
     ){
 
         alert(
@@ -3042,10 +3137,8 @@ function viewReceipt(){
     }
 
 
-    newWindow.document.open();
-
-
     newWindow.document.write(`
+
 <!DOCTYPE html>
 
 <html>
@@ -3059,36 +3152,54 @@ name="viewport"
 content="width=device-width,initial-scale=1.0"
 >
 
-<title>Payment Receipt</title>
+<title>
+Payment Receipt
+</title>
+
 
 <style>
 
 html,
 body{
+
     margin:0;
     padding:0;
-    background:#111;
+
     width:100%;
     min-height:100%;
+
+    background:#111;
+
 }
+
 
 body{
+
     display:flex;
+
     justify-content:center;
+
     align-items:center;
+
 }
 
+
 img{
+
     max-width:100%;
     max-height:100vh;
+
     width:auto;
     height:auto;
+
     object-fit:contain;
+
 }
 
 </style>
 
 </head>
+
 
 <body>
 
@@ -3100,6 +3211,7 @@ alt="Payment Receipt"
 </body>
 
 </html>
+
     `);
 
 
@@ -3108,9 +3220,9 @@ alt="Payment Receipt"
 }
 
 
-/* =====================================================
+/* =====================================
    REMOVE RECEIPT
-===================================================== */
+===================================== */
 
 function removeReceipt(){
 
@@ -3134,24 +3246,23 @@ function removeReceipt(){
     }catch(error){
 
         console.error(
-            "Receipt delete error:",
+            "Receipt remove error:",
             error
         );
 
     }
 
 
-    receiptUpload.value =
-        "";
+    receiptUpload.value = "";
 
     showReceipt("");
 
 }
 
 
-/* =====================================================
+/* =====================================
    PRINT
-===================================================== */
+===================================== */
 
 function printReceipt(){
 
@@ -3160,40 +3271,32 @@ function printReceipt(){
 }
 
 
-/* =====================================================
+/* =====================================
    SUPPORT
-===================================================== */
+===================================== */
 
 function support(){
 
     alert(
+
 `DEMO SUPPORT CENTER
 
 This is a sample support interface.`
+
     );
 
 }
 
 
-/* =====================================================
-   START
-===================================================== */
+/* =====================================
+   START APPLICATION
+===================================== */
 
 window.addEventListener(
     "DOMContentLoaded",
     function(){
 
-        /*
-           Load profile document
-           directly from user.doc
-        */
-
         loadDocument();
-
-
-        /*
-           Load saved receipt
-        */
 
         loadReceipt();
 
@@ -3204,4 +3307,5 @@ window.addEventListener(
 
 
 </body>
+
 </html>
