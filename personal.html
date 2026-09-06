@@ -66,7 +66,7 @@ header{
     border-radius:30px;
     text-align:center;
     color:#fff;
-    background:
+    background:#fff;
         linear-gradient(
             135deg,
             #071426,
@@ -77,9 +77,29 @@ header{
         0 25px 55px #0f172a2e;
 }
 
-header .icon{
-    font-size:42px;
+
+/* =========================
+   HEADER LOGO
+========================= */
+
+header .logo{
+    width:150px;
+    height:auto;
+    max-height:150px;
+    object-fit:contain;
+    object-position:center;
+    display:block;
+    margin:0 auto 14px;
+    background:transparent;
+    border:none;
+    border-radius:0;
+    box-shadow:none;
 }
+
+
+/* =========================
+   HEADER TEXT
+========================= */
 
 header h1{
     font-size:25px;
@@ -119,7 +139,7 @@ header p{
 }
 
 .nav a.primary{
-    background:#2563eb;
+    background:#fff;
     color:#fff;
 }
 
@@ -205,7 +225,7 @@ td{
 .status,
 .receipt-paid{
     display:inline-block;
-    background:#16a34a;
+    background:#fff;
     color:#fff;
     padding:7px 13px;
     border-radius:20px;
@@ -239,7 +259,7 @@ td{
     padding:22px;
     border-radius:23px;
     color:#fff;
-    background:
+    background:#fff;
         linear-gradient(
             135deg,
             #071426,
@@ -878,6 +898,16 @@ footer p{
         padding:28px 16px;
     }
 
+    header .logo{
+        width:125px;
+        height:auto;
+        max-height:125px;
+        object-fit:contain;
+        border-radius:0;
+        border:none;
+        box-shadow:none;
+    }
+
     header h1{
         font-size:22px;
     }
@@ -934,6 +964,16 @@ footer p{
     .profile-photo{
         width:130px;
         height:160px;
+    }
+
+    header .logo{
+        width:110px;
+        height:auto;
+        max-height:110px;
+        object-fit:contain;
+        border-radius:0;
+        border:none;
+        box-shadow:none;
     }
 
     .travel-header h2,
@@ -1001,7 +1041,10 @@ footer p{
 
 <header>
 
-    <div class="icon">🌍</div>
+    <img
+        class="logo"
+        src="https://res.cloudinary.com/dwclusteb/image/upload/v1788726885/images_4_xj5wfm.jpg"   alt="Travel & Skills Logo"
+    >
 
     <h1>
         Travel & Skills Dashboard
@@ -1179,6 +1222,7 @@ footer p{
     </table>
 
 </section>
+
 
 <section class="section">
 
@@ -1447,7 +1491,7 @@ footer p{
             ይህ ክፍል የሙያ፣ የክህሎት፣
             የስራ እድል እና የውጭ ስራ
             መረጃዎችን ለማሳየት የተዘጋጀ
-             ነው።
+            ነው።
 
         </div>
 
