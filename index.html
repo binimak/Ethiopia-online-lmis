@@ -2660,7 +2660,2824 @@ doc: " https://res.cloudinary.com/dwclusteb/image/upload/v1783979388/Screenshot_
     visa: "ስራ ቪዛ",
     country: "ካናዳ 🇨🇦",
     photo: "https://res.cloudinary.com/dwclusteb/image/upload/v1788881995/IMG-20260906-WA0031_nuq8ab.jpg ",
+    doc: " 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ministry Platform</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+body{
+  margin:0;
+  font-family:'Poppins',sans-serif;
+
+  background:
+  linear-gradient(
+  135deg,
+  #e0ecff,
+  #f8fbff,
+  #dbeafe);
+
+  color:#0f172a;
+
+  overflow-x:hidden;
+  line-height:1.7;
+}
+
+/* SMOOTH */
+html{
+  scroll-behavior:smooth;
+}
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+:root{
+  --primary:#2563eb;
+  --secondary:#1d4ed8;
+  --dark:#0f172a;
+  --white:#fff;
+
+  --glass:
+  rgba(255,255,255,0.55);
+
+  --shadow:
+  0 20px 60px rgba(37,99,235,.12);
+
+  --radius:30px;
+}
+/* HEADER */
+.header{
+  position:sticky;
+  top:0;
+  z-index:999;
+
+  height:85px;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  background:rgba(255,255,255,.45);
+
+  backdrop-filter:blur(20px);
+
+  border-bottom:
+  1px solid rgba(255,255,255,.35);
+
+  box-shadow:
+  0 8px 30px rgba(0,0,0,.04);
+}
+
+.header img{
+  width:95px;
+  transition:.4s ease;
+}
+.header img:hover{
+    transform: scale(1.08) rotate(2deg);
+}
+/* WELCOME */
+.news-section{
+padding:5px;
+}
+.section{
+  width:92%;
+  margin:30px auto;
+  padding:35px;
+
+  background:rgba(255,255,255,0.8);
+
+  backdrop-filter:blur(12px);
+
+  border:1px solid rgba(255,255,255,0.6);
+
+  border-radius:32px;
+
+  box-shadow:var(--shadow);
+}
+
+.section h2{
+  font-size:30px;
+  margin-bottom:18px;
+  color:var(--primary);
+  font-weight:700;
+}
+
+.section p{
+  color:#475569;
+  font-size:15px;
+  line-height:2;
+}
+ 
+ select{
+width:100%;
+padding:14px;
+margin:10px 0;
+border-radius:12px;
+border:1px solid #e2e8f0;
+background:#f8fafc;
+}
+/* MINISTERS (VERTICAL) */
+.ministers{
+display:flex;
+flex-direction:column;
+gap:20px;
+padding:20px;
+}
+
+.card{
+  position: relative;
+    width:92%;
+    margin:20px auto;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 10px 25px rgba(0,0,0,.12);
+}
+.card:hover{
+  transform:translateY(-8px);
+  box-shadow:
+  0 25px 60px rgba(37,99,235,0.18);
+}
+.card img{
+    width:100%;
+    height:140px;
+    object-fit:cover;
+    display:block;
+}
+.card:hover img{
+  transform:scale(1.1);
+}
+
+.card::before{
+  content:"";
+  position:absolute;
+  inset:0;
+
+  background:
+  linear-gradient(
+  to top,
+  rgba(0,0,0,0.78),
+  rgba(0,0,0,0.15),
+  transparent);
+
+  z-index:1;
+}
+
+.card h2,
+.card p{
+  position:absolute;
+  left:24px;
+  right:24px;
+  color:white;
+  z-index:2;
+}
+.card,
+.news-card,
+.slider{
+cursor:pointer;
+}
+.card h2{
+  bottom:65px;
+  font-size:34px;
+  font-weight:700;
+  line-height:1.3;
+}
+
+.card p{
+  bottom:20px;
+  font-size:15px;
+  opacity:.95;
+  padding:0;
+  background:none;
+}
+.register-btn{
+display:block;
+width:90%;
+margin:20px auto;
+padding:15px;
+text-align:center;
+background:#2563eb;
+color:white;
+border-radius:15px;
+font-weight:bold;
+text-decoration:none;
+}
+.login-section{
+background:white;
+margin:20px;
+padding:20px;
+border-radius:20px;
+box-shadow:0 10px 30px rgba(0,0,0,0.1);
+text-align:center;
+}
+
+.login-section input{
+width:100%;
+padding:14px;
+border-radius:10px;
+border:1px solid #ccc;
+margin-top:10px;
+}
+.contact-box{
+  margin-top:28px;
+
+  padding:22px;
+
+  border-radius:24px;
+
+  background:
+  linear-gradient(
+  135deg,
+  #0f172a,
+  #1e3a8a);
+
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:15px;
+
+  color:white;
+}
+
+.contact-btn{
+  background:white;
+  color:#0f172a;
+
+  padding:12px 18px;
+
+  border-radius:16px;
+
+  text-decoration:none;
+
+  font-weight:700;
+
+  transition:.3s;
+}
+
+.contact-btn:hover{
+  transform:scale(1.05);
+}
+.login-section button{
+width:100%;
+margin-top:15px;
+padding:14px;
+background:#2563eb;
+color:white;
+border:none;
+border-radius:10px;
+font-weight:bold;
+}
+.card img{
+width:100%;
+height:200px;
+object-fit:cover;
+ transition:0.4s;
+display:block;
+}
+/* IMAGE OVERLAY */
+.card .overlay{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:linear-gradient(to top, rgba(0,0,0,0.6), transparent);
+}
+.card p{
+position:absolute;
+bottom:0;
+left:0;
+width:100%;
+background:rgba(0,0,0,0.5);
+color:white;
+padding:10px;
+}
+/* FORM */
+.form-box{
+background:white;
+margin:20px;
+padding:20px;
+border-radius:25px;
+box-shadow:0 15px 40px rgba(0,0,0,0.1);
+}
+
+.form-box h2{
+text-align:center;
+margin-bottom:15px;
+}
+
+input{
+width:100%;
+padding:14px;
+margin:10px 0;
+border-radius:12px;
+border:1px solid #e2e8f0;
+font-size:14px;
+ background:#f8fafc;
+}
+
+
+/* FILE UPLOAD (VERTICAL) */
+.file-grid{
+display:flex;
+flex-direction:column;
+gap:12px;
+margin-top:10px;
+}
+
+.file-box{
+border:2px dashed #cbd5e1;
+border-radius:15px;
+padding:18px;
+text-align:center;
+cursor:pointer;
+background:#f8fafc;
+transition:0.3s;
+font-weight:500;
+}
+
+.file-box:hover{
+border-color:#2563eb;
+background:#e0ecff;
+}
+
+.file-box.active{
+border-color:#0d47a1;
+background:#e0ecff;
+}
+.file-box input{
+display:none;
+}
+
+.file-box img{
+width:100%;
+height:220px;
+object-fit:cover;
+border-radius:10px;
+margin-top:10px;
+ display:none;
+}
+
+/* BUTTON */
+button{
+width:100%;
+padding:15px;
+background:linear-gradient(90deg,#0d47a1,#2563eb);
+color:white;
+border:none;
+border-radius:12px;
+font-size:16px;
+margin-top:15px;
+font-weight:bold;
+}
+.register-btn{
+  border:none;
+  outline:none;
+  cursor:pointer;
+  transition:0.3s;
+}
+.register-btn{
+  width:92%;
+  margin:30px auto;
+  display:block;
+  text-align:center;
+  padding:18px;
+  border-radius:18px;
+  background:linear-gradient(135deg,
+  var(--primary),
+  var(--secondary));
+  color:white;
+  text-decoration:none;
+  font-weight:700;
+  font-size:17px;
+  box-shadow:0 10px 30px rgba(37,99,235,0.35);
+}
+.register-btn:hover{
+  transform:translateY(-3px);
+}
+button:hover{
+background:#1e40af;
+}
+
+/* TOAST */
+#toast{
+display:none;
+position:fixed;
+bottom:20px;
+right:20px;
+background:#16a34a;
+color:white;
+padding:15px;
+border-radius:12px;
+box-shadow:0 5px 20px rgba(0,0,0,0.3);
+}
+
+.news-card{
+    width:92%;
+    margin:20px auto;
+    border-radius:20px;
+    overflow:hidden;
+    position:relative;
+    background:#fff;
+    box-shadow:0 10px 25px rgba(0,0,0,.12);
+}
+
+
+.news-card:hover{
+  transform:translateY(-5px);
+}
+
+.news-card img{
+    width:100%;
+    height:260px;
+    object-fit:cover;
+    display:block;
+}
+
+.news-card:hover img{
+  transform:scale(1.1);
+}
+
+.news-card::before{
+  content:"";
+  position:absolute;
+  inset:0;
+
+  background:
+  linear-gradient(
+  to top,
+  rgba(0,0,0,0.82),
+  rgba(0,0,0,0.15),
+  transparent);
+
+  z-index:1;
+}
+
+.news-text{
+    position:absolute;
+    left:20px;
+    right:20px;
+    bottom:55px;
+    color:#fff;
+    font-size:18px;
+    font-weight:600;
+    z-index:2;
+}
+
+
+.news-date{
+    position:absolute;
+    left:0;
+    right:0;
+    bottom:0;
+    padding:12px;
+    background:#0f172a;
+    color:#fff;
+    text-align:center;
+    font-size:14px;
+    z-index:2;
+}
+/* FOOTER */
+.footer{
+  margin-top:60px;
+
+  background:
+  linear-gradient(
+  135deg,
+  #0f172a,
+  #1e3a8a);
+
+  color:white;
+
+  padding:50px 25px;
+
+  border-radius:30px 30px 0 0;
+}
+
+.footer-logo{
+  width:95px;
+  display:block;
+  margin:auto;
+}
+
+.about{
+  text-align:center;
+
+  margin-top:18px;
+
+  color:#dbeafe;
+
+  line-height:1.9;
+}
+
+.footer-grid{
+  margin-top:35px;
+
+  display:grid;
+  gap:28px;
+}
+
+.footer h2,
+.footer h3{
+  margin-bottom:14px;
+}
+
+.footer p{
+  color:#dbeafe;
+  margin:7px 0;
+}
+
+.social{
+  margin-top:28px;
+  text-align:center;
+}
+
+.social a{
+  display:inline-flex;
+  justify-content:center;
+  align-items:center;
+
+  width:48px;
+  height:48px;
+
+  margin:0 7px;
+
+  border-radius:50%;
+
+  background:
+  rgba(255,255,255,0.1);
+
+  color:white;
+
+  text-decoration:none;
+
+  font-size:20px;
+
+  transition:.3s;
+}
+
+.social a:hover{
+  background:white;
+  color:#1d4ed8;
+  transform:translateY(-4px);
+}
+
+.footer-bottom{
+  margin-top:35px;
+
+  padding-top:20px;
+
+  border-top:
+  1px solid rgba(255,255,255,0.12);
+
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+
+  flex-wrap:wrap;
+  gap:10px;
+}
+
+.footer-bottom button{
+  background:white;
+  color:#1d4ed8;
+
+  padding:10px 18px;
+
+  border-radius:14px;
+
+  font-weight:700;
+}
+
+.lang-btn{
+  background:white;
+  color:#0d47a1;
+  padding:5px 12px;
+  border-radius:15px;
+  font-weight:bold;
+}
+ #success{
+display:none;
+text-align:center;
+background:#dcfce7;
+padding:20px;
+border-radius:15px;
+margin-top:15px;
+color:#166534;
+font-weight:bold;
+}
+#successModal{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.85);
+z-index:999;
+justify-content:center;
+align-items:center;
+}
+
+.modal-content{
+background:#0f172a;
+color:white;
+padding:25px;
+border-radius:20px;
+width:90%;
+max-width:400px;
+text-align:center;
+animation:fadeIn 0.4s ease;
+}
+
+.modal-content h2{
+color:#facc15;
+margin-bottom:10px;
+}
+
+.modal-content p{
+font-size:14px;
+line-height:1.5;
+color:#e2e8f0;
+}
+
+.modal-content ul{
+text-align:left;
+margin-top:15px;
+}
+
+.modal-content li{
+margin:8px 0;
+}
+
+.modal-content button{
+margin-top:20px;
+width:100%;
+padding:12px;
+background:#facc15;
+border:none;
+border-radius:12px;
+font-weight:bold;
+}
+*{
+box-sizing:border-box;
+}
+@keyframes fadeIn{
+from{transform:scale(0.7); opacity:0;}
+to{transform:scale(1); opacity:1;}
+}
+/* SLIDER CARD */
+.slider{
+  width:92%;
+  height:260px;
+
+  cursor:pointer;
+  margin:30px auto;
+
+  border-radius:32px;
+  overflow:hidden;
+
+  position:relative;
+
+  box-shadow:
+  0 20px 60px rgba(0,0,0,0.18);
+}
+
+.slider img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:1s;
+}
+
+.slider:hover img{
+  transform:scale(1.08);
+}
+
+.slider::after{
+  content:"";
+  position:absolute;
+  inset:0;
+
+  background:
+  linear-gradient(
+  120deg,
+  rgba(29,78,216,0.92),
+  rgba(15,23,42,0.55));
+}
+
+.slide-text{
+  position:absolute;
+  left:28px;
+  bottom:28px;
+  z-index:3;
+  color:white;
+}
+
+.slide-text h2{
+  font-size:34px;
+  font-weight:700;
+  margin-bottom:5px;
+}
+
+.slide-text p{
+  opacity:.92;
+}
+
+.slide-text h3{
+  margin-top:10px;
+  font-size:17px;
+  font-weight:500;
+}
+
+.slide-text button{
+  margin-top:16px;
+
+  padding:13px 24px;
+
+  border:none;
+  border-radius:16px;
+
+  background:white;
+  color:var(--primary);
+
+  font-weight:700;
+
+  cursor:pointer;
+
+  transition:.3s;
+}
+
+.slide-text button:hover{
+  transform:translateY(-3px);
+  background:#eff6ff;
+}
+.lang-switch{
+  position:absolute;
+  top:10px;
+  right:10px;
+}
+body[dir="rtl"]{
+  text-align:right;
+}
+
+body[dir="rtl"] .footer-bottom{
+  flex-direction:row-reverse;
+}
+ .lang-switch button{
+  border:none;
+  padding:6px 10px;
+  margin-left:4px;
+  border-radius:8px;
+  background:#e2e8f0;
+  cursor:pointer;
+  font-weight:bold;
+}
+
+.lang-switch button:hover{
+  background:#2563eb;
+  color:white;
+}
+.lang-switch button{
+  border:none;
+  padding:5px 8px;
+  margin-left:4px;
+  border-radius:8px;
+  background:#e2e8f0;
+  cursor:pointer;
+}
+.login-section{
+  width:92%;
+  margin:35px auto;
+
+  padding:35px;
+
+  border-radius:32px;
+
+  background:rgba(255,255,255,0.85);
+
+  backdrop-filter:blur(16px);
+
+  box-shadow:var(--shadow);
+
+  text-align:center;
+}
+
+.login-section h2{
+  color:var(--primary);
+  margin-bottom:10px;
+  font-size:28px;
+}
+
+.login-section p{
+  color:var(--muted);
+}
+
+.login-section input{
+  width:100%;
+
+  margin-top:16px;
+
+  padding:17px;
+
+  border-radius:18px;
+
+  border:1px solid var(--border);
+
+  background:#f8fbff;
+
+  font-size:15px;
+
+  transition:.3s;
+}
+
+.login-section input:focus{
+  border-color:#2563eb;
+  background:white;
+  outline:none;
+
+  box-shadow:
+  0 0 0 5px rgba(37,99,235,0.08);
+}
+
+.login-section button{
+  width:100%;
+  margin-top:20px;
+
+  padding:17px;
+
+  border-radius:18px;
+
+  background:
+  linear-gradient(
+  135deg,
+  #1d4ed8,
+  #2563eb);
+
+  color:white;
+
+  font-size:16px;
+  font-weight:700;
+}
+
+.login-section button:hover{
+  transform:translateY(-2px);
+}
+
+.faq-section{
+  margin-top:28px;
+}
+
+.faq-item{
+  margin-top:16px;
+}
+
+.faq-btn{
+  width:100%;
+
+  padding:17px;
+
+  border:none;
+
+  border-radius:18px;
+
+  background:#eff6ff;
+
+  color:#0f172a;
+
+  font-size:15px;
+  font-weight:600;
+
+  text-align:left;
+}
+
+.faq-content{
+  margin-top:10px;
+
+  padding:18px;
+
+  border-radius:18px;
+
+  background:white;
+
+  box-shadow:
+  0 8px 20px rgba(0,0,0,0.05);
+
+  display:none;
+}
+
+ </style>
+</head>
+
+<body>
+
+<div class="header">
+<img src="https://res.cloudinary.com/dwclusteb/image/upload/v1777200343/images_1_hqmsxb.png">
+</div>
+ <div class="card">
+    <img src="https://res.cloudinary.com/dwclusteb/image/upload/v1787217907/images_3_osman9.jpg ">
+    <h2> </h2>
+ </div>
+  
+
+<!-- TEXT -->
+<div class="section">
+<h2> </h2>
+<p>  የሥራና ክህሎት ሚኒስቴር ሀገራዊ ሪፎርሙን ተከትሎ የፌዴራል መንግሥት አስፈፃሚ አካላትን ሥልጣንና ተግባር ለመወሰን በወጣው አዋጅ ቁጥር 1263/2014 ተቋቋመ፡፡ </p>
+</div>
+<!-- SLIDER -->
+<div class="slider">
+ <img src="https://res.cloudinary.com/dwclusteb/image/upload/v1787218109/6-2_mzejsy.jpg">
+
+  <div class="slide-text">
+    <h2>Minister of Labor and Skills</h2>
+    <p>H.E Muferihat Kamil Ahmed</p>
+
+    <h3>የውጭ ሀገር ሥራና ሠራተኛ አገናኝ ኤጀንሲ</h3>
+
+    <button type="button">
+      READ MORE
+    </button>
+
+  </div>
+</div>
+<div class="ministers">
+
+  <div class="card">
+    <img src="https://res.cloudinary.com/dwclusteb/image/upload/v1787214237/776627616_2043039920418285_2621337726937222737_n_cj5scg.jpg">
+    <p>ሪፎርምን ወደ ዘላቂ ተቋማዊ ለውጥ ማሸጋገር </p>
+  </div>
+ <h2> </h2>
+
+ <div class="card">
+    <img src="https://res.cloudinary.com/dwclusteb/image/upload/v1787214895/772883587_854993680914859_6547810437390485284_n-1536x1024_bd2bmm.jpg">
+   <p>የሥራና ክህሎት ሚኒስቴር የ2018 በጀት ዓመት የአሠሪና ሠራተኛ ዘርፍ</p>
+ </div>
+ 
+ <div class="news-section">
+
+  <div class="news-card">
+    <img src="https://res.cloudinary.com/dwclusteb/image/upload/v1787215271/772860735_1076462321391868_3232699150878125636_n-1_ruta9g.jpg ">
+
+    <div class="news-text">
+      ስለ ስራ ገበያ ዘርፍ አስፈላጊ ውይይት ተካሄደ
+    </div>  
+   <div class="news-date">
+      APRIL 2, 2026
+    </div>
+  </div>
+  <h2>  </h2>
+  
+  <div class="news-card">
+    <img src="https://res.cloudinary.com/dwclusteb/image/upload/v1787217687/photo_2026-08-09_15-44-29-1_wmids0.jpg">
+    <div class="news-text">
+     ክብርት ወ/ሮ ሙፈሪሃት ካሚል የሥራና ክህሎት ሚኒስትር
+    </div>
+
+    <div class="news-date">
+      APRIL 5, 2026
+    </div>
+  </div>
+
+  
+    </div>
+</div>
+<a href="index.html" class="register-btn">Register here</a>
+
+<section class="login-section">
+
+<h2>Enter Your 6-Digit Code</h2>
+<p class="am">ኮድ አስገባ</p>
+
+<input type="number" id="code" placeholder="Enter 6-digit number">
+
+<button onclick="checkCode()">Submit</button>
+
+<p id="msg"></p>
+
+<div class="contact-box">
+
+<div class="left">
+<h3>The Ministry<br>of Labor & Skills</h3>
+</div>
+
+<div class="right">
+<a href="https://api.whatsapp.com/send?phone=251116671792&text=Hello%20I%20need%20help" 
+   class="contact-btn" target="_blank">
+  WhatsApp
+</a>
+</div>
+
+</div>
+
+</section>
+
+<footer class="footer">
+
+<div class="footer-container">
+
+<img src="https://res.cloudinary.com/dwclusteb/image/upload/v1784188519/photo_3_2025-11-26_21-51-36_si3kam.jpg" class="footer-logo">
+
+<p class="about">
+The Ministry of Labour and Skills was established following the National Reform.
+The Ministry of Labour and Skills was founded with Proclamation No. 1263/2022,
+which oversees national job creation, skills development, and labor concerns.
+</p>
+
+<div class="footer-grid">
+
+<div>
+
+   <div class="faq-section">
+
+  <h2>❓ Frequently Asked Questions</h2>
+
+  <div class="faq-item">
+    <button class="faq-btn">ወደ ውጭ ሀገር ለመሄድ ምን ያስፈልጋል?</button>
+    <div class="faq-content">
+      <p>ፓስፖርት፣ ቪዛ፣ የህክምና ምርመራ እና ህጋዊ ኤጀንሲ መጠቀም ያስፈልጋል።</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-btn">ህገወጥ ደላሎች አደገኛ ናቸው?</button>
+    <div class="faq-content">
+      <p>አዎ፣ ለህይወት አደጋ እና ህጋዊ ችግር ያመጣሉ። ህጋዊ መንገድ ብቻ ተጠቀም።</p>
+    </div> 
+  </div>
+<h2>Get In Touch</h2>
+
+<p>Tel no: +251 978744462</p>
+<p>Po Box: 25534</p>
+<p>Fax: +251 116 671568</p>
+<p>Address: Behind Lambert Ethiopian Technical and Vocational Institute</p>
+<p>Email: info@MoLS.gov.et</p>
+
+</div>
+
+<div>
+
+<h2>Menu</h2>
+
+<p>Privacy Policy</p>
+<p>Copyright</p>
+
+</div>
+
+</div>
+
+<div class="social">
+
+<a href="#">📘</a>
+<a href="#">🐦</a>
+<a href="#">▶</a>
+</div>
+<h3>Contact Us</h3>
+<p>Tel: +251 962513636</p>
+<p>Email: info@mols.gov.et</p>
+
+<div class="footer-bottom">
+<p>© 2025 All rights reserved</p>
+<button class="lang">🇺🇸 EN</button>
+</div>
+</footer>
+<script>
+  // =======================
+// USERS DATABASE (FIXED)
+// =======================
+const users = {
+  "621016": {
+    name: "YESIN HAYATO HEDARA ",
+    gender: "Male",
+    age: "34",
+    dob: "18/03/1984",
+    elmis: "ELS BAW2-OADB-621016",
+    passport: "EP8526422",
+    phone: "+251917539207 ",
+    birth: "HASASA",
+    visa: "Work Visa",
+    country: "Canada 🇨🇦",
+    photo: "https://res.cloudinary.com/dwclusteb/image/upload/v1782750181/IMG-20260629-WA0124_qmg2bs.jpg ",
+    doc: "https://res.cloudinary.com/dwclusteb/image/upload/v1782813780/Screenshot_20260630_130119_Chrome_f6s2ut.jpg",
+  },
+"720303": {
+    name: "OUMER HUSSEN MOHAMMED",
+    gender: "Male",
+    age: "34",
+    dob: "10/10/1987 ",
+    elmis: "ELS BAW2-OADB-720303",
+    passport: "EP 9113214",
+    phone: "+251 951371118 ",
+    birth: "BERAHLE Ethiopia ",
+    visa: "Work Visa",
+    country: "Kuwait 🇰🇼 ",
+    photo: "https://res.cloudinary.com/dwclusteb/image/upload/v1782476471/IMG-20260626-WA0021_bcrygy.jpg ",
+    doc: "https://res.cloudinary.com/dwclusteb/image/upload/v1782477908/Screenshot_20260626_154424_Chrome_nkwlzm.jpg ",
+  },
+"730304": {
+    name: "ADANE MUSTEFA MOHAMMED  ",
+    gender: "Male",
+    age: "23",
+    dob: "15/08/1981",
+    elmis: "ELS BAW2-OADB-730304",
+    passport: "EP9235002 ",
+    phone: "+251 93 134 5850",
+    birth: "DIKSIS Ethiopia ",
+    visa: "Work Visa",
+    country: "Kuwait 🇰🇼 ",
+    photo: "https://res.cloudinary.com/dwclusteb/image/upload/v1782814669/IMG-20260630-WA0000_gjg1zb.jpg ",
+    doc: "https://res.cloudinary.com/dwclusteb/image/upload/v1782826248/Screenshot_20260630_162946_Chrome_pfhax3.jpg ",
+   
+  },
+"737305": {
+    name: "DEGEFE ERIMIAS WAYORE",
+    gender: "Male",
+    age: "26",
+    dob: "12/04/1992",
+    elmis: "ELS BAW2-OADB-737305",
+    passport: "EQ1764379",
+    phone: "+251 925644250 ",
+    birth: "BADEWACHO ETHIOPIA ",
+    visa: "Work Visa",
+    country: "Kuwait 🇰🇼 ",
+    photo: "https://res.cloudinary.com/dwclusteb/image/upload/v1781209420/IMG-20260611-WA0055_ybigdx.jpg ",
+    doc: "https://res.cloudinary.com/dwclusteb/image/upload/v1782809530/Screenshot_20260630_115055_Chrome_ceplna.jpg ",
+},
+
+    "727106": {
+    name: "KALID GUTA GUYASA ",
+    gender: "Male",
+    age: "43",
+    dob: "01/01/1975",
+    elmis: "ELS BAW2-OADB-727106",
+    passport: "EQ7108685",
+    phone: "private ",
+    birth: "WOLISO ETHIOPIA ",
+    visa: "Work Visa",
+    country: "Kuwait 🇰🇼 ",
+    photo: "https://res.cloudinary.com/dwclusteb/image/upload/v1782455986/IMG-20260626-WA0010_l4jjyf.jpg ",
+    doc: "https://res.cloudinary.com/dwclusteb/image/upload/v1782457668/Screenshot_20260626_100553_Chrome_gwxury.jpg ",
+    },
+    "737390": {
+    name: "MOGES ASEBE DELESHI",
+    gender: "Male",
+    age: "22",
+    dob: "13/07/1996",
+    elmis: "ELS BAW2-OADB-737390",
+    passport: "E00079118",
+    phone: "private ",
+    birth: "GURAGE ETHIOPIA ",
+    visa: "Work Visa",
+    country: "Kuwait 🇰🇼 ",
+    photo: "https://res.cloudinary.com/dwclusteb/image/upload/v1782454662/IMG-20260626-WA0008_dk4wmt.jpg ",
+    doc: "https://res.cloudinary.com/dwclusteb/image/upload/v1782455203/Screenshot_20260626_092605_Chrome_tb0duw.jpg ",
+   },
+
+    "717301": {
+    name: "SARA WOLDE HANKORO",
+    gender: "Female",
+    age: "31",
+    dob: "01/01/1986",
+    elmis: "ELS BAW2-OADB-717301",
+    passport: "EQ1589307",
+    phone: "Private ",
+    birth: "MESMES ETHIOPIA ",
+    visa: "Work Visa",
+    country: "Kuwait 🇰🇼 ",
+    photo: "https://res.cloudinary.com/dwclusteb/image/upload/v1782452163/IMG-20260626-WA0003_zis2yn.jpg ",
+    doc: "https://res.cloudinary.com/dwclusteb/image/upload/v1782453042/Screenshot_20260626_084941_Chrome_nvu5wi.jpg ",
+    },
+    "737311": {
+    name: "ELISABET SIDE GIBEBO  ",
+    gender: "Female",
+    age: "40",
+    dob: "10/02/1978",
+    elmis: "ELS BAW2-OADB-737311",
+    passport: "EQ1197331",
+    phone: "Private ",
+    birth: " ETHIOPIA  GIBE",
+    visa: "Work Visa",
+    country: "Kuwait 🇰🇼",
+    photo: "https://res.cloudinary.com/dwclusteb/image/upload/v1782425898/IMG-20260625-WA0010_qdqqy8.jpg ",
+    doc: "https://res.cloudinary.com/dwclusteb/image/upload/v1782450183/Screenshot_20260626_080207_Chrome_kytbho.jpg ",
+    },
+
+"647421": {
+     name: "AYELE ARSICHA HANKUTO ",
+    gender: "Male",
+    age: "27",
+    dob: "27/08/1991",
+    elmis: "KW-647421",
+    passport: "EQ6417573",
+    phone: "Private ",
+    birth: " ETHIOPIA SHONE",
+    visa: "Work Visa",
+    country: "Kuwait 🇰🇼",
+    photo: "https://res.cloudinary.com/dwclusteb/image/upload/v1782653407/IMG_20260628_162301_690_o5zhft.jpg ",
+    doc: "https://res.cloudinary.com/dwclusteb/image/upload/v1782653797/Screenshot_20260628_163617_Chrome_wtv3up.jpg ",           
+  },
+"657421": {
+     name: "DESALAGN WEILORO GADISO",
+    gender: "Male",
+    age: "32",
+    dob: "27/08/1981",
+    elmis: "KW-657421",
+    passport: "EQ6365443",
+    phone: "Private ",
+    birth: " ETHIOPIA ",
+    visa: "Work Visa",
+    country: "Kuwait 🇰🇼",
+    photo: "https://res.cloudinary.com/dwclusteb/image/upload/v1783262276/IMG-20260629-WA0020_bbdpkm.jpg ",
+doc: "https://res.cloudinary.com/dwclusteb/image/upload/v1783319738/Screenshot_20260705_183047_Chrome_wbcy44.jpg ",
+},
+"657422": {
+     name: "ዱሪቱ ጣፋ ተሲ",
+    gender: "ሴት",
+    age: "32",
+    dob: "27/08/1981",
+    elmis: "ELMIS-647422",
+    passport: "EP1714255",
+    phone: "Private ",
+    birth: "ኢትዮጵያ ",
+    visa: "ሥራ ቪዛ",
+    country: "ኩዌት",
+    photo: "https://res.cloudinary.com/dwclusteb/image/upload/v1783533724/IMG-20260706-WA0024_h7ltza.jpg ",
+doc: "https://res.cloudinary.com/dwclusteb/image/upload/v1783979857/Screenshot_20260714_005339_Chrome_g6sjoz.jpg ",
+
+},
+  "657523": {
+     name: "መኪያ አማኖ ወዶ",
+    gender: "ሴት",
+    age: "24",
+    dob: "13/09/1994",
+    elmis: "ELMIS-657523",
+    passport: "EP2775318 ",
+    phone: "Private ",
+    birth: "ኢትዮጵያ",
+    visa: "ሥራ ቪዛ",
+    country: "ኩዌት",
+    photo: "https://res.cloudinary.com/dwclusteb/image/upload/v1783409021/IMG_20260707_100922_205_e3ser5.jpg ",
+doc: " https://res.cloudinary.com/dwclusteb/image/upload/v1783979388/Screenshot_20260714_003855_Chrome_xkokah.jpg ",
+  },
+"637721": {
+     name: "ተሚም አብዱሰላም ተማም",
+    gender: "ሴት",
+    age: "27",
+    dob: "27/08/1991",
+    elmis: "ELMIS-637721",
+    passport: "EP2093016",
+    phone: "Private ",
+    birth: "ኢትዮጵያ",
+    visa: "ሥራ ቪዛ",
+    country: "ኩዌት 🇰🇼",
+    photo: "https://res.cloudinary.com/dwclusteb/image/upload/v1783549183/IMG-20260706-WA0026_mt5jvm.jpg ",
+    doc: "https://res.cloudinary.com/dwclusteb/image/upload/v1783549719/Screenshot_20260709_012803_Chrome_mbu0js.jpg ",           
+  },
+"638741": {
+     name: "ላይላ ሀጂ ገመዳ",
+    gender: "ሴት",
+    age: "26",
+    dob: "27/08/1992",
+    elmis: "ELMIS-638741",
+    passport: "EP2464884",
+    phone: "Private ",
+    birth: "ኢትዮጵያ",
+    visa: "ሥራ ቪዛ",
+    country: "ኩዌት 🇰🇼",
+    photo: "https://res.cloudinary.com/dwclusteb/image/upload/v1783664184/IMG-20260710-WA0001_abgcgf.jpg ",
+    doc: "https://res.cloudinary.com/dwclusteb/image/upload/v1783674036/Screenshot_20260710_115836_Chrome_kulzns.jpg ",           
+},
+  "648849": {
+     name: "አሺያ ኡሲ ቴሲላ",
+    gender: "ሴት",
+    age: "22",
+    dob: "20/12/1995",
+    elmis: "ELMIS-648849",
+    passport: "EP00186844",
+    phone: "Private ",
+    birth: "ኢትዮጵያ",
+    visa: "ሥራ ቪዛ",
+    country: "ኩዌት 🇰🇼",
+    photo: "https://res.cloudinary.com/dwclusteb/image/upload/v1783674838/IMG-20260710-WA0003_1_awaoy2.jpg ",
+    doc: "https://res.cloudinary.com/dwclusteb/image/upload/v1783675140/Screenshot_20260710_121802_Chrome_s3ur93.jpg ",           
+},
+  "524611": {
+     name: "ጀሚላ ኬነሶ ኤዳኦ ",
+    gender: "ሴት",
+    age: "26",
+    dob: "26/12/1995",
+    elmis: "ELMIS-524611",
+    passport: "EP2312361",
+    phone: "Private ",
+    birth: "ኢትዮጵያ",
+    visa: "ሥራ ቪዛ",
+    country: "ኩዌት 🇰🇼",
+    photo: "https://res.cloudinary.com/dwclusteb/image/upload/v1783675587/IMG-20260710-WA0002_zvtjvy.jpg ",
+    doc: "https://res.cloudinary.com/dwclusteb/image/upload/v1783676429/Screenshot_20260710_123950_Chrome_qxl2cm.jpg ",           
+},
+  "632671": {
+     name: "በህሪይ ናስር ሽሪፍ ",
+    gender: "ሴት",
+    age: "40",
+    dob: "05/12/1978",
+    elmis: "ELMIS-632671",
+    passport: "EP9057240",
+    phone: "Private ",
+    birth: "ኢትዮጵያ",
+    visa: "ሥራ ቪዛ",
+    country: "ኩዌት 🇰🇼",
+    photo: "https://res.cloudinary.com/dwclusteb/image/upload/v1783677076/IMG-20260710-WA0004_cn5acr.jpg ",
+    doc: "https://res.cloudinary.com/dwclusteb/image/upload/v1783677702/Screenshot_20260710_130115_Chrome_tivtvj.jpg",           
+},
+  "604376": {
+     name: "ሰሚራ አደም ሙሀመድ  ",
+    gender: "ሴት",
+    age: "21",
+    dob: "03/07/1997",
+    elmis: "ELMIS-604376",
+    passport: "EP00433402",
+    phone: "Private ",
+    birth: "ኢትዮጵያ",
+    visa: "ሥራ ቪዛ",
+    country: "ኩዌት 🇰🇼",
+    photo: "https://res.cloudinary.com/dwclusteb/image/upload/v1783678598/IMG-20260710-WA0009_gnyjim.jpg ",
+    doc: "https://res.cloudinary.com/dwclusteb/image/upload/v1783678857/Screenshot_20260710_132007_Chrome_ggeq9j.jpg",           
+  },
+  "605590": {
+     name: "ዘሙ ዉርጌሳ ወርዩ ",
+    gender: "ሴት",
+    age: "24",
+    dob: "03/07/1997",
+    elmis: "ELMIS-605590",
+    passport: "EP1001835",
+    phone: "Private ",
+    birth: "ኢትዮጵያ",
+    visa: "ሥራ ቪዛ",
+    country: "ኩዌት 🇰🇼",
+    photo: "https://res.cloudinary.com/dwclusteb/image/upload/v1783683295/IMG-20260710-WA0010_zpheo6.jpg ",
+    doc: "https://res.cloudinary.com/dwclusteb/image/upload/v1783681586/Screenshot_20260710_140040_Chrome_a5jtcj.jpg ",           
+  },
+  "625346": {
+     name: "ቦንቱ ጉቲ ቡሊ ",
+    gender: "ሴት",
+    age: "26",
+    dob: "17/03/1992",
+    elmis: "ELMIS-625346",
+    passport: "EP2263040",
+    phone: "Private ",
+    birth: "ኢትዮጵያ",
+    visa: "ሥራ ቪዛ",
+    country: "ኩዌት 🇰🇼",
+    photo: "https://res.cloudinary.com/dwclusteb/image/upload/v1783684060/IMG-20260710-WA0011_smh8dm.jpg ",
+    doc: "https://res.cloudinary.com/dwclusteb/image/upload/v1783684376/Screenshot_20260710_145236_Chrome_xir5p5.jpg ",           
+  
+    },
+  "593213": {
+     name: "ሀፊዛ ከድር ሀሰን ",
+    gender: "ሴት",
+    age: "24",
+    dob: "15/02/1996",
+    elmis: "ELMIS-593213",
+    passport: "EP00298090",
+    phone: "Private ",
+    birth: "ኢትዮጵያ",
+    visa: "ሥራ ቪዛ",
+    country: "ኩዌት 🇰🇼",
+    photo: "https://res.cloudinary.com/dwclusteb/image/upload/v1783685042/IMG-20260710-WA0013_mjzijl.jpg ",
+    doc: "https://res.cloudinary.com/dwclusteb/image/upload/v1783685338/Screenshot_20260710_150239_Chrome_dh7rb8.jpg ",           
+     },
+  "614498": {
+     name: "ጡባ ፋሎ ኦጌ ",
+    gender: "ሴት",
+    age: "25",
+    dob: "05/05/1993",
+    elmis: "ELMIS-614498",
+    passport: "EP1710478",
+    phone: "Private ",
+    birth: "ኢትዮጵያ",
+    visa: "ሥራ ቪዛ",
+    country: "ኩዌት 🇰🇼",
+    photo: "https://res.cloudinary.com/dwclusteb/image/upload/v1783686102/IMG-20260710-WA0014_dbtann.jpg ",
+    doc: "https://res.cloudinary.com/dwclusteb/image/upload/v1783686796/Screenshot_20260710_153018_Chrome_nnnykx.jpg ",           
+    },
+  "509842": {
+     name: "SEBELA FIKADU WIRITU",
+    gender: "Female",
+    age: "25",
+    dob: "10/03/1991",
+    elmis: "ELMIS-509842",
+    passport: "EP1710478",
+    phone: "Private ",
+    birth: "ETHIOPIA ",
+    visa: "WORK VISA",
+    country: "KUWAIT 🇰🇼",
+    photo: "https://res.cloudinary.com/dwclusteb/image/upload/v1783689718/IMG-20260709-WA0010_lipd2s.jpg ",
+    doc: "https://res.cloudinary.com/dwclusteb/image/upload/v1783931404/Screenshot_20260713_110558_Chrome_uyllcz.jpg ",           
+  },
+    "510098": {
+     name: "BANCHAYEHU GENETI ADULA",
+    gender: "Female",
+    age: "27",
+    dob: "14/06/1991",
+    elmis: "ELMIS-510098",
+    passport: "EP00178877",
+    phone: "Private ",
+    birth: "ETHIOPIA ",
+    visa: "WORK VISA",
+    country: "KUWAIT 🇰🇼",
+    photo: "https://res.cloudinary.com/dwclusteb/image/upload/v1783691105/IMG-20260710-WA0005_cdgyoo.jpg ",
+    doc: "https://res.cloudinary.com/dwclusteb/image/upload/v1783691350/Screenshot_20260710_164829_Chrome_ya6okx.jpg ",           
+    },
+      "648970": {
+     name: "ሰሚራ ሙሀመድ አብዱሰላም ",
+    gender: "ሴት",
+    age: "30",
+    dob: "13/03/1998",
+    elmis: "ELMIS-648970",
+    passport: "EP8186109",
+    phone: "Private ",
+    birth: "ኢትዮጵያ",
+    visa: "ሥራ ቪዛ",
+    country: "ኩዌት 🇰🇼",
+    photo: "https://res.cloudinary.com/dwclusteb/image/upload/v1783716341/IMG-20260710-WA0039_f1wamu.jpg ",
+    doc: "https://res.cloudinary.com/dwclusteb/image/upload/v1783762882/Screenshot_20260711_124046_Chrome_q1zj3n.jpg ",           
+    },
+      "639796": {
+     name: "ቦንቱ መርጋ ጃታ",
+    gender: "ሴት",
+    age: "25",
+    dob: "22/05/1993",
+    elmis: "ELMIS-639796",
+    passport: "EP2772297",
+    phone: "Private ",
+    birth: "ኢትዮጵያ",
+    visa: "ሥራ ቪዛ",
+    country: "ኩዌት 🇰🇼",
+    photo: "https://res.cloudinary.com/dwclusteb/image/upload/v1783716341/IMG-20260710-WA0039_f1wamu.jpg ",
+    doc: "https://res.cloudinary.com/dwclusteb/image/upload/v1783763151/Screenshot_20260711_124454_Chrome_re7jue.jpg ",           
+    },
+      "648842": {
+     name: "መኮ ከደሮ ጉደታ",
+    gender: "ሴት",
+    age: "28",
+    dob: "10/05/1990",
+    elmis: "ELMIS-648842",
+    passport: "EP1657213",
+    phone: "Private ",
+    birth: "ኢትዮጵያ",
+    visa: "ሥራ ቪዛ",
+    country: "ኩዌት 🇰🇼",
+    photo: "https://res.cloudinary.com/dwclusteb/image/upload/v1783721391/IMG-20260710-WA0041_mzqjjy.jpg ",
+ doc: "https://res.cloudinary.com/dwclusteb/image/upload/v1783764046/Screenshot_20260711_125956_Chrome_scxc1b.jpg ",           
+   },
+      "459066": {
+     name: "ABDULKERIM ABDELA NURO",
+    gender: "MALE",
+    age: "25",
+    dob: "12/10/1992",
+    elmis: "ELMIS-648842",
+    passport: "EP24725227",
+    phone: "Private ", 
+    birth: "ETHIOPIA ",
+    visa: "WORK VISA",
+    country: "KUWAIT 🇰🇼",
+    photo: "https://res.cloudinary.com/dwclusteb/image/upload/v1783750395/IMG-20260710-WA0030_wqgwrm.jpg ",
+    doc: "https://res.cloudinary.com/dwclusteb/image/upload/v1783756316/Screenshot_20260711_105011_Chrome_vcu8zs.jpg ",           
+     },
+      "384621": {
+     name: "FIREHIWOT TARIKU ADULA",
+    gender: "FEMALE",
+    age: "38",
+    dob: "05/03/1980",
+    elmis: "ELMIS-384621",
+    passport: "EP8160220",
+    phone: "Private ", 
+    birth: "ETHIOPIA ",
+    visa: "WORK VISA",
+    country: "KUWAIT 🇰🇼",
+    photo: "https://res.cloudinary.com/dwclusteb/image/upload/v1783752235/IMG-20260710-WA0017_tygxwi.jpg ",
+    doc: "https://res.cloudinary.com/dwclusteb/image/upload/v1783761242/Screenshot_20260711_121320_Chrome_ghziec.jpg ",           
+        },
+      "667281": {
+     name: "ሻምባ ከድር ታሬ",
+    gender: "ሴት",
+    age: "26",
+    dob: "03/01/1992",
+    elmis: "ELMIS-667281",
+    passport: "EP1864534",
+    phone: "Private ", 
+    birth: "ኢትዮጵያ ",
+    visa: "ስራ ቪዛ",
+    country: "ኩዌት 🇰🇼",
+    photo: "https://res.cloudinary.com/dwclusteb/image/upload/v1783754078/IMG-20260710-WA0057_a5paqc.jpg ",
+    doc: "https://res.cloudinary.com/dwclusteb/image/upload/v1783754325/Screenshot_20260711_101820_Chrome_jiaaem.jpg ",           
+       },
+      "657481": {
+     name: "ጫልቱ ሁሴን ነገዎ",
+    gender: "ሴት",
+    age: "23",
+    dob: "23/01/1995",
+    elmis: "ELMIS-657481",
+    passport: "EP13315665",
+    phone: "Private ", 
+    birth: "ኢትዮጵያ ",
+    visa: "ስራ ቪዛ",
+    country: "ኩዌት 🇰🇼",
+    photo: "https://res.cloudinary.com/dwclusteb/image/upload/v1783755280/IMG-20260710-WA0058_w8tvvv.jpg ",
+    doc: "https://res.cloudinary.com/dwclusteb/image/upload/v1783755955/Screenshot_20260711_104454_Chrome_gqgztr.jpg ",           
+  },
+      "634114": {
+     name: "አሊያ ገልገሉ ሄዳኖ",
+    gender: "ሴት",
+    age: "27",
+    dob: "14/09/1991",
+    elmis: "ELMIS-634114",
+    passport: "EP9337872",
+    phone: "Private ", 
+    birth: "ኢትዮጵያ ",
+    visa: "ስራ ቪዛ",
+    country: "ኩዌት 🇰🇼",
+    photo: "https://res.cloudinary.com/dwclusteb/image/upload/v1783756927/IMG-20260710-WA0062_wsvp11.jpg ",
+    doc: "https://res.cloudinary.com/dwclusteb/image/upload/v1783757709/Screenshot_20260711_111446_Chrome_vtkwwp.jpg ",           
+      },
+      "625629": {
+     name: "ሀዋ ሼኮ ኤሊጆ",
+    gender: "ሴት",
+    age: "25",
+    dob: "19/04/1993",
+    elmis: "ELMIS-634114",
+    passport: "EP9337872",
+    phone: "Private ", 
+    birth: "ኢትዮጵያ ",
+    visa: "ስራ ቪዛ",
+    country: "ኩዌት 🇰🇼",
+    photo: "https://res.cloudinary.com/dwclusteb/image/upload/v1783759033/IMG-20260710-WA0064_fcjlxr.jpg ",
+ doc: "https://res.cloudinary.com/dwclusteb/image/upload/v1783759070/Screenshot_20260711_113200_Chrome_t4hm4h.jpg ",           
+     },
+      "635187": {
+     name: "ፋዩኔ አማኖ ቱንዳ",
+    gender: "ሴት",
+    age: "26",
+    dob: "17/09/1992",
+    elmis: "ELMIS-635187",
+    passport: "EP2419725",
+    phone: "Private ", 
+    birth: "ኢትዮጵያ ",
+    visa: "ስራ ቪዛ",
+    country: "ኩዌት 🇰🇼",
+    photo: "https://res.cloudinary.com/dwclusteb/image/upload/v1783759776/IMG-20260710-WA0065_uswddp.jpg ",
+    doc: "https://res.cloudinary.com/dwclusteb/image/upload/v1783759808/Screenshot_20260711_114455_Chrome_im5tug.jpg ",           
+        },
+      "638401": {
+     name: "በዳቱ ዲነግዴ አበሹ",
+    gender: "ሴት",
+    age: "34",
+    dob: "18/01/1984",
+    elmis: "ELMIS-638401",
+    passport: "EP7406516",
+    phone: "Private ", 
+    birth: "ኢትዮጵያ ",
+    visa: "ስራ ቪዛ",
+    country: "ኩዌት 🇰🇼",
+    photo: "https://res.cloudinary.com/dwclusteb/image/upload/v1783761517/IMG-20260710-WA0066_qc2gtz.jpg ",
+    doc: "https://res.cloudinary.com/dwclusteb/image/upload/v1783761564/Screenshot_20260711_115904_Chrome_be8g2g.jpg ",           
+   },
+      "632112": {
+     name: "ሀምዝያ ደማ ኮርሶ",
+    gender: "ሴት",
+    age: "32",
+    dob: "10/06/1986",
+    elmis: "ELMIS-632112",
+    passport: "EP1532829",
+    phone: "Private ", 
+    birth: "ኢትዮጵያ ",
+    visa: "ስራ ቪዛ",
+    country: "ኩዌት 🇰🇼",
+    photo: "https://res.cloudinary.com/dwclusteb/image/upload/v1783762059/IMG-20260710-WA0067_xw2srx.jpg ",
+    doc: "https://res.cloudinary.com/dwclusteb/image/upload/v1783762288/Screenshot_20260711_123105_Chrome_raqkch.jpg ",           
+      },
+      "554421": {
+     name: "አለማየሁ ፈቀደ መንገሻ ",
+    gender: "ወንድ",
+    age: "32",
+    dob: "10/06/1986",
+    elmis: "ELMIS-554421",
+    passport: "EP7298771",
+    phone: "Private ", 
+    birth: "ኢትዮጵያ ",
+    visa: "ስራ ቪዛ",
+    country: "ኩዌት 🇰🇼",
+    photo: "https://res.cloudinary.com/dwclusteb/image/upload/v1783773558/IMG-20260707-WA0006_cgemcw.jpg ",
+    doc: "https://res.cloudinary.com/dwclusteb/image/upload/v1783774662/Screenshot_20260711_155711_Chrome_zlyg7e.jpg ",          
+  },
+      "646497": {
+     name: "ሳፊያ ሆራቶ ዋቤ",
+    gender: "ሴት",
+    age: "25",
+    dob: "24/09/1993",
+    elmis: "ELMIS-646497",
+    passport: "EP1728408",
+    phone: "Private ", 
+    birth: "ኢትዮጵያ ",
+    visa: "ስራ ቪዛ",
+    country: "ኩዌት 🇰🇼",
+    photo: "https://res.cloudinary.com/dwclusteb/image/upload/v1783868659/IMG-20260712-WA0023_vvsorm.jpg ",
+    doc: "https://res.cloudinary.com/dwclusteb/image/upload/v1783868575/Screenshot_20260712_180009_Chrome_f8rfig.jpg ",              
+      },
+      "645899": {
+     name: "ዜይነባ ቃሲም ሙሀመድ",
+    gender: "ሴት",
+    age: "25",
+    dob: "10/02/1993",
+    elmis: "ELMIS-645899",
+    passport: "EP00141885",
+    phone: "Private ", 
+    birth: "ኢትዮጵያ ",
+    visa: "ስራ ቪዛ",
+    country: "ኩዌት 🇰🇼",
+    photo: "https://res.cloudinary.com/dwclusteb/image/upload/v1783869453/IMG-20260712-WA0024_ton5kv.jpg ",
+    doc: "https://res.cloudinary.com/dwclusteb/image/upload/v1783869490/Screenshot_20260712_181523_Chrome_f2qsuh.jpg ",                        
+    },
+      "665133": {
+     name: "ዘይቱና አብሳ አምቦ",
+    gender: "ሴት",
+    age: "25",
+    dob: "10/02/1993",
+    elmis: "ELMIS-665133",
+    passport: "EP8489290",
+    phone: "Private ", 
+    birth: "ኢትዮጵያ ",
+    visa: "ስራ ቪዛ",
+    country: "ኩዌት 🇰🇼",
+    photo: "https://res.cloudinary.com/dwclusteb/image/upload/v1783871872/IMG-20260712-WA0025_nqj83n.jpg ",
+    doc: "https://res.cloudinary.com/dwclusteb/image/upload/v1783871818/Screenshot_20260712_185614_Chrome_o3ugsz.jpg ",                        
+    },
+      "654216": {
+     name: "ሀልከሜ ቦንሶ ኮሴ",
+    gender: "ሴት",
+    age: "28",
+    dob: "02/01/1990",
+    elmis: "ELMIS-654216",
+    passport: "EP81494221",
+    phone: "Private ", 
+    birth: "ኢትዮጵያ ",
+    visa: "ስራ ቪዛ",
+    country: "ኩዌት 🇰🇼",
+    photo: "https://res.cloudinary.com/dwclusteb/image/upload/v1783872670/IMG-20260712-WA0026_elnhnk.jpg ",
+    doc: "https://res.cloudinary.com/dwclusteb/image/upload/v1783872616/Screenshot_20260712_190816_Chrome_rte8xi.jpg ",                        
+  },
+      "625341": {
+     name: "ቀመሪያ ቃስም አልይ",
+    gender: "ሴት",
+    age: "28",
+    dob: "26/01/1986",
+    elmis: "ELMIS-625341",
+    passport: "EP9142381",
+    phone: "Private ", 
+    birth: "ኢትዮጵያ ",
+    visa: "ስራ ቪዛ",
+    country: "ኩዌት 🇰🇼",
+    photo: "https://res.cloudinary.com/dwclusteb/image/upload/v1783873379/IMG-20260712-WA0027_l6abzk.jpg ",
+    doc: "https://res.cloudinary.com/dwclusteb/image/upload/v1783873431/Screenshot_20260712_192044_Chrome_ivo3ry.jpg ",                        
+  },
+      "634322": {
+     name: "በድርያ ሀሰን ጉዮ",
+    gender: "ሴት",
+    age: "26",
+    dob: "26/05/1992",
+    elmis: "ELMIS-634322",
+    passport: "EP2358352",
+    phone: "Private ", 
+    birth: "ኢትዮጵያ ",
+    visa: "ስራ ቪዛ",
+    country: "ኩዌት 🇰🇼",
+    photo: "https://res.cloudinary.com/dwclusteb/image/upload/v1783874316/IMG-20260712-WA0028_k63mpm.jpg ",
+    doc: "https://res.cloudinary.com/dwclusteb/image/upload/v1783874240/Screenshot_20260712_193433_Chrome_y223ao.jpg ",                        
+      },
+      "655897": {
+     name: "ኢስኒ ሳብር አባጀበል",
+    gender: "ሴት",
+    age: "25",
+    dob: "20/05/1993",
+    elmis: "ELMIS-634322",
+    passport: "EP1775664",
+    phone: "Private ", 
+    birth: "ኢትዮጵያ ",
+    visa: "ስራ ቪዛ",
+    country: "ኩዌት 🇰🇼",
+    photo: "https://res.cloudinary.com/dwclusteb/image/upload/v1783875440/IMG-20260712-WA0029_miruwc.jpg ",
+    doc: "https://res.cloudinary.com/dwclusteb/image/upload/v1783876354/Screenshot_20260712_200620_Chrome_bt6vms.jpg ",                        
+         },
+      "613256": {
+     name: "ትግስት መንግስቱ ሁሪሳ",
+    gender: "ሴት",
+    age: "30",
+    dob: "23/04/1988",
+    elmis: "ELMIS-634322",
+    passport: "EP1784747",
+    phone: "Private ", 
+    birth: "ኢትዮጵያ ",
+    visa: "ስራ ቪዛ",
+    country: "ኩዌት 🇰🇼",
+    photo: "https://res.cloudinary.com/dwclusteb/image/upload/v1783879037/IMG-20260712-WA0030_wbuexf.jpg ",
+    doc: "https://res.cloudinary.com/dwclusteb/image/upload/v1783882091/Screenshot_20260712_214731_Chrome_vgzczg.jpg ",                        
+               },
+      "621123": {
+     name: "መኪያ ኪንሶ ጮታ",
+    gender: "ሴት",
+    age: "25",
+    dob: "12/04/1993",
+    elmis: "ELMIS-634322",
+    passport: "EP1284145",
+    phone: "Private ", 
+    birth: "ኢትዮጵያ ",
+    visa: "ስራ ቪዛ",
+    country: "ኩዌት 🇰🇼",
+    photo: "https://res.cloudinary.com/dwclusteb/image/upload/v1783883264/IMG-20260712-WA0035_b0gm9a.jpg ",
+    doc: "https://res.cloudinary.com/dwclusteb/image/upload/v1783883285/Screenshot_20260712_220636_Chrome_ad9osw.jpg  ",                    
+                  },
+      "613226": {
+     name: "ፋጡማ አማኖ ደቀቦ",
+    gender: "ሴት",
+    age: "27",
+    dob: "24/05/1991",
+    elmis: "ELMIS-613226",
+    passport: "EP8443945",
+    phone: "Private ", 
+    birth: "ኢትዮጵያ ",
+    visa: "ስራ ቪዛ",
+    country: "ኩዌት 🇰🇼",
+    photo: "https://res.cloudinary.com/dwclusteb/image/upload/v1783884372/IMG-20260712-WA0032_zelaio.jpg ",
+    doc: " https://res.cloudinary.com/dwclusteb/image/upload/v1783884411/Screenshot_20260712_222552_Chrome_ahqb1j.jpg ",                    
+    },
+      "637699": {
+     name: "ሰሚራ ከድር አህመድ",
+    gender: "ሴት",
+    age: "20",
+    dob: "05/05/1998",
+    elmis: "ELMIS-637699",
+    passport: "EP00431328",
+    phone: "Private ", 
+    birth: "ኢትዮጵያ ",
+    visa: "ስራ ቪዛ",
+    country: "ኩዌት 🇰🇼",
+    photo: "https://res.cloudinary.com/dwclusteb/image/upload/v1783885910/IMG-20260712-WA0033_da4wmq.jpg ",
+    doc: "https://res.cloudinary.com/dwclusteb/image/upload/v1783885877/Screenshot_20260712_225045_Chrome_xjemht.jpg  ",                  
+          },
+      "641221": {
+     name: "ቡሻ አልይ ደቀቦ",
+    gender: "ሴት",
+    age: "26",
+    dob: "15/05/1992",
+    elmis: "ELMIS-641221",
+    passport: "EP25700043",
+    phone: "Private ", 
+    birth: "ኢትዮጵያ ",
+    visa: "ስራ ቪዛ",
+    country: "ኩዌት 🇰🇼",
+    photo: "https://res.cloudinary.com/dwclusteb/image/upload/v1783886938/IMG-20260712-WA0034_fmdouv.jpg",
+    doc: " https://res.cloudinary.com/dwclusteb/image/upload/v1783887183/Screenshot_20260712_231235_Chrome_bjec8i.jpg ",                  
+                },
+      "582112": {
+     name: "MURAD IBRAHIM WASSU",
+    gender: "Men",
+    age: "33",
+    dob: "22/10/1985",
+    elmis: "ELMIS-581221",
+    passport: "EP7140992",
+    phone: "Private ", 
+    birth: "Ethiopia ",
+    visa: "Work Visa",
+    country: "Kuwait 🇰🇼",
+    photo: "https://res.cloudinary.com/dwclusteb/image/upload/v1784043917/IMG-20260713-WA0046_tm0qvy.jpg ",
+    doc: "https://res.cloudinary.com/dwclusteb/image/upload/v1784044341/Screenshot_20260714_185133_Chrome_vbavvw.jpg  ",                     
+     
+      },
+      "646411": {
+     name: "ዜይነብ ኑሬ ሀጂ",
+    gender: "ሴት",
+    age: "26",
+    dob: "12/11/1993",
+    elmis: "ELMIS-646411",
+    passport: "EP8945024",
+    phone: "Private ", 
+    birth: "ኢትዮጵያ ",
+    visa: "ስራ ቪዛ",
+    country: "ኩዌት 🇰🇼",
+    photo: "https://res.cloudinary.com/dwclusteb/image/upload/v1784044686/IMG-20260714-WA0028_nhm28b.jpg ",
+    doc: " https://res.cloudinary.com/dwclusteb/image/upload/v1784044914/Screenshot_20260714_190105_Chrome_x1pfne.jpg ",                  
+       
+      },
+      "657189": {
+     name: "መኪያ ሙሀመድ ኤደዶ",
+    gender: "ሴት",
+    age: "25",
+    dob: "13/05/1993",
+    elmis: "ELMIS-657189",
+    passport: "EP1815658",
+    phone: "Private ", 
+    birth: "ኢትዮጵያ ",
+    visa: "ስራ ቪዛ",
+    country: "ኩዌት 🇰🇼",
+    photo: "https://res.cloudinary.com/dwclusteb/image/upload/v1784045709/IMG-20260714-WA0029_iggjqt.jpg ",
+    doc: " https://res.cloudinary.com/dwclusteb/image/upload/v1784046062/Screenshot_20260714_192032_Chrome_shgw5s.jpg ",                  
+            },
+      "649711": {
+     name: "ጀሚላ ሸምሲ ሎሎ",
+    gender: "ሴት",
+    age: "26",
+    dob: "17/02/1992",
+    elmis: "ELMIS-649711",
+    passport: "EP1028786",
+    phone: "Private ", 
+    birth: "ኢትዮጵያ ",
+    visa: "ስራ ቪዛ",
+    country: "ኩዌት 🇰🇼",
+    photo: "https://res.cloudinary.com/dwclusteb/image/upload/v1784116185/IMG-20260715-WA0001_1_sy8rsd.jpg ",
+    doc: " https://res.cloudinary.com/dwclusteb/image/upload/v1784116145/Screenshot_20260715_144720_Chrome_bpwzqp.jpg ",                  
+                  },
+      "669223": {
+     name: "ተማም አልይ ሄደቶ ",
+    gender: "ሴት",
+    age: "24",
+    dob: "17/03/1994",
+    elmis: "ELMIS-699223",
+    passport: "EP2380846",
+    phone: "Private ", 
+    birth: "ኢትዮጵያ ",
+    visa: "ስራ ቪዛ",
+    country: "ኩዌት 🇰🇼",
+    photo: "https://res.cloudinary.com/dwclusteb/image/upload/v1784117676/IMG-20260715-WA0009_mnekvn.jpg ",
+    doc: " https://res.cloudinary.com/dwclusteb/image/upload/v1784121515/Screenshot_20260715_151832_Chrome_rhskjv.jpg ",                  
+      },
+        "686872": {
+     name: "መርያማ አብዶ ዳኮ",
+    gender: "ሴት",
+    age: "27",
+    dob: "18/09/1991",
+    elmis: "ELMIS-686872",
+    passport: "EP1961096",
+    phone: "Private ", 
+    birth: "ኢትዮጵያ ",
+    visa: "ስራ ቪዛ",
+    country: "ኩዌት 🇰🇼",
+    photo: "https://res.cloudinary.com/dwclusteb/image/upload/v1784122278/IMG-20260715-WA0008_gwyzms.jpg ",
+    doc: "https://res.cloudinary.com/dwclusteb/image/upload/v1784122466/Screenshot_20260715_163356_Chrome_sjqcqu.jpg  ",                  
+              },
+        "764532": {
+     name: "ቦንቱ ሁሴን መርቦ",
+    gender: "ሴት",
+    age: "26",
+    dob: "18/09/1993",
+    elmis: "ELMIS-764532",
+    passport: "EP1500886",
+    phone: "Private ", 
+    birth: "ኢትዮጵያ ",
+    visa: "ስራ ቪዛ",
+    country: "ኩዌት 🇰🇼",
+    photo: "https://res.cloudinary.com/dwclusteb/image/upload/v1784124879/IMG-20260715-WA0006_vremam.jpg ",
+    doc: " https://res.cloudinary.com/dwclusteb/image/upload/v1784124740/Screenshot_20260715_164038_Chrome_eosukb.jpg ",                  
+                     },
+        "554283": {
+     name: "ቡሻ አልይ ደቀቦ",
+    gender: "ሴት",
+    age: "26",
+    dob: "15/03/1992",
+    elmis: "ELMIS-764532",
+    passport: "EP2570043",
+    phone: "Private ", 
+    birth: "ኢትዮጵያ ",
+    visa: "ስራ ቪዛ",
+    country: "ኩዌት 🇰🇼",
+    photo: "https://res.cloudinary.com/dwclusteb/image/upload/v1784125574/IMG-20260715-WA0005_jxw6cd.jpg ",
+    doc: " https://res.cloudinary.com/dwclusteb/image/upload/v1784125377/Screenshot_20260715_171948_Chrome_e7oaou.jpg ",                  
+                             },
+        "699741": {
+     name: "ሩዚያ ቆንጣ ታሙኒ",
+    gender: "ሴት",
+    age: "24",
+    dob: "10/01/1994",
+    elmis: "ELMIS-699741",
+    passport: "EP8922912",
+    phone: "Private ", 
+    birth: "ኢትዮጵያ ",
+    visa: "ስራ ቪዛ",
+    country: "ኩዌት 🇰🇼",
+    photo: "https://res.cloudinary.com/dwclusteb/image/upload/v1784128136/IMG-20260715-WA0002_1_auknnk.jpg ",
+    doc: " https://res.cloudinary.com/dwclusteb/image/upload/v1784128191/Screenshot_20260715_180301_Chrome_rraatr.jpg ",                  
+        },
+        "687233": {
+     name: "ጀሚላ ሸምሲ ሎሎ",
+    gender: "ሴት",
+    age: "24",
+    dob: "17/00/1994!2",
+    elmis: "ELMIS-699741",
+    passport: "EP1028786",
+    phone: "Private ", 
+    birth: "ኢትዮጵያ ",
+    visa: "ስራ ቪዛ",
+    country: "ኩዌት 🇰🇼",
+    photo: "https://res.cloudinary.com/dwclusteb/image/upload/v1784129970/IMG-20260715-WA0011_baiwqg.jpg ",
+    doc: "https://res.cloudinary.com/dwclusteb/image/upload/v1784128191/Screenshot_20260715_180301_Chrome_rraatr.jpg  ",                  
+        },
+        "688346": {
+     name: "ጫልቱ ዳኬነ ክሞ",
+    gender: "ሴት",
+    age: "27",
+    dob: "27/01/1991",
+    elmis: "ELMIS-688346",
+    passport: "EP1005903",
+    phone: "Private ", 
+    birth: "ኢትዮጵያ ",
+    visa: "ስራ ቪዛ",
+    country: "ኩዌት 🇰🇼",
+    photo: "https://res.cloudinary.com/dwclusteb/image/upload/v1784130601/IMG-20260715-WA0007_ylrke2.jpg ",
+    doc: "https://res.cloudinary.com/dwclusteb/image/upload/v1784130650/Screenshot_20260715_184735_Chrome_gfa2fi.jpg  ",                  
+              },
+        "712112": {
+     name: "ብርቅ ደበላ ባዮሳ ",
+    gender: "ሴት",
+    age: "27",
+    dob: "13/04/1991",
+    elmis: "ELMIS-712112",
+    passport: "EP8878407",
+    phone: "Private ", 
+    birth: "ኢትዮጵያ ",
+    visa: "ስራ ቪዛ",
+    country: "ኩዌት 🇰🇼",
+    photo: "https://res.cloudinary.com/dwclusteb/image/upload/v1784131306/IMG-20260715-WA0004_ljeqpx.jpg ",
+    doc: " https://res.cloudinary.com/dwclusteb/image/upload/v1784131345/Screenshot_20260715_185909_Chrome_e9qbry.jpg ",                  
+        },
+        "213498": {
+     name: "FIKIRTE GUDISA FITA ",
+    gender: "FEMALE",
+    age: "37",
+    dob: "12/09/1981",
+    elmis: "ELMIS-213498",
+    passport: "EP8878407",
+    phone: "Private ", 
+    birth: "ETHIOPIA",
+    visa: "WORK VISA",
+    country: "DUBAI ",
+    photo: "https://res.cloudinary.com/dwclusteb/image/upload/v1784187537/IMG-20260716-WA0001_c3tx29.jpg ",
+    doc: "https://res.cloudinary.com/dwclusteb/image/upload/v1785225540/Screenshot_20260728_104459_Chrome_orfvvl.jpg  ",
+          },
+        "687122": {
+     name: "አ/ቶ አባስ ሀጂ ሻቃ",
+    gender: "ወንድ",
+    age: "37",
+    dob: "10/09/1994",
+    elmis: "ELMIS-687122",
+    passport: "EP1333966",
+    phone: "Private ", 
+    birth: "ETHIOPIA",
+    visa: "WORK VISA",
+    country: "KUWAIT 🇰🇼",
+    photo: "https://res.cloudinary.com/dwclusteb/image/upload/v1784207203/IMG-20260716-WA0006_fasqtu.jpg ",
+    doc: "https://res.cloudinary.com/dwclusteb/image/upload/v1784207412/Screenshot_20260716_160942_Chrome_hisf1w.jpg  ",
+                    },
+        "687899": {
+     name: "JEML HUSSEN WONDME",
+    gender: "MALE",
+    age: "37",
+    dob: "01/00/1981",
+    elmis: "ELMIS-687899",
+    passport: "EP1599615",
+    phone: "Private ", 
+    birth: "ETHIOPIA",
+    visa: "WORK VISA",
+    country: "CANADA 🇨🇦",
+    photo: "https://res.cloudinary.com/dwclusteb/image/upload/v1784271728/IMG-20260629-WA0155_1_h4cscl.jpg ",
+    doc: "https://res.cloudinary.com/dwclusteb/image/upload/v1784272035/Screenshot_20260717_100634_Chrome_a4mlyf.jpg  ",
+                        },
+        "667788": {
+     name: "መስከረም ጌታቸዉ ሐሶ",
+    gender: "ወንድ",
+    age: "24",
+    dob: "15/09/1994",
+    elmis: "ELMIS-667788",
+    passport: "EP8508055",
+    phone: "Private ", 
+    birth: "ETHIOPIA",
+    visa: "WORK VISA",
+    country: "KUWAIT 🇰🇼",
+    photo: "https://res.cloudinary.com/dwclusteb/image/upload/v1784301597/IMG-20260716-WA0043_itxxyu.jpg ",
+    doc: "https://res.cloudinary.com/dwclusteb/image/upload/v1784301854/Screenshot_20260717_182351_Chrome_v6nifs.jpg  ",
+                                },
+        "651224": {
+     name: "ፋጡማ ሀያቶ ጨዊቻ",
+    gender: "ሴት",
+    age: "24",
+    dob: "25/02/1991",
+    elmis: "ELMIS-667788",
+    passport: "EP1976259",
+    phone: "Private ", 
+    birth: "ETHIOPIA",
+    visa: "WORK VISA",
+    country: "KUWAIT 🇰🇼",
+    photo: "https://res.cloudinary.com/dwclusteb/image/upload/v1784302683/IMG-20260716-WA0044_q6zric.jpg ",
+    doc: "https://res.cloudinary.com/dwclusteb/image/upload/v1784302771/Screenshot_20260717_183909_Chrome_vfnazv.jpg  ",
+                                       },
+        "641334": {
+     name: "ሸምሲያ አደም ሹቦ",
+    gender: "ሴት",
+    age: "26",
+    dob: "19/02/1992",
+    elmis: "ELMIS-641334",
+    passport: "EP2573827",
+    phone: "Private ", 
+    birth: "ETHIOPIA",
+    visa: "WORK VISA",
+    country: "KUWAIT 🇰🇼",
+    photo: "https://res.cloudinary.com/dwclusteb/image/upload/v1784304251/IMG-20260716-WA0045_jerhj6.jpg ",
+    doc: " https://res.cloudinary.com/dwclusteb/image/upload/v1784304839/Screenshot_20260717_190540_Chrome_q9clak.jpg ",
+                       },
+        "614316": {
+     name: "ጫልቱ ሁሴን ቡዴ",
+    gender: "ሴት",
+    age: "28",
+    dob: "12/10/1990",
+    elmis: "ELMIS-614316",
+    passport: "EP2573827",
+    phone: "Private ", 
+    birth: "ETHIOPIA",
+    visa: "WORK VISA",
+    country: "KUWAIT 🇰🇼",
+    photo: "https://res.cloudinary.com/dwclusteb/image/upload/v1784305233/IMG-20260717-WA0001_uyelgi.jpg ",
+    doc: "https://res.cloudinary.com/dwclusteb/image/upload/v1784305265/Screenshot_20260717_191824_Chrome_tu9qdj.jpg  ",
+        },
+          "687240": {
+     name: "ቡርቱካን ገነሞ ቡቃ",
+    gender: "ሴት",
+    age: "27",
+    dob: "08/03/1991",
+    elmis: "ELMIS-687240",
+    passport: "EP8742162",
+    phone: "Private ", 
+    birth: "ETHIOPIA",
+    visa: "WORK VISA",
+    country: "KUWAIT 🇰🇼",
+    photo: "https://res.cloudinary.com/dwclusteb/image/upload/v1784305759/IMG-20260717-WA0002_w6typl.jpg ",
+    doc: "https://res.cloudinary.com/dwclusteb/image/upload/v1784305802/Screenshot_20260717_192506_Chrome_w4ctqy.jpg  ",
+            },
+          "682141": {
+     name: "አብዱሪህማን ቃሲም ሙሀመዶ",
+    gender: "ወንድ",
+    age: "27",
+    dob: "21/03/1991",
+    elmis: "ELMIS-682141",
+    passport: "EP1334175",
+    phone: "Private ", 
+    birth: "ETHIOPIA",
+    visa: "WORK VISA",
+    country: "KUWAIT 🇰🇼",
+    photo: "https://res.cloudinary.com/dwclusteb/image/upload/v1784306430/IMG-20260716-WA0046_rzcqlx.jpg ",
+    doc: "https://res.cloudinary.com/dwclusteb/image/upload/v1784306489/Screenshot_20260717_193623_Chrome_tjhcm9.jpg  ",
+                            
+           },
+          "242118": {
+     name: "SHEMISO NUR SULMAN",
+    gender: "Female ",
+    age: "40",
+    dob: "30/04/1978",
+    elmis: "ELMIS-242118",
+    passport: "EP006111083",
+    phone: "Private ", 
+    birth: "ETHIOPIA",
+    visa: "WORK VISA",
+    country: "KUWAIT 🇰🇼",
+    photo: "https://res.cloudinary.com/dwclusteb/image/upload/v1784362003/IMG_20260718_105853_802_lh5pgg.jpg ",
+    doc: " https://res.cloudinary.com/dwclusteb/image/upload/v1784362065/Screenshot_20260718_110540_Chrome_xq1rmn.jpg ",
+                                    
+           },
+          "212481": {
+     name: "ABEBECH MITIKU AJEBA",
+    gender: "Female ",
+    age: "25",
+    dob: "14/03/1993",
+    elmis: "ELMIS-212481",
+    passport: "EP1783592",
+    phone: "Private ", 
+    birth: "ETHIOPIA",
+    visa: "WORK VISA",
+    country: "KUWAIT 🇰🇼",
+    photo: "https://res.cloudinary.com/dwclusteb/image/upload/v1784362884/IMG_20260718_111545_045_hwno1p.jpg ",
+    doc: "  ",
+          },
+          "887422": {
+     name: "SALIYAT SEID EDEHO ",
+    gender: "Female ",
+    age: "25",
+    dob: "14/03/1993",
+    elmis: "ELMIS-887422",
+    passport: "EP2319828",
+    phone: "Private ", 
+    birth: "ETHIOPIA",
+    visa: "WORK VISA",
+    country: "KUWAIT 🇰🇼",
+    photo: "https://res.cloudinary.com/dwclusteb/image/upload/v1784530934/IMG-20260718-WA0021_1_y5pul0.jpg ",
+    doc: " https://res.cloudinary.com/dwclusteb/image/upload/v1785239157/Screenshot_20260728_144055_Chrome_ymwgmx.jpg ",                  
+           },
+          "886622": {
+     name: "ABDULMANEN MUKTER ABDO",
+    gender: "Male ",
+    age: "25",
+    dob: "14/03/1993",
+    elmis: "ELMIS-886622",
+    passport: "EP1620916",
+    phone: "Private ", 
+    birth: "ETHIOPIA",
+    visa: "WORK VISA",
+    country: "KUWAIT 🇰🇼",
+    photo: "https://res.cloudinary.com/dwclusteb/image/upload/v1784570532/IMG-20260720-WA0025_zifyv2.jpg ",
+    doc: " https://res.cloudinary.com/dwclusteb/image/upload/v1784570970/Screenshot_20260720_210859_Chrome_rbhfij.jpg ",                  
+           },
+          "776622": {
+     name: "BIRUK BUNARE BUCHA",
+    gender: "Male ",
+    age: "25",
+    dob: "14/03/1993",
+    elmis: "ELMIS-776622",
+    passport: "EP00565473",
+    phone: "Private ", 
+    birth: "ETHIOPIA",
+    visa: "WORK VISA",
+    country: "KUWAIT 🇰🇼",
+    photo: "https://res.cloudinary.com/dwclusteb/image/upload/v1784621372/IMG_20260721_110503_036_mg8rkn.jpg ",
+    doc: " https://res.cloudinary.com/dwclusteb/image/upload/v1784623289/Screenshot_20260721_113925_Chrome_vnwufy.jpg ",                  
+             },
+          "667722": {
+     name: "አንበሳ ቱላ ምቹ",
+    gender: "ወንድ",
+    age: "35",
+    dob: "19/09/1983",
+    elmis: "ELMIS-667722",
+    passport: "EP8797655",
+    phone: "+251919966092", 
+    birth: "ኢትዮጵያ ",
+    visa: "ስራ ቪዛ",
+    country: "ካናዳ 🇨🇦",
+    photo: "https://res.cloudinary.com/dwclusteb/image/upload/v1784624799/IMG-20260713-WA0026_vscuxo.jpg ",
+    doc: " https://res.cloudinary.com/dwclusteb/image/upload/v1784628871/Screenshot_20260721_121520_Chrome_wc3245.jpg ",                  
+                             
+            },
+          "997722": {
+     name: "ሀሺም ከማል በሪያ",
+    gender: "ወንድ",
+    age: "35",
+    dob: "06/05/1980",
+    elmis: "ELMIS-997722",
+    passport: "EP2628606",
+    phone: "private ", 
+    birth: "ኢትዮጵያ ",
+    visa: "ስራ ቪዛ",
+    country: "Kuwait 🇰🇼",
+    photo: "https://res.cloudinary.com/dwclusteb/image/upload/v1784704018/IMG_20260722_091102_261_iunpyg.jpg ",
+    doc: " https://res.cloudinary.com/dwclusteb/image/upload/v1784895513/Screenshot_20260724_151802_Chrome_tfbycx.jpg ",                  
+             },
+          
+          "663123": {
+     name: "ጀማል ዳዋኖ ሰኢድ ",
+    gender: "ወንድ",
+    age: "24",
+    dob: "11/02/1994",
+    elmis: "ELMIS-663123",
+    passport: "EP00261194",
+    phone: "private ", 
+    birth: "ኢትዮጵያ ",
+    visa: "ስራ ቪዛ",
+    country: "Kuwait 🇰🇼",
+    photo: "https://res.cloudinary.com/dwclusteb/image/upload/v1784804292/IMG-20260723-WA0018_ywb5zn.jpg ",
+    doc: " https://res.cloudinary.com/dwclusteb/image/upload/v1784805393/Screenshot_20260723_141354_Chrome_vphovl.jpg ",                  
+     },
+          "653141": {
+     name: "አቡ ጀማል ሮባ ",
+    gender: "ወንድ",
+    age: "24",
+    dob: "04/08/1994",
+    elmis: "ELMIS-653141",
+    passport: "EP1455048",
+    phone: "private ", 
+    birth: "ኢትዮጵያ ",
+    visa: "ስራ ቪዛ",
+    country: "Kuwait 🇰🇼",
+    photo: "https://res.cloudinary.com/dwclusteb/image/upload/v1784805848/IMG-20260723-WA0019_tcckoc.jpg ",
+    doc: " https://res.cloudinary.com/dwclusteb/image/upload/v1784806363/Screenshot_20260723_143159_Chrome_tr8b4m.jpg ",                  
+                 },
+          "643141": {
+     name: "አለሙዲን ደደፎ ቡሎ ",
+    gender: "ወንድ",
+    age: "25",
+    dob: "26/07/1993",
+    elmis: "ELMIS-643141",
+    passport: "EP1580678",
+    phone: "private ", 
+    birth: "ኢትዮጵያ ",
+    visa: "ስራ ቪዛ",
+    country: "Kuwait 🇰🇼",
+    photo: "https://res.cloudinary.com/dwclusteb/image/upload/v1784809472/IMG-20260723-WA0021_uepxed.jpg ",
+    doc: " https://res.cloudinary.com/dwclusteb/image/upload/v1784809536/Screenshot_20260723_151848_Chrome_eofbvn.jpg ",                  
+          },
+          "687312": {
+     name: "ሙስጠፋ ሙሀመድ ጤሳ",
+    gender: "ወንድ",
+    age: "25",
+    dob: "15/04/1993",
+    elmis: "ELMIS-687312",
+    passport: "EP2655603",
+    phone: "private ", 
+    birth: "ኢትዮጵያ ",
+    visa: "ስራ ቪዛ",
+    country: "Kuwait 🇰🇼",
+    photo: "https://res.cloudinary.com/dwclusteb/image/upload/v1784809889/IMG-20260723-WA0022_vvakjv.jpg ",
+    doc: "https://res.cloudinary.com/dwclusteb/image/upload/v1784810064/Screenshot_20260723_153353_Chrome_pbfyqu.jpg  ",                  
+        },
+          "623354": {
+     name: "ጌታዉ ሙላት ቸኮል",
+    gender: "ወንድ",
+    age: "30",
+    dob: "02/03/1988",
+    elmis: "ELMIS-623354",
+    passport: "EP1388125",
+    phone: "private ", 
+    birth: "ኢትዮጵያ ",
+    visa: "ስራ ቪዛ",
+    country: "Kuwait 🇰🇼",
+    photo: "https://res.cloudinary.com/dwclusteb/image/upload/v1784812071/IMG-20260723-WA0023_dpzqtx.jpg ",
+    doc: " https://res.cloudinary.com/dwclusteb/image/upload/v1784812325/Screenshot_20260723_161104_Chrome_d4hh77.jpg ",                  
+         },
+          "673149": {
+     name: "ደደፎ ጉተማ መሀመድ",
+    gender: "ወንድ",
+    age: "26",
+    dob: "16/01/1992",
+    elmis: "ELMIS-673149",
+    passport: "EP2686057",
+    phone: "private ", 
+    birth: "ኢትዮጵያ ",
+    visa: "ስራ ቪዛ",
+    country: "Kuwait 🇰🇼",
+    photo: "https://res.cloudinary.com/dwclusteb/image/upload/v1784812837/IMG-20260723-WA0025_y8pcxg.jpg ",
+    doc: " https://res.cloudinary.com/dwclusteb/image/upload/v1784812973/Screenshot_20260723_162240_Chrome_rqbnpu.jpg ",                  
+        },
+          "443128": {
+     name: "አህመድ እሸቱ አበበ",
+    gender: "ወንድ",
+    age: "36",
+    dob: "01/06/1982",
+    elmis: "ELMIS-443128",
+    passport: "private ",
+    phone: "private ", 
+    birth: "ኢትዮጵያ ",
+    visa: "ስራ ቪዛ",
+    country: "Canada 🇨🇦",
+    photo: "https://res.cloudinary.com/dwclusteb/image/upload/v1784882501/IMG_20260724_103045_077_pjrpjq.jpg ",
+    doc: " https://res.cloudinary.com/dwclusteb/image/upload/v1784966839/Screenshot_20260725_110325_Chrome_msjiic.jpg ",                  
+       },
+          "443328": {
+     name: "ጋሻዉ አማረ እሸቱ",
+    gender: "ወንድ",
+    age: "23",
+    dob: "20/08/1995",
+    elmis: "ELMIS-443328",
+    passport: "EP00427483 ",
+    phone: "private ", 
+    birth: "ኢትዮጵያ ",
+    visa: "ስራ ቪዛ",
+    country: "ኩዌት 🇰🇼",
+    photo: "https://res.cloudinary.com/dwclusteb/image/upload/v1785096820/BG_Removed_20260726_231302_jm02dz.png ",
+    doc: " https://res.cloudinary.com/dwclusteb/image/upload/v1789383615/Screenshot_20260914_135856_Chrome_trqohs.jpg ",                  
+          },
+          "643128": {
+     name: "ምትኩ አስራት በለጠ",
+    gender: "ወንድ",
+    age: "23",
+    dob: "24/08/1995",
+    elmis: "ELMIS-643128",
+    passport: "EP1980958",
+    phone: "private ", 
+    birth: "ኢትዮጵያ ",
+    visa: "ስራ ቪዛ",
+    country: "ኩዌት 🇰🇼",
+    photo: "https://res.cloudinary.com/dwclusteb/image/upload/v1785098306/BG_Removed_20260726_233310_upl6bm.png ",
+    doc: " https://res.cloudinary.com/dwclusteb/image/upload/v1785098507/Screenshot_20260726_234112_Chrome_hdirkz.jpg ",                  
+          },
+          "143119": {
+     name: "ዘቢባ መለሰ መኮንን",
+    gender: "ሴት",
+    age: "23",
+    dob: "24/08/1995",
+    elmis: "ELMIS-143119",
+    passport: "EP00456790",
+    phone: "private ", 
+    birth: "ኢትዮጵያ ",
+    visa: "ስራ ቪዛ",
+    country: "ኩዌት 🇰🇼",
+    photo: "https://res.cloudinary.com/dwclusteb/image/upload/v1785099055/IMG_20260726_234622_xjoun1.jpg ",
+    doc: "https://res.cloudinary.com/dwclusteb/image/upload/v1786960691/Screenshot_20260817_125507_Chrome_rksk4v.jpg  ",                  
+            },
+          "113119": {
+     name: "ፃርቃን ጣዓመ ገብረዝግሄር",
+    gender: "ሴት",
+    age: "30",
+    dob: "05/07/1988",
+    elmis: "ELMIS-113119",
+    passport: "EP00126839",
+    phone: "private ", 
+    birth: "ኢትዮጵያ ",
+    visa: "ስራ ቪዛ",
+    country: "ዱባይ ",
+    photo: "https://res.cloudinary.com/dwclusteb/image/upload/v1785357878/IMG-20260729-WA0023_d0eqsc.jpg ",
+    doc: "https://res.cloudinary.com/dwclusteb/image/upload/v1785584464/Screenshot_20260801_143842_Chrome_a4qrqj.jpg  ",                  
+         },
+          "123119": {
+     name: "ነጋሽ ተስፋየ ደሜ",
+    gender: "ወንድ",
+    age: "25",
+    dob: "01/01/1993",
+    elmis: "ELMIS-123119",
+    passport: "EP2507377",
+    phone: "private ", 
+    birth: "ኢትዮጵያ ",
+    visa: "ስራ ቪዛ",
+    country: "ኩዌት 🇰🇼",
+    photo: "https://res.cloudinary.com/dwclusteb/image/upload/v1785360506/IMG-20260727-WA0047_srv7gr.jpg ",
+    doc: "https://res.cloudinary.com/dwclusteb/image/upload/v1785360708/Screenshot_20260730_003122_Chrome_fumfh3.jpg  ",                  
+         },
+          "123159": {
+     name: "ጌታቸዉ ፀጋዉ ጌጡ",
+    gender: "ወንድ",
+    age: "28",
+    dob: "03/05/1990",
+    elmis: "ELMIS-123159",
+    passport: "EP7979941",
+    phone: "private ", 
+    birth: "ኢትዮጵያ ",
+    visa: "ስራ ቪዛ",
+    country: "ኩዌት 🇰🇼",
+    photo: "https://res.cloudinary.com/dwclusteb/image/upload/v1785361161/IMG-20260728-WA0030_hove9d.jpg ",
+    doc: "https://res.cloudinary.com/dwclusteb/image/upload/v1785361386/Screenshot_20260730_004242_Chrome_fuzkae.jpg  ",                  
+                                                                                                  
+           },
+          "143159": {
+     name: "ሞሀመድ ከማል አባጋሮ  ",
+    gender: "ወንድ",
+    age: "25",
+    dob: "17/03/1980",
+    elmis: "ELMIS-143159",
+    passport: "private ",
+    phone: "private ", 
+    birth: "ኢትዮጵያ ",
+    visa: "ስራ ቪዛ",
+    country: "ኩዌት 🇰🇼",
+    photo: "https://res.cloudinary.com/dwclusteb/image/upload/v1785362067/BG_Removed_20260730_004744_yixyqk.png ",
+    doc: "https://res.cloudinary.com/dwclusteb/image/upload/v1785362256/Screenshot_20260730_005719_Chrome_mj9gv3.jpg  ",                  
+           },
+          "243159": {
+     name: "ሜሮን ኩማ ጪብሳ",
+    gender: "ሴት",
+    age: "25",
+    dob: "17/03/1980",
+    elmis: "ELMIS-243159",
+    passport: "EP9288962 ",
+    phone: "private ", 
+    birth: "ኢትዮጵያ ",
+    visa: "ስራ ቪዛ",
+    country: "ኩዌት 🇰🇼",
+    photo: "https://res.cloudinary.com/dwclusteb/image/upload/v1785362702/IMG-20260726-WA0007_u0q4hl.jpg ",
+    doc: " https://res.cloudinary.com/dwclusteb/image/upload/v1785363326/Screenshot_20260730_011459_Chrome_wntrm2.jpg ",                  
+                              },
+          "533218": {
+     name: "ዘይቱና ነቢ ጎዳና",
+    gender: "ሴት",
+    age: "25",
+    dob: "12/09/1993",
+    elmis: "ELMIS-533218",
+    passport: "EP00599665 ",
+    phone: "private ", 
+    birth: "ኢትዮጵያ ",
+    visa: "ስራ ቪዛ",
+    country: "ኩዌት 🇰🇼",
+    photo: "https://res.cloudinary.com/dwclusteb/image/upload/v1785692808/IMG-20260802-WA0000_k0ydfg.jpg ",
+    doc: " https://res.cloudinary.com/dwclusteb/image/upload/v1785693156/Screenshot_20260802_205214_Chrome_kmgzb2.jpg ",                  
+                                         },
+          "534672": {
+     name: "አልፊያ ጀማል ገለቶ",
+    gender: "ሴት",
+    age: "25",
+    dob: "30/03/1993",
+    elmis: "ELMIS-534672",
+    passport: "EP2500379",
+    phone: "private ", 
+    birth: "ኢትዮጵያ ",
+    visa: "ስራ ቪዛ",
+    country: "ኩዌት 🇰🇼",
+    photo: "https://res.cloudinary.com/dwclusteb/image/upload/v1785694103/IMG-20260802-WA0002_garpzk.jpg ",
+    doc: "https://res.cloudinary.com/dwclusteb/image/upload/v1785694470/Screenshot_20260802_211243_Chrome_egr9zw.jpg  ",                  
+     },
+            
+            "543687": {
+     name: "አብዱልጀበር ገነሞ ሳዶ",
+    gender: "ወንድ",
+    age: "24",
+    dob: "12/03/1994",
+    elmis: "ELMIS-534672",
+    passport: "EP00443259",
+    phone: "private ", 
+    birth: "ኢትዮጵያ ",
+    visa: "ስራ ቪዛ",
+    country: "ኩዌት 🇰🇼",
+    photo: "https://res.cloudinary.com/dwclusteb/image/upload/v1785696247/IMG-20260802-WA0003_smbqco.jpg ",
+    doc: " https://res.cloudinary.com/dwclusteb/image/upload/v1785700286/Screenshot_20260802_225028_Chrome_sl5xrc.jpg ",                  
+                 },                                                        
+               "542112": {
+     name: "ኢብራሂም ሁሴን ቀተላ",
+    gender: "ወንድ",
+    age: "25",
+    dob: "21/08/1993",
+    elmis: "ELMIS-534672",
+    passport: "EP00443259",
+    phone: "private ", 
+    birth: "ኢትዮጵያ ",
+    visa: "ስራ ቪዛ",
+    country: "ኩዌት 🇰🇼",
+    photo: "https://res.cloudinary.com/dwclusteb/image/upload/v1785700716/IMG-20260802-WA0001_rgen52.jpg ",
+    doc: "https://res.cloudinary.com/dwclusteb/image/upload/v1785700961/Screenshot_20260802_230225_Chrome_epxcqv.jpg  ",                  
+        },                                                        
+               "587312": {
+     name: "ሱመያ ኑጉሴ ቱሪ",
+    gender: "ሴት",
+    age: "24",
+    dob: "01/01/1994",
+    elmis: "ELMIS-587312",
+    passport: "EP00294148",
+    phone: "private ", 
+    birth: "ኢትዮጵያ ",
+    visa: "ስራ ቪዛ",
+    country: "ኩዌት 🇰🇼",
+    photo: "https://res.cloudinary.com/dwclusteb/image/upload/v1785829088/IMG-20260803-WA0013_ohxfk9.jpg ",
+    doc: " https://res.cloudinary.com/dwclusteb/image/upload/v1785832611/Screenshot_20260804_113308_Chrome_bfl1i4.jpg ",                  
+        },                                                        
+               "587418": {
+     name: "ጫልቱ ቴሶ ገለቾ",
+    gender: "ሴት",
+    age: "24",
+    dob: "06/12/1995",
+    elmis: "ELMIS-587418",
+    passport: "EP1871780",
+    phone: "private ", 
+    birth: "ኢትዮጵያ ",
+    visa: "ስራ ቪዛ",
+    country: "ኩዌት 🇰🇼",
+    photo: "https://res.cloudinary.com/dwclusteb/image/upload/v1785833576/IMG-20260803-WA0014_1_omkbop.jpg ",
+    doc: " https://res.cloudinary.com/dwclusteb/image/upload/v1785840174/Screenshot_20260804_122757_Chrome_om0ehh.jpg ",                  
+                 },                                                        
+               "573213": {
+     name: "ፎዚያ ገቢ ካዮ",
+    gender: "ሴት",
+    age: "24",
+    dob: "02/02/1993",
+    elmis: "ELMIS-573213",
+    passport: "EP8328214",
+    phone: "private ", 
+    birth: "ኢትዮጵያ ",
+    visa: "ስራ ቪዛ",
+    country: "ኩዌት 🇰🇼",
+    photo: "https://res.cloudinary.com/dwclusteb/image/upload/v1785836707/IMG-20260803-WA0012_ezazdj.jpg ",
+    doc: "  ",                  
+            },                                                        
+               "584213": {
+     name: "አላሙዲን አባጊዳ አባቢሎ  ",
+    gender: "ወንድ",
+    age: "24",
+    dob: "05/01/1993",
+    elmis: "ELMIS-573213",
+    passport: "EP2392552",
+    phone: "private ", 
+    birth: "ኢትዮጵያ ",
+    visa: "ስራ ቪዛ",
+    country: "ኩዌት 🇰🇼",
+    photo: "https://res.cloudinary.com/dwclusteb/image/upload/v1785928330/IMG_20260805_114014_330_qwnuqc.jpg ",
+    doc: "https://res.cloudinary.com/dwclusteb/image/upload/v1786431276/IMG_20260811_091951_955_k3ap5f.jpg  ",                  
+      },                                                        
+                                                                       
+               "696816": {
+     name: "ሉባባ አለሙ የሴፍ",
+    gender: "ሴት",
+    age: "24",
+    dob: "30/04/1993",
+    elmis: "ELMIS-696876",
+    passport: "EP8712000",
+    phone: "private ", 
+    birth: "ኢትዮጵያ ",
+    visa: "ስራ ቪዛ",
+    country: "ኩዌት 🇰🇼",
+    photo: "https://res.cloudinary.com/dwclusteb/image/upload/v1786523996/IMG_20260812_100734_gs5zib.jpg ",
+    doc: "https://res.cloudinary.com/dwclusteb/image/upload/v1786535880/Screenshot_20260812_145713_Chrome_h9shgh.jpg  ",                                                   
+          },                                                        
+                                                                       
+               "696833": {
+     name: "አ/ቶ ፋሪስ ስርሞሉ ሞሳ",
+    gender: "ወንድ",
+    age: "27",
+    dob: "20/09/1998",
+    elmis: "ELMIS-696833",
+    passport: "EP2398340",
+    phone: "private ", 
+    birth: "ኢትዮጵያ ",
+    visa: "ስራ ቪዛ",
+    country: "ካናዳ 🇨🇦",
+    photo: "https://res.cloudinary.com/dwclusteb/image/upload/v1787172475/IMG-20260819-WA0007_1_ilfqdr.jpg ",
+    doc: " https://res.cloudinary.com/dwclusteb/image/upload/v1787228428/Screenshot_20260820_151837_Chrome_drjhnr.jpg ",                                                   
+                    },                                                        
+                                                                       
+               "696834": {
+     name: "አ/ቶ ነጂብ ሙሀመድ ይማም",
+    gender: "ወንድ",
+    age: "24",
+    dob: "10/11/1994",
+    elmis: "ELMIS-696834",
+    passport: "EP00862582",
+    phone: "private ", 
+    birth: "ኢትዮጵያ ",
+    visa: "ስራ ቪዛ",
+    country: "ኩዌት 🇰🇼",
+    photo: "https://res.cloudinary.com/dwclusteb/image/upload/v1787173880/IMG-20260819-WA0009_ffw6uo.jpg ",
+    doc: "https://res.cloudinary.com/dwclusteb/image/upload/v1787174087/Screenshot_20260820_001428_Chrome_f3vkdh.jpg  ",                                                   
+              },                                                        
+                "692122": {
+     name: "ወ/ሮ ከሪም ኢብራሂም አሚ",
+    gender: "ሴት",
+    age: "29",
+    dob: "02/08/1989",
+    elmis: "ELMIS-692122",
+    passport: "EP8988067",
+    phone: "private ", 
+    birth: "ኢትዮጵያ ",
+    visa: "ስራ ቪዛ",
+    country: "ካናዳ 🇨🇦",
+    photo: "https://res.cloudinary.com/dwclusteb/image/upload/v1787299484/IMG-20260821-WA0004_wkhf0s.jpg ",
+    doc: "https://res.cloudinary.com/dwclusteb/image/upload/v1787174087/Screenshot_20260820_001428_Chrome_f3vkdh.jpg ",
+
+               },                                                        
+                "602122": {
+     name: "ወ/ሮ ብርቱካን ኃይሉ ተሰማ",
+    gender: "ሴት",
+    age: "29",
+    dob: "02/03/1992",
+    elmis: "ELMIS-602122",
+    passport: "EP7508579",
+    phone: "private ", 
+    birth: "ኢትዮጵያ ",
+    visa: "ስራ ቪዛ",
+    country: "ኩዌት 🇰🇼",
+    photo: "https://res.cloudinary.com/dwclusteb/image/upload/v1788727301/IMG-20260905-WA0043_l3hwpl.jpg ",
+    doc: "https://res.cloudinary.com/dwclusteb/image/upload/v1789737674/Screenshot_20260918_160810_Chrome_gcajka.jpg ",
+},                                                        
+                "702122": {
+     name: "ወ/ሮ ሊዲያ መስፍን ቡናሬ ",
+    gender: "ሴት",
+    age: "29",
+    dob: "12/09/1998",
+    elmis: "ELMIS-702122",
+    passport: "EP2351856",
+    phone: "private ", 
+    birth: "ኢትዮጵያ ",
+    visa: "ስራ ቪዛ",
+    country: "ኩዌት 🇰🇼",
+    photo: "https://res.cloudinary.com/dwclusteb/image/upload/v1788737015/IMG-20260905-WA0027_qkvark.jpg ",
+    doc: "https://res.cloudinary.com/dwclusteb/image/upload/v1788737349/Screenshot_20260907_022837_Chrome_commlg.jpg ",
+                },
+                 "802122": {
+     name: "አ/ቶ ሞላ መንገሻ ሁሴን ",
+    gender: "ወንድ",
+    age: "29",
+    dob: "07/06/1980",
+    elmis: "ELMIS-802122",
+    passport: "",
+    phone: "private ", 
+    birth: "ኢትዮጵያ ",
+    visa: "ስራ ቪዛ",
+    country: "ኩዌት 🇰🇼",
+    photo: "https://res.cloudinary.com/dwclusteb/image/upload/v1788738411/22220-removebg-preview_ppyn4g.png ",
+    doc: "https://res.cloudinary.com/dwclusteb/image/upload/v1788738213/Screenshot_20260907_024259_Chrome_lbdh7f.jpg ",
+
+            },
+                 "902122": {
+     name: "አ/ቶ ዮናስ አብርሃ ተስፋሁነኝ ",
+    gender: "ወንድ",
+    age: "32",
+    dob: "07/12/1986",
+    elmis: "ELMIS-902122",
+    passport: "EP2773414",
+    phone: "private ", 
+    birth: "ኢትዮጵያ ",
+    visa: "ስራ ቪዛ",
+    country: "ኩዌት 🇰🇼",
+    photo: "https://res.cloudinary.com/dwclusteb/image/upload/v1788767091/BG_Removed_20260907_103932_bm8kji.png ",
+    doc: "https://res.cloudinary.com/dwclusteb/image/upload/v1788767652/Screenshot_20260907_105312_Chrome_tpvcod.jpg ",
+
+            },
+                 "502122": {
+     name: "አ/ቶ ጌታቸዉ ኣሰፋ ወልደጀወርግስ ",
+    gender: "ወንድ",
+    age: "50",
+    dob: "27/07/1968",
+    elmis: "ELMIS-502122",
+    passport: "EP1439853",
+    phone: "private ", 
+    birth: "ኢትዮጵያ ",
+    visa: "ስራ ቪዛ",
+    country: "ካናዳ 🇨🇦",
+    photo: "https://res.cloudinary.com/dwclusteb/image/upload/v1788779662/BG_Removed_20260907_140545_fbk4ch.png ",
+    doc: "https://res.cloudinary.com/dwclusteb/image/upload/v1789985406/Screenshot_20260921_130921_Chrome_as7tt6.jpg ",
+},
+                 "102122": {
+     name: "አ/ቶ ኣለም ዘዉልዲ ንጉሴ  ",
+    gender: "ወንድ",
+    age: "42",
+    dob: "16/11/1976",
+    elmis: "ELMIS-102122",
+    passport: "EP1196065",
+    phone: "private ", 
+    birth: "ኢትዮጵያ ",
+    visa: "ስራ ቪዛ",
+    country: "ካናዳ 🇨🇦",
+    photo: "https://res.cloudinary.com/dwclusteb/image/upload/v1788855930/IMG-20260907-WA0017_jxwkr0.jpg ",
+    doc: "https://res.cloudinary.com/dwclusteb/image/upload/v1789035332/Screenshot_20260910_125805_Chrome_i5s09h.jpg ",
+},
+                 "112122": {
+     name: " ወ/ሮ ሌይላ ሌንጀሶ ዋቆ  ",
+    gender: "ሴት",
+    age: "29",
+    dob: "20/09/1989",
+    elmis: "ELMIS-112122",
+    passport: "EP00822525",
+    phone: "private ", 
+    birth: "ኢትዮጵያ ",
+    visa: "ስራ ቪዛ",
+    country: "ካናዳ 🇨🇦",
+    photo: "https://res.cloudinary.com/dwclusteb/image/upload/v1788881995/IMG-20260906-WA0031_nuq8ab.jpg ",
     doc: "https://res.cloudinary.com/dwclusteb/image/upload/v1789645836/Screenshot_20260917_144417_Chrome_o1fkys.jpg",
+},
+                 "882122": {
+     name: "ወ/ሮ ጂማ መስቀሌ ቱፋ  ",
+    gender: "ሴት",
+    age: "19",
+    dob: "05/09/1999",
+    elmis: "ELMIS-882122",
+    passport: "EP00144207",
+    phone: "private ", 
+    birth: "ኢትዮጵያ ",
+    visa: "ስራ ቪዛ",
+    country: "ኩዌት 🇰🇼",
+    photo: "https://res.cloudinary.com/dwclusteb/image/upload/v1788883192/IMG-20260908-WA0001_ujjq3q.jpg ",
+    doc: "https://res.cloudinary.com/dwclusteb/image/upload/v1788883636/Screenshot_20260908_190526_Chrome_a61hmp.jpg ",
+
+},
+                 "992122": {
+     name: "አ/ቶ ዚያድ ሰይዳ ሃሚዳ",
+    gender: "ወንድ",
+    age: "19",
+    dob: "05/09/1999",
+    elmis: "ELMIS-992122",
+    passport: "E00598791",
+    phone: "private ", 
+    birth: "ኢትዮጵያ,አርሲ",
+    visa: "ስራ ቪዛ",
+    country: "ኩዌት 🇰🇼",
+    photo: "https://res.cloudinary.com/dwclusteb/image/upload/v1789539727/IMG_20260916_091443_753_gyzjri.jpg ",
+    doc: "https://res.cloudinary.com/dwclusteb/image/upload/v1789973689/Screenshot_20260921_094003_Chrome_v13sib.jpg ",
+
+
+
+                                                                              
+
+                                                            
+                                                                                                  
+                                                                                                  
+                                                                                                  
+                                                    
+                                                                                                 
+                                                  
+                                                   
+                                                   
+                                                                                       
+                                                                                                  
+                                                                                       
+                                                                                                                          
+                                                                                                                       
+                                                                                                                          
+                                                                                                                                                                                                   
+      }
+};
+
+
+
+// CARD 1
+document.querySelectorAll('.card')[0]
+.addEventListener('click', () => {
+
+window.location.href = 'news1.html';
+
+});
+
+
+// CARD 2
+document.querySelectorAll('.card')[1]
+.addEventListener('click', () => {
+
+window.location.href = 'news2.html';
+
+});
+
+
+// CARD 3
+document.querySelectorAll('.card')[2]
+.addEventListener('click', () => {
+
+window.location.href = 'news3.html';
+
+});
+
+
+// NEWS CARD 1
+document.querySelectorAll('.news-card')[0]
+.addEventListener('click', () => {
+
+window.location.href = 'news4.html';
+
+});
+
+
+// NEWS CARD 2
+document.querySelectorAll('.news-card')[1]
+.addEventListener('click', () => {
+
+window.location.href = 'news5.html';
+
+});
+
+
+// =======================
+// CHECK CODE FUNCTION
+// =======================
+function checkCode() {
+  let code = document.getElementById("code").value.trim();
+  let msg = document.getElementById("msg");
+
+  if (!code) {
+    msg.style.color = "red";
+    msg.innerHTML = "❌ Please enter code";
+    return;
+  }
+
+  if (users[code]) {
+    msg.style.color = "green";
+    msg.innerHTML = "✅ Access Granted";
+
+    localStorage.setItem("user", JSON.stringify(users[code]));
+    localStorage.setItem("vcode", code);
+
+    setTimeout(() => {
+      window.location.href = "personal.html";
+    }, 800);
+
+  } else {
+    msg.style.color = "red";
+    msg.innerHTML = "❌ Invalid Code";
+  }
+}
+
+
+// =======================
+// SLIDER (FIXED)
+// =======================
+window.addEventListener("load", () => {
+  const sliderImages = [
+    "https://e-lmis-online.netlify.app/image/photo_2025-11-29_18-23-08.jpg",
+    "https://e-lmis-online.netlify.app/image/photo_2025-11-26_21-51-36.jpg",
+    "https://e-lmis-online.netlify.app/image/photo_2025-11-29_18-58-10.jpg"
+  ];
+
+  let index = 0;
+  const slider = document.querySelector(".slider img");
+
+  if (!slider) return;
+
+  setInterval(() => {
+    index = (index + 1) % sliderImages.length;
+    slider.src = sliderImages[index];
+  }, 6000);
+});
+</script>
+
+</body>
+</html>",
 },
                  "882122": {
      name: "ወ/ሮ ጂማ መስቀሌ ቱፋ  ",
