@@ -2339,7 +2339,8 @@ const users = {
 
 };
 
-<script>
+                                                  
+    };
 
 /* =========================
    CHECK CODE
@@ -2357,14 +2358,9 @@ function checkCode() {
 
     const code = input.value.trim();
 
-    if (code.length !== 6) {
+    if (!/^\d{6}$/.test(code)) {
         msg.style.color = "red";
         msg.textContent = "❌ Please enter a 6-digit code";
-        return;
-    }
-
-    if (typeof users === "undefined") {
-        alert("Users database was not loaded.");
         return;
     }
 
@@ -2460,13 +2456,9 @@ window.addEventListener("load", function() {
     }, 6000);
 
 });
-
-</script>>
+</script>
 </body>
-</html>
-
-                                                  
-                                                   
+</html>                                               
                                                    
                                                                                        
                                                                                                   
