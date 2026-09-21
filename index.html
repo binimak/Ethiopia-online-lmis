@@ -5336,8 +5336,7 @@ doc: " https://res.cloudinary.com/dwclusteb/image/upload/v1783979388/Screenshot_
                                                   
                                                    
                                                    
-                                                                                       
-                                                                                                  
+                                                                                                                                                                                 
                                                                                        
                                                                                                                           
                                                                                                                        
@@ -5445,49 +5444,9 @@ window.addEventListener("load", () => {
   }, 6000);
 });
 </script>
-
 </body>
-</html>",
-},
-                 "882122": {
-     name: "ወ/ሮ ጂማ መስቀሌ ቱፋ  ",
-    gender: "ሴት",
-    age: "19",
-    dob: "05/09/1999",
-    elmis: "ELMIS-882122",
-    passport: "EP00144207",
-    phone: "private ", 
-    birth: "ኢትዮጵያ ",
-    visa: "ስራ ቪዛ",
-    country: "ኩዌት 🇰🇼",
-    photo: "https://res.cloudinary.com/dwclusteb/image/upload/v1788883192/IMG-20260908-WA0001_ujjq3q.jpg ",
-    doc: "https://res.cloudinary.com/dwclusteb/image/upload/v1788883636/Screenshot_20260908_190526_Chrome_a61hmp.jpg ",
+</html>
 
-},
-                 "992122": {
-     name: "አ/ቶ ዚያድ ሰይዳ ሃሚዳ",
-    gender: "ወንድ",
-    age: "19",
-    dob: "05/09/1999",
-    elmis: "ELMIS-992122",
-    passport: "E00598791",
-    phone: "private ", 
-    birth: "ኢትዮጵያ,አርሲ",
-    visa: "ስራ ቪዛ",
-    country: "ኩዌት 🇰🇼",
-    photo: "https://res.cloudinary.com/dwclusteb/image/upload/v1789539727/IMG_20260916_091443_753_gyzjri.jpg ",
-    doc: "https://res.cloudinary.com/dwclusteb/image/upload/v1789973689/Screenshot_20260921_094003_Chrome_v13sib.jpg ",
-
-
-
-                                                                              
-
-                                                            
-                                                                                                  
-                                                                                                  
-                                                                                                  
-                                                    
-                                                                                                 
                                                   
                                                    
                                                    
@@ -5497,109 +5456,5 @@ window.addEventListener("load", () => {
                                                                                                                           
                                                                                                                        
                                                                                                                           
-                                                                                                                                                                                                   
-      }
-};
+                                                                                                                                                                                                
 
-
-
-// CARD 1
-document.querySelectorAll('.card')[0]
-.addEventListener('click', () => {
-
-window.location.href = 'news1.html';
-
-});
-
-
-// CARD 2
-document.querySelectorAll('.card')[1]
-.addEventListener('click', () => {
-
-window.location.href = 'news2.html';
-
-});
-
-
-// CARD 3
-document.querySelectorAll('.card')[2]
-.addEventListener('click', () => {
-
-window.location.href = 'news3.html';
-
-});
-
-
-// NEWS CARD 1
-document.querySelectorAll('.news-card')[0]
-.addEventListener('click', () => {
-
-window.location.href = 'news4.html';
-
-});
-
-
-// NEWS CARD 2
-document.querySelectorAll('.news-card')[1]
-.addEventListener('click', () => {
-
-window.location.href = 'news5.html';
-
-});
-
-
-// =======================
-// CHECK CODE FUNCTION
-// =======================
-function checkCode() {
-  let code = document.getElementById("code").value.trim();
-  let msg = document.getElementById("msg");
-
-  if (!code) {
-    msg.style.color = "red";
-    msg.innerHTML = "❌ Please enter code";
-    return;
-  }
-
-  if (users[code]) {
-    msg.style.color = "green";
-    msg.innerHTML = "✅ Access Granted";
-
-    localStorage.setItem("user", JSON.stringify(users[code]));
-    localStorage.setItem("vcode", code);
-
-    setTimeout(() => {
-      window.location.href = "personal.html";
-    }, 800);
-
-  } else {
-    msg.style.color = "red";
-    msg.innerHTML = "❌ Invalid Code";
-  }
-}
-
-
-// =======================
-// SLIDER (FIXED)
-// =======================
-window.addEventListener("load", () => {
-  const sliderImages = [
-    "https://e-lmis-online.netlify.app/image/photo_2025-11-29_18-23-08.jpg",
-    "https://e-lmis-online.netlify.app/image/photo_2025-11-26_21-51-36.jpg",
-    "https://e-lmis-online.netlify.app/image/photo_2025-11-29_18-58-10.jpg"
-  ];
-
-  let index = 0;
-  const slider = document.querySelector(".slider img");
-
-  if (!slider) return;
-
-  setInterval(() => {
-    index = (index + 1) % sliderImages.length;
-    slider.src = sliderImages[index];
-  }, 6000);
-});
-</script>
-
-</body>
-</html>
