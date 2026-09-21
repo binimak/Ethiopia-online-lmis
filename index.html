@@ -2715,10 +2715,15 @@ window.location.href = 'news5.html';
 // =======================
 function checkCode() {
 
-    const codeInput = document.getElementById("code");
+    const codeElement = document.getElementById("code");
     const msg = document.getElementById("msg");
 
-    const code = codeInput.value.trim();
+    if (!codeElement || !msg) {
+        alert("Code input or message element not found!");
+        return;
+    }
+
+    const code = String(codeElement.value).trim();
 
     if (code.length !== 6) {
         msg.style.color = "red";
@@ -2734,15 +2739,17 @@ function checkCode() {
         return;
     }
 
-    // Save user information
+    // Save selected user
     localStorage.setItem("user", JSON.stringify(user));
     localStorage.setItem("vcode", code);
 
     msg.style.color = "green";
     msg.innerHTML = "✅ Access Granted";
 
-    // Go to personal.html
-    window.location.href = "./personal.html";
+    // Open personal.html
+    setTimeout(function () {
+        window.location.assign("./personal.html");
+    }, 500);
 }
 
 
