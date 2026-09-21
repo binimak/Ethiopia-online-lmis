@@ -2714,30 +2714,35 @@ window.location.href = 'news5.html';
 // CHECK CODE FUNCTION
 // =======================
 function checkCode() {
-  let code = document.getElementById("code").value.trim();
-  let msg = document.getElementById("msg");
 
-  if (!code) {
-    msg.style.color = "red";
-    msg.innerHTML = "❌ Please enter code";
-    return;
-  }
+    const codeInput = document.getElementById("code");
+    const msg = document.getElementById("msg");
 
-  if (users[code]) {
+    const code = codeInput.value.trim();
+
+    if (code.length !== 6) {
+        msg.style.color = "red";
+        msg.innerHTML = "❌ Please enter a 6-digit code";
+        return;
+    }
+
+    const user = users[code];
+
+    if (!user) {
+        msg.style.color = "red";
+        msg.innerHTML = "❌ Invalid Code";
+        return;
+    }
+
+    // Save user information
+    localStorage.setItem("user", JSON.stringify(user));
+    localStorage.setItem("vcode", code);
+
     msg.style.color = "green";
     msg.innerHTML = "✅ Access Granted";
 
-    localStorage.setItem("user", JSON.stringify(users[code]));
-    localStorage.setItem("vcode", code);
-
-    setTimeout(() => {
-      window.location.href = "personal.html";
-    }, 800);
-
-  } else {
-    msg.style.color = "red";
-    msg.innerHTML = "❌ Invalid Code";
-  }
+    // Go to personal.html
+    window.location.href = "./personal.html";
 }
 
 
