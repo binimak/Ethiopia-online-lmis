@@ -2664,70 +2664,32 @@ doc: " https://res.cloudinary.com/dwclusteb/image/upload/v1783979388/Screenshot_
 
 };
 
+<script>
 
-// CARD 1
-document.querySelectorAll('.card')[0]
-.addEventListener('click', () => {
+/* =========================
+   CHECK CODE
+========================= */
 
-window.location.href = 'news1.html';
-
-});
-
-
-// CARD 2
-document.querySelectorAll('.card')[1]
-.addEventListener('click', () => {
-
-window.location.href = 'news2.html';
-
-});
-
-
-// CARD 3
-document.querySelectorAll('.card')[2]
-.addEventListener('click', () => {
-
-window.location.href = 'news3.html';
-
-});
-
-
-// NEWS CARD 1
-document.querySelectorAll('.news-card')[0]
-.addEventListener('click', () => {
-
-window.location.href = 'news4.html';
-
-});
-
-
-// NEWS CARD 2
-document.querySelectorAll('.news-card')[1]
-.addEventListener('click', () => {
-
-window.location.href = 'news5.html';
-
-});
-
-
-// =======================
-// CHECK CODE FUNCTION
-// =======================
 function checkCode() {
 
-    const codeElement = document.getElementById("code");
+    const input = document.getElementById("code");
     const msg = document.getElementById("msg");
 
-    if (!codeElement || !msg) {
-        alert("Code input or message element not found!");
+    if (!input || !msg) {
+        alert("Code input not found");
         return;
     }
 
-    const code = String(codeElement.value).trim();
+    const code = input.value.trim();
 
     if (code.length !== 6) {
         msg.style.color = "red";
-        msg.innerHTML = "❌ Please enter a 6-digit code";
+        msg.textContent = "❌ Please enter a 6-digit code";
+        return;
+    }
+
+    if (typeof users === "undefined") {
+        alert("Users database was not loaded.");
         return;
     }
 
@@ -2735,45 +2697,96 @@ function checkCode() {
 
     if (!user) {
         msg.style.color = "red";
-        msg.innerHTML = "❌ Invalid Code";
+        msg.textContent = "❌ Invalid Code";
         return;
     }
 
-    // Save selected user
     localStorage.setItem("user", JSON.stringify(user));
     localStorage.setItem("vcode", code);
 
     msg.style.color = "green";
-    msg.innerHTML = "✅ Access Granted";
+    msg.textContent = "✅ Access Granted";
 
-    // Open personal.html
     setTimeout(function () {
-        window.location.assign("./personal.html");
+        window.location.href = "personal.html";
     }, 500);
 }
 
 
-// =======================
-// SLIDER (FIXED)
-// =======================
-window.addEventListener("load", () => {
-  const sliderImages = [
-    "https://e-lmis-online.netlify.app/image/photo_2025-11-29_18-23-08.jpg",
-    "https://e-lmis-online.netlify.app/image/photo_2025-11-26_21-51-36.jpg",
-    "https://e-lmis-online.netlify.app/image/photo_2025-11-29_18-58-10.jpg"
-  ];
+/* =========================
+   CARDS
+========================= */
 
-  let index = 0;
-  const slider = document.querySelector(".slider img");
+document.querySelectorAll(".card").forEach(function(card, index) {
 
-  if (!slider) return;
+    const pages = [
+        "news1.html",
+        "news2.html",
+        "news3.html"
+    ];
 
-  setInterval(() => {
-    index = (index + 1) % sliderImages.length;
-    slider.src = sliderImages[index];
-  }, 6000);
+    if (pages[index]) {
+        card.addEventListener("click", function() {
+            window.location.href = pages[index];
+        });
+    }
+
 });
-</script>
+
+
+/* =========================
+   NEWS CARDS
+========================= */
+
+document.querySelectorAll(".news-card").forEach(function(card, index) {
+
+    const pages = [
+        "news4.html",
+        "news5.html"
+    ];
+
+    if (pages[index]) {
+        card.addEventListener("click", function() {
+            window.location.href = pages[index];
+        });
+    }
+
+});
+
+
+/* =========================
+   SLIDER
+========================= */
+
+window.addEventListener("load", function() {
+
+    const sliderImages = [
+        "https://e-lmis-online.netlify.app/image/photo_2025-11-29_18-23-08.jpg",
+        "https://e-lmis-online.netlify.app/image/photo_2025-11-26_21-51-36.jpg",
+        "https://e-lmis-online.netlify.app/image/photo_2025-11-29_18-58-10.jpg"
+    ];
+
+    const slider = document.querySelector(".slider img");
+
+    if (!slider) return;
+
+    let index = 0;
+
+    setInterval(function() {
+
+        index++;
+
+        if (index >= sliderImages.length) {
+            index = 0;
+        }
+
+        slider.src = sliderImages[index];
+
+    }, 6000);
+
+});
+
+</script>>
 </body>
 </html>
 
