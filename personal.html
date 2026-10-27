@@ -684,6 +684,37 @@ footer p {
     </div>
   </div>
 </section>
+</section>
+
+<!-- RECEIPT UPLOAD -->
+<section class="section">
+  <div class="title">🧾 የክፍያ ደረሰኝ ፎቶ</div>
+  <div class="receipt-upload-reference">
+    <div class="receipt-upload-box">
+      <div class="receipt-upload-icon">🧾</div>
+      <div class="receipt-upload-label">Receipt Photo / የደረሰኝ ፎቶ</div>
+
+      <img id="receiptImage" class="receipt-preview" alt="Receipt preview" style="display:none">
+
+      <div id="receiptPlaceholder">
+        <label for="receiptUpload" class="receipt-file-label">📷 Choose Receipt</label>
+      </div>
+
+      <input type="file" id="receiptUpload" accept="image/jpeg,image/png,image/webp" hidden>
+      <div id="receiptStatus" class="receipt-upload-status">No file chosen</div>
+    </div>
+
+    <div class="receipt-actions">
+      <label for="receiptUpload" class="upload-action">📷 Upload</label>
+      <button type="button" class="view-action" onclick="viewReceipt()">🔍 View</button>
+      <button type="button" class="remove-action" onclick="removeReceipt()">🗑️ Remove</button>
+    </div>
+
+    <p style="text-align:center;padding-top:12px;color:#64748b;font-size:10px">
+      JPG, PNG ወይም WEBP ፎቶ ይምረጡ።
+    </p>
+  </div>
+</section>
 
 <!-- TRAVEL -->
 <section class="section">
@@ -744,37 +775,6 @@ footer p {
       <div class="ministry-link"><small>OVERSEAS</small><strong>የውጭ ስራ መረጃ</strong></div>
     </div>
   </div>
-</section>
-
-<!-- RECEIPT UPLOAD -->
-<section class="section">
-  <div class="title">🧾 የክፍያ ደረሰኝ ፎቶ</div>
-  <div class="receipt-upload-reference">
-    <div class="receipt-upload-box">
-      <div class="receipt-upload-icon">🧾</div>
-      <div class="receipt-upload-label">Receipt Photo / የደረሰኝ ፎቶ</div>
-
-      <img id="receiptImage" class="receipt-preview" alt="Receipt preview" style="display:none">
-
-      <div id="receiptPlaceholder">
-        <label for="receiptUpload" class="receipt-file-label">📷 Choose Receipt</label>
-      </div>
-
-      <input type="file" id="receiptUpload" accept="image/jpeg,image/png,image/webp" hidden>
-      <div id="receiptStatus" class="receipt-upload-status">No file chosen</div>
-    </div>
-
-    <div class="receipt-actions">
-      <label for="receiptUpload" class="upload-action">📷 Upload</label>
-      <button type="button" class="view-action" onclick="viewReceipt()">🔍 View</button>
-      <button type="button" class="remove-action" onclick="removeReceipt()">🗑️ Remove</button>
-    </div>
-
-    <p style="text-align:center;padding-top:12px;color:#64748b;font-size:10px">
-      JPG, PNG ወይም WEBP ፎቶ ይምረጡ።
-    </p>
-  </div>
-</section>
 
 <!-- PAYMENT STAGE -->
 <section class="section">
