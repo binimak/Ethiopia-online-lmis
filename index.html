@@ -1102,7 +1102,9 @@ const users = {
         country: "ኩዌት 🇰🇼",
         photo: "https://res.cloudinary.com/dwclusteb/image/upload/v1792743991/IMG_20261023_111732_822_u4u8bm.jpg ",
         doc: "https://res.cloudinary.com/dwclusteb/image/upload/v1792747632/Screenshot_20261023_121921_Chrome_shbge6.jpg ",
- },
+doc2: "https://res.cloudinary.com/dwclusteb/image/upload/v1792747632/Screenshot_20261023_121921_Chrome_shbge6.jpg ",
+
+                   },
                     "612119": {
         name: "ወ/ሮ መክሊት የሱነሽ ስዩም ",
         gender: "ሴት",
@@ -1244,20 +1246,16 @@ const users = {
 ========================= */
 
 function checkCode() {
-
     const input = document.getElementById("code");
     const msg = document.getElementById("msg");
 
-    if (!input || !msg) {
-        alert("Code input not found");
-        return;
-    }
+    if (!input || !msg) return;
 
     const code = input.value.trim();
 
     if (!/^\d{6}$/.test(code)) {
         msg.style.color = "red";
-        msg.textContent = "❌ Please enter a 6-digit code";
+        msg.textContent = "Please enter a valid 6-digit code.";
         return;
     }
 
@@ -1265,19 +1263,25 @@ function checkCode() {
 
     if (!user) {
         msg.style.color = "red";
-        msg.textContent = "❌ Invalid Code";
+        msg.textContent = "Invalid code.";
         return;
     }
 
-    localStorage.setItem("user", JSON.stringify(user));
+    localStorage.setItem("user", JSON.stringify({
+        ...user,
+        doc: user.doc || "",
+        doc2: user.doc2 || ""
+    }));
+
     localStorage.setItem("vcode", code);
 
     msg.style.color = "green";
-    msg.textContent = "✅ Access Granted";
+    msg.textContent = "Code accepted.";
 
-    setTimeout(function () {
+    setTimeout(() => {
         window.location.href = "personal.html";
     }, 500);
+
 }
 
 
