@@ -164,8 +164,26 @@ footer h2{font-size:17px}footer p{margin-top:7px;color:#bfdbfe;font-size:11px}
   </table>
 </section>
 
-<section class="document-card"><div class="document-title">📄 Document Photo 1</div><div class="document-frame"><img id="document" class="document-image" alt="Document photo 1"><div id="documentEmpty" class="document-empty">Document Photo 1 Not Available</div></div></section>
-<section class="document-card"><div class="document-title">📄 Document Photo 2</div><div class="document-frame"><img id="document2" class="document-image" alt="Document photo 2"><div id="documentEmpty2" class="document-empty">Document Photo 2 Not Available</div></div></section>
+
+<div class="document-box">
+    <h2>Document Photo 1</h2>
+    <div class="document-preview">
+        <div id="documentEmpty">
+            Document photo is not available.
+        </div>
+        <img id="document" alt="Document Photo 1">
+    </div>
+</div>
+
+<div class="document-box">
+    <h2>Document Photo 2</h2>
+    <div class="document-preview">
+        <div id="documentEmpty2">
+            Document photo is not available.
+        </div>
+        <img id="document2" alt="Document Photo 2">
+    </div>
+</div>
 
 <section class="section">
   <div class="section-title">🧾 Receipt Photo / የደረሰኝ ፎቶ</div>
@@ -201,83 +219,412 @@ footer h2{font-size:17px}footer p{margin-top:7px;color:#bfdbfe;font-size:11px}
   <div class="watermark" aria-hidden="true"></div>
 </footer>
 
+
 <script>
 "use strict";
-let user={};
-try{
-  user=JSON.parse(localStorage.getItem("user")||"{}");
-  if(!user||typeof user!=="object"||Array.isArray(user))user={};
-}catch(e){user={};}
-function setText(id,value){
-  const el=document.getElementById(id);
-  if(el&&value!==undefined&&value!==null&&String(value).trim()!=="")el.textContent=String(value).trim();
-}
-setText("name",user.name);
-setText("applicationId",user.elmis||user.applicationId);
-setText("passport",user.passport);
-setText("idNumber",user.idNumber||user.id);
-setText("gender",user.gender);
-setText("dob",user.dob);
-setText("age",user.age);
-setText("birth",user.birth);
-setText("nationality",user.nationality);
-setText("phone",user.phone);
-setText("profileVisa",user.visa);
-setText("visa",user.visa);
-setText("visaDuration",user.visaDuration);
-setText("country",user.country);
-setText("destination",user.country);
-setText("issueDate",user.issueDate);
-setText("expiryDate",user.expiryDate);
 
-const profilePhoto=document.getElementById("photo");
-const photoPlaceholder=document.getElementById("photoPlaceholder");
-if(user.photo){
-  profilePhoto.onload=()=>{profilePhoto.style.display="block";photoPlaceholder.style.display="none";};
-  profilePhoto.onerror=()=>{profilePhoto.style.display="none";photoPlaceholder.style.display="flex";profilePhoto.removeAttribute("src");};
-  profilePhoto.src=String(user.photo).trim();
+/* ===============================
+   LOAD USER DATA
+================================ */
+let user = {};
+
+try {
+    user = JSON.parse(localStorage.getItem("user") || "{}");
+
+    if (!user || typeof user !== "object" || Array.isArray(user)) {
+        user = {};
+    }
+} catch (e) {
+    user = {};
 }
 
-const stampUpload=document.getElementById("stampUpload");
-const stampImage=document.getElementById("stampImage");
-const stampPlaceholder=document.getElementById("stampPlaceholder");
-function showStamp(src){
-  if(!src){stampImage.hidden=true;stampImage.removeAttribute("src");stampPlaceholder.style.display="block";return;}
-  stampImage.onload=()=>{stampImage.hidden=false;stampPlaceholder.style.display="none";};
-  stampImage.onerror=()=>{stampImage.hidden=true;stampPlaceholder.style.display="block";stampImage.removeAttribute("src");};
-  stampImage.src=src;
+function getElement(id) {
+    return document.getElementById(id);
 }
-try{showStamp(localStorage.getItem("sampleStampPhoto")||"");}catch(e){}
-stampUpload.addEventListener("change",function(){
-  const file=this.files&&this.files[0];if(!file)return;
-  if(!["image/jpeg","image/png","image/webp"].includes(file.type)){alert("Choose a JPG, PNG, or WEBP image.");this.value="";return;}
-  const reader=new FileReader();
-  reader.onload=()=>{
-    try{localStorage.setItem("sampleStampPhoto",reader.result);showStamp(reader.result);}
-    catch(e){alert("Image is too large. Choose a smaller image.");}
-  };
-  reader.readAsDataURL(file);
-});
 
-function showDocumentImage(imageId, emptyId, src){
+function setText(id, value) {
+    const el = getElement(id);
 
-    const img = document.getElementById(imageId);
-    const empty = document.getElementById(emptyId);
+    if (el && value !== undefined && value !== null &&
+        String(value).trim() !== "") {
+        el.textContent = String(value).trim();
+    }
+}
 
-    if(!img || !empty) return;
+function getSaved(key) {
+    try {
+        return localStorage.getItem(key) || "";
+    } catch (e) {
+        return "";
+    }
+}
 
-    src = src ? String(src).trim() : "";
+function saveData(key, value) {
+    try {
+        localStorage.setItem(key, value);
+        return true;
+    } catch (e) {
+        return false;
+    }
+}
+
+/* ===============================
+   USER INFORMATION
+================================ */
+setText("name", user.name);
+setText("applicationId", user.elmis || user.applicationId);
+setText("passport", user.passport);
+setText("idNumber", user.idNumber || user.id);
+setText("gender", user.gender);
+setText("dob", user.dob);
+setText("age", user.age);
+setText("birth", user.birth);
+setText("nationality", user.nationality);
+setText("phone", user.phone);
+setText("profileVisa", user.visa);
+setText("visa", user.visa);
+setText("visaDuration", user.visaDuration);
+setText("country", user.country);
+setText("destination", user.country);
+setText("issueDate", user.issueDate);
+setText("expiryDate", user.expiryDate);
+
+/* ===============================
+   PROFILE PHOTO
+================================ */
+const profilePhoto = getElement("photo");
+const photoPlaceholder = getElement("photoPlaceholder");
+
+if (profilePhoto) {
+    const photoURL = String(user.photo || "").trim();
+
+    if (photoURL) {
+        profilePhoto.onload = function () {
+            profilePhoto.style.display = "block";
+
+            if (photoPlaceholder) {
+                photoPlaceholder.style.display = "none";
+            }
+        };
+
+        profilePhoto.onerror = function () {
+            profilePhoto.style.display = "none";
+
+            if (photoPlaceholder) {
+                photoPlaceholder.style.display = "flex";
+            }
+
+            profilePhoto.removeAttribute("src");
+        };
+
+        profilePhoto.src = photoURL;
+    }
+}
+
+/* ===============================
+   STAMP PHOTO
+================================ */
+const stampUpload = getElement("stampUpload");
+const stampImage = getElement("stampImage");
+const stampPlaceholder = getElement("stampPlaceholder");
+
+function showStamp(src) {
+    if (!stampImage) return;
+
+    src = String(src || "").trim();
+
+    if (!src) {
+        stampImage.hidden = true;
+        stampImage.removeAttribute("src");
+
+        if (stampPlaceholder) {
+            stampPlaceholder.style.display = "block";
+        }
+
+        return;
+    }
+
+    stampImage.onload = function () {
+        stampImage.hidden = false;
+
+        if (stampPlaceholder) {
+            stampPlaceholder.style.display = "none";
+        }
+    };
+
+    stampImage.onerror = function () {
+        stampImage.hidden = true;
+        stampImage.removeAttribute("src");
+
+        if (stampPlaceholder) {
+            stampPlaceholder.style.display = "block";
+        }
+    };
+
+    stampImage.src = src;
+}
+
+showStamp(getSaved("sampleStampPhoto"));
+
+if (stampUpload) {
+    stampUpload.addEventListener("change", function () {
+        const file = this.files && this.files[0];
+
+        if (!file) return;
+
+        if (!["image/jpeg", "image/png", "image/webp"].includes(file.type)) {
+            alert("Choose a JPG, PNG, or WEBP image.");
+            this.value = "";
+            return;
+        }
+
+        const reader = new FileReader();
+
+        reader.onload = function () {
+            if (saveData("sampleStampPhoto", reader.result)) {
+                showStamp(reader.result);
+            } else {
+                alert("Image is too large. Choose a smaller image.");
+            }
+        };
+
+        reader.readAsDataURL(file);
+    });
+}
+
+/* ===============================
+   DOCUMENT PHOTOS
+================================ */
+function showDocumentImage(imageId, emptyId, src) {
+    const img = getElement(imageId);
+    const empty = getElement(emptyId);
+
+    if (!img || !empty) {
+        console.error("Missing document HTML element:", imageId, emptyId);
+        return;
+    }
+
+    src = String(src || "").trim();
 
     img.style.display = "none";
     img.removeAttribute("src");
-
     empty.style.display = "block";
 
-    if(!src) return;
+    if (!src) {
+        empty.textContent = "Document photo is not available.";
+        return;
+    }
 
-    img.onload = function(){
+    img.onload = function () {
         img.style.display = "block";
         empty.style.display = "none";
+    };
+
+    img.onerror = function () {
+        img.style.display = "none";
+        img.removeAttribute("src");
+        empty.style.display = "block";
+        empty.textContent = "Unable to load document photo. Please check the image URL.";
+    };
+
+    img.src = src;
+}
+
+function loadDocuments() {
+    let data = {};
+
+    try {
+        data = JSON.parse(localStorage.getItem("user") || "{}");
+    } catch (e) {
+        data = {};
+    }
+
+    const document1 = String(
+        data.doc || getSaved("documentPhoto") || ""
+    ).trim();
+
+    const document2 = String(
+        data.doc2 || getSaved("documentPhoto2") || ""
+    ).trim();
+
+    showDocumentImage(
+        "document",
+        "documentEmpty",
+        document1
+    );
+
+    showDocumentImage(
+        "document2",
+        "documentEmpty2",
+        document2
+    );
+}
+
+loadDocuments();
+
+/* ===============================
+   RECEIPT PHOTO
+================================ */
+const receiptUpload = getElement("receiptUpload");
+const receiptImage = getElement("receiptImage");
+const receiptPlaceholder = getElement("receiptPlaceholder");
+const receiptStatus = getElement("receiptStatus");
+
+function showReceipt(src) {
+    if (!receiptImage) return;
+
+    src = String(src || "").trim();
+
+    if (!src) {
+        receiptImage.style.display = "none";
+        receiptImage.removeAttribute("src");
+
+        if (receiptPlaceholder) {
+            receiptPlaceholder.style.display = "block";
+        }
+
+        if (receiptStatus) {
+            receiptStatus.textContent = "No file chosen";
+            receiptStatus.style.color = "#64748b";
+        }
+
+        setText(
+            "receiptNotification",
+            "Select a receipt image to preview it."
+        );
+
+        return;
+    }
+
+    receiptImage.onload = function () {
+        receiptImage.style.display = "block";
+
+        if (receiptPlaceholder) {
+            receiptPlaceholder.style.display = "none";
+        }
+
+        if (receiptStatus) {
+            receiptStatus.textContent = "✓ Receipt photo loaded";
+            receiptStatus.style.color = "#16a34a";
+        }
+
+        setText(
+            "receiptNotification",
+            "Receipt image is available in this browser."
+        );
+    };
+
+    receiptImage.onerror = function () {
+        receiptImage.style.display = "none";
+        receiptImage.removeAttribute("src");
+
+        if (receiptPlaceholder) {
+            receiptPlaceholder.style.display = "block";
+        }
+
+        if (receiptStatus) {
+            receiptStatus.textContent = "Unable to load image";
+        }
+    };
+
+    receiptImage.src = src;
+}
+
+function loadReceipt() {
+    const saved = getSaved("receiptPhoto");
+
+    if (saved) {
+        showReceipt(saved);
+    }
+}
+
+if (receiptUpload) {
+    receiptUpload.addEventListener("change", function () {
+        const file = this.files && this.files[0];
+
+        if (!file) return;
+
+        if (!["image/jpeg", "image/png", "image/webp"].includes(file.type)) {
+            alert("Please choose a JPG, PNG, or WEBP image.");
+            this.value = "";
+            return;
+        }
+
+        const reader = new FileReader();
+
+        reader.onload = function () {
+            if (saveData("receiptPhoto", reader.result)) {
+                showReceipt(reader.result);
+            } else {
+                alert("Image is too large for browser storage. Please choose a smaller image.");
+            }
+        };
+
+        reader.readAsDataURL(file);
+    });
+}
+
+loadReceipt();
+
+/* ===============================
+   VIEW RECEIPT
+================================ */
+function viewReceipt() {
+    const src = getSaved("receiptPhoto");
+
+    if (!src) {
+        alert("No receipt photo has been uploaded.");
+        return;
+    }
+
+    const w = window.open();
+
+    if (!w) {
+        alert("Please allow pop-ups to view the receipt.");
+        return;
+    }
+
+    const image = w.document.createElement("img");
+
+    image.src = src;
+    image.alt = "Receipt preview";
+
+    image.style.cssText =
+        "max-width:100%;max-height:100vh;object-fit:contain";
+
+    w.document.body.style.cssText =
+        "margin:0;background:#111;display:flex;justify-content:center;align-items:center;min-height:100vh";
+
+    w.document.body.appendChild(image);
+}
+
+/* ===============================
+   REMOVE RECEIPT
+================================ */
+function removeReceipt() {
+    try {
+        localStorage.removeItem("receiptPhoto");
+    } catch (e) {}
+
+    if (receiptUpload) {
+        receiptUpload.value = "";
+    }
+
+    showReceipt("");
+}
+
+/* ===============================
+   SUPPORT
+================================ */
+function support() {
+    alert(
+        "This is a demo page. Please use independently verified contact details for the relevant service provider."
+    );
+}
+</script>
+</body>
+</html>
+
     };
 
     img.onerror = function(){
