@@ -1,4 +1,3 @@
- 
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,1266 +10,1221 @@
 body{
   margin:0;
   font-family:'Poppins',sans-serif;
-
-  background:
-  linear-gradient(
-  135deg,
-  #e0ecff,
-  #f8fbff,
-  #dbeafe);
-
+  background:linear-gradient(135deg,#e0ecff,#f8fbff,#dbeafe);
   color:#0f172a;
-
   overflow-x:hidden;
   line-height:1.7;
 }
-
-/* SMOOTH */
-html{
-  scroll-behavior:smooth;
-}
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
+html{scroll-behavior:smooth;}
+*{margin:0;padding:0;box-sizing:border-box;}
 :root{
   --primary:#2563eb;
   --secondary:#1d4ed8;
   --dark:#0f172a;
   --white:#fff;
-
-  --glass:
-  rgba(255,255,255,0.55);
-
-  --shadow:
-  0 20px 60px rgba(37,99,235,.12);
-
+  --glass:rgba(255,255,255,0.55);
+  --shadow:0 20px 60px rgba(37,99,235,.12);
   --radius:30px;
 }
-/* HEADER */
 .header{
-  position:sticky;
-  top:0;
-  z-index:999;
-
-  height:85px;
-
-  display:flex;
-  justify-content:center;
-  align-items:center;
-
+  position:sticky;top:0;z-index:999;height:85px;
+  display:flex;justify-content:center;align-items:center;
   background:rgba(255,255,255,.45);
-
   backdrop-filter:blur(20px);
-
-  border-bottom:
-  1px solid rgba(255,255,255,.35);
-
-  box-shadow:
-  0 8px 30px rgba(0,0,0,.04);
+  border-bottom:1px solid rgba(255,255,255,.35);
+  box-shadow:0 8px 30px rgba(0,0,0,.04);
 }
-
-.header img{
-  width:95px;
-  transition:.4s ease;
-}
-.header img:hover{
-    transform: scale(1.08) rotate(2deg);
-}
-/* WELCOME */
-.news-section{
-padding:5px;
-}
+.header img{width:95px;transition:.4s ease;}
+.header img:hover{transform:scale(1.08) rotate(2deg);}
+.news-section{padding:5px;}
 .section{
-  width:92%;
-  margin:30px auto;
-  padding:35px;
-
+  width:92%;margin:30px auto;padding:35px;
   background:rgba(255,255,255,0.8);
-
   backdrop-filter:blur(12px);
-
   border:1px solid rgba(255,255,255,0.6);
-
-  border-radius:32px;
-
-  box-shadow:var(--shadow);
+  border-radius:32px;box-shadow:var(--shadow);
 }
-
-.section h2{
-  font-size:30px;
-  margin-bottom:18px;
-  color:var(--primary);
-  font-weight:700;
+.section h2{font-size:30px;margin-bottom:18px;color:var(--primary);font-weight:700;}
+.section p{color:#475569;font-size:15px;line-height:2;}
+select{
+  width:100%;padding:14px;margin:10px 0;border-radius:12px;
+  border:1px solid #e2e8f0;background:#f8fafc;
 }
-
-.section p{
-  color:#475569;
-  font-size:15px;
-  line-height:2;
-}
- 
- select{
-width:100%;
-padding:14px;
-margin:10px 0;
-border-radius:12px;
-border:1px solid #e2e8f0;
-background:#f8fafc;
-}
-/* MINISTERS (VERTICAL) */
-.ministers{
-display:flex;
-flex-direction:column;
-gap:20px;
-padding:20px;
-}
-
+.ministers{display:flex;flex-direction:column;gap:20px;padding:20px;}
 .card{
-  position: relative;
-    width:92%;
-    margin:20px auto;
-    border-radius:20px;
-    overflow:hidden;
-    box-shadow:0 10px 25px rgba(0,0,0,.12);
+  position:relative;width:92%;margin:20px auto;border-radius:20px;
+  overflow:hidden;box-shadow:0 10px 25px rgba(0,0,0,.12);
 }
-.card:hover{
-  transform:translateY(-8px);
-  box-shadow:
-  0 25px 60px rgba(37,99,235,0.18);
-}
-.card img{
-    width:100%;
-    height:140px;
-    object-fit:cover;
-    display:block;
-}
-.card:hover img{
-  transform:scale(1.1);
-}
-
+.card:hover{transform:translateY(-8px);box-shadow:0 25px 60px rgba(37,99,235,0.18);}
+.card img{width:100%;height:140px;object-fit:cover;display:block;}
+.card:hover img{transform:scale(1.1);}
 .card::before{
-  content:"";
-  position:absolute;
-  inset:0;
-
-  background:
-  linear-gradient(
-  to top,
-  rgba(0,0,0,0.78),
-  rgba(0,0,0,0.15),
-  transparent);
-
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(to top,rgba(0,0,0,0.78),rgba(0,0,0,0.15),transparent);
   z-index:1;
 }
-
-.card h2,
-.card p{
-  position:absolute;
-  left:24px;
-  right:24px;
-  color:white;
-  z-index:2;
-}
-.card,
-.news-card,
-.slider{
-cursor:pointer;
-}
-.card h2{
-  bottom:65px;
-  font-size:34px;
-  font-weight:700;
-  line-height:1.3;
-}
-
-.card p{
-  bottom:20px;
-  font-size:15px;
-  opacity:.95;
-  padding:0;
-  background:none;
-}
+.card h2,.card p{position:absolute;left:24px;right:24px;color:white;z-index:2;}
+.card,.news-card,.slider{cursor:pointer;}
+.card h2{bottom:65px;font-size:34px;font-weight:700;line-height:1.3;}
+.card p{bottom:20px;font-size:15px;opacity:.95;padding:0;background:none;}
 .register-btn{
-display:block;
-width:90%;
-margin:20px auto;
-padding:15px;
-text-align:center;
-background:#2563eb;
-color:white;
-border-radius:15px;
-font-weight:bold;
-text-decoration:none;
+  display:block;width:90%;margin:20px auto;padding:15px;text-align:center;
+  background:#2563eb;color:white;border-radius:15px;font-weight:bold;text-decoration:none;
 }
 .login-section{
-background:white;
-margin:20px;
-padding:20px;
-border-radius:20px;
-box-shadow:0 10px 30px rgba(0,0,0,0.1);
-text-align:center;
+  background:white;margin:20px;padding:20px;border-radius:20px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.1);text-align:center;
 }
-
 .login-section input{
-width:100%;
-padding:14px;
-border-radius:10px;
-border:1px solid #ccc;
-margin-top:10px;
+  width:100%;padding:14px;border-radius:10px;border:1px solid #ccc;margin-top:10px;
 }
 .contact-box{
-  margin-top:28px;
-
-  padding:22px;
-
-  border-radius:24px;
-
-  background:
-  linear-gradient(
-  135deg,
-  #0f172a,
-  #1e3a8a);
-
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:15px;
-
-  color:white;
+  margin-top:28px;padding:22px;border-radius:24px;
+  background:linear-gradient(135deg,#0f172a,#1e3a8a);
+  display:flex;justify-content:space-between;align-items:center;gap:15px;color:white;
 }
-
 .contact-btn{
-  background:white;
-  color:#0f172a;
-
-  padding:12px 18px;
-
-  border-radius:16px;
-
-  text-decoration:none;
-
-  font-weight:700;
-
-  transition:.3s;
+  background:white;color:#0f172a;padding:12px 18px;border-radius:16px;
+  text-decoration:none;font-weight:700;transition:.3s;
 }
-
-.contact-btn:hover{
-  transform:scale(1.05);
-}
+.contact-btn:hover{transform:scale(1.05);}
 .login-section button{
-width:100%;
-margin-top:15px;
-padding:14px;
-background:#2563eb;
-color:white;
-border:none;
-border-radius:10px;
-font-weight:bold;
+  width:100%;margin-top:15px;padding:14px;background:#2563eb;color:white;
+  border:none;border-radius:10px;font-weight:bold;
 }
 .card img{
-width:100%;
-height:200px;
-object-fit:cover;
- transition:0.4s;
-display:block;
+  width:100%;height:200px;object-fit:cover;transition:0.4s;display:block;
 }
-/* IMAGE OVERLAY */
 .card .overlay{
-position:absolute;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:linear-gradient(to top, rgba(0,0,0,0.6), transparent);
+  position:absolute;top:0;left:0;width:100%;height:100%;
+  background:linear-gradient(to top,rgba(0,0,0,0.6),transparent);
 }
 .card p{
-position:absolute;
-bottom:0;
-left:0;
-width:100%;
-background:rgba(0,0,0,0.5);
-color:white;
-padding:10px;
+  position:absolute;bottom:0;left:0;width:100%;background:rgba(0,0,0,0.5);
+  color:white;padding:10px;
 }
-/* FORM */
 .form-box{
-background:white;
-margin:20px;
-padding:20px;
-border-radius:25px;
-box-shadow:0 15px 40px rgba(0,0,0,0.1);
+  background:white;margin:20px;padding:20px;border-radius:25px;
+  box-shadow:0 15px 40px rgba(0,0,0,0.1);
 }
-
-.form-box h2{
-text-align:center;
-margin-bottom:15px;
-}
-
+.form-box h2{text-align:center;margin-bottom:15px;}
 input{
-width:100%;
-padding:14px;
-margin:10px 0;
-border-radius:12px;
-border:1px solid #e2e8f0;
-font-size:14px;
- background:#f8fafc;
+  width:100%;padding:14px;margin:10px 0;border-radius:12px;
+  border:1px solid #e2e8f0;font-size:14px;background:#f8fafc;
 }
-
-
-/* FILE UPLOAD (VERTICAL) */
-.file-grid{
-display:flex;
-flex-direction:column;
-gap:12px;
-margin-top:10px;
-}
-
+.file-grid{display:flex;flex-direction:column;gap:12px;margin-top:10px;}
 .file-box{
-border:2px dashed #cbd5e1;
-border-radius:15px;
-padding:18px;
-text-align:center;
-cursor:pointer;
-background:#f8fafc;
-transition:0.3s;
-font-weight:500;
+  border:2px dashed #cbd5e1;border-radius:15px;padding:18px;text-align:center;
+  cursor:pointer;background:#f8fafc;transition:0.3s;font-weight:500;
 }
-
-.file-box:hover{
-border-color:#2563eb;
-background:#e0ecff;
-}
-
-.file-box.active{
-border-color:#0d47a1;
-background:#e0ecff;
-}
-.file-box input{
-display:none;
-}
-
+.file-box:hover{border-color:#2563eb;background:#e0ecff;}
+.file-box.active{border-color:#0d47a1;background:#e0ecff;}
+.file-box input{display:none;}
 .file-box img{
-width:100%;
-height:220px;
-object-fit:cover;
-border-radius:10px;
-margin-top:10px;
- display:none;
+  width:100%;height:220px;object-fit:cover;border-radius:10px;
+  margin-top:10px;display:none;
 }
-
-/* BUTTON */
 button{
-width:100%;
-padding:15px;
-background:linear-gradient(90deg,#0d47a1,#2563eb);
-color:white;
-border:none;
-border-radius:12px;
-font-size:16px;
-margin-top:15px;
-font-weight:bold;
+  width:100%;padding:15px;background:linear-gradient(90deg,#0d47a1,#2563eb);
+  color:white;border:none;border-radius:12px;font-size:16px;margin-top:15px;font-weight:bold;
 }
 .register-btn{
-  border:none;
-  outline:none;
-  cursor:pointer;
-  transition:0.3s;
+  border:none;outline:none;cursor:pointer;transition:0.3s;
 }
 .register-btn{
-  width:92%;
-  margin:30px auto;
-  display:block;
-  text-align:center;
-  padding:18px;
-  border-radius:18px;
-  background:linear-gradient(135deg,
-  var(--primary),
-  var(--secondary));
-  color:white;
-  text-decoration:none;
-  font-weight:700;
-  font-size:17px;
+  width:92%;margin:30px auto;display:block;text-align:center;padding:18px;
+  border-radius:18px;background:linear-gradient(135deg,var(--primary),var(--secondary));
+  color:white;text-decoration:none;font-weight:700;font-size:17px;
   box-shadow:0 10px 30px rgba(37,99,235,0.35);
 }
-.register-btn:hover{
-  transform:translateY(-3px);
+.register-btn:hover{transform:translateY(-3px);}
+button:hover{background:#1e40af;}
+#toast{
+  display:none;position:fixed;bottom:20px;right:20px;background:#16a34a;color:white;
+  padding:15px;border-radius:12px;box-shadow:0 5px 20px rgba(0,0,0,0.3);
 }
-button:hover{
-background:#1e40af;
+.news-card{
+  width:92%;margin:20px auto;border-radius:20px;overflow:hidden;position:relative;
+  background:#fff;box-shadow:0 10px 25px rgba(0,0,0,.12);
+}
+.news-card:hover{transform:translateY(-5px);}
+.news-card img{width:100%;height:260px;object-fit:cover;display:block;}
+.news-card:hover img{transform:scale(1.1);}
+.news-card::before{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(to top,rgba(0,0,0,0.82),rgba(0,0,0,0.15),transparent);
+  z-index:1;
+}
+.news-text{
+  position:absolute;left:20px;right:20px;bottom:55px;color:#fff;
+  font-size:18px;font-weight:600;z-index:2;
+}
+.news-date{
+  position:absolute;left:0;right:0;bottom:0;padding:12px;background:#0f172a;
+  color:#fff;text-align:center;font-size:14px;z-index:2;
+}
+.footer{
+  margin-top:60px;background:linear-gradient(135deg,#0f172a,#1e3a8a);
+  color:white;padding:50px 25px;border-radius:30px 30px 0 0;
+}
+.footer-logo{width:95px;display:block;margin:auto;}
+.about{text-align:center;margin-top:18px;color:#dbeafe;line-height:1.9;}
+.footer-grid{margin-top:35px;display:grid;gap:28px;}
+.footer h2,.footer h3{margin-bottom:14px;}
+.footer p{color:#dbeafe;margin:7px 0;}
+.social{margin-top:28px;text-align:center;}
+.social a{
+  display:inline-flex;justify-content:center;align-items:center;width:48px;height:48px;
+  margin:0 7px;border-radius:50%;background:rgba(255,255,255,0.1);
+  color:white;text-decoration:none;font-size:20px;transition:.3s;
+}
+.social a:hover{background:white;color:#1d4ed8;transform:translateY(-4px);}
+.footer-bottom{
+  margin-top:35px;padding-top:20px;border-top:1px solid rgba(255,255,255,0.12);
+  display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;
+}
+.footer-bottom button{
+  background:white;color:#1d4ed8;padding:10px 18px;border-radius:14px;font-weight:700;
+}
+.lang-btn{background:white;color:#0d47a1;padding:5px 12px;border-radius:15px;font-weight:bold;}
+#success{
+  display:none;text-align:center;background:#dcfce7;padding:20px;border-radius:15px;
+  margin-top:15px;color:#166534;font-weight:bold;
+}
+#successModal{
+  display:none;position:fixed;top:0;left:0;width:100%;height:100%;
+  background:rgba(0,0,0,0.85);z-index:999;justify-content:center;align-items:center;
+}
+.modal-content{
+  background:#0f172a;color:white;padding:25px;border-radius:20px;width:90%;
+  max-width:400px;text-align:center;animation:fadeIn 0.4s ease;
+}
+.modal-content h2{color:#facc15;margin-bottom:10px;}
+.modal-content p{font-size:14px;line-height:1.5;color:#e2e8f0;}
+.modal-content ul{text-align:left;margin-top:15px;}
+.modal-content li{margin:8px 0;}
+.modal-content button{
+  margin-top:20px;width:100%;padding:12px;background:#facc15;border:none;
+  border-radius:12px;font-weight:bold;
+}
+@keyframes fadeIn{
+  from{transform:scale(0.7);opacity:0;}
+  to{transform:scale(1);opacity:1;}
+}
+.slider{
+  width:92%;height:260px;cursor:pointer;margin:30px auto;border-radius:32px;
+  overflow:hidden;position:relative;box-shadow:0 20px 60px rgba(0,0,0,0.18);
+}
+.slider img{width:100%;height:100%;object-fit:cover;transition:1s;}
+.slider:hover img{transform:scale(1.08);}
+.slider::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(120deg,rgba(29,78,216,0.92),rgba(15,23,42,0.55));
+}
+.slide-text{position:absolute;left:28px;bottom:28px;z-index:3;color:white;}
+.slide-text h2{font-size:34px;font-weight:700;margin-bottom:5px;}
+.slide-text p{opacity:.92;}
+.slide-text h3{margin-top:10px;font-size:17px;font-weight:500;}
+.slide-text button{
+  margin-top:16px;padding:13px 24px;border:none;border-radius:16px;
+  background:white;color:var(--primary);font-weight:700;cursor:pointer;transition:.3s;
+}
+.slide-text button:hover{transform:translateY(-3px);background:#eff6ff;}
+.lang-switch{position:absolute;top:10px;right:10px;}
+body[dir="rtl"]{text-align:right;}
+body[dir="rtl"] .footer-bottom{flex-direction:row-reverse;}
+.lang-switch button{
+  border:none;padding:6px 10px;margin-left:4px;border-radius:8px;
+  background:#e2e8f0;cursor:pointer;font-weight:bold;
+}
+.lang-switch button:hover{background:#2563eb;color:white;}
+.lang-switch button{
+  border:none;padding:5px 8px;margin-left:4px;border-radius:8px;
+  background:#e2e8f0;cursor:pointer;
+}
+.login-section{
+  width:92%;margin:35px auto;padding:35px;border-radius:32px;
+  background:rgba(255,255,255,0.85);backdrop-filter:blur(16px);
+  box-shadow:var(--shadow);text-align:center;
+}
+.login-section h2{color:var(--primary);margin-bottom:10px;font-size:28px;}
+.login-section p{color:var(--muted);}
+.login-section input{
+  width:100%;margin-top:16px;padding:17px;border-radius:18px;
+  border:1px solid var(--border);background:#f8fbff;font-size:15px;transition:.3s;
+}
+.login-section input:focus{
+  border-color:#2563eb;background:white;outline:none;
+  box-shadow:0 0 0 5px rgba(37,99,235,0.08);
+}
+.login-section button{
+  width:100%;margin-top:20px;padding:17px;border-radius:18px;
+  background:linear-gradient(135deg,#1d4ed8,#2563eb);color:white;font-size:16px;font-weight:700;
+}
+.login-section button:hover{transform:translateY(-2px);}
+.faq-section{margin-top:28px;}
+.faq-item{margin-top:16px;}
+.faq-btn{
+  width:100%;padding:17px;border:none;border-radius:18px;background:#eff6ff;
+  color:#0f172a;font-size:15px;font-weight:600;text-align:left;
+}
+.faq-content{
+  margin-top:10px;padding:18px;border-radius:18px;background:white;
+  box-shadow:0 8px 20px rgba(0,0,0,0.05);display:none;
 }
 
-/* TOAST */
-#toast{
-display:none;
-position:fixed;
-bottom:20px;
-right:20px;
-background:#16a34a;
-color:white;
-padding:15px;
-border-radius:12px;
-box-shadow:0 5px 20px rgba(0,0,0,0.3);
+/* =====================================
+   PHOTO LAYOUT - MATCHING YOUR SCREENSHOT
+   Only the news photo cards are restyled
+===================================== */
+
+.news-section{
+  width:100%;
+  padding:10px 0 25px;
 }
 
 .news-card{
-    width:92%;
-    margin:20px auto;
-    border-radius:20px;
-    overflow:hidden;
-    position:relative;
-    background:#fff;
-    box-shadow:0 10px 25px rgba(0,0,0,.12);
+  width:80%;
+  margin:35px auto;
+  padding:14px;
+  border-radius:3px;
+  background:#e8edef;
+  box-shadow:0 5px 12px rgba(0,0,0,.13);
+  overflow:hidden;
+  position:relative;
+  transition:.3s ease;
 }
-
 
 .news-card:hover{
   transform:translateY(-5px);
 }
 
 .news-card img{
-    width:100%;
-    height:260px;
-    object-fit:cover;
-    display:block;
+  display:block;
+  width:100%;
+  height:380px;
+  object-fit:cover;
+  object-position:center;
+  transition:transform .4s ease;
 }
 
 .news-card:hover img{
-  transform:scale(1.1);
+  transform:scale(1.03);
 }
 
 .news-card::before{
   content:"";
   position:absolute;
-  inset:0;
-
-  background:
-  linear-gradient(
-  to top,
-  rgba(0,0,0,0.82),
-  rgba(0,0,0,0.15),
-  transparent);
-
+  top:14px;
+  left:14px;
+  right:14px;
+  bottom:70px;
+  background:linear-gradient(
+    to top,
+    rgba(0,0,0,.65),
+    rgba(0,0,0,.08),
+    transparent
+  );
   z-index:1;
+  pointer-events:none;
 }
 
 .news-text{
-    position:absolute;
-    left:20px;
-    right:20px;
-    bottom:55px;
-    color:#fff;
-    font-size:18px;
-    font-weight:600;
-    z-index:2;
-}
-
-
-.news-date{
-    position:absolute;
-    left:0;
-    right:0;
-    bottom:0;
-    padding:12px;
-    background:#0f172a;
-    color:#fff;
-    text-align:center;
-    font-size:14px;
-    z-index:2;
-}
-/* FOOTER */
-.footer{
-  margin-top:60px;
-
-  background:
-  linear-gradient(
-  135deg,
-  #0f172a,
-  #1e3a8a);
-
-  color:white;
-
-  padding:50px 25px;
-
-  border-radius:30px 30px 0 0;
-}
-
-.footer-logo{
-  width:95px;
-  display:block;
-  margin:auto;
-}
-
-.about{
-  text-align:center;
-
-  margin-top:18px;
-
-  color:#dbeafe;
-
-  line-height:1.9;
-}
-
-.footer-grid{
-  margin-top:35px;
-
-  display:grid;
-  gap:28px;
-}
-
-.footer h2,
-.footer h3{
-  margin-bottom:14px;
-}
-
-.footer p{
-  color:#dbeafe;
-  margin:7px 0;
-}
-
-.social{
-  margin-top:28px;
-  text-align:center;
-}
-
-.social a{
-  display:inline-flex;
-  justify-content:center;
-  align-items:center;
-
-  width:48px;
-  height:48px;
-
-  margin:0 7px;
-
-  border-radius:50%;
-
-  background:
-  rgba(255,255,255,0.1);
-
-  color:white;
-
-  text-decoration:none;
-
-  font-size:20px;
-
-  transition:.3s;
-}
-
-.social a:hover{
-  background:white;
-  color:#1d4ed8;
-  transform:translateY(-4px);
-}
-
-.footer-bottom{
-  margin-top:35px;
-
-  padding-top:20px;
-
-  border-top:
-  1px solid rgba(255,255,255,0.12);
-
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-
-  flex-wrap:wrap;
-  gap:10px;
-}
-
-.footer-bottom button{
-  background:white;
-  color:#1d4ed8;
-
-  padding:10px 18px;
-
-  border-radius:14px;
-
-  font-weight:700;
-}
-
-.lang-btn{
-  background:white;
-  color:#0d47a1;
-  padding:5px 12px;
-  border-radius:15px;
-  font-weight:bold;
-}
- #success{
-display:none;
-text-align:center;
-background:#dcfce7;
-padding:20px;
-border-radius:15px;
-margin-top:15px;
-color:#166534;
-font-weight:bold;
-}
-#successModal{
-display:none;
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.85);
-z-index:999;
-justify-content:center;
-align-items:center;
-}
-
-.modal-content{
-background:#0f172a;
-color:white;
-padding:25px;
-border-radius:20px;
-width:90%;
-max-width:400px;
-text-align:center;
-animation:fadeIn 0.4s ease;
-}
-
-.modal-content h2{
-color:#facc15;
-margin-bottom:10px;
-}
-
-.modal-content p{
-font-size:14px;
-line-height:1.5;
-color:#e2e8f0;
-}
-
-.modal-content ul{
-text-align:left;
-margin-top:15px;
-}
-
-.modal-content li{
-margin:8px 0;
-}
-
-.modal-content button{
-margin-top:20px;
-width:100%;
-padding:12px;
-background:#facc15;
-border:none;
-border-radius:12px;
-font-weight:bold;
-}
-*{
-box-sizing:border-box;
-}
-@keyframes fadeIn{
-from{transform:scale(0.7); opacity:0;}
-to{transform:scale(1); opacity:1;}
-}
-/* SLIDER CARD */
-.slider{
-  width:92%;
-  height:260px;
-
-  cursor:pointer;
-  margin:30px auto;
-
-  border-radius:32px;
-  overflow:hidden;
-
-  position:relative;
-
-  box-shadow:
-  0 20px 60px rgba(0,0,0,0.18);
-}
-
-.slider img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  transition:1s;
-}
-
-.slider:hover img{
-  transform:scale(1.08);
-}
-
-.slider::after{
-  content:"";
-  position:absolute;
-  inset:0;
-
-  background:
-  linear-gradient(
-  120deg,
-  rgba(29,78,216,0.92),
-  rgba(15,23,42,0.55));
-}
-
-.slide-text{
   position:absolute;
   left:28px;
-  bottom:28px;
-  z-index:3;
-  color:white;
-}
-
-.slide-text h2{
-  font-size:34px;
+  right:28px;
+  bottom:95px;
+  z-index:2;
+  color:#fff;
+  font-size:19px;
   font-weight:700;
-  margin-bottom:5px;
+  line-height:1.6;
+  text-align:left;
+  text-shadow:0 2px 5px rgba(0,0,0,.5);
 }
 
-.slide-text p{
-  opacity:.92;
-}
-
-.slide-text h3{
-  margin-top:10px;
+.news-date{
+  position:relative;
+  left:auto;
+  right:auto;
+  bottom:auto;
+  width:100%;
+  margin-top:0;
+  padding:14px 10px;
+  background:#071d26;
+  color:#fff;
+  text-align:center;
   font-size:17px;
   font-weight:500;
+  letter-spacing:.4px;
+  z-index:2;
 }
 
+/* Responsive photo layout */
+@media(max-width:600px){
+  .news-card{
+    width:88%;
+    margin:30px auto;
+    padding:12px;
+  }
+
+  .news-card img{
+    height:380px;
+  }
+
+  .news-card::before{
+    top:12px;
+    left:12px;
+    right:12px;
+    bottom:68px;
+  }
+
+  .news-text{
+    left:25px;
+    right:20px;
+    bottom:92px;
+    font-size:17px;
+    line-height:1.5;
+  }
+
+  .news-date{
+    padding:14px 8px;
+    font-size:16px;
+  }
+}
+
+@media(max-width:380px){
+  .news-card{width:92%;}
+  .news-card img{height:300px;}
+  .news-text{font-size:15px;}
+}
+
+/* Keep other page sections responsive */
+@media(max-width:600px){
+  .section{padding:24px;}
+  .login-section{padding:24px;}
+  .slide-text{left:18px;right:18px;bottom:18px;}
+  .slide-text h2{font-size:25px;}
+  .contact-box{flex-wrap:wrap;}
+  .footer{padding:35px 20px;}
+}
+
+
+/* =========================================================
+   PREMIUM VISUAL REFRESH — ADDITIVE OVERRIDES
+   Keeps the existing content, user records and interactions.
+========================================================= */
+
+:root{
+  --primary:#155eef;
+  --secondary:#123b8a;
+  --ink:#10213a;
+  --muted:#64748b;
+  --surface:#ffffff;
+  --line:rgba(148,163,184,.22);
+  --shadow-soft:0 14px 38px rgba(15,35,75,.09);
+  --shadow-deep:0 24px 65px rgba(15,35,75,.16);
+}
+
+body{
+  background:
+    radial-gradient(ellipse at 8% 5%,rgba(96,165,250,.20),transparent 32%),
+    radial-gradient(ellipse at 92% 28%,rgba(129,140,248,.14),transparent 28%),
+    linear-gradient(180deg,#f5f8ff 0%,#edf3fb 48%,#f8fbff 100%);
+  color:var(--ink);
+}
+
+.header{
+  height:78px;
+  background:rgba(255,255,255,.82);
+  border-bottom:1px solid rgba(203,213,225,.55);
+  box-shadow:0 5px 24px rgba(15,23,42,.06);
+}
+.header img{
+  width:88px;
+  max-height:65px;
+  object-fit:contain;
+}
+
+.section{
+  position:relative;
+  background:rgba(255,255,255,.92);
+  border:1px solid rgba(255,255,255,.9);
+  box-shadow:var(--shadow-soft);
+}
+.section h2{
+  letter-spacing:-.6px;
+}
+.section p{
+  color:#52647c;
+}
+
+.card{
+  border-radius:24px;
+  box-shadow:var(--shadow-soft);
+  isolation:isolate;
+  transition:transform .35s ease,box-shadow .35s ease;
+}
+.card img{
+  min-height:190px;
+  height:clamp(190px,38vw,300px);
+  object-position:center;
+  transition:transform .65s cubic-bezier(.2,.7,.2,1);
+}
+.card::before{
+  background:linear-gradient(0deg,rgba(4,15,35,.82) 0%,rgba(4,15,35,.24) 48%,transparent 100%);
+}
+.card p{
+  bottom:0;
+  padding:16px 20px;
+  font-size:clamp(14px,2.6vw,17px);
+  line-height:1.65;
+  background:linear-gradient(0deg,rgba(4,15,35,.68),transparent);
+}
+.card:hover{
+  transform:translateY(-6px);
+  box-shadow:var(--shadow-deep);
+}
+.card:hover img{
+  transform:scale(1.045);
+}
+
+.slider{
+  height:clamp(280px,58vw,480px);
+  border-radius:28px;
+  box-shadow:var(--shadow-deep);
+  isolation:isolate;
+}
+.slider img{
+  object-position:center;
+}
+.slider::after{
+  background:linear-gradient(90deg,rgba(7,24,55,.88),rgba(15,45,100,.48) 58%,rgba(15,45,100,.08));
+}
+.slide-text{
+  left:clamp(20px,5vw,48px);
+  right:clamp(20px,5vw,48px);
+  bottom:clamp(22px,5vw,45px);
+  max-width:720px;
+}
+.slide-text h2{
+  font-size:clamp(25px,5vw,44px);
+  line-height:1.15;
+  letter-spacing:-1px;
+}
+.slide-text p{
+  font-size:clamp(14px,2vw,18px);
+}
+.slide-text h3{
+  font-size:clamp(15px,2.4vw,20px);
+}
 .slide-text button{
-  margin-top:16px;
-
+  width:auto;
+  min-width:145px;
   padding:13px 24px;
+  border-radius:999px;
+  box-shadow:0 8px 22px rgba(0,0,0,.16);
+}
 
-  border:none;
-  border-radius:16px;
-
-  background:white;
-  color:var(--primary);
-
+.news-section{
+  padding:12px 0 30px;
+}
+.news-card{
+  width:min(88%,760px);
+  padding:12px;
+  border:1px solid rgba(203,213,225,.5);
+  border-radius:22px;
+  background:#fff;
+  box-shadow:var(--shadow-soft);
+  transition:transform .3s ease,box-shadow .3s ease;
+}
+.news-card:hover{
+  transform:translateY(-7px);
+  box-shadow:var(--shadow-deep);
+}
+.news-card img{
+  height:clamp(260px,58vw,460px);
+  border-radius:13px 13px 0 0;
+  object-position:center;
+}
+.news-card::before{
+  top:12px;
+  left:12px;
+  right:12px;
+  bottom:70px;
+  border-radius:13px 13px 0 0;
+  background:linear-gradient(0deg,rgba(2,12,28,.72),rgba(2,12,28,.10) 62%,transparent);
+}
+.news-text{
+  left:clamp(22px,4vw,38px);
+  right:clamp(22px,4vw,38px);
+  bottom:95px;
+  font-size:clamp(16px,2.6vw,21px);
+  line-height:1.55;
+}
+.news-date{
+  padding:15px 12px;
+  border-radius:0 0 13px 13px;
+  font-size:14px;
   font-weight:700;
-
-  cursor:pointer;
-
-  transition:.3s;
+  letter-spacing:1px;
+  background:linear-gradient(100deg,#0b1f36,#123b67);
 }
 
-.slide-text button:hover{
-  transform:translateY(-3px);
-  background:#eff6ff;
+.register-btn{
+  width:min(88%,720px);
+  padding:18px 22px;
+  border-radius:999px;
+  letter-spacing:.2px;
+  box-shadow:0 12px 28px rgba(37,99,235,.25);
 }
-.lang-switch{
-  position:absolute;
-  top:10px;
-  right:10px;
-}
-body[dir="rtl"]{
-  text-align:right;
+.register-btn:hover{
+  box-shadow:0 17px 34px rgba(37,99,235,.32);
 }
 
-body[dir="rtl"] .footer-bottom{
-  flex-direction:row-reverse;
-}
- .lang-switch button{
-  border:none;
-  padding:6px 10px;
-  margin-left:4px;
-  border-radius:8px;
-  background:#e2e8f0;
-  cursor:pointer;
-  font-weight:bold;
-}
-
-.lang-switch button:hover{
-  background:#2563eb;
-  color:white;
-}
-.lang-switch button{
-  border:none;
-  padding:5px 8px;
-  margin-left:4px;
-  border-radius:8px;
-  background:#e2e8f0;
-  cursor:pointer;
-}
 .login-section{
-  width:92%;
-  margin:35px auto;
+  border:1px solid rgba(255,255,255,.95);
+  box-shadow:var(--shadow-soft);
+}
+.login-section h2{
+  letter-spacing:-.5px;
+}
+.login-section input{
+  border:1px solid #d9e3f0;
+  color:#10213a;
+  outline:none;
+}
+.login-section input:focus{
+  border-color:#3b82f6;
+  box-shadow:0 0 0 4px rgba(59,130,246,.12);
+}
+.login-section button{
+  border-radius:14px;
+  box-shadow:0 9px 22px rgba(37,99,235,.2);
+  transition:transform .25s ease,box-shadow .25s ease;
+}
+.login-section button:hover{
+  transform:translateY(-2px);
+  box-shadow:0 13px 27px rgba(37,99,235,.27);
+}
 
-  padding:35px;
+.contact-box{
+  border:1px solid rgba(255,255,255,.12);
+  box-shadow:0 12px 28px rgba(15,23,42,.16);
+}
+.contact-btn{
+  border-radius:999px;
+  padding:12px 22px;
+}
 
-  border-radius:32px;
+.footer{
+  background:
+    radial-gradient(circle at 85% 10%,rgba(59,130,246,.25),transparent 28%),
+    linear-gradient(135deg,#07172d,#102f61 62%,#123b78);
+  border-radius:34px 34px 0 0;
+  padding-top:55px;
+}
+.footer-logo{
+  width:105px;
+  height:105px;
+  object-fit:contain;
+  padding:8px;
+  border-radius:22px;
+  background:rgba(255,255,255,.10);
+}
+.footer .about{
+  max-width:760px;
+  margin:22px auto 0;
+  color:#dbeafe;
+}
+.footer-grid{
+  grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));
+  gap:36px;
+}
+.footer h2,.footer h3{
+  color:#fff;
+}
+.footer p{
+  color:#d7e6fb;
+}
+.faq-btn{
+  background:rgba(255,255,255,.10);
+  border:1px solid rgba(255,255,255,.12);
+  color:#fff;
+  text-align:left;
+}
+.faq-content{
+  background:rgba(255,255,255,.96);
+  color:#334155;
+}
+.faq-content p{
+  color:#334155;
+}
+.social a{
+  border:1px solid rgba(255,255,255,.16);
+  background:rgba(255,255,255,.09);
+}
+.footer-bottom{
+  border-top-color:rgba(255,255,255,.20);
+}
+.footer-bottom button{
+  width:auto;
+  margin:0;
+  border-radius:999px;
+  padding:10px 20px;
+}
 
-  background:rgba(255,255,255,0.85);
+button,a,.card,.news-card,.slider{
+  -webkit-tap-highlight-color:transparent;
+}
+button:focus-visible,a:focus-visible{
+  outline:3px solid #93c5fd;
+  outline-offset:3px;
+}
 
-  backdrop-filter:blur(16px);
+@media(min-width:800px){
+  .ministers{
+    max-width:1100px;
+    margin:0 auto;
+    padding:20px 0;
+  }
+  .ministers > .card{
+    width:100%;
+  }
+  .news-section{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:22px;
+    align-items:start;
+  }
+  .news-section .news-card{
+    width:100%;
+    margin:18px 0;
+  }
+  .news-section > h2{
+    display:none;
+  }
+  .section{
+    max-width:1100px;
+  }
+}
 
-  box-shadow:var(--shadow);
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto;}
+  *,*::before,*::after{
+    animation-duration:.01ms!important;
+    animation-iteration-count:1!important;
+    transition-duration:.01ms!important;
+  }
+}
 
+
+/* =========================================================
+   NEWS PHOTO LAYOUT — MATCH THE PROVIDED MOBILE REFERENCE
+   Keeps the existing news content and navigation unchanged.
+========================================================= */
+.news-section{
+  width:100%;
+  padding:18px 0 32px;
+}
+
+.news-section .news-card{
+  display:block;
+  position:relative;
+  width:min(80%,760px);
+  margin:36px auto;
+  padding:14px;
+  overflow:hidden;
+  border:0;
+  border-radius:2px;
+  background:#e8edef;
+  box-shadow:0 5px 12px rgba(15,23,42,.16);
+  cursor:pointer;
+  transition:transform .25s ease, box-shadow .25s ease;
+}
+
+.news-section .news-card img{
+  display:block;
+  width:100%;
+  height:clamp(300px,53.2vw,380px);
+  margin:0;
+  border-radius:0;
+  object-fit:cover;
+  object-position:center;
+  transition:transform .35s ease;
+}
+
+.news-section .news-card::before{
+  content:"";
+  position:absolute;
+  top:14px;
+  left:14px;
+  right:14px;
+  bottom:70px;
+  z-index:1;
+  pointer-events:none;
+  border-radius:0;
+  background:linear-gradient(
+    to top,
+    rgba(0,0,0,.58) 0%,
+    rgba(0,0,0,.22) 34%,
+    rgba(0,0,0,0) 78%
+  );
+}
+
+.news-section .news-card .news-text{
+  position:absolute;
+  left:clamp(28px,5vw,48px);
+  right:28px;
+  bottom:80px;
+  z-index:2;
+  margin:0;
+  padding:0;
+  color:#fff;
+  font-size:clamp(16px,2.6vw,21px);
+  font-weight:700;
+  line-height:1.45;
+  text-align:left;
+  text-shadow:0 2px 5px rgba(0,0,0,.35);
+}
+
+.news-section .news-card .news-date{
+  position:relative;
+  left:auto;
+  right:auto;
+  bottom:auto;
+  z-index:2;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:100%;
+  min-height:56px;
+  margin:0;
+  padding:12px 8px;
+  background:linear-gradient(110deg,#111820,#082a32);
+  color:#fff;
+  font-size:clamp(15px,2.5vw,20px);
+  font-weight:500;
+  line-height:1.3;
+  letter-spacing:.2px;
   text-align:center;
 }
 
-.login-section h2{
-  color:var(--primary);
-  margin-bottom:10px;
-  font-size:28px;
+.news-section .news-card:hover{
+  transform:translateY(-3px);
+  box-shadow:0 8px 18px rgba(15,23,42,.18);
 }
 
-.login-section p{
-  color:var(--muted);
+.news-section .news-card:hover img{
+  transform:scale(1.015);
 }
 
-.login-section input{
-  width:100%;
-
-  margin-top:16px;
-
-  padding:17px;
-
-  border-radius:18px;
-
-  border:1px solid var(--border);
-
-  background:#f8fbff;
-
-  font-size:15px;
-
-  transition:.3s;
+@media(max-width:600px){
+  .news-section{
+    padding:12px 0 26px;
+  }
+  .news-section .news-card{
+    width:80%;
+    margin:34px auto;
+    padding:14px;
+    border-radius:2px;
+  }
+  .news-section .news-card img{
+    height:clamp(300px,53.2vw,380px);
+  }
+  .news-section .news-card::before{
+    top:14px;
+    left:14px;
+    right:14px;
+    bottom:70px;
+  }
+  .news-section .news-card .news-text{
+    left:clamp(27px,5vw,38px);
+    right:22px;
+    bottom:80px;
+    font-size:clamp(15px,2.7vw,19px);
+    line-height:1.45;
+  }
+  .news-section .news-card .news-date{
+    min-height:56px;
+    font-size:clamp(14px,2.6vw,18px);
+  }
 }
 
-.login-section input:focus{
-  border-color:#2563eb;
-  background:white;
-  outline:none;
-
-  box-shadow:
-  0 0 0 5px rgba(37,99,235,0.08);
+@media(max-width:380px){
+  .news-section .news-card{
+    width:86%;
+    margin:28px auto;
+    padding:10px;
+  }
+  .news-section .news-card img{
+    height:300px;
+  }
+  .news-section .news-card::before{
+    top:10px;
+    left:10px;
+    right:10px;
+    bottom:66px;
+  }
+  .news-section .news-card .news-text{
+    left:22px;
+    right:18px;
+    bottom:76px;
+    font-size:15px;
+  }
+  .news-section .news-card .news-date{
+    min-height:54px;
+    font-size:14px;
+  }
 }
 
-.login-section button{
-  width:100%;
-  margin-top:20px;
-
-  padding:17px;
-
-  border-radius:18px;
-
-  background:
-  linear-gradient(
-  135deg,
-  #1d4ed8,
-  #2563eb);
-
-  color:white;
-
-  font-size:16px;
-  font-weight:700;
-}
-
-.login-section button:hover{
-  transform:translateY(-2px);
-}
-
-.faq-section{
-  margin-top:28px;
-}
-
-.faq-item{
-  margin-top:16px;
-}
-
-.faq-btn{
-  width:100%;
-
-  padding:17px;
-
-  border:none;
-
-  border-radius:18px;
-
-  background:#eff6ff;
-
-  color:#0f172a;
-
-  font-size:15px;
-  font-weight:600;
-
-  text-align:left;
-}
-
-.faq-content{
-  margin-top:10px;
-
-  padding:18px;
-
-  border-radius:18px;
-
-  background:white;
-
-  box-shadow:
-  0 8px 20px rgba(0,0,0,0.05);
-
-  display:none;
-}
-
- </style>
+</style>
 </head>
 
 <body>
 
 <div class="header">
-<img src="https://res.cloudinary.com/dwclusteb/image/upload/v1777200343/images_1_hqmsxb.png">
+<img src="https://res.cloudinary.com/dwclusteb/image/upload/v1777200343/images_1_hqmsxb.png" alt="Ministry logo">
 </div>
- <div class="card">
-    <img src="https://res.cloudinary.com/dwclusteb/image/upload/v1787217907/images_3_osman9.jpg ">
-    <h2> </h2>
- </div>
-  
 
-<!-- TEXT -->
+<div class="card">
+  <img src="https://res.cloudinary.com/dwclusteb/image/upload/v1787217907/images_3_osman9.jpg" alt="Ministry" loading="lazy">
+  <h2></h2>
+</div>
+
 <div class="section">
-<h2> </h2>
-<p>  የሥራና ክህሎት ሚኒስቴር ሀገራዊ ሪፎርሙን ተከትሎ የፌዴራል መንግሥት አስፈፃሚ አካላትን ሥልጣንና ተግባር ለመወሰን በወጣው አዋጅ ቁጥር 1263/2014 ተቋቋመ፡፡ </p>
+  <h2></h2>
+  <p>የሥራና ክህሎት ሚኒስቴር ሀገራዊ ሪፎርሙን ተከትሎ የፌዴራል መንግሥት አስፈፃሚ አካላትን ሥልጣንና ተግባር ለመወሰን በወጣው አዋጅ ቁጥር 1263/2014 ተቋቋመ፡፡</p>
 </div>
-<!-- SLIDER -->
-<div class="slider">
- <img src="https://res.cloudinary.com/dwclusteb/image/upload/v1787218109/6-2_mzejsy.jpg">
 
+<div class="slider">
+  <img src="https://res.cloudinary.com/dwclusteb/image/upload/v1787218109/6-2_mzejsy.jpg" alt="Minister">
   <div class="slide-text">
     <h2>Minister of Labor and Skills</h2>
     <p>H.E Muferihat Kamil Ahmed</p>
-
     <h3>የውጭ ሀገር ሥራና ሠራተኛ አገናኝ ኤጀንሲ</h3>
-
-    <button type="button">
-      READ MORE
-    </button>
-
+    <button type="button">READ MORE</button>
   </div>
 </div>
+
 <div class="ministers">
 
   <div class="card">
-    <img src="https://res.cloudinary.com/dwclusteb/image/upload/v1787214237/776627616_2043039920418285_2621337726937222737_n_cj5scg.jpg">
-    <p>ሪፎርምን ወደ ዘላቂ ተቋማዊ ለውጥ ማሸጋገር </p>
+    <img src="https://res.cloudinary.com/dwclusteb/image/upload/v1794650652/2019_08_pm-n_jpg_nkt9kh.jpg" alt="Ministry news" loading="lazy">
+    <p>ሪፎርምን ወደ ዘላቂ ተቋማዊ ለውጥ ማሸጋገር</p>
   </div>
- <h2> </h2>
 
- <div class="card">
-    <img src="https://res.cloudinary.com/dwclusteb/image/upload/v1787214895/772883587_854993680914859_6547810437390485284_n-1536x1024_bd2bmm.jpg">
-   <p>የሥራና ክህሎት ሚኒስቴር የ2018 በጀት ዓመት የአሠሪና ሠራተኛ ዘርፍ</p>
+  <h2></h2>
+
+  <div class="card">
+    <img src="https://res.cloudinary.com/dwclusteb/image/upload/v1794649811/884079251_1181861704411978_759695596987946337_n_y8hfzu.jpg" alt="Ministry news" loading="lazy">
+    <p>የውጭ ሀገር ሥራ ስምሪት አገልግሎትን ለማሻሻል …</p>
+  </div>
+
+  <div class="news-section">
+
+    <div class="news-card">
+      <img src="https://res.cloudinary.com/dwclusteb/image/upload/v1794648529/886770619_1868137304539796_869397700396765812_n-2_qggbmy.jpg" alt="News">
+      <div class="news-text">የውጭ ሀገር ሥራ ስምሪት አገልግሎትን ለማሻሻል …</div>
+      <div class="news-date">NOVEMBER 4, 2026</div>
+    </div>
+
+    <h2></h2>
+
+    <div class="news-card">
+      <img src="https://res.cloudinary.com/dwclusteb/image/upload/v1794648905/886770619_1868137304539796_869397700396765812_n_zsxygs.jpg" alt="News">
+      <div class="news-text">የውጭ ሀገር ሥራ ስምሪት አገልግሎትን ለማሻሻል …</div>
+      <div class="news-date">NOVEMBER 4, 2026</div>
+    </div>
+  <h2></h2>
+
+    <div class="news-card">
+      <img src="https://res.cloudinary.com/dwclusteb/image/upload/v1794649138/887990452_1409254014704849_2225911814600122337_n_cq1ukq.jpg" alt="News">
+      <div class="news-text">የሥልጠና ጥራትን ለማረጋገጥ የአሰልጣኞች አቅም ግንባታ ወሳኝ ነው</div>
+      <div class="news-date">NOVEMBER 4, 2026</div>
+    </div>
+ <h2></h2>
+
+    <div class="news-card">
+      <img src="https://res.cloudinary.com/dwclusteb/image/upload/v1794649301/885420662_4601792466750062_4740571213907416656_n-1_ralo7d.jpg" alt="News">
+      <div class="news-text">የሥራ ዕድል ፈጠራ ሀገራዊ ግቦችን ለማሳካት</div>
+      <div class="news-date">NOVEMBER 4, 2026</div>
+    </div>
  </div>
- 
- <div class="news-section">
-
-  <div class="news-card">
-    <img src="https://res.cloudinary.com/dwclusteb/image/upload/v1787215271/772860735_1076462321391868_3232699150878125636_n-1_ruta9g.jpg ">
-
-    <div class="news-text">
-      ስለ ስራ ገበያ ዘርፍ አስፈላጊ ውይይት ተካሄደ
-    </div>  
-   <div class="news-date">
-      APRIL 2, 2026
-    </div>
-  </div>
-  <h2>  </h2>
-  
-  <div class="news-card">
-    <img src="https://res.cloudinary.com/dwclusteb/image/upload/v1787217687/photo_2026-08-09_15-44-29-1_wmids0.jpg">
-    <div class="news-text">
-     ክብርት ወ/ሮ ሙፈሪሃት ካሚል የሥራና ክህሎት ሚኒስትር
-    </div>
-
-    <div class="news-date">
-      APRIL 5, 2026
-    </div>
-  </div>
-
-  
-    </div>
 </div>
+
 <a href="index.html" class="register-btn">Register here</a>
 
 <section class="login-section">
 
-<h2>Enter Your 6-Digit Code</h2>
-<p class="am">ኮድ አስገባ</p>
+  <h2>Enter Your 6-Digit Code</h2>
+  <p class="am">ኮድ አስገባ</p>
 
-<input type="number" id="code" placeholder="Enter 6-digit number">
+  <input type="number" id="code" placeholder="Enter 6-digit number" inputmode="numeric">
 
-<button onclick="checkCode()">Submit</button>
+  <button onclick="checkCode()">Submit</button>
+  <p id="msg"></p>
 
-<p id="msg"></p>
-
-<div class="contact-box">
-
-<div class="left">
-<h3>The Ministry<br>of Labor & Skills</h3>
-</div>
-
-<div class="right">
-<a href="https://api.whatsapp.com/send?phone=251116671792&text=Hello%20I%20need%20help" 
-   class="contact-btn" target="_blank">
-  WhatsApp
-</a>
-</div>
-
-</div>
+  <div class="contact-box">
+    <div class="left">
+      <h3>The Ministry<br>of Labor &amp; Skills</h3>
+    </div>
+    <div class="right">
+      <a href="https://api.whatsapp.com/send?phone=251116671792&amp;text=Hello%20I%20need%20help" class="contact-btn" target="_blank" rel="noopener">
+        WhatsApp
+      </a>
+    </div>
+  </div>
 
 </section>
 
 <footer class="footer">
 
-<div class="footer-container">
+  <div class="footer-container">
 
-<img src="https://res.cloudinary.com/dwclusteb/image/upload/v1784188519/photo_3_2025-11-26_21-51-36_si3kam.jpg" class="footer-logo">
+    <img src="https://res.cloudinary.com/dwclusteb/image/upload/v1784188519/photo_3_2025-11-26_21-51-36_si3kam.jpg" class="footer-logo" alt="Footer logo">
 
-<p class="about">
-The Ministry of Labour and Skills was established following the National Reform.
-The Ministry of Labour and Skills was founded with Proclamation No. 1263/2022,
-which oversees national job creation, skills development, and labor concerns.
-</p>
+    <p class="about">
+      The Ministry of Labour and Skills was established following the National Reform.
+      The Ministry of Labour and Skills was founded with Proclamation No. 1263/2022,
+      which oversees national job creation, skills development, and labor concerns.
+    </p>
 
-<div class="footer-grid">
+    <div class="footer-grid">
 
-<div>
+      <div>
 
-   <div class="faq-section">
+        <div class="faq-section">
 
-  <h2>❓ Frequently Asked Questions</h2>
+          <h2>❓ Frequently Asked Questions</h2>
 
-  <div class="faq-item">
-    <button class="faq-btn">ወደ ውጭ ሀገር ለመሄድ ምን ያስፈልጋል?</button>
-    <div class="faq-content">
-      <p>ፓስፖርት፣ ቪዛ፣ የህክምና ምርመራ እና ህጋዊ ኤጀንሲ መጠቀም ያስፈልጋል።</p>
+          <div class="faq-item">
+            <button class="faq-btn" type="button">ወደ ውጭ ሀገር ለመሄድ ምን ያስፈልጋል?</button>
+            <div class="faq-content">
+              <p>ፓስፖርት፣ ቪዛ፣ የህክምና ምርመራ እና ህጋዊ ኤጀንሲ መጠቀም ያስፈልጋል።</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-btn" type="button">ህገወጥ ደላሎች አደገኛ ናቸው?</button>
+            <div class="faq-content">
+              <p>አዎ፣ ለህይወት አደጋ እና ህጋዊ ችግር ያመጣሉ። ህጋዊ መንገድ ብቻ ተጠቀም።</p>
+            </div>
+          </div>
+
+        </div>
+
+        <h2>Get In Touch</h2>
+        <p>Tel no: +251 978744462</p>
+        <p>Po Box: 25534</p>
+        <p>Fax: +251 116 671568</p>
+        <p>Address: Behind Lambert Ethiopian Technical and Vocational Institute</p>
+        <p>Email: info@MoLS.gov.et</p>
+
+      </div>
+
+      <div>
+        <h2>Menu</h2>
+        <p>Privacy Policy</p>
+        <p>Copyright</p>
+      </div>
+
     </div>
+
+    <div class="social">
+      <a href="#" aria-label="Facebook">📘</a>
+      <a href="#" aria-label="Twitter">🐦</a>
+      <a href="#" aria-label="YouTube">▶</a>
+    </div>
+
+    <h3>Contact Us</h3>
+    <p>Tel: +251 962513636</p>
+    <p>Email: info@mols.gov.et</p>
+
+    <div class="footer-bottom">
+      <p>© 2025 All rights reserved</p>
+      <button class="lang" type="button">🇺🇸 EN</button>
+    </div>
+
   </div>
-
-  <div class="faq-item">
-    <button class="faq-btn">ህገወጥ ደላሎች አደገኛ ናቸው?</button>
-    <div class="faq-content">
-      <p>አዎ፣ ለህይወት አደጋ እና ህጋዊ ችግር ያመጣሉ። ህጋዊ መንገድ ብቻ ተጠቀም።</p>
-    </div> 
-  </div>
-<h2>Get In Touch</h2>
-
-<p>Tel no: +251 978744462</p>
-<p>Po Box: 25534</p>
-<p>Fax: +251 116 671568</p>
-<p>Address: Behind Lambert Ethiopian Technical and Vocational Institute</p>
-<p>Email: info@MoLS.gov.et</p>
-
-</div>
-
-<div>
-
-<h2>Menu</h2>
-
-<p>Privacy Policy</p>
-<p>Copyright</p>
-
-</div>
-
-</div>
-
-<div class="social">
-
-<a href="#">📘</a>
-<a href="#">🐦</a>
-<a href="#">▶</a>
-</div>
-<h3>Contact Us</h3>
-<p>Tel: +251 962513636</p>
-<p>Email: info@mols.gov.et</p>
-
-<div class="footer-bottom">
-<p>© 2025 All rights reserved</p>
-<button class="lang">🇺🇸 EN</button>
-</div>
 </footer>
+
 <script>
-  // =======================
-// USERS DATABASE (FIXED)
 // =======================
-const users = { 
-         
-                   
-                    "145865": {
-        name: "አ/ቶ ሞላልኝ ኤልያስ ዘዉጌ ",
-        gender: "ወንድ",
-        age: "33",
-        dob: "12/01/1985",
-        elmis: "ELMIS-145865",
-        passport: "EQ1475747",
-        phone: "private",
-        birth: "ኢትዮጵያ",
-        visa: "ስራ ቪዛ",
-        country: "ኩዌት 🇰🇼",
-         photo: "https://res.cloudinary.com/dwclusteb/image/upload/v1794388311/e11fcd8a9fdc4b2bb50f8fc1f9496fcd_vvov29.webp ",
-        doc: "https://res.cloudinary.com/dwclusteb/image/upload/v1794390727/Screenshot_20261111_125107_Chrome_hgnfgt.jpg ",
-doc2: "https://res.cloudinary.com/dwclusteb/image/upload/v1794390767/Screenshot_20261111_124237_Code_Studio_e3hawq.jpg ",
-                    },
-                    "845412": {
-        name: "አ/ቶ አማንኤል ደጌ አቸነፍ",
-        gender: "ወንድ",
-        age: "24",
-        dob: "08/03/1995",
-        elmis: "ELMIS-845412",
-        passport: "E00272453",
-        phone: "+251918794992",
-        birth: "ኢትዮጵያ",
-        visa: "ስራ ቪዛ",
-        country: "ኩዌት 🇰🇼",
-         photo: "https://res.cloudinary.com/dwclusteb/image/upload/v1794402306/7c4de6a48d8c4f8998a790e15c4664d8_j2sx01.jpg ",
-        doc: "https://res.cloudinary.com/dwclusteb/image/upload/v1794403510/Screenshot_20261111_161147_Chrome_zg9fax.jpg ",
-doc2: "https://res.cloudinary.com/dwclusteb/image/upload/v1794403529/Screenshot_20261111_160913_Code_Studio_dsm926.jpg ",
-},
-                    "139142": {
-        name: "ወ/ሮ ሰናይት ተጂ አርቲ",
-        gender: "ሴት",
-        age: "27",
-        dob: "04/04/1992",
-        elmis: "ELMIS-845412",
-        passport: "EQ1747239",
-        phone: "private",
-        birth: "ኢትዮጵያ",
-        visa: "ስራ ቪዛ",
-        country: "ኩዌት 🇰🇼",
-         photo: "https://res.cloudinary.com/dwclusteb/image/upload/v1793581297/IMG_20261102_040037_226_c0zkzs.jpg ",
-        doc: " ",
-doc2: "https://res.cloudinary.com/dwclusteb/image/upload/v1793616034/Screenshot_20261102_133924_Chrome_pagkyu.jpg ",
+// USERS DATABASE
+// =======================
 
-                                                                                                                 
-                  
+const users = {
 
-                                                                                                                 
-                    }
+  "145865": {
+    name: "አ/ቶ ሞላልኝ ኤልያስ ዘዉጌ ",
+    gender: "ወንድ",
+    age: "33",
+    dob: "12/01/1985",
+    elmis: "ELMIS-145865",
+    passport: "EQ1475747",
+    phone: "private",
+    birth: "ኢትዮጵያ",
+    visa: "ስራ ቪዛ",
+    country: "ኩዌት 🇰🇼",
+    photo: "https://res.cloudinary.com/dwclusteb/image/upload/v1794388311/e11fcd8a9fdc4b2bb50f8fc1f9496fcd_vvov29.webp",
+    doc: "https://res.cloudinary.com/dwclusteb/image/upload/v1794390727/Screenshot_20261111_125107_Chrome_hgnfgt.jpg",
+    doc2: "https://res.cloudinary.com/dwclusteb/image/upload/v1794390767/Screenshot_20261111_124237_Code_Studio_e3hawq.jpg"
+  },
+
+  "845412": {
+    name: "አ/ቶ አማንኤል ደጌ አቸነፍ",
+    gender: "ወንድ",
+    age: "24",
+    dob: "08/03/1995",
+    elmis: "ELMIS-845412",
+    passport: "E00272453",
+    phone: "+251918794992",
+    birth: "ኢትዮጵያ",
+    visa: "ስራ ቪዛ",
+    country: "ኩዌት 🇰🇼",
+    photo: "https://res.cloudinary.com/dwclusteb/image/upload/v1794402306/7c4de6a48d8c4f8998a790e15c4664d8_j2sx01.jpg",
+    doc: "https://res.cloudinary.com/dwclusteb/image/upload/v1794403510/Screenshot_20261111_161147_Chrome_zg9fax.jpg",
+    doc2: "https://res.cloudinary.com/dwclusteb/image/upload/v1794403529/Screenshot_20261111_160913_Code_Studio_dsm926.jpg"
+  },
+
+  "139142": {
+    name: "ወ/ሮ ሰናይት ተጂ አርቲ",
+    gender: "ሴት",
+    age: "27",
+    dob: "04/04/1992",
+    elmis: "ELMIS-845412",
+    passport: "EQ1747239",
+    phone: "private",
+    birth: "ኢትዮጵያ",
+    visa: "ስራ ቪዛ",
+    country: "ኩዌት 🇰🇼",
+    photo: "https://res.cloudinary.com/dwclusteb/image/upload/v1793581297/IMG_20261102_040037_226_c0zkzs.jpg",
+    doc: "",
+    doc2: "https://res.cloudinary.com/dwclusteb/image/upload/v1793616034/Screenshot_20261102_133924_Chrome_pagkyu.jpg"
+  }
 
 };
 
-                                                  
-  
-
-/* =========================
-   CHECK CODE
-========================= */
+// =======================
+// CHECK CODE
+// =======================
 
 function checkCode() {
-    const input = document.getElementById("code");
-    const msg = document.getElementById("msg");
+  const input = document.getElementById("code");
+  const msg = document.getElementById("msg");
 
-    if (!input || !msg) return;
+  if (!input || !msg) return;
 
-    const code = input.value.trim();
+  const code = input.value.trim();
 
-    if (!/^\d{6}$/.test(code)) {
-        msg.style.color = "red";
-        msg.textContent = "Please enter a valid 6-digit code.";
-        return;
-    }
+  if (!/^\d{6}$/.test(code)) {
+    msg.style.color = "red";
+    msg.textContent = "Please enter a valid 6-digit code.";
+    return;
+  }
 
-    const user = users[code];
+  const user = users[code];
 
-    if (!user) {
-        msg.style.color = "red";
-        msg.textContent = "Invalid code.";
-        return;
-    }
+  if (!user) {
+    msg.style.color = "red";
+    msg.textContent = "Invalid code.";
+    return;
+  }
 
-    localStorage.setItem("user", JSON.stringify({
-        ...user,
-        doc: user.doc || "",
-        doc2: user.doc2 || ""
-    }));
+  localStorage.setItem("user", JSON.stringify({
+    ...user,
+    doc: user.doc || "",
+    doc2: user.doc2 || ""
+  }));
 
-    localStorage.setItem("vcode", code);
+  localStorage.setItem("vcode", code);
 
-    msg.style.color = "green";
-    msg.textContent = "Code accepted.";
+  msg.style.color = "green";
+  msg.textContent = "Code accepted.";
 
-    setTimeout(() => {
-        window.location.href = "personal.html";
-    }, 500);
-
+  setTimeout(() => {
+    window.location.href = "personal.html";
+  }, 500);
 }
 
-
-/* =========================
-   CARDS
-========================= */
+// =======================
+// CARDS NAVIGATION
+// =======================
 
 document.querySelectorAll(".card").forEach(function(card, index) {
+  const pages = ["news1.html", "news2.html", "news3.html"];
 
-    const pages = [
-        "news1.html",
-        "news2.html",
-        "news3.html"
-    ];
-
-    if (pages[index]) {
-        card.addEventListener("click", function() {
-            window.location.href = pages[index];
-        });
-    }
-
+  if (pages[index]) {
+    card.addEventListener("click", function() {
+      window.location.href = pages[index];
+    });
+  }
 });
 
-
-/* =========================
-   NEWS CARDS
-========================= */
+// =======================
+// NEWS CARDS NAVIGATION
+// =======================
 
 document.querySelectorAll(".news-card").forEach(function(card, index) {
+  const pages = ["news4.html", "news5.html"];
 
-    const pages = [
-        "news4.html",
-        "news5.html"
-    ];
-
-    if (pages[index]) {
-        card.addEventListener("click", function() {
-            window.location.href = pages[index];
-        });
-    }
-
+  if (pages[index]) {
+    card.addEventListener("click", function() {
+      window.location.href = pages[index];
+    });
+  }
 });
 
-
-/* =========================
-   SLIDER
-========================= */
+// =======================
+// SLIDER
+// =======================
 
 window.addEventListener("load", function() {
+  const sliderImages = [
+    "https://e-lmis-online.netlify.app/image/photo_2025-11-29_18-23-08.jpg",
+    "https://e-lmis-online.netlify.app/image/photo_2025-11-26_21-51-36.jpg",
+    "https://e-lmis-online.netlify.app/image/photo_2025-11-29_18-58-10.jpg"
+  ];
 
-    const sliderImages = [
-        "https://e-lmis-online.netlify.app/image/photo_2025-11-29_18-23-08.jpg",
-        "https://e-lmis-online.netlify.app/image/photo_2025-11-26_21-51-36.jpg",
-        "https://e-lmis-online.netlify.app/image/photo_2025-11-29_18-58-10.jpg"
-    ];
+  const slider = document.querySelector(".slider img");
 
-    const slider = document.querySelector(".slider img");
+  if (!slider) return;
 
-    if (!slider) return;
+  let index = 0;
 
-    let index = 0;
+  setInterval(function() {
+    index++;
 
-    setInterval(function() {
+    if (index >= sliderImages.length) {
+      index = 0;
+    }
 
-        index++;
+    slider.src = sliderImages[index];
+  }, 6000);
+});
 
-        if (index >= sliderImages.length) {
-            index = 0;
-        }
+// =======================
+// FAQ ACCORDION
+// =======================
 
-        slider.src = sliderImages[index];
+document.querySelectorAll(".faq-btn").forEach(function(button) {
+  button.addEventListener("click", function() {
+    const content = button.nextElementSibling;
 
-    }, 6000);
+    if (!content) return;
 
+    const isOpen = content.style.display === "block";
+
+    document.querySelectorAll(".faq-content").forEach(function(item) {
+      item.style.display = "none";
+    });
+
+    content.style.display = isOpen ? "none" : "block";
+  });
 });
 </script>
-</body>
-</html>                                               
-                                                   
-                                                                                       
-                                                                                                  
-                                                                                       
-                                                                                                                          
-                                                                                                                       
-                                                                                                                          
-                                                                                                                                                                                                
 
+</body>
+</html>
+    
