@@ -259,21 +259,60 @@ stampUpload.addEventListener("change",function(){
   reader.readAsDataURL(file);
 });
 
-function showDocumentImage(imageId,emptyId,src){
-  const img=document.getElementById(imageId),empty=document.getElementById(emptyId);
-  if(!img||!empty)return;
-  src=src?String(src).trim():"";
-  if(!src){img.style.display="none";img.removeAttribute("src");empty.style.display="block";return;}
-  img.onload=()=>{img.style.display="block";empty.style.display="none";};
-  img.onerror=()=>{img.style.display="none";img.removeAttribute("src");empty.style.display="block";};
-  img.src=src;
+function showDocumentImage(imageId, emptyId, src){
+
+    const img = document.getElementById(imageId);
+    const empty = document.getElementById(emptyId);
+
+    if(!img || !empty) return;
+
+    src = src ? String(src).trim() : "";
+
+    img.style.display = "none";
+    img.removeAttribute("src");
+
+    empty.style.display = "block";
+
+    if(!src) return;
+
+    img.onload = function(){
+        img.style.display = "block";
+        empty.style.display = "none";
+    };
+
+    img.onerror = function(){
+        img.style.display = "none";
+        img.removeAttribute("src");
+        empty.style.display = "block";
+        empty.textContent = "Unable to load document photo.";
+    };
+
+    img.src = src;
 }
+
 function loadDocuments(){
-  let data=user;
-  try{data=JSON.parse(localStorage.getItem("user")||"{}");}catch(e){data={};}
-  showDocumentImage("document","documentEmpty",data.doc||localStorage.getItem("documentPhoto")||"");
-  showDocumentImage("document2","documentEmpty2",data.doc2||localStorage.getItem("documentPhoto2")||"");
+
+    let data = {};
+
+    try{
+        data = JSON.parse(localStorage.getItem("user") || "{}");
+    }catch(error){
+        data = {};
+    }
+
+    showDocumentImage(
+        "document",
+        "documentEmpty",
+        data.doc || localStorage.getItem("documentPhoto") || ""
+    );
+
+    showDocumentImage(
+        "document2",
+        "documentEmpty2",
+        data.doc2 || localStorage.getItem("documentPhoto2") || ""
+    );
 }
+
 loadDocuments();
 
 const receiptUpload=document.getElementById("receiptUpload");
