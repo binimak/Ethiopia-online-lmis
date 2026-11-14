@@ -53,85 +53,73 @@ body{min-height:100vh;background:#f3f6fa;color:#151b25;font-family:Arial,"Noto S
 .section-title{margin-bottom:14px;color:#173f87;font-size:18px;font-weight:800}
 
 
-/* DOCUMENT SECTION - FIXED */
+
+/* DOCUMENT CARD */
 .document-card {
-    display: block !important;
-    width: 100% !important;
-    max-width: 245px !important;
-    box-sizing: border-box !important;
-    margin: 12px 0 !important;
-    padding: 0 !important;
-    overflow: hidden !important;
-    border: 1px solid #d5e2f0 !important;
-    border-radius: 10px !important;
-    background: #fff !important;
-    box-shadow: 0 2px 6px rgba(0,0,0,.06) !important;
+    display: block;
+    width: 100%;
+    max-width: 700px;
+    margin: 15px auto;
+    padding: 0;
+    overflow: hidden;
+    box-sizing: border-box;
+    background: #fff;
+    border: 1px solid #d5e2f0;
+    border-radius: 12px;
 }
 
+/* DOCUMENT TITLE */
 .document-title {
-    display: block !important;
-    width: 100% !important;
-    box-sizing: border-box !important;
-    padding: 9px 8px !important;
-    margin: 0 !important;
-    background: #0752a0 !important;
-    color: #fff !important;
-    text-align: center !important;
-    font-size: 13px !important;
-    font-weight: 700 !important;
+    width: 100%;
+    padding: 12px;
+    box-sizing: border-box;
+    background: #0752a0;
+    color: #fff;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 700;
 }
 
+/* DOCUMENT FRAME */
 .document-frame {
-    width: 100% !important;
-    min-height: 100px !important;
-    max-height: 190px !important;
-    box-sizing: border-box !important;
-    padding: 8px !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    overflow: hidden !important;
-    background: #f8fafc !important;
+    width: 100%;
+    min-height: 200px;
+    height: auto;
+    padding: 10px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: visible;
+    background: #fff;
 }
 
+/* DOCUMENT IMAGES */
 .document-image,
 #document,
 #document2 {
     display: none;
     width: 100% !important;
-    max-width: 100% !important;
+    max-width: 660px !important;
     height: auto !important;
-    max-height: 170px !important;
+    max-height: none !important;
     object-fit: contain !important;
-    margin: 0 auto !important;
-    border-radius: 5px !important;
+    margin: 0 auto;
+    border-radius: 4px;
 }
 
+/* EMPTY MESSAGE */
 .document-empty,
 #documentEmpty,
 #documentEmpty2 {
-    display: block;
-    width: 100% !important;
-    box-sizing: border-box !important;
-    padding: 20px 8px !important;
-    color: #64748b !important;
-    font-size: 11px !important;
-    text-align: center !important;
-}
-
-/* Prevent horizontal overflow */
-html,
-body {
-    max-width: 100% !important;
-    overflow-x: hidden !important;
-}
-
-* {
+    width: 100%;
+    padding: 30px 10px;
     box-sizing: border-box;
+    text-align: center;
+    color: #64748b;
+    font-size: 13px;
 }
 
-
-.document-empty{color:#64748b;font-size:12px;text-align:center;padding:25px}
 .receipt-box{padding:15px;border:1px solid #dbeafe;border-radius:15px}
 .receipt-note{padding:15px;border:1px solid #dbeafe;border-radius:12px;background:#f5f9ff;color:#4a6077;font-size:12px;line-height:1.7;text-align:center}
 .receipt-upload{margin-top:13px;min-height:210px;padding:18px;display:flex;flex-direction:column;align-items:center;justify-content:center;border:2px dashed #93c5fd;border-radius:15px;background:#f4f8ff;text-align:center}
