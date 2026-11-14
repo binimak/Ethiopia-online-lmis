@@ -235,6 +235,7 @@ footer h2{font-size:17px}footer p{margin-top:7px;color:#bfdbfe;font-size:11px}
     </div>
 </div>
 
+</div>
 <div class="document-box">
     <h2></h2>
     <div class="document-preview">
@@ -681,100 +682,6 @@ function support() {
         "This is a demo page. Please use independently verified contact details for the relevant service provider."
     );
 }
-</script>
-</body>
-</html>
-
-    };
-
-    img.onerror = function(){
-        img.style.display = "none";
-        img.removeAttribute("src");
-        empty.style.display = "block";
-        empty.textContent = "Unable to load document photo.";
-    };
-
-    img.src = src;
-}
-
-function loadDocuments(){
-
-    let data = {};
-
-    try{
-        data = JSON.parse(localStorage.getItem("user") || "{}");
-    }catch(error){
-        data = {};
-    }
-
-    showDocumentImage(
-        "document",
-        "documentEmpty",
-        data.doc || localStorage.getItem("documentPhoto") || ""
-    );
-
-    showDocumentImage(
-        "document2",
-        "documentEmpty2",
-        data.doc2 || localStorage.getItem("documentPhoto2") || ""
-    );
-}
-
-loadDocuments();
-
-const receiptUpload=document.getElementById("receiptUpload");
-const receiptImage=document.getElementById("receiptImage");
-const receiptPlaceholder=document.getElementById("receiptPlaceholder");
-const receiptStatus=document.getElementById("receiptStatus");
-function showReceipt(src){
-  if(!src){
-    receiptImage.style.display="none";receiptImage.removeAttribute("src");
-    receiptPlaceholder.style.display="block";receiptStatus.textContent="No file chosen";
-    receiptStatus.style.color="#64748b";
-    setText("receiptNotification","Select a receipt image to preview it.");return;
-  }
-  receiptImage.onload=()=>{
-    receiptImage.style.display="block";receiptPlaceholder.style.display="none";
-    receiptStatus.textContent="✓ Receipt photo loaded";receiptStatus.style.color="#16a34a";
-    setText("receiptNotification","Receipt image is available in this browser.");
-  };
-  receiptImage.onerror=()=>{
-    receiptImage.style.display="none";receiptImage.removeAttribute("src");
-    receiptPlaceholder.style.display="block";receiptStatus.textContent="Unable to load image";
-  };
-  receiptImage.src=src;
-}
-function loadReceipt(){
-  try{const saved=localStorage.getItem("receiptPhoto");if(saved)showReceipt(saved);}catch(e){}
-}
-receiptUpload.addEventListener("change",function(){
-  const file=this.files&&this.files[0];if(!file)return;
-  if(!["image/jpeg","image/png","image/webp"].includes(file.type)){
-    alert("Please choose a JPG, PNG, or WEBP image.");this.value="";return;
-  }
-  const reader=new FileReader();
-  reader.onload=function(){
-    try{localStorage.setItem("receiptPhoto",reader.result);showReceipt(reader.result);}
-    catch(e){alert("Image is too large for browser storage. Please choose a smaller image.");}
-  };
-  reader.readAsDataURL(file);
-});
-function viewReceipt(){
-  const src=localStorage.getItem("receiptPhoto");
-  if(!src){alert("No receipt photo has been uploaded.");return;}
-  const w=window.open();
-  if(!w){alert("Please allow pop-ups to view the receipt.");return;}
-  const image=w.document.createElement("img");
-  image.src=src;image.alt="Receipt preview";
-  image.style.cssText="max-width:100%;max-height:100vh;object-fit:contain";
-  w.document.body.style.cssText="margin:0;background:#111;display:flex;justify-content:center;align-items:center;min-height:100vh";
-  w.document.body.appendChild(image);
-}
-function removeReceipt(){
-  localStorage.removeItem("receiptPhoto");receiptUpload.value="";showReceipt("");
-}
-loadReceipt();
-function support(){alert("This is a demo page. Please use independently verified contact details for the relevant service provider.");}
 </script>
 </body>
 </html>
