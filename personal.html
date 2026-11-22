@@ -80,6 +80,493 @@ body{min-height:100vh;background:#f3f6fa;color:#151b25;font-family:Arial,"Noto S
     font-weight: 700;
 }
 
+/* =====================================
+   PREMIUM FLIGHT HEADER
+   ADDIS ABABA  →  KUWAIT
+===================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --green: #008f78;
+    --blue: #173d86;
+    --ink: #172b45;
+    --muted: #65758a;
+    --line: #dce6ed;
+    --white: #ffffff;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f3f5f9;
+}
+
+/* MAIN HEADER */
+
+.brand-bar.flight-header {
+    position: relative;
+    width: 100%;
+    min-height: 205px;
+    padding: 25px 20px;
+    overflow: hidden;
+    isolation: isolate;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background:
+        radial-gradient(
+            circle at 50% 50%,
+            rgba(0, 143, 120, 0.08),
+            transparent 45%
+        ),
+        linear-gradient(120deg, #ffffff, #f7fbff);
+
+    border: 1px solid rgba(210, 224, 235, 0.8);
+    border-radius: 28px;
+
+    box-shadow:
+        0 12px 35px rgba(25, 55, 85, 0.09),
+        inset 0 1px 0 rgba(255,255,255,0.9);
+}
+
+/* BACKGROUND DECORATION */
+
+.header-orbit {
+    position: absolute;
+    width: 270px;
+    height: 270px;
+    border: 1px solid rgba(0, 143, 120, 0.09);
+    border-radius: 50%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+}
+
+.header-orbit::before {
+    content: "";
+    position: absolute;
+    inset: 22px;
+    border: 1px dashed rgba(23, 61, 134, 0.10);
+    border-radius: 50%;
+}
+
+/* AIRPORT SECTIONS */
+
+.header-airport {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 21%;
+    z-index: 4;
+    text-align: center;
+}
+
+.header-airport.departure {
+    left: 2%;
+}
+
+.header-airport.arrival {
+    right: 2%;
+}
+
+/* AIRPORT CODE */
+
+.airport-code {
+    font-size: 25px;
+    line-height: 1;
+    font-weight: 900;
+    letter-spacing: 1px;
+    margin-bottom: 7px;
+}
+
+.departure .airport-code {
+    color: var(--green);
+}
+
+.arrival .airport-code {
+    color: var(--blue);
+}
+
+/* AIRPORT NAME */
+
+.airport-name {
+    color: var(--ink);
+    font-size: 11px;
+    font-weight: 700;
+    margin-bottom: 5px;
+    white-space: nowrap;
+}
+
+/* COUNTRY NAME */
+
+.airport-country {
+    color: var(--muted);
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+/* ROUTE AREA */
+
+.header-route {
+    position: absolute;
+    left: 24%;
+    right: 24%;
+    top: 50%;
+    height: 85px;
+    transform: translateY(-50%);
+    z-index: 2;
+    overflow: visible;
+}
+
+/* ROUTE LINE */
+
+.route-line {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    height: 2px;
+    transform: translateY(-50%);
+
+    background: repeating-linear-gradient(
+        to right,
+        #b9cbd5 0px,
+        #b9cbd5 7px,
+        transparent 7px,
+        transparent 14px
+    );
+}
+
+/* ROUTE GLOW */
+
+.header-route::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    height: 12px;
+    transform: translateY(-50%);
+    background: linear-gradient(
+        90deg,
+        rgba(0,143,120,0.04),
+        rgba(23,61,134,0.08)
+    );
+    filter: blur(8px);
+    pointer-events: none;
+}
+
+/* ROUTE DOTS */
+
+.route-dot {
+    position: absolute;
+    top: 50%;
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    transform: translateY(-50%);
+    z-index: 4;
+}
+
+.route-dot.start {
+    left: 0;
+    background: var(--green);
+    box-shadow: 0 0 0 5px rgba(0,143,120,0.12);
+}
+
+.route-dot.end {
+    right: 0;
+    background: var(--blue);
+    box-shadow: 0 0 0 5px rgba(23,61,134,0.12);
+}
+
+/* =====================================
+   LARGE AIRPLANE PHOTO
+===================================== */
+
+.header-plane {
+    position: absolute;
+
+    /* Plane moves inside the route container */
+    left: 0%;
+    top: 50%;
+
+    width: 125px;
+    height: 105px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transform: translate(-50%, -50%);
+    z-index: 10;
+
+    animation: headerFlight 12s linear infinite;
+    will-change: left, opacity;
+}
+
+.header-plane img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+
+    filter:
+        drop-shadow(0 7px 7px rgba(20, 45, 70, 0.22));
+
+    animation: headerFloat 2.5s ease-in-out infinite;
+}
+
+/* PLANE SMALL FLOATING MOTION */
+
+@keyframes headerFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+/* =====================================
+   FULL FLIGHT: ADD → KWI
+   No backward movement
+===================================== */
+
+@keyframes headerFlight {
+
+    /* Start at ADD */
+    0% {
+        left: 0%;
+        opacity: 1;
+    }
+
+    /* Fly completely to KWI */
+    75% {
+        left: 100%;
+        opacity: 1;
+    }
+
+    /* Briefly stay at KWI */
+    83% {
+        left: 100%;
+        opacity: 1;
+    }
+
+    /* Disappear at destination */
+    89% {
+        left: 100%;
+        opacity: 0;
+    }
+
+    /* Reset invisibly to ADD */
+    90% {
+        left: 0%;
+        opacity: 0;
+    }
+
+    /* Appear again at ADD */
+    100% {
+        left: 0%;
+        opacity: 1;
+    }
+}
+
+/* HEADER FOOTER */
+
+.header-footer {
+    position: absolute;
+    bottom: 13px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    color: #8493a4;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    white-space: nowrap;
+}
+
+/* BRAND LOGO */
+
+.brand-logo {
+    position: absolute;
+    top: 13px;
+    right: 16px;
+
+    width: 55px;
+    height: 45px;
+    object-fit: contain;
+
+    z-index: 12;
+}
+
+/* =====================================
+   TABLET RESPONSIVE
+===================================== */
+
+@media (max-width: 768px) {
+
+    .brand-bar.flight-header {
+        min-height: 180px;
+        border-radius: 22px;
+        padding: 20px 10px;
+    }
+
+    .header-route {
+        left: 24%;
+        right: 24%;
+        height: 75px;
+    }
+
+    .header-plane {
+        width: 105px;
+        height: 90px;
+    }
+
+    .airport-code {
+        font-size: 22px;
+    }
+
+    .airport-name {
+        font-size: 10px;
+    }
+
+    .airport-country {
+        font-size: 7px;
+    }
+
+    .brand-logo {
+        width: 45px;
+        height: 38px;
+    }
+}
+
+/* =====================================
+   MOBILE RESPONSIVE
+===================================== */
+
+@media (max-width: 480px) {
+
+    .brand-bar.flight-header {
+        min-height: 155px;
+        padding: 15px 7px;
+        border-radius: 18px;
+    }
+
+    .header-airport {
+        width: 22%;
+    }
+
+    .header-airport.departure {
+        left: 1%;
+    }
+
+    .header-airport.arrival {
+        right: 1%;
+    }
+
+    .header-route {
+        left: 25%;
+        right: 25%;
+        height: 65px;
+    }
+
+    /* Keep the plane prominent on mobile */
+    .header-plane {
+        width: 208px;
+        height: 88px;
+    }
+
+    .airport-code {
+        font-size: 19px;
+        margin-bottom: 5px;
+    }
+
+    .airport-name {
+        font-size: 6px;
+        margin-bottom: 4px;
+    }
+
+    .airport-country {
+        font-size: 6px;
+        letter-spacing: 1px;
+    }
+
+    .route-dot {
+        width: 8px;
+        height: 8px;
+    }
+
+    .header-footer {
+        bottom: 9px;
+        font-size: 7px;
+        letter-spacing: 1.3px;
+    }
+
+    .brand-logo {
+        top: 8px;
+        right: 9px;
+        width: 36px;
+        height: 32px;
+    }
+
+    .header-orbit {
+        width: 190px;
+        height: 190px;
+    }
+}
+
+/* VERY SMALL MOBILE */
+
+@media (max-width: 360px) {
+
+    .brand-bar.flight-header {
+        min-height: 145px;
+    }
+
+    .header-plane {
+        width: 176px;
+        height: 168px;
+    }
+
+    .airport-code {
+        font-size: 12px;
+    }
+
+    .airport-name {
+        font-size: 5px;
+    }
+
+    .airport-country {
+        font-size: 5px;
+    }
+}
+
+/* ACCESSIBILITY */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .header-plane {
+        animation: none;
+        left: 100%;
+        opacity:11;
+    }
+
+    .header-plane img {
+        animation: none;
+    }
+}
+
 /* DOCUMENT FRAME */
 .document-frame {
     width: 100%;
@@ -183,9 +670,43 @@ footer h2{font-size:17px}footer p{margin-top:7px;color:#bfdbfe;font-size:11px}
 </style>
 </head>
 <body>
-<header class="brand-bar">
-  <img class="brand-logo" src="https://res.cloudinary.com/dwclusteb/image/upload/v1788726780/Screenshot_20260820_001428_Chrome_f3vkdh_cicqed.jpg" alt="Logo">
+
+<header class="brand-bar flight-header">
+
+    <div class="header-orbit"></div>
+
+    <div class="header-airport departure">
+        <div class="airport-code">ADD</div>
+        <div class="airport-name">Addis Ababa</div>
+        <div class="airport-country">ETHIOPIA</div>
+    </div>
+
+    <div class="header-route">
+        <div class="route-line"></div>
+        <div class="route-dot start"></div>
+        <div class="route-dot end"></div>
+
+        <div class="header-plane">
+            <img
+                src="https://res.cloudinary.com/dwclusteb/image/upload/v1795385912/file_0000000033a4821198aa72933efc6505_n7tgxv.png"
+                alt="Airplane">
+        </div>
+    </div>
+
+    <div class="header-airport arrival">
+        <div class="airport-code">KWI</div>
+        <div class="airport-name">Kuwait</div>
+        <div class="airport-country">KUWAIT</div>
+    </div>
+
+    <div class="header-footer">FLIGHT ROUTE • ADD — KWI</div>
+
+    <img class="brand-logo"
+         src="https://res.cloudinary.com/dwclusteb/image/upload/v1788726780/Screenshot_20260820_001428_Chrome_f3vkdh_cicqed.jpg"
+         alt="Logo">
+
 </header>
+
 
 <main class="container">
 <section class="profile-card">
