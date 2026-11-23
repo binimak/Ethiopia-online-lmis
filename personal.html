@@ -194,6 +194,58 @@ body {
     color: var(--blue);
 }
 
+/* PROFILE TEXT AREA - TRANSPARENT BACKGROUND */
+
+.profile-details {
+    background: transparent !important;
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+}
+
+/* REMOVE TOP DECORATIVE LINE */
+
+.profile-details::before,
+.profile-details::after {
+    display: none !important;
+    content: none !important;
+}
+
+/* MAKE ALL TEXT ELEMENTS TRANSPARENT */
+
+.profile-details #name,
+.profile-details p,
+.profile-details .idline {
+    background: transparent !important;
+    background-color: transparent !important;
+    box-shadow: none !important;
+}
+
+/* REMOVE ID BADGE BACKGROUND */
+
+.profile-details .idline {
+    border: none !important;
+    border-radius: 0 !important;
+}
+
+/* KEEP TEXT CLEAR AND VISIBLE */
+
+.profile-details #name {
+    color: #164477 !important;
+}
+
+.profile-details p {
+    color: #343b45 !important;
+}
+
+.profile-details .idline,
+.profile-details .idline span {
+    color: #596b7a !important;
+}
+
 /* AIRPORT NAME */
 
 .airport-name {
