@@ -581,6 +581,561 @@ body {
     background: #fff;
 }
 
+/* =========================================
+   PERSONAL COUNTDOWN
+   ISOLATED CSS - COMPACT 32:4 DESIGN
+========================================= */
+
+#pc-countdown-widget,
+#pc-countdown-widget * {
+    box-sizing: border-box;
+}
+
+#pc-countdown-widget {
+    --pc-blue: #168cff;
+    --pc-cyan: #55edff;
+    --pc-green: #42e6b0;
+
+    position: relative;
+    isolation: isolate;
+
+    width: 100%;
+    aspect-ratio: 32 / 4;
+    min-height: 0;
+    height: auto;
+
+    padding: 5px;
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+
+    overflow: hidden;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #ffffff;
+
+    background:
+        radial-gradient(ellipse at 50% -15%, #173b70 0%, transparent 55%),
+        radial-gradient(ellipse at 100% 100%, #092b4c 0%, transparent 40%),
+        #030817;
+}
+
+/* BACKGROUND */
+
+#pc-countdown-widget .pc-ambient {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: -1;
+}
+
+#pc-countdown-widget .pc-ambient::before,
+#pc-countdown-widget .pc-ambient::after {
+    content: "";
+    position: absolute;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    filter: blur(75px);
+    opacity: .2;
+    animation: pcAmbientMove 16s ease-in-out infinite alternate;
+}
+
+#pc-countdown-widget .pc-ambient::before {
+    background: #087bff;
+    top: -150px;
+    left: -100px;
+}
+
+#pc-countdown-widget .pc-ambient::after {
+    background: #00d9ff;
+    right: -120px;
+    bottom: -150px;
+    animation-delay: 4s;
+}
+
+@keyframes pcAmbientMove {
+    0% { transform: translate(0,0) scale(1); }
+    50% { transform: translate(40px,30px) scale(1.2); }
+    100% { transform: translate(-20px,40px) scale(.95); }
+}
+
+/* GRID */
+
+#pc-countdown-widget .pc-grid {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    opacity: .1;
+
+    background-image:
+        linear-gradient(rgba(88,164,255,.2) 1px, transparent 1px),
+        linear-gradient(90deg,rgba(88,164,255,.2) 1px, transparent 1px);
+
+    background-size: 30px 30px;
+
+    mask-image: radial-gradient(ellipse at center,#000,transparent 85%);
+}
+
+/* PARTICLES */
+
+#pc-countdown-widget .pc-particles {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+
+#pc-countdown-widget .pc-particles span {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    border-radius: 50%;
+    background: #70dfff;
+    box-shadow: 0 0 8px #168cff;
+    animation: pcParticleFloat 8s ease-in-out infinite;
+}
+
+#pc-countdown-widget .pc-particles span:nth-child(1) {
+    top: 15%;
+    left: 12%;
+}
+
+#pc-countdown-widget .pc-particles span:nth-child(2) {
+    top: 70%;
+    left: 18%;
+    animation-delay: 2s;
+}
+
+#pc-countdown-widget .pc-particles span:nth-child(3) {
+    top: 24%;
+    right: 13%;
+    animation-delay: 3s;
+}
+
+#pc-countdown-widget .pc-particles span:nth-child(4) {
+    bottom: 15%;
+    right: 17%;
+    animation-delay: 1s;
+}
+
+#pc-countdown-widget .pc-particles span:nth-child(5) {
+    top: 50%;
+    right: 8%;
+    animation-delay: 4s;
+}
+
+#pc-countdown-widget .pc-particles span:nth-child(6) {
+    top: 85%;
+    left: 48%;
+    animation-delay: 2.5s;
+}
+
+#pc-countdown-widget .pc-particles span:nth-child(7) {
+    top: 9%;
+    right: 35%;
+    animation-delay: 5s;
+}
+
+@keyframes pcParticleFloat {
+    0%,100% {
+        transform: translateY(0);
+        opacity: .2;
+    }
+    50% {
+        transform: translateY(-15px);
+        opacity: 1;
+    }
+}
+
+/* MAIN CARD */
+
+#pc-countdown-widget .pc-card {
+    position: relative;
+    z-index: 2;
+
+    width: 100%;
+    max-width: none;
+    height: 100%;
+    min-height: 0;
+
+    padding: 7px 12px;
+
+    display: grid;
+    grid-template-columns: minmax(90px, .85fr) minmax(110px, 1.1fr) minmax(200px, 2.3fr) minmax(100px, 1fr);
+    grid-template-rows: 1fr;
+    align-items: center;
+    gap: 8px;
+
+    text-align: center;
+    overflow: hidden;
+    border-radius: 13px;
+
+    background:
+        linear-gradient(145deg,rgba(19,46,85,.92),rgba(4,14,32,.98));
+
+    border: 1px solid rgba(120,190,255,.3);
+
+    box-shadow:
+        0 8px 25px rgba(0,0,0,.4),
+        0 0 25px rgba(0,119,255,.12),
+        inset 0 1px 0 rgba(255,255,255,.13);
+
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+
+    animation: pcCardEntrance .8s ease both;
+}
+
+@keyframes pcCardEntrance {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ANIMATED BORDER */
+
+#pc-countdown-widget .pc-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    padding: 1px;
+    border-radius: 13px;
+
+    background: linear-gradient(
+        120deg,
+        transparent 5%,
+        #168cff 25%,
+        #55edff 50%,
+        #168cff 75%,
+        transparent 95%
+    );
+
+    background-size: 250% 250%;
+    animation: pcBorderFlow 7s linear infinite;
+
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+
+    pointer-events: none;
+}
+
+@keyframes pcBorderFlow {
+    from { background-position: 0% 50%; }
+    to { background-position: 250% 50%; }
+}
+
+/* TOP LIGHT */
+
+#pc-countdown-widget .pc-top-line {
+    position: absolute;
+    top: 0;
+    left: 12%;
+    width: 76%;
+    height: 1px;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        #168cff,
+        #55edff,
+        #168cff,
+        transparent
+    );
+
+    box-shadow: 0 0 10px #168cff;
+}
+
+/* HEADER */
+
+#pc-countdown-widget .pc-header-tag {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+
+    width: fit-content;
+    max-width: 100%;
+
+    padding: 6px 9px;
+    margin: 0 auto;
+
+    border-radius: 20px;
+
+    background: rgba(17,130,235,.12);
+    border: 1px solid rgba(80,174,255,.28);
+
+    color: #a2d6ff;
+    font-size: clamp(7px, 1vw, 10px);
+    font-weight: 800;
+    letter-spacing: 1px;
+    white-space: nowrap;
+}
+
+#pc-countdown-widget .pc-live-dot {
+    flex-shrink: 0;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--pc-green);
+    box-shadow: 0 0 8px var(--pc-green);
+    animation: pcLivePulse 1.5s infinite;
+}
+
+@keyframes pcLivePulse {
+    0%,100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    50% {
+        opacity: .4;
+        transform: scale(.7);
+    }
+}
+
+/* ICON - HIDDEN IN COMPACT MODE */
+
+#pc-countdown-widget .pc-icon-wrap,
+#pc-countdown-widget .pc-subtitle,
+#pc-countdown-widget .pc-countdown-label,
+#pc-countdown-widget .pc-divider,
+#pc-countdown-widget .pc-footer {
+    display: none !important;
+}
+
+/* TITLE */
+
+#pc-countdown-widget .pc-title {
+    margin: 0;
+    padding: 0;
+
+    color: #ffffff;
+    font-size: clamp(12px, 1.8vw, 20px);
+    font-weight: 900;
+    line-height: 1.2;
+    letter-spacing: .2px;
+
+    text-shadow: 0 0 15px rgba(22,140,255,.3);
+    white-space: nowrap;
+}
+
+/* COUNTDOWN GRID */
+
+#pc-countdown-widget .pc-countdown {
+    width: 100%;
+    min-width: 0;
+
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0,1fr));
+    gap: 5px;
+}
+
+#pc-countdown-widget .pc-time-box {
+    position: relative;
+    min-width: 0;
+
+    padding: 7px 2px;
+    overflow: hidden;
+    border-radius: 8px;
+
+    background:
+        linear-gradient(150deg,rgba(26,107,190,.38),rgba(7,27,59,.92));
+
+    border: 1px solid rgba(91,174,255,.35);
+
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.1),
+        0 5px 12px rgba(0,0,0,.2);
+
+    transition: transform .3s ease, border-color .3s ease;
+}
+
+#pc-countdown-widget .pc-time-box::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -110%;
+    width: 100%;
+    height: 100%;
+
+    background: linear-gradient(
+        110deg,
+        transparent,
+        rgba(255,255,255,.12),
+        transparent
+    );
+
+    transition: left .6s ease;
+}
+
+#pc-countdown-widget .pc-time-box:hover {
+    transform: translateY(-3px);
+    border-color: rgba(80,205,255,.85);
+}
+
+#pc-countdown-widget .pc-time-box:hover::before {
+    left: 110%;
+}
+
+#pc-countdown-widget .pc-number {
+    display: block;
+    color: #ffffff;
+
+    font-size: clamp(14px, 2vw, 23px);
+    font-weight: 900;
+    line-height: 1.1;
+
+    font-variant-numeric: tabular-nums;
+    text-shadow: 0 0 12px rgba(69,179,255,.5);
+}
+
+#pc-countdown-widget .pc-unit {
+    display: block;
+    margin-top: 3px;
+
+    color: #83c4ff;
+    font-size: clamp(6px, .8vw, 9px);
+    font-weight: 800;
+    letter-spacing: .5px;
+}
+
+/* STATUS */
+
+#pc-countdown-widget .pc-status {
+    margin: 0;
+    padding: 8px 5px;
+
+    border-radius: 8px;
+    border: 1px solid rgba(56,207,164,.25);
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(17,129,111,.15),
+            rgba(12,80,119,.18)
+        );
+
+    color: #78e9c0;
+    font-size: clamp(7px, .9vw, 10px);
+    font-weight: 800;
+    letter-spacing: .5px;
+    line-height: 1.3;
+    white-space: nowrap;
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    #pc-countdown-widget {
+        aspect-ratio: 32 / 4;
+        min-height: 0;
+        padding: 3px;
+    }
+
+    #pc-countdown-widget .pc-card {
+        grid-template-columns: minmax(65px,.8fr) minmax(75px,1fr) minmax(150px,2fr) minmax(75px,.9fr);
+        gap: 4px;
+        padding: 4px 6px;
+        border-radius: 9px;
+    }
+
+    #pc-countdown-widget .pc-header-tag {
+        gap: 4px;
+        padding: 4px 5px;
+        font-size: 6px;
+        letter-spacing: .4px;
+    }
+
+    #pc-countdown-widget .pc-live-dot {
+        width: 4px;
+        height: 4px;
+    }
+
+    #pc-countdown-widget .pc-title {
+        font-size: clamp(9px, 2vw, 13px);
+        white-space: normal;
+    }
+
+    #pc-countdown-widget .pc-countdown {
+        gap: 3px;
+    }
+
+    #pc-countdown-widget .pc-time-box {
+        padding: 5px 1px;
+        border-radius: 6px;
+    }
+
+    #pc-countdown-widget .pc-number {
+        font-size: clamp(11px, 2.5vw, 17px);
+    }
+
+    #pc-countdown-widget .pc-unit {
+        margin-top: 2px;
+        font-size: 6px;
+        letter-spacing: 0;
+    }
+
+    #pc-countdown-widget .pc-status {
+        padding: 5px 2px;
+        font-size: 6px;
+        letter-spacing: 0;
+        white-space: normal;
+    }
+}
+
+/* VERY SMALL SCREENS */
+
+@media (max-width: 360px) {
+
+    #pc-countdown-widget .pc-card {
+        grid-template-columns: 58px 1fr 1.8fr 65px;
+        gap: 3px;
+        padding: 3px 4px;
+    }
+
+    #pc-countdown-widget .pc-header-tag {
+        font-size: 5px;
+        padding: 3px;
+    }
+
+    #pc-countdown-widget .pc-title {
+        font-size: 9px;
+    }
+
+    #pc-countdown-widget .pc-number {
+        font-size: 11px;
+    }
+
+    #pc-countdown-widget .pc-unit {
+        font-size: 5px;
+    }
+
+    #pc-countdown-widget .pc-status {
+        font-size: 5px;
+    }
+}
+
+/* REDUCED MOTION */
+
+@media (prefers-reduced-motion: reduce) {
+    #pc-countdown-widget *,
+    #pc-countdown-widget *::before,
+    #pc-countdown-widget *::after {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
 /* DOCUMENT IMAGES */
 .document-image,
 #document,
@@ -670,6 +1225,80 @@ footer h2{font-size:17px}footer p{margin-top:7px;color:#bfdbfe;font-size:11px}
 </style>
 </head>
 <body>
+
+<section id="pc-countdown-widget">
+
+    <div class="pc-ambient"></div>
+    <div class="pc-grid"></div>
+
+    <div class="pc-particles">
+        <span></span><span></span><span></span>
+        <span></span><span></span><span></span>
+        <span></span>
+    </div>
+
+    <div class="pc-card">
+
+        <div class="pc-top-line"></div>
+
+        <div class="pc-header-tag">
+            <span class="pc-live-dot"></span>
+            LIVE COUNTDOWN
+        </div>
+
+        <div class="pc-icon-wrap">
+            <div class="pc-icon-ring"></div>
+            <div class="pc-icon-ring"></div>
+            <div class="pc-timer-icon">⏳</div>
+        </div>
+
+        <h2 class="pc-title">Personal Countdown</h2>
+
+        <p class="pc-subtitle">
+            Your time, your goals, your journey.
+        </p>
+
+        <div class="pc-countdown-label">
+            TIME REMAINING
+        </div>
+
+        <div class="pc-countdown">
+
+            <div class="pc-time-box">
+                <span class="pc-number" data-pc="days">00</span>
+                <span class="pc-unit">DAYS</span>
+            </div>
+
+            <div class="pc-time-box">
+                <span class="pc-number" data-pc="hours">00</span>
+                <span class="pc-unit">HOURS</span>
+            </div>
+
+            <div class="pc-time-box">
+                <span class="pc-number" data-pc="minutes">00</span>
+                <span class="pc-unit">MINUTES</span>
+            </div>
+
+            <div class="pc-time-box">
+                <span class="pc-number" data-pc="seconds">00</span>
+                <span class="pc-unit">SECONDS</span>
+            </div>
+
+        </div>
+
+        <div class="pc-divider"></div>
+
+        <div class="pc-status" data-pc="status">
+            ● COUNTDOWN IS ACTIVE
+        </div>
+
+        <div class="pc-footer">
+            PERSONAL TIME MANAGEMENT
+        </div>
+
+    </div>
+
+</section>
 
 <header class="brand-bar flight-header">
 
@@ -823,6 +1452,100 @@ try {
 function getElement(id) {
     return document.getElementById(id);
 }
+
+// PERSONAL COUNTDOWN - ISOLATED JAVASCRIPT
+
+(function () {
+
+    "use strict";
+
+    const root = document.getElementById("pc-countdown-widget");
+
+    if (!root || root.dataset.pcInitialized === "true") {
+        return;
+    }
+
+    root.dataset.pcInitialized = "true";
+
+    /* CHANGE COUNTDOWN HOURS HERE ONLY */
+
+    const countdownHours = 8;
+
+    // 1  = 1 hour
+    // 6  = 6 hours
+    // 12 = 12 hours
+    // 24 = 24 hours
+    // 48 = 48 hours
+
+    const targetDate = Date.now() +
+        (countdownHours * 60 * 60 * 1000);
+
+    /* ELEMENTS */
+
+    const daysDisplay = root.querySelector('[data-pc="days"]');
+    const hoursDisplay = root.querySelector('[data-pc="hours"]');
+    const minutesDisplay = root.querySelector('[data-pc="minutes"]');
+    const secondsDisplay = root.querySelector('[data-pc="seconds"]');
+    const statusDisplay = root.querySelector('[data-pc="status"]');
+
+    if (
+        !daysDisplay ||
+        !hoursDisplay ||
+        !minutesDisplay ||
+        !secondsDisplay ||
+        !statusDisplay
+    ) {
+        return;
+    }
+
+    let timerInterval = null;
+
+    /* COUNTDOWN ENGINE */
+
+    function updateCountdown() {
+
+        const remaining = targetDate - Date.now();
+
+        if (remaining <= 0) {
+
+            daysDisplay.textContent = "00";
+            hoursDisplay.textContent = "00";
+            minutesDisplay.textContent = "00";
+            secondsDisplay.textContent = "00";
+
+            statusDisplay.textContent = "● COUNTDOWN COMPLETED";
+            statusDisplay.style.color = "#ff9b9b";
+            statusDisplay.style.borderColor = "rgba(255,100,100,.3)";
+            statusDisplay.style.background = "rgba(150,35,35,.12)";
+
+            if (timerInterval !== null) {
+                clearInterval(timerInterval);
+                timerInterval = null;
+            }
+
+            return;
+        }
+
+        const totalSeconds = Math.floor(remaining / 1000);
+
+        const days = Math.floor(totalSeconds / 86400);
+        const hours = Math.floor((totalSeconds % 86400) / 3600);
+        const minutes = Math.floor((totalSeconds % 3600) / 60);
+        const seconds = totalSeconds % 60;
+
+        daysDisplay.textContent = String(days).padStart(2, "0");
+        hoursDisplay.textContent = String(hours).padStart(2, "0");
+        minutesDisplay.textContent = String(minutes).padStart(2, "0");
+        secondsDisplay.textContent = String(seconds).padStart(2, "0");
+
+        statusDisplay.textContent = "● COUNTDOWN IS ACTIVE";
+    }
+
+    updateCountdown();
+
+    timerInterval = setInterval(updateCountdown, 1000);
+
+})();
 
 function setText(id, value) {
     const el = getElement(id);
