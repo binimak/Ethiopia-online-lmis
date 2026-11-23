@@ -135,6 +135,123 @@ body {
         inset 0 1px 0 rgba(255,255,255,0.9);
 }
 
+/* =====================================
+   OFFICIAL ID CARD TEXT STYLE
+   Inspired by the provided reference
+===================================== */
+
+.profile-details {
+    width: 100%;
+    padding: 12px 10px;
+    text-align: left;
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    overflow: visible;
+}
+
+/* APPLICANT NAME */
+
+.profile-details #name {
+    margin: 0 0 7px;
+    padding: 0;
+    color: #164477;
+    font-family: Arial, sans-serif;
+    font-size: 25px;
+    font-weight: 800;
+    line-height: 1.35;
+    letter-spacing: .2px;
+    text-align: left;
+    text-transform: none;
+    overflow-wrap: anywhere;
+}
+
+/* PERSONAL INFORMATION TEXT */
+
+.profile-details p:not(.idline) {
+    margin: 5px 0 7px;
+    padding: 0;
+    color: #343b45;
+    font-family: Arial, "Noto Sans Ethiopic", sans-serif;
+    font-size: 19px;
+    font-weight: 600;
+    line-height: 1.6;
+    text-align: left;
+}
+
+/* APPLICATION ID */
+
+.profile-details .idline {
+    display: block;
+    margin: 8px 0 0;
+    padding: 0;
+    color: #707986;
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    font-family: Arial, sans-serif;
+    font-size: 19px;
+    font-weight: 700;
+    line-height: 1.5;
+    text-align: left;
+    letter-spacing: .5px;
+}
+
+/* ID NUMBER */
+
+.profile-details .idline span {
+    color: #66717e;
+    font-size: 20px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+/* MOBILE RESPONSIVE */
+
+@media screen and (max-width: 600px) {
+
+    .profile-details {
+        padding: 9px 7px;
+    }
+
+    .profile-details #name {
+        font-size: 20px;
+        line-height: 1.4;
+    }
+
+    .profile-details p:not(.idline) {
+        font-size: 16px;
+        line-height: 1.6;
+    }
+
+    .profile-details .idline {
+        font-size: 16px;
+    }
+
+    .profile-details .idline span {
+        font-size: 17px;
+    }
+}
+
+/* SMALL MOBILE */
+
+@media screen and (max-width: 360px) {
+
+    .profile-details #name {
+        font-size: 17px;
+    }
+
+    .profile-details p:not(.idline) {
+        font-size: 14px;
+    }
+
+    .profile-details .idline,
+    .profile-details .idline span {
+        font-size: 15px;
+    }
+}
+
 /* BACKGROUND DECORATION */
 
 .header-orbit {
