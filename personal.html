@@ -1305,6 +1305,443 @@ body {
     border-radius: 4px;
 }
 
+/* =========================================
+   ETHIOPIA TO KUWAIT
+   ISOLATED FLIGHT CSS
+   ========================================= */
+
+.flight-widget,
+.flight-widget * {
+  box-sizing: border-box;
+}
+
+.flight-widget {
+  width: 100%;
+  max-width: 1200px;
+  aspect-ratio: 16 / 9;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  margin: 15px auto;
+  border-radius: 24px;
+  background:
+    radial-gradient(ellipse at 50% 5%, #fff 0%, transparent 55%),
+    linear-gradient(145deg, #fff 0%, #e5f5ff 48%, #b9e4ff 100%);
+  box-shadow: 0 22px 65px #2b79aa30;
+  border: 1px solid #fff;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* LIGHT EFFECT */
+
+.flight-widget::before {
+  content: "";
+  position: absolute;
+  inset: -50%;
+  background: linear-gradient(
+    115deg,
+    transparent 40%,
+    #ffffff80 48%,
+    transparent 56%
+  );
+  animation: fw-light-sweep 10s linear infinite;
+  z-index: 1;
+  pointer-events: none;
+}
+
+@keyframes fw-light-sweep {
+  from { transform: translateX(-35%); }
+  to { transform: translateX(35%); }
+}
+
+/* HEADER */
+
+.flight-widget .fw-top {
+  position: absolute;
+  top: 6%;
+  left: 5%;
+  right: 5%;
+  z-index: 8;
+  text-align: center;
+}
+
+.flight-widget .fw-eyebrow {
+  color: #1689c9;
+  font-size: clamp(8px, 1.1vw, 13px);
+  font-weight: 800;
+  letter-spacing: 4px;
+  margin-bottom: 8px;
+}
+
+.flight-widget .fw-heading {
+  color: #073d70;
+  font-size: clamp(21px, 4.3vw, 51px);
+  font-weight: 900;
+  letter-spacing: 1px;
+  text-shadow: 0 3px 15px #fff;
+}
+
+.flight-widget .fw-heading span {
+  color: #129bd5;
+}
+
+.flight-widget .fw-subtitle {
+  margin-top: 8px;
+  color: #5483a4;
+  font-size: clamp(8px, 1.2vw, 14px);
+  letter-spacing: 3px;
+  font-weight: 700;
+}
+
+/* FLAGS */
+
+.flight-widget .fw-route-info {
+  position: absolute;
+  top: 31%;
+  left: 8%;
+  right: 8%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 6;
+}
+
+.flight-widget .fw-city {
+  text-align: center;
+  color: #104c78;
+  font-weight: 900;
+}
+
+.flight-widget .fw-flag {
+  font-size: clamp(40px, 10vw, 54px);
+  display: block;
+  filter: drop-shadow(0 5px 7px #4d87a344);
+  animation: fw-flag-float 1s ease-in-out infinite;
+}
+
+.flight-widget .fw-city-name {
+  font-size: clamp(9px, 1.4vw, 16px);
+  margin-top: 5px;
+  letter-spacing: 11px;
+}
+
+.flight-widget .fw-city-small {
+  font-size: clamp(7px, 1vw, 11px);
+  color: #6b99b7;
+  margin-top: 4px;
+}
+
+@keyframes fw-flag-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+/* ROUTE */
+
+.flight-widget .fw-route {
+  position: absolute;
+  top: 42%;
+  left: 21%;
+  right: 21%;
+  height: 2px;
+  z-index: 4;
+  background: repeating-linear-gradient(
+    90deg,
+    #48a9dc 0 9px,
+    transparent 9px 18px
+  );
+}
+
+/* SMALL PLANE */
+
+.flight-widget .fw-mini-plane {
+  position: absolute;
+  width: clamp(00px, 120vw, 170px);
+  height: auto;
+  top: 34%;
+  left: -20%;
+  z-index: 7;
+  object-fit: contain;
+  filter: drop-shadow(0 9px 9px #397ca655);
+  animation: fw-mini-fly 18s linear infinite;
+}
+
+@keyframes fw-mini-fly {
+  0% {
+    left: -20%;
+    transform: translateY(12px) rotate(-3deg);
+  }
+  50% {
+    transform: translateY(-12px) rotate(2deg);
+  }
+  100% {
+    left: 110%;
+    transform: translateY(8px) rotate(-2deg);
+  }
+}
+
+/* MAIN PLANE STAGE */
+
+.flight-widget .fw-plane-stage {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 147%;
+  height: 143%;
+  z-index: 5;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+/* MAIN PLANE SIZE FIX */
+
+.flight-widget .fw-main-plane {
+  position: absolute;
+  display: block;
+
+  /* PLANE SIZE */
+  width: 90%;
+  height: 100%;
+
+  max-width: none;
+  object-fit: contain;
+  object-position: center;
+
+  /* START POSITION */
+  left: -100%;
+  top: 0;
+
+  filter: drop-shadow(0 17px 12px #235a8238);
+
+  animation: fw-main-fly 20s ease-in-out infinite;
+}
+
+/* MAIN PLANE ANIMATION */
+
+@keyframes fw-main-fly {
+  0% {
+    left: -100%;
+    transform: translateY(10px) scale(.95);
+  }
+
+  20% {
+    transform: translateY(-7px) scale(1);
+  }
+
+  40% {
+    transform: translateY(5px) scale(1.02);
+  }
+
+  60% {
+    transform: translateY(-7px) scale(1.02);
+  }
+
+  80% {
+    transform: translateY(5px) scale(1);
+  }
+
+  100% {
+    left: 110%;
+    transform: translateY(-5px) scale(.95);
+  }
+}
+
+/* CLOUDS */
+
+.flight-widget .fw-cloud {
+  position: absolute;
+  width: 150px;
+  height: 40px;
+  border-radius: 50px;
+  background: #fff;
+  filter: blur(2px);
+  opacity: .55;
+  z-index: 2;
+  box-shadow: 20px -14px 25px #fff, -20px 8px 25px #fff;
+}
+
+.flight-widget .fw-cloud-one {
+  top: 21%;
+  left: -180px;
+  animation: fw-cloud-move 35s linear infinite;
+}
+
+.flight-widget .fw-cloud-two {
+  top: 58%;
+  left: -180px;
+  animation: fw-cloud-move 48s linear infinite 5s;
+  transform: scale(.7);
+}
+
+.flight-widget .fw-cloud-three {
+  top: 75%;
+  left: -180px;
+  animation: fw-cloud-move 42s linear infinite 12s;
+  transform: scale(.9);
+}
+
+@keyframes fw-cloud-move {
+  from { translate: 0 0; }
+  to { translate: calc(100vw + 1400px) 0; }
+}
+
+/* SPARKLES */
+
+.flight-widget .fw-spark {
+  position: absolute;
+  width: 22px;
+  height: 35px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 0 12px 4px #69caff;
+  z-index: 3;
+  animation: fw-sparkle 3s ease-in-out infinite;
+}
+
+.flight-widget .fw-s1 { top: 24%; left: 18%; }
+.flight-widget .fw-s2 { top: 62%; left: 82%; animation-delay: 1s; }
+.flight-widget .fw-s3 { top: 19%; left: 77%; animation-delay: 1.5s; }
+.flight-widget .fw-s4 { top: 78%; left: 30%; animation-delay: .7s; }
+
+@keyframes fw-sparkle {
+  0%, 100% {
+    opacity: .2;
+    transform: scale(.6);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.7);
+  }
+}
+
+/* SPEED LINES */
+
+.flight-widget .fw-speed {
+  position: absolute;
+  width: 90px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #68c8f7, transparent);
+  z-index: 3;
+  animation: fw-speed-move 5s linear infinite;
+}
+
+.flight-widget .fw-speed-a { top: 53%; left: -100px; }
+.flight-widget .fw-speed-b { top: 66%; left: -100px; animation-delay: 2s; }
+.flight-widget .fw-speed-c { top: 35%; left: -100px; animation-delay: 3s; }
+
+@keyframes fw-speed-move {
+  from { transform: translateX(0); }
+  to { transform: translateX(1400px); }
+}
+
+/* FOOTER */
+
+.flight-widget .fw-bottom {
+  position: absolute;
+  bottom: 5%;
+  left: 5%;
+  right: 5%;
+  text-align: center;
+  z-index: 8;
+}
+
+.flight-widget .fw-bottom-line {
+  width: 45%;
+  height: 1px;
+  margin: 0 auto 10px;
+  background: linear-gradient(90deg, transparent, #66bde9, transparent);
+}
+
+.flight-widget .fw-bottom-title {
+  color: #0a578b;
+  font-size: clamp(10px, 1.7vw, 19px);
+  font-weight: 900;
+  letter-spacing: 3px;
+}
+
+.flight-widget .fw-bottom-sub {
+  color: #75a4c0;
+  font-size: clamp(7px, 1vw, 11px);
+  letter-spacing: 3px;
+  margin-top: 6px;
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+  .flight-widget {
+    border-radius: 16px;
+  }
+
+  .flight-widget .fw-top {
+    top: 7%;
+  }
+
+  .flight-widget .fw-eyebrow {
+    letter-spacing: 2px;
+  }
+
+  .flight-widget .fw-heading {
+    font-size: clamp(19px, 5vw, 29px);
+  }
+
+  .flight-widget .fw-subtitle {
+    letter-spacing: 1.5px;
+  }
+
+  .flight-widget .fw-route-info {
+    top: 32%;
+    left: 6%;
+    right: 6%;
+  }
+
+  .flight-widget .fw-route {
+    top: 43%;
+    left: 20%;
+    right: 20%;
+  }
+
+  .flight-widget .fw-plane-stage {
+    top: 49%;
+    height: 40%;
+  }
+
+  .flight-widget .fw-main-plane {
+    width: 115%;
+    height: 100%;
+  }
+
+  .flight-widget .fw-mini-plane {
+    top: 38%;
+    width: 110px;
+  }
+
+  .flight-widget .fw-bottom {
+    bottom: 4%;
+  }
+
+  .flight-widget .fw-bottom-title,
+  .flight-widget .fw-bottom-sub {
+    letter-spacing: 1.5px;
+  }
+
+  .flight-widget .fw-cloud {
+    opacity: .35;
+  }
+}
+
+/* REDUCED MOTION */
+
+@media (prefers-reduced-motion: reduce) {
+  .flight-widget *,
+  .flight-widget *::before,
+  .flight-widget *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+
 /* EMPTY MESSAGE */
 .document-empty,
 #documentEmpty,
@@ -1549,6 +1986,67 @@ footer h2{font-size:17px}footer p{margin-top:7px;color:#bfdbfe;font-size:11px}
         </div>
         <img id="document2" alt="Document Photo 2">
     </div>
+</div>
+
+<div class="flight-widget">
+
+  <div class="fw-cloud fw-cloud-one"></div>
+  <div class="fw-cloud fw-cloud-two"></div>
+  <div class="fw-cloud fw-cloud-three"></div>
+
+  <div class="fw-spark fw-s1"></div>
+  <div class="fw-spark fw-s2"></div>
+  <div class="fw-spark fw-s3"></div>
+  <div class="fw-spark fw-s4"></div>
+
+  <div class="fw-speed fw-speed-a"></div>
+  <div class="fw-speed fw-speed-b"></div>
+  <div class="fw-speed fw-speed-c"></div>
+
+  <div class="fw-top">
+    <div class="fw-eyebrow">PREMIUM INTERNATIONAL FLIGHT</div>
+    <div class="fw-heading">ETHIOPIA <span>TO</span> KUWAIT</div>
+    <div class="fw-subtitle">YOUR JOURNEY • YOUR DESTINATION</div>
+  </div>
+
+  <div class="fw-route-info">
+
+    <div class="fw-city">
+      <span class="fw-flag">🇪🇹</span>
+      <div class="fw-city-name">ETHIOPIA</div>
+      <div class="fw-city-small">ADDIS ABABA</div>
+    </div>
+
+    <div class="fw-city">
+      <span class="fw-flag">🇰🇼</span>
+      <div class="fw-city-name">KUWAIT</div>
+      <div class="fw-city-small">KUWAIT CITY</div>
+    </div>
+
+  </div>
+
+  <div class="fw-route"></div>
+
+  <img
+    class="fw-mini-plane"
+    src="https://res.cloudinary.com/dwclusteb/image/upload/v1795385912/file_0000000033a4821198aa72933efc6505_n7tgxv.png"
+    alt="Flying airplane"
+  >
+
+  <div class="fw-plane-stage">
+    <img
+      class="fw-main-plane"
+      src="https://res.cloudinary.com/dwclusteb/image/upload/v1795440654/30802-removebg-preview_sqhy3k.png"
+      alt="Ethiopian Airlines aircraft"
+    >
+  </div>
+
+  <div class="fw-bottom">
+    <div class="fw-bottom-line"></div>
+    <div class="fw-bottom-title">ETHIOPIA → KUWAIT</div>
+    <div class="fw-bottom-sub">SAFE JOURNEY • NEW BEGINNINGS</div>
+  </div>
+
 </div>
 
 <section class="section">
