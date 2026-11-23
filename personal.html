@@ -1455,6 +1455,8 @@ function getElement(id) {
 
 // PERSONAL COUNTDOWN - ISOLATED JAVASCRIPT
 
+// PERSONAL COUNTDOWN - ISOLATED & PERSISTENT JAVASCRIPT
+
 (function () {
 
     "use strict";
@@ -1469,7 +1471,7 @@ function getElement(id) {
 
     /* CHANGE COUNTDOWN HOURS HERE ONLY */
 
-    const countdownHours = 8;
+    const countdownHours = 24;
 
     // 1  = 1 hour
     // 6  = 6 hours
@@ -1477,8 +1479,43 @@ function getElement(id) {
     // 24 = 24 hours
     // 48 = 48 hours
 
-    const targetDate = Date.now() +
-        (countdownHours * 60 * 60 * 1000);
+    /* STORAGE KEY */
+
+    const storageKey = "personal_countdown_target_v1";
+
+    /* GET SAVED TARGET DATE */
+
+    let targetDate;
+
+    try {
+
+        const savedTarget = localStorage.getItem(storageKey);
+
+        if (savedTarget && Number.isFinite(Number(savedTarget))) {
+
+            // Continue from the previously saved time
+            targetDate = Number(savedTarget);
+
+        } else {
+
+            // Start countdown only for the first time
+            targetDate = Date.now() +
+                (countdownHours * 60 * 60 * 1000);
+
+            localStorage.setItem(
+                storageKey,
+                String(targetDate)
+            );
+
+        }
+
+    } catch (error) {
+
+        // Fallback if browser storage is unavailable
+        targetDate = Date.now() +
+            (countdownHours * 60 * 60 * 1000);
+
+    }
 
     /* ELEMENTS */
 
@@ -1514,9 +1551,12 @@ function getElement(id) {
             secondsDisplay.textContent = "00";
 
             statusDisplay.textContent = "● COUNTDOWN COMPLETED";
+
             statusDisplay.style.color = "#ff9b9b";
-            statusDisplay.style.borderColor = "rgba(255,100,100,.3)";
-            statusDisplay.style.background = "rgba(150,35,35,.12)";
+            statusDisplay.style.borderColor =
+                "rgba(255,100,100,.3)";
+            statusDisplay.style.background =
+                "rgba(150,35,35,.12)";
 
             if (timerInterval !== null) {
                 clearInterval(timerInterval);
@@ -1533,19 +1573,34 @@ function getElement(id) {
         const minutes = Math.floor((totalSeconds % 3600) / 60);
         const seconds = totalSeconds % 60;
 
-        daysDisplay.textContent = String(days).padStart(2, "0");
-        hoursDisplay.textContent = String(hours).padStart(2, "0");
-        minutesDisplay.textContent = String(minutes).padStart(2, "0");
-        secondsDisplay.textContent = String(seconds).padStart(2, "0");
+        daysDisplay.textContent =
+            String(days).padStart(2, "0");
+
+        hoursDisplay.textContent =
+            String(hours).padStart(2, "0");
+
+        minutesDisplay.textContent =
+            String(minutes).padStart(2, "0");
+
+        secondsDisplay.textContent =
+            String(seconds).padStart(2, "0");
 
         statusDisplay.textContent = "● COUNTDOWN IS ACTIVE";
+
+        statusDisplay.style.color = "";
+        statusDisplay.style.borderColor = "";
+        statusDisplay.style.background = "";
+
     }
+
+    /* START */
 
     updateCountdown();
 
     timerInterval = setInterval(updateCountdown, 1000);
 
 })();
+
 
 function setText(id, value) {
     const el = getElement(id);
