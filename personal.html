@@ -1696,6 +1696,176 @@ body {
     right: 6%;
   }
 
+/* PREMIUM VISA DOCUMENT BOX - ISOLATED CSS */
+
+.document-box {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    margin: 22px auto;
+    padding: 20px;
+    overflow: hidden;
+
+    background: linear-gradient(145deg, #ffffff, #f3f8ff);
+    border: 1px solid rgba(30, 100, 180, 0.16);
+    border-radius: 20px;
+
+    box-shadow:
+        0 12px 30px rgba(20, 65, 120, 0.09),
+        inset 0 1px 0 rgba(255,255,255,0.9);
+
+    transition: transform .35s ease, box-shadow .35s ease;
+}
+
+.document-box:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 18px 38px rgba(20, 65, 120, 0.15);
+}
+
+/* TITLE */
+
+.document-box h2 {
+    position: relative;
+    margin: 0 0 18px;
+    padding: 0 0 13px 14px;
+
+    color: #153b70;
+    font-size: 17px;
+    font-weight: 800;
+    line-height: 1.7;
+
+    border-bottom: 1px solid #e1eaf5;
+}
+
+.document-box h2::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 4px;
+
+    width: 5px;
+    height: 25px;
+
+    background: linear-gradient(180deg, #1688ed, #0752a5);
+    border-radius: 10px;
+}
+
+/* DOCUMENT PREVIEW */
+
+.document-box .document-preview {
+    position: relative;
+    width: 100%;
+    min-height: 210px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(circle at 50% 30%, #ffffff, #edf4fc);
+
+    border: 2px dashed #b9cce2;
+    border-radius: 15px;
+
+    transition: border-color .3s ease,
+                background .3s ease;
+}
+
+.document-box .document-preview:hover {
+    border-color: #2787df;
+    background: #f0f7ff;
+}
+
+/* EMPTY DOCUMENT MESSAGE */
+
+.document-box #documentEmpty2 {
+    position: relative;
+    padding: 55px 15px;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    color: #71839b;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+    line-height: 1.7;
+}
+
+.document-box #documentEmpty2::before {
+    content: "📄";
+    display: block;
+    margin-bottom: 12px;
+
+    font-size: 42px;
+    opacity: .85;
+
+    animation: visaDocumentFloat 3s ease-in-out infinite;
+}
+
+/* DOCUMENT IMAGE */
+
+.document-box .document-preview img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    max-height: 450px;
+
+    object-fit: contain;
+    border-radius: 12px;
+}
+
+/* FLOATING ANIMATION */
+
+@keyframes visaDocumentFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-7px);
+    }
+}
+
+/* MOBILE RESPONSIVE */
+
+@media (max-width: 600px) {
+    .document-box {
+        padding: 14px;
+        margin: 15px auto;
+        border-radius: 16px;
+    }
+
+    .document-box h2 {
+        font-size: 15px;
+        margin-bottom: 14px;
+    }
+
+    .document-box .document-preview {
+        min-height: 180px;
+    }
+
+    .document-box #documentEmpty2 {
+        font-size: 12px;
+    }
+
+    .document-box #documentEmpty2::before {
+        font-size: 36px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .document-box,
+    .document-box #documentEmpty2::before {
+        animation: none;
+        transition: none;
+    }
+}
+
   .flight-widget .fw-route {
     top: 43%;
     left: 20%;
