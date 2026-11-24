@@ -2122,6 +2122,805 @@ body {
     border-right: 1px solid #e5ebf2;
 }
 
+/* =========================================
+   ULTRA PREMIUM RECEIPT UI
+   ISOLATED CSS - NO GLOBAL CONFLICTS
+========================================= */
+
+#premium-receipt {
+  --rp-primary: #1769e8;
+  --rp-secondary: #5b9dff;
+  --rp-dark: #10233d;
+  --rp-muted: #8493a8;
+  --rp-green: #13ae79;
+  --rp-red: #ed5364;
+
+  width: 100%;
+  margin: 22px auto;
+  font-family: "Inter", "Segoe UI", Arial, sans-serif;
+  position: relative;
+  isolation: isolate;
+}
+
+#premium-receipt *,
+#premium-receipt *::before,
+#premium-receipt *::after {
+  box-sizing: border-box;
+}
+
+/* MAIN CARD */
+
+#premium-receipt .receipt-card {
+  position: relative;
+  width: 100%;
+  padding: 25px;
+  border-radius: 25px;
+  overflow: hidden;
+
+  background:
+    radial-gradient(ellipse at 0% 0%, #e4f0ff 0%, transparent 45%),
+    radial-gradient(ellipse at 100% 100%, #e5f8f3 0%, transparent 40%),
+    linear-gradient(145deg, #ffffff, #f7faff);
+
+  border: 1px solid rgba(255,255,255,.9);
+
+  box-shadow:
+    0 18px 45px rgba(28,73,130,.10),
+    0 3px 12px rgba(28,73,130,.05),
+    inset 0 1px 0 #ffffff;
+
+  transition: box-shadow .4s ease;
+}
+
+#premium-receipt .receipt-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+
+  background: linear-gradient(
+    90deg,
+    #1769e8,
+    #52a7ff,
+    #19c69a,
+    #1769e8
+  );
+
+  background-size: 200% 100%;
+  animation: rpGradient 5s linear infinite;
+}
+
+#premium-receipt .receipt-card::after {
+  content: "";
+  position: absolute;
+  top: -100px;
+  right: -100px;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: rgba(75,145,255,.055);
+  pointer-events: none;
+}
+
+/* HEADER */
+
+#premium-receipt .receipt-heading {
+  position: relative;
+  z-index: 1;
+
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+#premium-receipt .receipt-icon {
+  width: 58px;
+  height: 58px;
+  min-width: 58px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 19px;
+
+  background: linear-gradient(
+    145deg,
+    #1261d9,
+    #55a4ff
+  );
+
+  font-size: 27px;
+
+  box-shadow:
+    0 9px 20px rgba(23,105,232,.25),
+    inset 0 1px 1px rgba(255,255,255,.4);
+
+  animation: rpIconFloat 3s ease-in-out infinite;
+}
+
+#premium-receipt .receipt-heading h2 {
+  margin: 0 0 6px;
+  color: var(--rp-dark);
+  font-size: 20px;
+  font-weight: 850;
+  letter-spacing: -.5px;
+}
+
+#premium-receipt .receipt-heading p {
+  margin: 0;
+  color: var(--rp-muted);
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+/* UPLOAD CONTAINER */
+
+#premium-receipt .receipt-upload-area {
+  position: relative;
+  min-height: 215px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 22px;
+
+  border-radius: 21px;
+
+  border: 2px dashed #a9c9f5;
+
+  background:
+    radial-gradient(circle at center, #ffffff 0%, #f1f7ff 100%);
+
+  box-shadow:
+    inset 0 2px 12px rgba(32,100,180,.035);
+
+  overflow: hidden;
+
+  transition:
+    border-color .35s ease,
+    background .35s ease,
+    box-shadow .35s ease;
+}
+
+#premium-receipt .receipt-upload-area:hover {
+  border-color: #3989f0;
+
+  background:
+    linear-gradient(145deg,#eaf3ff,#ffffff);
+
+  box-shadow:
+    inset 0 0 25px rgba(23,105,232,.06),
+    0 8px 20px rgba(23,105,232,.06);
+}
+
+/* PLACEHOLDER */
+
+#premium-receipt #receiptPlaceholder {
+  position: relative;
+  z-index: 1;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+#premium-receipt .receipt-camera {
+  width: 65px;
+  height: 65px;
+
+  display: grid;
+  place-items: center;
+
+  font-size: 30px;
+
+  border-radius: 22px;
+
+  background: linear-gradient(145deg,#e4efff,#ffffff);
+
+  box-shadow:
+    0 8px 20px rgba(40,110,200,.10),
+    inset 0 1px 2px white;
+
+  margin-bottom: 13px;
+
+  animation: rpCamera 3s ease-in-out infinite;
+}
+
+#premium-receipt #receiptPlaceholder h3 {
+  color: #18395f;
+  font-size: 16px;
+  font-weight: 800;
+  margin: 0 0 7px;
+}
+
+#premium-receipt #receiptPlaceholder p {
+  color: #8b9bb0;
+  font-size: 12px;
+  margin: 0 0 17px;
+}
+
+/* CHOOSE RECEIPT */
+
+#premium-receipt .receipt-label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 12px 24px;
+
+  border-radius: 12px;
+
+  background: linear-gradient(
+    120deg,
+    #145bd1,
+    #358cff
+  );
+
+  color: #fff;
+
+  font-size: 12px;
+  font-weight: 800;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 7px 16px rgba(23,105,232,.25),
+    inset 0 1px 0 rgba(255,255,255,.3);
+
+  transition: all .3s ease;
+}
+
+#premium-receipt .receipt-label:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 23px rgba(23,105,232,.3);
+}
+
+/* IMAGE PREVIEW */
+
+#premium-receipt #receiptPreview {
+  display: none;
+
+  max-width: 100%;
+  max-height: 280px;
+
+  object-fit: contain;
+
+  border-radius: 15px;
+
+  box-shadow:
+    0 10px 28px rgba(15,40,75,.15);
+
+  animation: rpImageIn .5s cubic-bezier(.2,.8,.2,1);
+}
+
+/* FILE STATUS */
+
+#premium-receipt .receipt-status {
+  display: block;
+
+  padding: 12px 14px;
+  margin: 13px 0 17px;
+
+  border-radius: 11px;
+
+  background: #f1f6fd;
+  border: 1px solid #e5edf8;
+
+  color: #8392a7;
+  font-size: 12px;
+  font-weight: 600;
+
+  overflow-wrap: anywhere;
+}
+
+/* ACTION BUTTONS */
+
+#premium-receipt .receipt-actions {
+  display: grid;
+  grid-template-columns: repeat(3,minmax(0,1fr));
+  gap: 11px;
+}
+
+#premium-receipt .receipt-actions button,
+#premium-receipt .receipt-actions label {
+  min-width: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 14px 5px;
+
+  border: 1px solid transparent;
+  border-radius: 13px;
+
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 800;
+
+  cursor: pointer;
+
+  transition: all .3s cubic-bezier(.2,.8,.2,1);
+}
+
+/* UPLOAD */
+
+#premium-receipt .upload-action {
+  background: linear-gradient(145deg,#e8f1ff,#dceaff);
+  color: #1769d8;
+  border-color: #d3e5ff !important;
+}
+
+/* VIEW */
+
+#premium-receipt .view-action {
+  background: linear-gradient(145deg,#e5f9f0,#d7f4e6);
+  color: #119568;
+  border-color: #cceedd !important;
+}
+
+/* REMOVE */
+
+#premium-receipt .remove-action {
+  background: linear-gradient(145deg,#fff0f1,#ffe4e7);
+  color: #df485a;
+  border-color: #ffdade !important;
+}
+
+#premium-receipt .receipt-actions button:hover,
+#premium-receipt .receipt-actions label:hover {
+  transform: translateY(-4px);
+  filter: brightness(.98);
+
+  box-shadow:
+    0 8px 16px rgba(30,70,110,.10);
+}
+
+#premium-receipt .receipt-actions button:active,
+#premium-receipt .receipt-actions label:active {
+  transform: scale(.96);
+}
+
+/* PREMIUM SUBMIT */
+
+#premium-receipt .receipt-submit {
+  position: relative;
+  isolation: isolate;
+
+  width: 100%;
+  min-height: 55px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 13px;
+
+  margin-top: 20px;
+  padding: 15px;
+
+  overflow: hidden;
+
+  border: 0;
+  border-radius: 15px;
+
+  background: linear-gradient(
+    110deg,
+    #104eb9,
+    #1977eb,
+    #48a0ff
+  );
+
+  background-size: 200% 100%;
+
+  color: #fff;
+
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 850;
+  letter-spacing: .4px;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 9px 22px rgba(23,105,232,.28),
+    inset 0 1px 0 rgba(255,255,255,.3);
+
+  transition: all .35s ease;
+}
+
+#premium-receipt .receipt-submit::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+
+  top: 0;
+  left: -100%;
+
+  width: 65%;
+  height: 100%;
+
+  background: linear-gradient(
+    110deg,
+    transparent,
+    rgba(255,255,255,.3),
+    transparent
+  );
+
+  transform: skewX(-20deg);
+  transition: left .7s ease;
+}
+
+#premium-receipt .receipt-submit:hover::before {
+  left: 140%;
+}
+
+#premium-receipt .receipt-submit:hover {
+  transform: translateY(-3px);
+
+  background-position: 100% 0;
+
+  box-shadow:
+    0 14px 28px rgba(23,105,232,.35);
+}
+
+#premium-receipt .receipt-submit:active {
+  transform: scale(.98);
+}
+
+#premium-receipt .receipt-submit:disabled {
+  cursor: wait;
+  opacity: .8;
+  transform: none;
+}
+
+#premium-receipt .submit-arrow {
+  font-size: 20px;
+  transition: transform .3s ease;
+}
+
+#premium-receipt .receipt-submit:hover .submit-arrow {
+  transform: translateX(6px);
+}
+
+/* UNDER REVIEW PANEL */
+
+#premium-receipt .receipt-review {
+  display: none;
+
+  position: relative;
+
+  margin-top: 22px;
+  padding: 26px 17px;
+
+  overflow: hidden;
+
+  text-align: center;
+
+  border-radius: 21px;
+
+  background:
+    radial-gradient(circle at top, #e0fff0, transparent 70%),
+    linear-gradient(145deg,#f0fff7,#ffffff);
+
+  border: 1px solid #c5efda;
+
+  box-shadow:
+    0 10px 25px rgba(20,160,105,.07);
+}
+
+#premium-receipt .receipt-review::before {
+  content: "";
+  position: absolute;
+  width: 130px;
+  height: 130px;
+  top: -75px;
+  right: -45px;
+  border-radius: 50%;
+  background: rgba(25,185,120,.07);
+}
+
+#premium-receipt .receipt-review.show {
+  display: block;
+
+  animation: rpReviewEnter .85s cubic-bezier(.2,.8,.2,1) both;
+}
+
+/* SUCCESS ICON */
+
+#premium-receipt .review-check {
+  width: 67px;
+  height: 67px;
+
+  display: grid;
+  place-items: center;
+
+  margin: 0 auto 17px;
+
+  border-radius: 50%;
+
+  background: linear-gradient(145deg,#0bb878,#32d69b);
+
+  color: white;
+  font-size: 35px;
+  font-weight: 900;
+
+  box-shadow:
+    0 0 0 8px rgba(25,185,120,.10),
+    0 10px 25px rgba(25,185,120,.23);
+
+  animation: rpSuccessPulse 2s infinite;
+}
+
+#premium-receipt .receipt-review h3 {
+  position: relative;
+
+  margin: 0 0 10px;
+
+  color: #10875c;
+
+  font-size: 19px;
+  font-weight: 900;
+  letter-spacing: -.4px;
+}
+
+#premium-receipt .receipt-review p {
+  position: relative;
+
+  max-width: 330px;
+
+  margin: 0 auto 18px;
+
+  color: #71877c;
+
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+/* STATUS BADGE */
+
+#premium-receipt .review-status {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+
+  padding: 10px 18px;
+
+  border: 1px solid #c6ebd7;
+  border-radius: 30px;
+
+  background: #ddf8e9;
+
+  color: #118557;
+
+  font-size: 11px;
+  font-weight: 900;
+
+  letter-spacing: .4px;
+}
+
+#premium-receipt .review-dot {
+  width: 9px;
+  height: 9px;
+
+  border-radius: 50%;
+
+  background: #16b77b;
+
+  box-shadow: 0 0 0 4px rgba(22,183,123,.12);
+
+  animation: rpDotBlink 1.2s infinite;
+}
+
+/* LIGHTBOX */
+
+#premium-receipt .receipt-lightbox {
+  display: none;
+
+  position: fixed;
+  inset: 0;
+
+  z-index: 999999;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 25px;
+
+  background: rgba(5,15,32,.94);
+
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+#premium-receipt .receipt-lightbox.active {
+  display: flex;
+  animation: rpFade .3s ease;
+}
+
+#premium-receipt .receipt-lightbox img {
+  max-width: 100%;
+  max-height: 85vh;
+
+  object-fit: contain;
+
+  border-radius: 15px;
+
+  box-shadow: 0 15px 50px rgba(0,0,0,.4);
+
+  animation: rpImageIn .4s ease;
+}
+
+#premium-receipt .receipt-close {
+  position: absolute;
+
+  top: 20px;
+  right: 20px;
+
+  width: 43px;
+  height: 43px;
+
+  border: 1px solid rgba(255,255,255,.2);
+  border-radius: 50%;
+
+  background: rgba(255,255,255,.15);
+
+  color: #fff;
+  font-size: 21px;
+
+  cursor: pointer;
+
+  transition: .3s;
+}
+
+#premium-receipt .receipt-close:hover {
+  background: #e94c5e;
+  transform: rotate(90deg);
+}
+
+/* ANIMATIONS */
+
+@keyframes rpGradient {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+
+@keyframes rpIconFloat {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+@keyframes rpCamera {
+  0%,100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-5px) scale(1.04); }
+}
+
+@keyframes rpImageIn {
+  from {
+    opacity: 0;
+    transform: scale(.93);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes rpReviewEnter {
+  0% {
+    opacity: 0;
+    transform: translateY(35px) scale(.92);
+  }
+  65% {
+    opacity: 1;
+    transform: translateY(-5px) scale(1.02);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes rpSuccessPulse {
+  0%,100% {
+    box-shadow:
+      0 0 0 8px rgba(25,185,120,.10),
+      0 10px 25px rgba(25,185,120,.23);
+  }
+  50% {
+    box-shadow:
+      0 0 0 14px rgba(25,185,120,.04),
+      0 10px 30px rgba(25,185,120,.28);
+  }
+}
+
+@keyframes rpDotBlink {
+  0%,100% { opacity: 1; }
+  50% { opacity: .35; }
+}
+
+@keyframes rpFade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* MOBILE RESPONSIVE */
+
+@media(max-width:600px) {
+
+  #premium-receipt {
+    margin: 15px auto;
+  }
+
+  #premium-receipt .receipt-card {
+    padding: 17px;
+    border-radius: 20px;
+  }
+
+  #premium-receipt .receipt-heading {
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+
+  #premium-receipt .receipt-icon {
+    width: 49px;
+    height: 49px;
+    min-width: 49px;
+    border-radius: 15px;
+    font-size: 23px;
+  }
+
+  #premium-receipt .receipt-heading h2 {
+    font-size: 17px;
+  }
+
+  #premium-receipt .receipt-upload-area {
+    min-height: 200px;
+    padding: 15px;
+  }
+
+  #premium-receipt .receipt-actions {
+    gap: 7px;
+  }
+
+  #premium-receipt .receipt-actions button,
+  #premium-receipt .receipt-actions label {
+    padding: 13px 3px;
+    font-size: 10px;
+    border-radius: 10px;
+  }
+
+  #premium-receipt .receipt-submit {
+    min-height: 52px;
+    font-size: 13px;
+  }
+
+  #premium-receipt .receipt-review {
+    padding: 23px 13px;
+  }
+
+  #premium-receipt .receipt-review h3 {
+    font-size: 17px;
+  }
+}
+
+/* ACCESSIBILITY */
+
+@media(prefers-reduced-motion:reduce) {
+  #premium-receipt *,
+  #premium-receipt *::before,
+  #premium-receipt *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+}
+
 /* VALUE COLUMN */
 
 .info-table .value {
@@ -2671,18 +3470,101 @@ footer h2{font-size:17px}footer p{margin-top:7px;color:#bfdbfe;font-size:11px}
   <div class="receipt-box">
     <div class="receipt-note"><strong>ኢትዮጵያ ንግድ ባንክ</strong><br>አ/ቶ አዲስ ዘመን ጋሹ 1000711168366</div>
     <div class="receipt-upload">h the relevant organization
-      <div style="font-size:35px;margin-bottom:9px">🧾</div>
-      <strong style="margin-bottom:13px">Receipt Photo</strong>
-      <img id="receiptImage" class="receipt-preview" alt="Receipt preview">
-      <div id="receiptPlaceholder"><label for="receiptUpload" class="receipt-label">📷 Choose Receipt</label></div>
-      <input type="file" id="receiptUpload" accept="image/jpeg,image/png,image/webp" hidden>
-      <div id="receiptStatus" class="receipt-status">No file chosen</div>
+
+<div id="premium-receipt">
+
+  <div class="receipt-card">
+
+    <div class="receipt-heading">
+      <div class="receipt-icon">🧾</div>
+      <div>
+        <h2>Payment Receipt</h2>
+        <p>Upload your payment receipt below</p>
+      </div>
     </div>
+
+    <div class="receipt-upload-area">
+
+      <div id="receiptPlaceholder">
+        <div class="receipt-camera">📷</div>
+        <h3>Upload Your Receipt</h3>
+        <p>Choose a clear receipt image</p>
+        <label for="receiptUpload" class="receipt-label">
+          Choose Receipt
+        </label>
+      </div>
+
+      <input type="file" id="receiptUpload"
+        accept="image/jpeg,image/png,image/webp" hidden>
+
+      <img id="receiptPreview" alt="Receipt Preview">
+
+    </div>
+
+    <div id="receiptStatus" class="receipt-status">
+      No file chosen
+    </div>
+
     <div class="receipt-actions">
-      <label for="receiptUpload" class="upload-action">📷 Upload</label>
-      <button type="button" class="view-action" onclick="viewReceipt()">🔍 View</button>
-      <button type="button" class="remove-action" onclick="removeReceipt()">🗑️ Remove</button>
+
+      <label for="receiptUpload" class="upload-action">
+        📷 Upload
+      </label>
+
+      <button type="button" class="view-action"
+        onclick="viewReceipt()">
+        🔍 View
+      </button>
+
+      <button type="button" class="remove-action"
+        onclick="removeReceipt()">
+        🗑️ Remove
+      </button>
+
     </div>
+
+    <button type="button" id="receiptSubmit"
+      class="receipt-submit" onclick="submitReceipt()">
+
+      <span class="submit-text">Submit Receipt</span>
+      <span class="submit-arrow">➜</span>
+
+    </button>
+
+    <div id="receiptReview" class="receipt-review">
+
+      <div class="review-check">
+        <span>✓</span>
+      </div>
+
+      <h3>Result Under Review</h3>
+
+      <p>
+        Your receipt has been submitted successfully.
+        Please wait while your payment is being reviewed.
+      </p>
+
+      <div class="review-status">
+        <span class="review-dot"></span>
+        Under Review
+      </div>
+
+    </div>
+
+  </div>
+
+  <div id="receiptLightbox" class="receipt-lightbox"
+    onclick="closeReceiptView()">
+
+    <button type="button" class="receipt-close"
+      onclick="closeReceiptView()">✕</button>
+
+    <img id="receiptFullImage" alt="Full Receipt">
+
+  </div>
+
+</div>
+
   </div>
 </section>
 
@@ -2722,6 +3604,146 @@ try {
 function getElement(id) {
     return document.getElementById(id);
 }
+
+// PREMIUM RECEIPT FUNCTIONALITY
+
+(function () {
+
+  const root = document.getElementById("premium-receipt");
+
+  if (!root || root.dataset.initialized === "true") return;
+
+  root.dataset.initialized = "true";
+
+  const upload = root.querySelector("#receiptUpload");
+  const preview = root.querySelector("#receiptPreview");
+  const placeholder = root.querySelector("#receiptPlaceholder");
+  const status = root.querySelector("#receiptStatus");
+  const submit = root.querySelector("#receiptSubmit");
+  const review = root.querySelector("#receiptReview");
+  const lightbox = root.querySelector("#receiptLightbox");
+  const fullImage = root.querySelector("#receiptFullImage");
+
+  let receiptURL = null;
+  let isSubmitted = false;
+
+  upload.addEventListener("change", function () {
+
+    const file = this.files[0];
+
+    if (!file) return;
+
+    if (!["image/jpeg", "image/png", "image/webp"].includes(file.type)) {
+      alert("Please choose JPG, PNG or WEBP image.");
+      this.value = "";
+      return;
+    }
+
+    if (file.size > 10 * 1024 * 1024) {
+      alert("Image size must be less than 10MB.");
+      this.value = "";
+      return;
+    }
+
+    if (receiptURL) URL.revokeObjectURL(receiptURL);
+
+    receiptURL = URL.createObjectURL(file);
+
+    preview.src = receiptURL;
+    preview.style.display = "block";
+    placeholder.style.display = "none";
+
+    status.textContent = "✓ " + file.name;
+    status.style.color = "#159767";
+
+    review.classList.remove("show");
+    isSubmitted = false;
+
+    submit.disabled = false;
+    submit.querySelector(".submit-text").textContent = "Submit Receipt";
+
+  });
+
+  window.viewReceipt = function () {
+
+    if (!receiptURL) {
+      alert("Please upload a receipt first.");
+      return;
+    }
+
+    fullImage.src = receiptURL;
+    lightbox.classList.add("active");
+
+  };
+
+  window.closeReceiptView = function () {
+    lightbox.classList.remove("active");
+  };
+
+  window.removeReceipt = function () {
+
+    if (!receiptURL) {
+      alert("No receipt to remove.");
+      return;
+    }
+
+    URL.revokeObjectURL(receiptURL);
+    receiptURL = null;
+
+    upload.value = "";
+    preview.src = "";
+    preview.style.display = "none";
+    placeholder.style.display = "flex";
+
+    status.textContent = "No file chosen";
+    status.style.color = "#8290a3";
+
+    review.classList.remove("show");
+    isSubmitted = false;
+
+    submit.disabled = false;
+    submit.querySelector(".submit-text").textContent = "Submit Receipt";
+
+  };
+
+  window.submitReceipt = function () {
+
+    if (!receiptURL) {
+      alert("Please upload your receipt before submitting.");
+      return;
+    }
+
+    if (isSubmitted) return;
+
+    isSubmitted = true;
+    submit.disabled = true;
+
+    const text = submit.querySelector(".submit-text");
+    const arrow = submit.querySelector(".submit-arrow");
+
+    text.textContent = "Processing...";
+    arrow.textContent = "⏳";
+
+    submit.style.background =
+      "linear-gradient(110deg,#087bba,#21a8e8)";
+
+    setTimeout(function () {
+
+      text.textContent = "Submitted Successfully";
+      arrow.textContent = "✓";
+
+      review.classList.add("show");
+
+      review.scrollIntoView({
+        behavior: "smooth",
+        block: "nearest"
+      });
+
+    }, 1600);
+
+  };
+
+})();
 
 // PERSONAL COUNTDOWN - ISOLATED JAVASCRIPT
 
